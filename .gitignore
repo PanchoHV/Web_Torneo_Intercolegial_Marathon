@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Supabase local temp artifacts
+supabase/.temp/
+
+# Local export assets
+sitio-*.png
+sitio-*.pdf
