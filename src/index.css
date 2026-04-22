@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 86% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 211 100% 32%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 211 100% 32%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-marathon-cream text-marathon-blue font-inter antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at top left, rgba(0, 80, 164, 0.08), transparent 32rem),
+      linear-gradient(180deg, #F4F8FC 0%, #FFFFFF 46%, #F4F8FC 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(135deg, #E21B2D 0%, #D8A84B 54%, #0050A4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-sports {
+    background: linear-gradient(135deg, #E21B2D 0%, #D8A84B 100%);
+  }
+
+  .gradient-institutional {
+    background: linear-gradient(180deg, #062A4F 0%, #0050A4 100%);
+  }
+
+  .gradient-cta {
+    background:
+      linear-gradient(135deg, rgba(6,42,79,0.98) 0%, rgba(0,80,164,0.92) 58%, rgba(226,27,45,0.9) 100%);
+  }
+
+  .sports-lines-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'%3E%3Cpath d='M-10 50 L50 -10'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 40px 40px;
+    animation: patternShift 20s linear infinite;
+  }
+
+  .shadow-card {
+    box-shadow: 0 12px 34px rgba(6, 42, 79, 0.1);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 22px 56px rgba(6, 42, 79, 0.16);
+  }
+
+  .shadow-button {
+    box-shadow: 0 12px 28px rgba(226, 27, 45, 0.32);
+  }
+
+  .pulse-dot {
+    position: relative;
+    background: #E21B2D;
+  }
+
+  .pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #E21B2D;
+    animation: pulse 2s ease-out infinite;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes patternShift {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
