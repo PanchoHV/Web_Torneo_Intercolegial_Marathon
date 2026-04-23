@@ -36,19 +36,44 @@ export async function createRegistration(
     turnstile_token: values.turnstileToken?.trim() || '',
   };
 
-  const { data, error } = await supabase.functions.invoke('create-registration', {
-    body: payload,
-  });
+  const response = await fetch(
+    `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-registration`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+      },
+      body: JSON.stringify(payload),
+    }
+  );
 
-  if (error) {
-    throw new Error(error.message || 'No se pudo registrar la inscripción.');
+  const data = (await response.json().catch(() => null)) as
+    | { id?: string; created_at?: string; error?: string; message?: string }
+    | null;
+
+  if (!response.ok) {
+    const backendMessage =
+      data?.error || data?.message || 'No se pudo registrar la inscripción.';
+
+    const localTurnstileHint =
+      typeof window !== 'undefined' &&
+      ['localhost', '127.0.0.1'].includes(window.location.hostname) &&
+      response.status === 400 &&
+      backendMessage.toLowerCase().includes('verificación de seguridad')
+        ? ' Si estás probando en local, revisa que Turnstile permita localhost o usa un dominio autorizado.'
+        : '';
+
+    throw new Error(`${backendMessage}${localTurnstileHint}`);
   }
 
-  const response = data as { id?: string; created_at?: string } | null;
+  if (!data) {
+    throw new Error('No se recibió una respuesta válida del servidor.');
+  }
 
   return {
-    id: response?.id ?? null,
-    createdAt: response?.created_at ?? null,
+    id: data.id ?? null,
+    createdAt: data.created_at ?? null,
     isLocal: false,
   };
 }
