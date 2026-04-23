@@ -23,6 +23,11 @@ type ResendEmailResult = {
   [key: string]: unknown;
 };
 
+type SupabaseMutationError = {
+  code?: string;
+  message?: string;
+};
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
@@ -35,6 +40,15 @@ function escapeHtml(value: unknown) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function isMissingColumnError(error: SupabaseMutationError) {
+  const message = error.message ?? "";
+  return (
+    error.code === "PGRST204" ||
+    /could not find .* column/i.test(message) ||
+    /(column|schema cache).*does not exist/i.test(message)
+  );
 }
 
 async function sendResendEmail(params: {
@@ -233,7 +247,7 @@ Deno.serve(async (req: Request) => {
       .eq("id", data.id);
 
     if (firstUpdateError) {
-      if (/(column|schema cache).*does not exist/i.test(firstUpdateError.message)) {
+      if (isMissingColumnError(firstUpdateError)) {
         const { error: fallbackUpdateError } = await admin
           .from("school_registrations")
           .update(flagsUpdate)
