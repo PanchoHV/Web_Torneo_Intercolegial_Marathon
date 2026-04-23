@@ -31,6 +31,8 @@ export const registrationSchema = z.object({
   termsAccepted: z.boolean().refine((value) => value, {
     message: 'Debes aceptar el uso de datos para continuar.',
   }),
+  website: z.string().default(''),
+  turnstileToken: z.string().default(''),
 });
 
-export type RegistrationSchemaValues = z.infer<typeof registrationSchema>;
+export type RegistrationSchemaValues = z.input<typeof registrationSchema>;

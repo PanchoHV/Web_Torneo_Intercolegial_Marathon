@@ -16,6 +16,8 @@ type RegistrationPayload = {
   city: string;
   status: "new" | "qualified" | "contacted" | "won" | "lost";
   source: string;
+  website?: string;
+  turnstile_token?: string;
 };
 
 type ResendEmailResult = {
@@ -33,6 +35,20 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+const RATE_LIMIT_WINDOW_MINUTES = Number(
+  Deno.env.get("REGISTRATION_RATE_LIMIT_WINDOW_MINUTES") ?? "10"
+);
+const RATE_LIMIT_MAX_ATTEMPTS = Number(
+  Deno.env.get("REGISTRATION_RATE_LIMIT_MAX_ATTEMPTS") ?? "5"
+);
+
+function jsonResponse(body: unknown, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
+
 function escapeHtml(value: unknown) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -49,6 +65,133 @@ function isMissingColumnError(error: SupabaseMutationError) {
     /could not find .* column/i.test(message) ||
     /(column|schema cache).*does not exist/i.test(message)
   );
+}
+
+function getClientIp(req: Request) {
+  const forwardedFor =
+    req.headers.get("cf-connecting-ip") ??
+    req.headers.get("x-forwarded-for") ??
+    req.headers.get("x-real-ip");
+
+  if (!forwardedFor) {
+    return "unknown";
+  }
+
+  return forwardedFor.split(",")[0]?.trim() || "unknown";
+}
+
+function getUserAgent(req: Request) {
+  return req.headers.get("user-agent") ?? "unknown";
+}
+
+async function logRegistrationAttempt(params: {
+  admin: ReturnType<typeof createClient>;
+  ipAddress: string;
+  userAgent: string;
+  status: string;
+  reason?: string | null;
+}) {
+  const { error } = await params.admin.from("registration_request_audit").insert({
+    ip_address: params.ipAddress,
+    user_agent: params.userAgent,
+    status: params.status,
+    reason: params.reason ?? null,
+  });
+
+  if (error) {
+    console.error("Registration audit insert failed", error);
+  }
+}
+
+async function isRateLimited(params: {
+  admin: ReturnType<typeof createClient>;
+  ipAddress: string;
+}) {
+  if (!params.ipAddress || params.ipAddress === "unknown") {
+    return false;
+  }
+
+  const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_MINUTES * 60_000).toISOString();
+  const { count, error } = await params.admin
+    .from("registration_request_audit")
+    .select("id", { head: true, count: "exact" })
+    .eq("ip_address", params.ipAddress)
+    .gte("created_at", windowStart);
+
+  if (error) {
+    console.error("Rate limit lookup failed", error);
+    return false;
+  }
+
+  return (count ?? 0) >= RATE_LIMIT_MAX_ATTEMPTS;
+}
+
+async function validateTurnstile(params: {
+  token: string;
+  ipAddress: string;
+}) {
+  const secret = Deno.env.get("TURNSTILE_SECRET_KEY");
+
+  if (!secret) {
+    return { success: true, skipped: true, errors: [] as string[] };
+  }
+
+  if (!params.token) {
+    return { success: false, skipped: false, errors: ["missing-input-response"] };
+  }
+
+  const formData = new FormData();
+  formData.append("secret", secret);
+  formData.append("response", params.token);
+
+  if (params.ipAddress && params.ipAddress !== "unknown") {
+    formData.append("remoteip", params.ipAddress);
+  }
+
+  formData.append("idempotency_key", crypto.randomUUID());
+
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  const result = await response.json().catch(() => null);
+  const errorCodes = Array.isArray(result?.["error-codes"])
+    ? result["error-codes"].map((item: unknown) => String(item))
+    : [];
+  const expectedHostname = Deno.env.get("TURNSTILE_EXPECTED_HOSTNAME");
+  const action = result?.action ? String(result.action) : null;
+  const hostname = result?.hostname ? String(result.hostname) : null;
+  const success =
+    response.ok &&
+    Boolean(result?.success) &&
+    action === "registration_submit" &&
+    (!expectedHostname || hostname === expectedHostname);
+
+  if (success) {
+    return { success: true, skipped: false, errors: [] as string[] };
+  }
+
+  if (!response.ok && errorCodes.length === 0) {
+    errorCodes.push("siteverify-request-failed");
+  }
+
+  if (action !== "registration_submit") {
+    errorCodes.push("invalid-action");
+  }
+
+  if (expectedHostname && hostname !== expectedHostname) {
+    errorCodes.push("invalid-hostname");
+  }
+
+  return {
+    success: false,
+    skipped: false,
+    errors: [...new Set(errorCodes)],
+  };
 }
 
 async function sendResendEmail(params: {
@@ -88,6 +231,10 @@ Deno.serve(async (req: Request) => {
     return new Response("ok", { headers: corsHeaders });
   }
 
+  if (req.method !== "POST") {
+    return jsonResponse({ error: "Method not allowed." }, 405);
+  }
+
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -100,23 +247,110 @@ Deno.serve(async (req: Request) => {
     }
 
     const payload = (await req.json()) as RegistrationPayload;
+    const ipAddress = getClientIp(req);
+    const userAgent = getUserAgent(req);
 
     const admin = createClient(supabaseUrl, serviceRoleKey, {
       auth: { persistSession: false },
     });
 
+    if (await isRateLimited({ admin, ipAddress })) {
+      await logRegistrationAttempt({
+        admin,
+        ipAddress,
+        userAgent,
+        status: "blocked_rate_limit",
+        reason: `Exceeded ${RATE_LIMIT_MAX_ATTEMPTS} attempts in ${RATE_LIMIT_WINDOW_MINUTES} minutes.`,
+      });
+
+      return jsonResponse(
+        {
+          error:
+            "Has realizado varios intentos en poco tiempo. Espera unos minutos antes de volver a intentar.",
+        },
+        429
+      );
+    }
+
+    if (String(payload.website ?? "").trim().length > 0) {
+      await logRegistrationAttempt({
+        admin,
+        ipAddress,
+        userAgent,
+        status: "blocked_honeypot",
+        reason: "Hidden honeypot field was filled.",
+      });
+
+      return jsonResponse(
+        { error: "No pudimos verificar el envío. Revisa el formulario e intenta nuevamente." },
+        400
+      );
+    }
+
+    const turnstileCheck = await validateTurnstile({
+      token: String(payload.turnstile_token ?? "").trim(),
+      ipAddress,
+    });
+
+    if (!turnstileCheck.success) {
+      await logRegistrationAttempt({
+        admin,
+        ipAddress,
+        userAgent,
+        status: "blocked_turnstile",
+        reason: turnstileCheck.errors.join(", ") || "Turnstile validation failed.",
+      });
+
+      return jsonResponse(
+        {
+          error:
+            "No pudimos validar la verificación de seguridad. Intenta nuevamente antes de enviar.",
+        },
+        400
+      );
+    }
+
     const { data, error } = await admin
       .from("school_registrations")
-      .insert(payload)
+      .insert({
+        school_name: payload.school_name,
+        school_address: payload.school_address,
+        contact_name: payload.contact_name,
+        applicant_role: payload.applicant_role,
+        applicant_role_other: payload.applicant_role_other,
+        school_type: payload.school_type,
+        contact_id_number: payload.contact_id_number,
+        contact_email: payload.contact_email,
+        contact_phone: payload.contact_phone,
+        city: payload.city,
+        status: payload.status,
+        source: payload.source,
+      })
       .select("id, created_at")
       .single();
 
     if (error) {
+      await logRegistrationAttempt({
+        admin,
+        ipAddress,
+        userAgent,
+        status: "blocked_validation_error",
+        reason: error.message,
+      });
+
       return new Response(JSON.stringify({ error: error.message }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
+
+    await logRegistrationAttempt({
+      admin,
+      ipAddress,
+      userAgent,
+      status: "allowed",
+      reason: turnstileCheck.skipped ? "Turnstile skipped because secret is not configured." : null,
+    });
 
     // Best-effort email delivery with auditable flags.
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
@@ -279,9 +513,9 @@ Deno.serve(async (req: Request) => {
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error) {
-    return new Response(
-      JSON.stringify({ error: error instanceof Error ? error.message : "Unexpected error" }),
-      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    return jsonResponse(
+      { error: error instanceof Error ? error.message : "Unexpected error" },
+      500
     );
   }
 });

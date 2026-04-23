@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase/client';
 import type {
+  RegistrationCreateRequest,
   RegistrationFormValues,
   RegistrationInsert,
   RegistrationResult,
@@ -29,7 +30,11 @@ export async function createRegistration(
     );
   }
 
-  const payload = mapRegistrationInsert(values);
+  const payload: RegistrationCreateRequest = {
+    ...mapRegistrationInsert(values),
+    website: values.website?.trim() || '',
+    turnstile_token: values.turnstileToken?.trim() || '',
+  };
 
   const { data, error } = await supabase.functions.invoke('create-registration', {
     body: payload,

@@ -23,6 +23,8 @@ export interface RegistrationFormValues {
   phone: string;
   city: RegistrationCity;
   termsAccepted: boolean;
+  website: string;
+  turnstileToken: string;
 }
 
 export interface RegistrationInsert {
@@ -38,6 +40,11 @@ export interface RegistrationInsert {
   city: string;
   status: RegistrationStatus;
   source: string;
+}
+
+export interface RegistrationCreateRequest extends RegistrationInsert {
+  website?: string;
+  turnstile_token?: string;
 }
 
 export interface RegistrationRecord extends RegistrationInsert {

@@ -1,10 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Building2, CheckCircle2, Loader2, LockKeyhole, Send, UserRound } from 'lucide-react';
-import { type ReactNode, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import TurnstileChallenge, {
+  type TurnstileChallengeHandle,
+} from '@/components/registrations/TurnstileChallenge';
 import {
   Select,
   SelectContent,
@@ -31,6 +34,11 @@ type RegistrationFormProps = {
 
 export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormProps) {
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState('');
+  const [pendingValues, setPendingValues] = useState<RegistrationSchemaValues | null>(null);
+  const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
+  const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
+  const hasTurnstile = Boolean(turnstileSiteKey);
 
   const {
     register,
@@ -38,6 +46,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     formState: { errors, isSubmitting },
     control,
     reset,
+    setValue,
   } = useForm<RegistrationSchemaValues>({
     resolver: zodResolver(registrationSchema),
     defaultValues: {
@@ -51,10 +60,15 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       phone: '',
       city: undefined,
       termsAccepted: false,
+      website: '',
+      turnstileToken: '',
     },
   });
 
-  const onSubmit = handleSubmit(async (values) => {
+  const submitRegistration = async (
+    values: RegistrationSchemaValues,
+    tokenOverride?: string
+  ) => {
     setSubmitError(null);
 
     try {
@@ -65,13 +79,34 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         delegateName: normalizeText(values.delegateName),
         delegateId: normalizeDigits(values.delegateId),
         phone: normalizePhone(values.phone),
+        website: values.website?.trim() || '',
+        turnstileToken: tokenOverride ?? turnstileToken,
       });
 
       reset();
+      setTurnstileToken('');
+      setPendingValues(null);
+      setValue('turnstileToken', '');
+      turnstileRef.current?.reset();
       onSubmitSuccess(result);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
+      setTurnstileToken('');
+      setValue('turnstileToken', '');
+      turnstileRef.current?.reset();
     }
+  };
+
+  const onSubmit = handleSubmit(async (values) => {
+    setSubmitError(null);
+
+    if (hasTurnstile && !turnstileToken) {
+      setPendingValues(values);
+      turnstileRef.current?.execute();
+      return;
+    }
+
+    await submitRegistration(values);
   });
 
   return (
@@ -104,6 +139,15 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         </aside>
 
         <form className="grid gap-5 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:gap-6 sm:p-7 lg:p-8" onSubmit={onSubmit} noValidate>
+          <input
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden opacity-0"
+            {...register('website')}
+          />
+          <input type="hidden" {...register('turnstileToken')} />
           <div className="grid gap-5 md:grid-cols-2">
             <Field label="Nombre completo del Colegio" error={errors.institutionName?.message} required>
               <Input
@@ -219,6 +263,55 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </label>
             {errors.termsAccepted?.message && <p className="mt-2 text-xs font-semibold text-red-600">{errors.termsAccepted.message}</p>}
           </div>
+
+          {hasTurnstile && turnstileSiteKey ? (
+            <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
+              <p className="text-sm font-semibold text-marathon-blue">
+                Verificación final antes del envío
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+                Antes de enviar la inscripción validamos que el envío proviene de una persona real.
+              </p>
+              <div className="mt-4">
+                <TurnstileChallenge
+                  ref={turnstileRef}
+                  siteKey={turnstileSiteKey}
+                  onVerify={(token) => {
+                    setTurnstileToken(token);
+                    setValue('turnstileToken', token, { shouldValidate: false });
+
+                    if (pendingValues) {
+                      const valuesToSubmit = pendingValues;
+                      setPendingValues(null);
+                      setSubmitError(null);
+                      void submitRegistration(valuesToSubmit, token);
+                      return;
+                    }
+
+                    if (!pendingValues) {
+                      setSubmitError(null);
+                    }
+                  }}
+                  onError={() => {
+                    setSubmitError(
+                      'No pudimos completar la verificación de seguridad. Intenta nuevamente.'
+                    );
+                    setPendingValues(null);
+                    setTurnstileToken('');
+                    setValue('turnstileToken', '');
+                  }}
+                  onExpire={() => {
+                    setPendingValues(null);
+                    setTurnstileToken('');
+                    setValue('turnstileToken', '');
+                    setSubmitError(
+                      'La verificación de seguridad expiró. Presiona enviar nuevamente.'
+                    );
+                  }}
+                />
+              </div>
+            </div>
+          ) : null}
 
           {submitError && (
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{submitError}</p>
