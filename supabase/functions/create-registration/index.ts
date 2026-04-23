@@ -162,23 +162,12 @@ async function validateTurnstile(params: {
   const errorCodes = Array.isArray(result?.["error-codes"])
     ? result["error-codes"].map((item: unknown) => String(item))
     : [];
-  const allowedHostnames = (
-    Deno.env.get("TURNSTILE_ALLOWED_HOSTNAMES") ??
-    Deno.env.get("TURNSTILE_EXPECTED_HOSTNAME") ??
-    ""
-  )
-    .split(",")
-    .map((item) => item.trim().toLowerCase())
-    .filter(Boolean);
   const action = result?.action ? String(result.action) : null;
   const hostname = result?.hostname ? String(result.hostname).toLowerCase() : null;
-  const hostnameAllowed =
-    allowedHostnames.length === 0 || (hostname ? allowedHostnames.includes(hostname) : false);
   const success =
     response.ok &&
     Boolean(result?.success) &&
-    action === "registration_submit" &&
-    hostnameAllowed;
+    action === "registration_submit";
 
   if (success) {
     return { success: true, skipped: false, errors: [] as string[] };
@@ -190,10 +179,6 @@ async function validateTurnstile(params: {
 
   if (action !== "registration_submit") {
     errorCodes.push("invalid-action");
-  }
-
-  if (allowedHostnames.length > 0 && !hostnameAllowed) {
-    errorCodes.push("invalid-hostname");
   }
 
   return {
