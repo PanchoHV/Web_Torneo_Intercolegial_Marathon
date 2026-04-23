@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
-import { type ReactNode, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
@@ -44,12 +44,32 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState('');
   const [pendingValues, setPendingValues] = useState<RegistrationSchemaValues | null>(null);
+  const [turnstileReady, setTurnstileReady] = useState(false);
   const [turnstileState, setTurnstileState] = useState<
     'loading' | 'ready' | 'verifying' | 'verified' | 'error'
   >('loading');
   const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
+  const verificationTimeoutRef = useRef<number | null>(null);
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
+
+  const clearVerificationTimeout = () => {
+    if (verificationTimeoutRef.current) {
+      window.clearTimeout(verificationTimeoutRef.current);
+      verificationTimeoutRef.current = null;
+    }
+  };
+
+  const armVerificationTimeout = () => {
+    clearVerificationTimeout();
+    verificationTimeoutRef.current = window.setTimeout(() => {
+      setTurnstileState('error');
+      setPendingValues(null);
+      setSubmitError(
+        'La verificación de seguridad tardó demasiado. Presiona enviar nuevamente.'
+      );
+    }, 8000);
+  };
 
   const {
     register,
@@ -76,6 +96,12 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     },
   });
 
+  useEffect(() => {
+    return () => {
+      clearVerificationTimeout();
+    };
+  }, []);
+
   const submitRegistration = async (
     values: RegistrationSchemaValues,
     tokenOverride?: string
@@ -99,6 +125,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       setPendingValues(null);
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
+      clearVerificationTimeout();
       if (hasTurnstile) {
         setTurnstileState('ready');
       }
@@ -108,6 +135,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       setTurnstileToken('');
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
+      clearVerificationTimeout();
       if (hasTurnstile) {
         setTurnstileState('error');
       }
@@ -119,7 +147,17 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
     if (hasTurnstile && !turnstileToken) {
       setPendingValues(values);
+
+      if (!turnstileReady) {
+        setTurnstileState('loading');
+        setSubmitError(
+          'La verificación de seguridad aún se está cargando. Intenta de nuevo en un momento.'
+        );
+        return;
+      }
+
       setTurnstileState('verifying');
+      armVerificationTimeout();
       turnstileRef.current?.execute();
       return;
     }
@@ -286,11 +324,9 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <p className="text-sm font-semibold text-marathon-blue">
-                    Verificación final antes del envío
-                  </p>
+                  
                   <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
-                    Protegido por Cloudflare Turnstile para reducir bots, spam y envíos automáticos.
+                    Protegido por Cloudflare.
                   </p>
                 </div>
 
@@ -344,14 +380,14 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                         ? 'Revisando la protección del envío'
                         : turnstileState === 'verified'
                         ? 'Verificación completada'
-                        : 'Protección inteligente habilitada'}
+                        : 'Protección Anti-SPAM habilitada'}
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
                       {turnstileState === 'verifying'
                         ? 'Estamos validando este envío antes de registrar la inscripción.'
                         : turnstileState === 'verified'
                         ? 'La validación pasó correctamente y el envío puede continuar.'
-                        : 'La comprobación se ejecuta justo antes de enviar, sin fricción innecesaria para usuarios reales.'}
+                        : 'Utilizamos tecnología antispam para asegurarnos de que las inscripciones sean legítimas y evitar registros automáticos.'}
                     </p>
                   </div>
                 </div>
@@ -362,9 +398,16 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   ref={turnstileRef}
                   siteKey={turnstileSiteKey}
                   onReady={() => {
+                    setTurnstileReady(true);
                     setTurnstileState('ready');
+                    if (pendingValues && !turnstileToken) {
+                      setTurnstileState('verifying');
+                      armVerificationTimeout();
+                      turnstileRef.current?.execute();
+                    }
                   }}
                   onVerify={(token) => {
+                    clearVerificationTimeout();
                     setTurnstileToken(token);
                     setTurnstileState('verified');
                     setValue('turnstileToken', token, { shouldValidate: false });
@@ -382,6 +425,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     }
                   }}
                   onError={() => {
+                    clearVerificationTimeout();
                     setTurnstileState('error');
                     setSubmitError(
                       'No pudimos completar la verificación de seguridad. Intenta nuevamente.'
@@ -391,6 +435,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     setValue('turnstileToken', '');
                   }}
                   onExpire={() => {
+                    clearVerificationTimeout();
                     setTurnstileState('ready');
                     setPendingValues(null);
                     setTurnstileToken('');
