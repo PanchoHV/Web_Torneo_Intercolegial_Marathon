@@ -8,14 +8,14 @@ import {
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
-import { type ReactNode, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import TurnstileChallenge, {
   type TurnstileChallengeHandle,
 } from '@/components/registrations/TurnstileChallenge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
@@ -43,33 +43,13 @@ type RegistrationFormProps = {
 export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormProps) {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState('');
-  const [pendingValues, setPendingValues] = useState<RegistrationSchemaValues | null>(null);
   const [turnstileReady, setTurnstileReady] = useState(false);
-  const [turnstileState, setTurnstileState] = useState<
-    'loading' | 'ready' | 'verifying' | 'verified' | 'error'
-  >('loading');
+  const [turnstileState, setTurnstileState] = useState<'loading' | 'ready' | 'verified' | 'error'>(
+    'loading'
+  );
   const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
-  const verificationTimeoutRef = useRef<number | null>(null);
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
-
-  const clearVerificationTimeout = () => {
-    if (verificationTimeoutRef.current) {
-      window.clearTimeout(verificationTimeoutRef.current);
-      verificationTimeoutRef.current = null;
-    }
-  };
-
-  const armVerificationTimeout = () => {
-    clearVerificationTimeout();
-    verificationTimeoutRef.current = window.setTimeout(() => {
-      setTurnstileState('error');
-      setPendingValues(null);
-      setSubmitError(
-        'La verificación de seguridad tardó demasiado. Presiona enviar nuevamente.'
-      );
-    }, 8000);
-  };
 
   const {
     register,
@@ -96,17 +76,24 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     },
   });
 
-  useEffect(() => {
-    return () => {
-      clearVerificationTimeout();
-    };
-  }, []);
-
-  const submitRegistration = async (
-    values: RegistrationSchemaValues,
-    tokenOverride?: string
-  ) => {
+  const onSubmit = handleSubmit(async (values) => {
     setSubmitError(null);
+
+    if (hasTurnstile) {
+      if (!turnstileReady) {
+        setTurnstileState('loading');
+        setSubmitError(
+          'La verificación de seguridad aún se está cargando. Intenta nuevamente en un momento.'
+        );
+        return;
+      }
+
+      if (!turnstileToken) {
+        setTurnstileState('error');
+        setSubmitError('Completa la verificación de seguridad antes de enviar.');
+        return;
+      }
+    }
 
     try {
       const result = await createRegistration({
@@ -117,56 +104,33 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         delegateId: normalizeDigits(values.delegateId),
         phone: normalizePhone(values.phone),
         website: values.website?.trim() || '',
-        turnstileToken: tokenOverride ?? turnstileToken,
+        turnstileToken,
       });
 
       reset();
       setTurnstileToken('');
-      setPendingValues(null);
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
-      clearVerificationTimeout();
       if (hasTurnstile) {
         setTurnstileState('ready');
       }
       onSubmitSuccess(result);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
-      setTurnstileToken('');
-      setValue('turnstileToken', '');
-      turnstileRef.current?.reset();
-      clearVerificationTimeout();
       if (hasTurnstile) {
+        setTurnstileToken('');
+        setValue('turnstileToken', '');
+        turnstileRef.current?.reset();
         setTurnstileState('error');
       }
     }
-  };
-
-  const onSubmit = handleSubmit(async (values) => {
-    setSubmitError(null);
-
-    if (hasTurnstile && !turnstileToken) {
-      setPendingValues(values);
-
-      if (!turnstileReady) {
-        setTurnstileState('loading');
-        setSubmitError(
-          'La verificación de seguridad aún se está cargando. Intenta de nuevo en un momento.'
-        );
-        return;
-      }
-
-      setTurnstileState('verifying');
-      armVerificationTimeout();
-      turnstileRef.current?.execute();
-      return;
-    }
-
-    await submitRegistration(values);
   });
 
   return (
-    <section id="formulario-inscripcion" className="overflow-hidden rounded-[1.25rem] border border-marathon-blue/10 bg-white shadow-card sm:rounded-[1.5rem]">
+    <section
+      id="formulario-inscripcion"
+      className="overflow-hidden rounded-[1.25rem] border border-marathon-blue/10 bg-white shadow-card sm:rounded-[1.5rem]"
+    >
       <div className="grid lg:grid-cols-[0.62fr_1.38fr]">
         <aside className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-4 text-white sm:p-7 lg:p-8">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-[length:46px_46px] opacity-20" />
@@ -176,7 +140,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               Inscribe a tu colegio
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-base">
-              Toma menos de dos minutos. Necesitamos los datos del colegio y de la persona responsable para dar seguimiento.
+              Toma menos de dos minutos. Necesitamos los datos del colegio y de la persona
+              responsable para dar seguimiento.
             </p>
 
             <div className="mt-6 hidden gap-3 sm:grid">
@@ -185,7 +150,10 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 { icon: UserRound, text: 'Persona responsable autorizada' },
                 { icon: LockKeyhole, text: 'Uso exclusivo para contacto oficial' },
               ].map((item) => (
-                <div key={item.text} className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/10 p-3 text-sm font-semibold">
+                <div
+                  key={item.text}
+                  className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/10 p-3 text-sm font-semibold"
+                >
                   <item.icon size={18} />
                   {item.text}
                 </div>
@@ -194,7 +162,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           </div>
         </aside>
 
-        <form className="grid gap-5 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:gap-6 sm:p-7 lg:p-8" onSubmit={onSubmit} noValidate>
+        <form
+          className="grid gap-5 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:gap-6 sm:p-7 lg:p-8"
+          onSubmit={onSubmit}
+          noValidate
+        >
           <input
             type="text"
             tabIndex={-1}
@@ -204,8 +176,13 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             {...register('website')}
           />
           <input type="hidden" {...register('turnstileToken')} />
+
           <div className="grid gap-5 md:grid-cols-2">
-            <Field label="Nombre completo del Colegio" error={errors.institutionName?.message} required>
+            <Field
+              label="Nombre completo del Colegio"
+              error={errors.institutionName?.message}
+              required
+            >
               <Input
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
                 placeholder="Unidad Educativa Marathon"
@@ -228,7 +205,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
-            <Field label="Dirección del colegio" error={errors.institutionAddress?.message} required>
+            <Field
+              label="Dirección del colegio"
+              error={errors.institutionAddress?.message}
+              required
+            >
               <Input
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
                 placeholder="Av. principal, sector, referencia"
@@ -236,7 +217,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
-            <Field label="Nombre de la persona encargada" error={errors.delegateName?.message} required>
+            <Field
+              label="Nombre de la persona encargada"
+              error={errors.delegateName?.message}
+              required
+            >
               <Input
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
                 placeholder="Nombre y apellido"
@@ -274,7 +259,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
-            <Field label="Cédula de la persona a cargo" error={errors.delegateId?.message} required>
+            <Field
+              label="Cédula de la persona a cargo"
+              error={errors.delegateId?.message}
+              required
+            >
               <Input
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
                 inputMode="numeric"
@@ -287,7 +276,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
-            <Field label="Celular de la persona encargada" error={errors.phone?.message} required>
+            <Field
+              label="Celular de la persona encargada"
+              error={errors.phone?.message}
+              required
+            >
               <Input
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
                 inputMode="tel"
@@ -300,7 +293,12 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
-            <Field label="Correo de la persona encargada" error={errors.email?.message} required className="md:col-span-2">
+            <Field
+              label="Correo de la persona encargada"
+              error={errors.email?.message}
+              required
+              className="md:col-span-2"
+            >
               <Input
                 type="email"
                 className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
@@ -312,21 +310,32 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
           <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
             <label className="flex items-start gap-3">
-              <input type="checkbox" className="mt-1 h-4 w-4 accent-marathon-red" {...register('termsAccepted')} />
+              <input
+                type="checkbox"
+                className="mt-1 h-4 w-4 accent-marathon-red"
+                {...register('termsAccepted')}
+              />
               <span className="text-sm leading-relaxed text-marathon-gray">
-                Acepto que Marathon utilice estos datos para gestionar la inscripción y el contacto oficial del torneo.
+                Acepto que Marathon utilice estos datos para gestionar la inscripción y el
+                contacto oficial del torneo.
               </span>
             </label>
-            {errors.termsAccepted?.message && <p className="mt-2 text-xs font-semibold text-red-600">{errors.termsAccepted.message}</p>}
+            {errors.termsAccepted?.message && (
+              <p className="mt-2 text-xs font-semibold text-red-600">
+                {errors.termsAccepted.message}
+              </p>
+            )}
           </div>
 
           {hasTurnstile && turnstileSiteKey ? (
             <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  
+                  <p className="text-sm font-semibold text-marathon-blue">
+                    Verificación final antes del envío
+                  </p>
                   <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
-                    Protegido por Cloudflare.
+                    Protegido por Cloudflare para reducir bots, spam y envíos automáticos.
                   </p>
                 </div>
 
@@ -334,41 +343,30 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] ${
                     turnstileState === 'verified'
                       ? 'bg-emerald-50 text-emerald-700'
-                      : turnstileState === 'verifying'
-                      ? 'bg-marathon-blue/8 text-marathon-blue'
                       : turnstileState === 'error'
                       ? 'bg-red-50 text-red-700'
                       : 'bg-marathon-blue/8 text-marathon-blue'
                   }`}
                 >
-                  {turnstileState === 'verifying' ? (
-                    <Loader2 size={14} className="animate-spin" />
-                  ) : turnstileState === 'verified' ? (
+                  {turnstileState === 'verified' ? (
                     <CheckCircle2 size={14} />
                   ) : (
                     <ShieldCheck size={14} />
                   )}
                   {turnstileState === 'loading'
                     ? 'Protección cargando'
-                    : turnstileState === 'verifying'
-                    ? 'Verificando seguridad'
                     : turnstileState === 'verified'
                     ? 'Formulario protegido'
                     : turnstileState === 'error'
-                    ? 'Requiere nueva validación'
+                    ? 'Verificación pendiente'
                     : 'Protección activa'}
                 </div>
               </div>
 
               <div className="mt-4 rounded-2xl border border-marathon-blue/10 bg-[linear-gradient(180deg,#FFFFFF_0%,#F6FAFF_100%)] p-4">
                 <div className="flex items-center gap-3">
-                  <div className="relative inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-marathon-blue text-white">
-                    {turnstileState === 'verifying' ? (
-                      <>
-                        <span className="absolute inset-0 rounded-2xl border border-marathon-blue/25 animate-ping" />
-                        <Loader2 size={18} className="relative animate-spin" />
-                      </>
-                    ) : turnstileState === 'verified' ? (
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-marathon-blue text-white">
+                    {turnstileState === 'verified' ? (
                       <CheckCircle2 size={18} />
                     ) : (
                       <ShieldCheck size={18} />
@@ -376,18 +374,18 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-marathon-blue">
-                      {turnstileState === 'verifying'
-                        ? 'Revisando la protección del envío'
-                        : turnstileState === 'verified'
+                      {turnstileState === 'verified'
                         ? 'Verificación completada'
-                        : 'Protección Anti-SPAM habilitada'}
+                        : turnstileState === 'error'
+                        ? 'Completa la verificación para continuar'
+                        : 'Protección anti-spam habilitada'}
                     </p>
                     <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
-                      {turnstileState === 'verifying'
-                        ? 'Estamos validando este envío antes de registrar la inscripción.'
-                        : turnstileState === 'verified'
+                      {turnstileState === 'verified'
                         ? 'La validación pasó correctamente y el envío puede continuar.'
-                        : 'Utilizamos tecnología antispam para asegurarnos de que las inscripciones sean legítimas y evitar registros automáticos.'}
+                        : turnstileState === 'error'
+                        ? 'Interactúa con el módulo de seguridad de Cloudflare y luego envía la inscripción.'
+                        : 'Utilizamos tecnología anti-spam para asegurarnos de que las inscripciones sean legítimas y evitar registros automáticos.'}
                     </p>
                   </div>
                 </div>
@@ -400,48 +398,27 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   onReady={() => {
                     setTurnstileReady(true);
                     setTurnstileState('ready');
-                    if (pendingValues && !turnstileToken) {
-                      setTurnstileState('verifying');
-                      armVerificationTimeout();
-                      turnstileRef.current?.execute();
-                    }
                   }}
                   onVerify={(token) => {
-                    clearVerificationTimeout();
                     setTurnstileToken(token);
                     setTurnstileState('verified');
+                    setSubmitError(null);
                     setValue('turnstileToken', token, { shouldValidate: false });
-
-                    if (pendingValues) {
-                      const valuesToSubmit = pendingValues;
-                      setPendingValues(null);
-                      setSubmitError(null);
-                      void submitRegistration(valuesToSubmit, token);
-                      return;
-                    }
-
-                    if (!pendingValues) {
-                      setSubmitError(null);
-                    }
                   }}
                   onError={() => {
-                    clearVerificationTimeout();
+                    setTurnstileToken('');
+                    setValue('turnstileToken', '');
                     setTurnstileState('error');
                     setSubmitError(
                       'No pudimos completar la verificación de seguridad. Intenta nuevamente.'
                     );
-                    setPendingValues(null);
-                    setTurnstileToken('');
-                    setValue('turnstileToken', '');
                   }}
                   onExpire={() => {
-                    clearVerificationTimeout();
-                    setTurnstileState('ready');
-                    setPendingValues(null);
                     setTurnstileToken('');
                     setValue('turnstileToken', '');
+                    setTurnstileState('ready');
                     setSubmitError(
-                      'La verificación de seguridad expiró. Presiona enviar nuevamente.'
+                      'La verificación de seguridad expiró. Complétala nuevamente antes de enviar.'
                     );
                   }}
                 />
@@ -450,7 +427,9 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           ) : null}
 
           {submitError && (
-            <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{submitError}</p>
+            <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
+              {submitError}
+            </p>
           )}
 
           <div className="flex flex-col gap-4 border-t border-marathon-blue/10 pt-5 sm:flex-row sm:items-center sm:justify-between sm:pt-6">
@@ -460,7 +439,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </p>
             <Button
               type="submit"
-              className="h-12 w-full sm:w-auto rounded-full bg-marathon-red px-8 font-montserrat text-base font-bold text-white shadow-button hover:bg-marathon-red/90"
+              className="h-12 w-full rounded-full bg-marathon-red px-8 font-montserrat text-base font-bold text-white shadow-button hover:bg-marathon-red/90 sm:w-auto"
               disabled={isSubmitting}
             >
               {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
@@ -517,7 +496,11 @@ function SelectField({
       </SelectTrigger>
       <SelectContent position="popper" className="max-h-64 rounded-2xl border-marathon-blue/10">
         {options.map((option) => (
-          <SelectItem key={option} value={option} className="rounded-xl py-2.5 font-semibold text-marathon-blue">
+          <SelectItem
+            key={option}
+            value={option}
+            className="rounded-xl py-2.5 font-semibold text-marathon-blue"
+          >
             {option}
           </SelectItem>
         ))}

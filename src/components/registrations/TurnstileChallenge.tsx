@@ -22,7 +22,6 @@ declare global {
 }
 
 export type TurnstileChallengeHandle = {
-  execute: () => void;
   reset: () => void;
 };
 
@@ -75,11 +74,6 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
     const [loadError, setLoadError] = useState<string | null>(null);
 
     useImperativeHandle(ref, () => ({
-      execute: () => {
-        if (widgetIdRef.current && window.turnstile) {
-          window.turnstile.execute(widgetIdRef.current);
-        }
-      },
       reset: () => {
         if (widgetIdRef.current && window.turnstile) {
           window.turnstile.reset(widgetIdRef.current);
@@ -106,10 +100,10 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
           widgetIdRef.current = window.turnstile.render(containerRef.current, {
             sitekey: siteKey,
             action: 'registration_submit',
-            appearance: 'interaction-only',
-            execution: 'execute',
             theme: 'light',
             size: 'flexible',
+            retry: 'auto',
+            'refresh-expired': 'auto',
             callback: (token: string) => {
               onVerify(token);
             },
