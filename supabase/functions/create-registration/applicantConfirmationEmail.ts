@@ -1,5 +1,5 @@
 const mailingAssetsBaseUrl =
-  "https://torneo.fundacionmarathon.org.ec/images/mailing";
+  "https://cdn.jsdelivr.net/gh/PanchoHV/Web_Torneo_Intercolegial_Marathon@5e77cd2/public/images/mailing";
 const logoUrl = `${mailingAssetsBaseUrl}/logo.png`;
 const tiktokIconUrl = `${mailingAssetsBaseUrl}/tiktok.png`;
 const instagramIconUrl = `${mailingAssetsBaseUrl}/instagram.png`;
