@@ -1,10 +1,17 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Building2, CheckCircle2, Loader2, LockKeyhole, MapPin, Send, UserRound } from 'lucide-react';
+import { Building2, CheckCircle2, Loader2, LockKeyhole, Send, UserRound } from 'lucide-react';
 import { type ReactNode, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import {
   CITY_OPTIONS,
   DELEGATE_ROLE_OPTIONS,
@@ -29,6 +36,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    control,
     reset,
   } = useForm<RegistrationSchemaValues>({
     resolver: zodResolver(registrationSchema),
@@ -67,27 +75,24 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   });
 
   return (
-    <section id="formulario-inscripcion" className="overflow-hidden rounded-[1.25rem] sm:rounded-[1.75rem] border border-marathon-blue/10 bg-white shadow-card">
-      <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-        <aside className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-5 text-white sm:p-8 lg:p-10">
+    <section id="formulario-inscripcion" className="overflow-hidden rounded-[1.25rem] border border-marathon-blue/10 bg-white shadow-card sm:rounded-[1.5rem]">
+      <div className="grid lg:grid-cols-[0.62fr_1.38fr]">
+        <aside className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-4 text-white sm:p-7 lg:p-8">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-[length:46px_46px] opacity-20" />
           <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-marathon-red" />
           <div className="relative">
-            <span className="inline-flex rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.12em]">
-              Formulario oficial
-            </span>
-            <h2 className="mt-5 text-[clamp(1.8rem,3vw,2.6rem)] font-black uppercase leading-tight tracking-[0.02em]">
+            <h2 className="text-[clamp(1.35rem,3vw,2.35rem)] font-black uppercase leading-tight tracking-[0.02em]">
               Inscribe a tu colegio
             </h2>
-            <p className="mt-4 leading-relaxed text-white/82">
-              Completa los datos institucionales. Un ejecutivo del torneo revisará la información y se comunicará con la persona encargada.
+            <p className="mt-2 text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-base">
+              Toma menos de dos minutos. Necesitamos los datos del colegio y de la persona responsable para dar seguimiento.
             </p>
 
-            <div className="mt-8 grid gap-3">
+            <div className="mt-6 hidden gap-3 sm:grid">
               {[
                 { icon: Building2, text: 'Datos oficiales del colegio' },
                 { icon: UserRound, text: 'Persona responsable autorizada' },
-                { icon: MapPin, text: 'Ciudades participantes habilitadas' },
+                { icon: LockKeyhole, text: 'Uso exclusivo para contacto oficial' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/10 p-3 text-sm font-semibold">
                   <item.icon size={18} />
@@ -98,7 +103,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           </div>
         </aside>
 
-        <form className="grid gap-5 sm:gap-6 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:p-8 lg:p-10" onSubmit={onSubmit} noValidate>
+        <form className="grid gap-5 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:gap-6 sm:p-7 lg:p-8" onSubmit={onSubmit} noValidate>
           <div className="grid gap-5 md:grid-cols-2">
             <Field label="Nombre completo del Colegio" error={errors.institutionName?.message} required>
               <Input
@@ -109,18 +114,18 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </Field>
 
             <Field label="Ciudad" error={errors.city?.message} required>
-              <OptionGrid columns="grid-cols-1 sm:grid-cols-3 md:grid-cols-1 xl:grid-cols-3">
-                {CITY_OPTIONS.map((city) => (
-                  <OptionCard key={city} label={city}>
-                    <input
-                      type="radio"
-                      value={city}
-                      className="peer sr-only"
-                      {...register('city')}
-                    />
-                  </OptionCard>
-                ))}
-              </OptionGrid>
+              <Controller
+                control={control}
+                name="city"
+                render={({ field }) => (
+                  <SelectField
+                    options={CITY_OPTIONS}
+                    placeholder="Selecciona la ciudad"
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  />
+                )}
+              />
             </Field>
 
             <Field label="Dirección del colegio" error={errors.institutionAddress?.message} required>
@@ -140,33 +145,33 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </Field>
 
             <Field label="Cargo del solicitante" error={errors.delegateRole?.message} required>
-              <OptionGrid columns="grid-cols-2">
-                {DELEGATE_ROLE_OPTIONS.map((role) => (
-                  <OptionCard key={role} label={role}>
-                    <input
-                      type="radio"
-                      value={role}
-                      className="peer sr-only"
-                      {...register('delegateRole')}
-                    />
-                  </OptionCard>
-                ))}
-              </OptionGrid>
+              <Controller
+                control={control}
+                name="delegateRole"
+                render={({ field }) => (
+                  <SelectField
+                    options={DELEGATE_ROLE_OPTIONS}
+                    placeholder="Selecciona el cargo"
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  />
+                )}
+              />
             </Field>
 
             <Field label="Tipo de Colegio" error={errors.schoolType?.message} required>
-              <OptionGrid columns="grid-cols-2">
-                {SCHOOL_TYPE_OPTIONS.map((type) => (
-                  <OptionCard key={type} label={type}>
-                    <input
-                      type="radio"
-                      value={type}
-                      className="peer sr-only"
-                      {...register('schoolType')}
-                    />
-                  </OptionCard>
-                ))}
-              </OptionGrid>
+              <Controller
+                control={control}
+                name="schoolType"
+                render={({ field }) => (
+                  <SelectField
+                    options={SCHOOL_TYPE_OPTIONS}
+                    placeholder="Selecciona el tipo"
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  />
+                )}
+              />
             </Field>
 
             <Field label="Cédula de la persona a cargo" error={errors.delegateId?.message} required>
@@ -219,7 +224,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{submitError}</p>
           )}
 
-          <div className="flex flex-col gap-4 border-t border-marathon-blue/10 pt-5 sm:pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 border-t border-marathon-blue/10 pt-5 sm:flex-row sm:items-center sm:justify-between sm:pt-6">
             <p className="flex items-center gap-2 text-sm font-medium text-marathon-gray">
               <LockKeyhole size={16} className="text-marathon-blue" />
               Registro seguro para contacto oficial.
@@ -265,16 +270,29 @@ function Field({ label, error, children, required, className = '' }: FieldProps)
   );
 }
 
-function OptionGrid({ children, columns }: { children: ReactNode; columns: string }) {
-  return <div className={`grid gap-3 ${columns}`}>{children}</div>;
-}
-
-function OptionCard({ label, children }: { label: string; children: ReactNode }) {
+function SelectField({
+  options,
+  placeholder,
+  value,
+  onValueChange,
+}: {
+  options: readonly string[];
+  placeholder: string;
+  value?: string;
+  onValueChange: (value: string) => void;
+}) {
   return (
-    <label className="group relative flex min-h-12 cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-marathon-blue/10 bg-white px-3 py-3 text-center text-sm font-black text-marathon-blue shadow-[0_10px_28px_rgba(6,42,79,0.06)] transition hover:-translate-y-0.5 hover:border-marathon-red/40 has-[:checked]:border-marathon-red has-[:checked]:bg-marathon-red has-[:checked]:text-white has-[:checked]:shadow-[0_16px_34px_rgba(226,27,45,0.24)]">
-      {children}
-      <span className="absolute inset-x-0 top-0 h-1 bg-marathon-red opacity-0 transition group-has-[:checked]:opacity-100" />
-      <span>{label}</span>
-    </label>
+    <Select value={value} onValueChange={onValueChange}>
+      <SelectTrigger className="h-[3.25rem] w-full rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] focus-visible:ring-marathon-blue/25">
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent position="popper" className="max-h-64 rounded-2xl border-marathon-blue/10">
+        {options.map((option) => (
+          <SelectItem key={option} value={option} className="rounded-xl py-2.5 font-semibold text-marathon-blue">
+            {option}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }

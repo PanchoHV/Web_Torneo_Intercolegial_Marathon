@@ -13,8 +13,11 @@ Deno.serve(async (req: Request) => {
 
   try {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const RESEND_FROM_EMAIL = Deno.env.get("RESEND_FROM_EMAIL") ?? "onboarding@resend.dev";
-    const RESEND_EXECUTIVE_EMAIL = Deno.env.get("RESEND_EXECUTIVE_EMAIL");
+    const RESEND_FROM_EMAIL =
+      Deno.env.get("RESEND_FROM_EMAIL") ??
+      "Torneo Intercolegial Marathon <info@torneo.fundacionmarathon.org.ec>";
+    const RESEND_EXECUTIVE_EMAIL =
+      Deno.env.get("RESEND_EXECUTIVE_EMAIL") ?? "fvasquez@treicreatividad.com";
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 
@@ -57,6 +60,7 @@ Deno.serve(async (req: Request) => {
 
     const from = RESEND_FROM_EMAIL;
     const executiveEmail = RESEND_EXECUTIVE_EMAIL;
+    const replyTo = executiveEmail;
 
     const participantResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -67,6 +71,7 @@ Deno.serve(async (req: Request) => {
       body: JSON.stringify({
         from,
         to: [contact_email],
+        reply_to: replyTo,
         subject: "Hemos recibido la inscripción de tu colegio",
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.5;">
@@ -106,6 +111,7 @@ Deno.serve(async (req: Request) => {
       body: JSON.stringify({
         from,
         to: [executiveEmail],
+        reply_to: replyTo,
         subject: "Nueva inscripción recibida – Torneo Intercolegial Marathon",
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.5;">

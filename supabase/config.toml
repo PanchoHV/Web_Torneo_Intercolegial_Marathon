@@ -1,6 +1,51 @@
 
+[functions.create-registration]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/create-registration/index.ts"
+
 [functions.send-registration-email]
 enabled = true
 verify_jwt = false
 import_map = "./functions/send-registration-email/deno.json"
 entrypoint = "./functions/send-registration-email/index.ts"
+
+[functions.admin-update-registration]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-update-registration/index.ts"
+
+[functions.admin-add-note]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-add-note/index.ts"
+
+[functions.admin-export-registrations]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-export-registrations/index.ts"
+
+[functions.admin-create-user]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-create-user/index.ts"
+
+[functions.admin-resend-registration-email]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-resend-registration-email/index.ts"
+
+[functions.admin-mark-contact]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-mark-contact/index.ts"
+
+[functions.admin-deactivate-user]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-deactivate-user/index.ts"
+
+[functions.admin-update-user-password]
+enabled = true
+verify_jwt = true
+entrypoint = "./functions/admin-update-user-password/index.ts"

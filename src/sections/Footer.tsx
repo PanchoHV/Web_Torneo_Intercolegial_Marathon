@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 import { useNavigate } from 'react-router';
 
 const quickLinks = [
@@ -80,6 +80,13 @@ export default function Footer() {
             <p className="font-inter text-sm text-marathon-cream/70 leading-relaxed mb-6">
               La competencia deportiva escolar más grande del Ecuador. Una copa nacional para formar campeones dentro y fuera de la cancha.
             </p>
+            <button
+              onClick={() => navigate('/admin/login')}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-marathon-cream/20 bg-white/8 px-4 py-2 text-sm font-bold text-marathon-cream/85 transition hover:border-marathon-red hover:bg-marathon-red hover:text-white"
+            >
+              <ShieldCheck size={16} />
+              Acceso Team
+            </button>
             <div className="flex items-center gap-3">
               {[
                 { icon: FacebookIcon, label: 'Facebook' },

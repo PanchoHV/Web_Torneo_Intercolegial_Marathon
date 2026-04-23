@@ -1,10 +1,7 @@
 import { useState } from 'react';
 
-import RegistrationBenefits from '@/components/registrations/RegistrationBenefits';
 import RegistrationForm from '@/components/registrations/RegistrationForm';
 import RegistrationHero from '@/components/registrations/RegistrationHero';
-import RegistrationIntro from '@/components/registrations/RegistrationIntro';
-import RegistrationPrivacy from '@/components/registrations/RegistrationPrivacy';
 import RegistrationSuccess from '@/components/registrations/RegistrationSuccess';
 import type { RegistrationResult } from '@/types/registration';
 
@@ -16,14 +13,12 @@ export default function InscripcionesPage() {
       <img
         src="/inscripciones-page-background.webp"
         alt=""
-        className="pointer-events-none fixed inset-0 h-full w-full object-cover opacity-[0.58]"
+        className="pointer-events-none fixed inset-0 h-full w-full object-cover opacity-[0.36]"
         aria-hidden="true"
       />
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(180deg,rgba(244,248,252,0.62)_0%,rgba(255,255,255,0.76)_42%,rgba(244,248,252,0.9)_100%),radial-gradient(circle_at_top_left,rgba(0,80,164,0.18),transparent_34rem)]" />
-      <div className="relative mx-auto flex w-full max-w-[1240px] flex-col gap-5 sm:gap-8">
+      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(180deg,rgba(244,248,252,0.82)_0%,rgba(255,255,255,0.9)_44%,rgba(244,248,252,0.96)_100%),radial-gradient(circle_at_top_left,rgba(0,80,164,0.14),transparent_34rem)]" />
+      <div className="relative mx-auto flex w-full max-w-[1180px] flex-col gap-4 sm:gap-5">
         <RegistrationHero />
-        <RegistrationIntro />
-        <RegistrationBenefits />
         {registrationResult ? (
           <RegistrationSuccess
             registration={registrationResult}
@@ -32,7 +27,6 @@ export default function InscripcionesPage() {
         ) : (
           <RegistrationForm onSubmitSuccess={setRegistrationResult} />
         )}
-        <RegistrationPrivacy />
       </div>
     </div>
   );

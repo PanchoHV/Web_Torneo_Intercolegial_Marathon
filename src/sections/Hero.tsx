@@ -22,7 +22,7 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
   }, [value]);
 
   return (
-    <div className="bg-white rounded-2xl px-3 py-4 sm:px-6 sm:py-5 min-w-[68px] sm:min-w-[90px] shadow-card text-center">
+    <div className="w-full min-w-0 bg-white rounded-2xl px-3 py-4 sm:w-auto sm:min-w-[90px] sm:px-6 sm:py-5 shadow-card text-center">
       <div
         ref={numRef}
         className="font-montserrat font-black text-marathon-red tabular-nums text-[clamp(1.75rem,6vw,3.5rem)] leading-none"
@@ -108,20 +108,20 @@ export default function Hero() {
         <rect width="100%" height="100%" fill="url(#diagonalLines)" />
       </svg>
 
-      <div className="relative z-10 max-w-[960px] mx-auto px-3 sm:px-6 text-center pt-[96px] sm:pt-[120px] pb-12 sm:pb-16">
+      <div className="relative z-10 w-full max-w-[min(960px,100vw)] mx-auto px-5 sm:px-6 text-center pt-[96px] sm:pt-[120px] pb-12 sm:pb-16">
         {/* Badge */}
-        <div className="hero-badge inline-flex max-w-full items-center gap-2 bg-white/80 text-marathon-blue font-inter font-bold text-[0.68rem] sm:text-xs tracking-[0.08em] sm:tracking-[0.12em] rounded-full px-4 sm:px-5 py-2 mb-6 sm:mb-8 border border-marathon-blue/10 shadow-card backdrop-blur">
-          <span className="h-2 w-2 rounded-full bg-marathon-red" /> EDICIÓN 2026 - INSCRIPCIONES ABIERTAS
+        <div className="hero-badge inline-flex max-w-full flex-wrap items-center justify-center gap-2 bg-white/80 text-center text-marathon-blue font-inter font-bold text-[0.66rem] leading-snug sm:text-xs tracking-[0.06em] sm:tracking-[0.12em] rounded-full px-4 sm:px-5 py-2 mb-6 sm:mb-8 border border-marathon-blue/10 shadow-card backdrop-blur">
+          <span className="h-2 w-2 shrink-0 rounded-full bg-marathon-red" /> EDICIÓN 2026 - INSCRIPCIONES ABIERTAS
         </div>
 
         {/* Title */}
-        <h1 className="hero-title font-montserrat font-black text-marathon-blue uppercase tracking-[0.02em] text-[clamp(2.15rem,13vw,4.7rem)] leading-[1.02] mb-5 flex flex-col items-center">
-          <span>COPA NACIONAL</span>
-          <span>INTERCOLEGIAL</span>
+        <h1 className="hero-title mx-auto flex max-w-full flex-col items-center font-montserrat font-black uppercase text-marathon-blue tracking-[0.01em] sm:tracking-[0.02em] text-[clamp(2rem,9.2vw,3.35rem)] sm:text-[clamp(3.25rem,7vw,4.7rem)] leading-[1.02] mb-5">
+          <span className="block max-w-full whitespace-nowrap">COPA NACIONAL</span>
+          <span className="block max-w-full whitespace-nowrap">INTERCOLEGIAL</span>
           <img
             src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Vigia-Logos-2.webp"
             alt="Marathon"
-            className="h-[clamp(2.45rem,5vw,4.25rem)] w-auto mt-2"
+            className="mt-2 h-[clamp(2.25rem,10vw,3rem)] w-auto max-w-[72vw] sm:h-[clamp(3rem,5vw,4.25rem)] sm:max-w-none"
             loading="eager"
             fetchPriority="high"
             onError={(e) => {
@@ -136,12 +136,12 @@ export default function Hero() {
         </p>
 
         {/* Countdown */}
-        <div className="hero-countdown mb-8 sm:mb-10 rounded-3xl bg-white/55 border border-white/70 shadow-card px-3 sm:px-6 py-5 sm:py-7 backdrop-blur-md" aria-live="polite">
+        <div className="hero-countdown mx-auto mb-8 max-w-full rounded-[1.25rem] bg-white/55 border border-white/70 shadow-card px-3 py-5 backdrop-blur-md sm:mb-10 sm:rounded-3xl sm:px-6 sm:py-7" aria-live="polite">
           <p className="font-inter font-semibold text-xs tracking-[0.1em] text-marathon-gray uppercase mb-4">
             {isExpired ? 'INSCRIPCIONES CERRADAS' : 'CIERRE DE INSCRIPCIONES EN:'}
           </p>
           {!isExpired && (
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <div className="mx-auto grid max-w-[320px] grid-cols-2 justify-center gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:gap-4">
               <CountdownUnit value={days} label="DÍAS" />
               <CountdownUnit value={hours} label="HORAS" />
               <CountdownUnit value={minutes} label="MINUTOS" />
