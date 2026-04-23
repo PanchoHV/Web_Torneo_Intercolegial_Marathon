@@ -44,12 +44,45 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState('');
   const [turnstileReady, setTurnstileReady] = useState(false);
+  const [turnstileErrorCode, setTurnstileErrorCode] = useState<string | null>(null);
   const [turnstileState, setTurnstileState] = useState<'loading' | 'ready' | 'verified' | 'error'>(
     'loading'
   );
   const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
+
+  const getTurnstileMessage = (errorCode?: string | null) => {
+    if (!errorCode) {
+      return 'No pudimos completar la verificación de seguridad. Intenta nuevamente.';
+    }
+
+    if (errorCode.startsWith('110200')) {
+      return 'Cloudflare está rechazando este dominio para el captcha. Revisa que el hostname actual esté autorizado en Turnstile.';
+    }
+
+    if (
+      errorCode.startsWith('110100') ||
+      errorCode.startsWith('110110') ||
+      errorCode.startsWith('400020')
+    ) {
+      return 'La Site Key de Turnstile no es válida o no coincide con el widget configurado.';
+    }
+
+    if (errorCode.startsWith('400070')) {
+      return 'La Site Key de Turnstile está deshabilitada en Cloudflare.';
+    }
+
+    if (errorCode.startsWith('200500')) {
+      return 'El navegador no pudo cargar el challenge de Cloudflare. Revisa extensiones, bloqueadores o restricciones de red.';
+    }
+
+    if (errorCode.startsWith('110600') || errorCode.startsWith('110620')) {
+      return 'La verificación de seguridad expiró. Complétala nuevamente antes de enviar.';
+    }
+
+    return `No pudimos completar la verificación de seguridad. Código Cloudflare: ${errorCode}.`;
+  };
 
   const {
     register,
@@ -109,6 +142,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
       reset();
       setTurnstileToken('');
+      setTurnstileErrorCode(null);
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
       if (hasTurnstile) {
@@ -119,6 +153,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
       if (hasTurnstile) {
         setTurnstileToken('');
+        setTurnstileErrorCode(null);
         setValue('turnstileToken', '');
         turnstileRef.current?.reset();
         setTurnstileState('error');
@@ -387,6 +422,11 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                         ? 'Interactúa con el módulo de seguridad de Cloudflare y luego envía la inscripción.'
                         : 'Utilizamos tecnología anti-spam para asegurarnos de que las inscripciones sean legítimas y evitar registros automáticos.'}
                     </p>
+                    {turnstileErrorCode && (
+                      <p className="mt-2 text-xs font-semibold text-red-600">
+                        Código de verificación: {turnstileErrorCode}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -397,24 +437,26 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   siteKey={turnstileSiteKey}
                   onReady={() => {
                     setTurnstileReady(true);
+                    setTurnstileErrorCode(null);
                     setTurnstileState('ready');
                   }}
                   onVerify={(token) => {
                     setTurnstileToken(token);
+                    setTurnstileErrorCode(null);
                     setTurnstileState('verified');
                     setSubmitError(null);
                     setValue('turnstileToken', token, { shouldValidate: false });
                   }}
-                  onError={() => {
+                  onError={(errorCode) => {
                     setTurnstileToken('');
+                    setTurnstileErrorCode(errorCode ?? null);
                     setValue('turnstileToken', '');
                     setTurnstileState('error');
-                    setSubmitError(
-                      'No pudimos completar la verificación de seguridad. Intenta nuevamente.'
-                    );
+                    setSubmitError(getTurnstileMessage(errorCode));
                   }}
                   onExpire={() => {
                     setTurnstileToken('');
+                    setTurnstileErrorCode(null);
                     setValue('turnstileToken', '');
                     setTurnstileState('ready');
                     setSubmitError(

@@ -28,7 +28,7 @@ export type TurnstileChallengeHandle = {
 type TurnstileChallengeProps = {
   siteKey: string;
   onVerify: (token: string) => void;
-  onError: () => void;
+  onError: (errorCode?: string) => void;
   onExpire: () => void;
   onReady?: () => void;
 };
@@ -102,13 +102,14 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
             action: 'registration_submit',
             theme: 'light',
             size: 'flexible',
-            retry: 'auto',
+            retry: 'never',
             'refresh-expired': 'auto',
             callback: (token: string) => {
               onVerify(token);
             },
-            'error-callback': () => {
-              onError();
+            'error-callback': (errorCode: string | number) => {
+              onError(String(errorCode));
+              return true;
             },
             'expired-callback': () => {
               onExpire();
