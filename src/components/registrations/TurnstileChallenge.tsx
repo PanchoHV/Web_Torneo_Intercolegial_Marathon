@@ -31,6 +31,7 @@ type TurnstileChallengeProps = {
   onVerify: (token: string) => void;
   onError: () => void;
   onExpire: () => void;
+  onReady?: () => void;
 };
 
 function loadTurnstileScript() {
@@ -68,7 +69,7 @@ function loadTurnstileScript() {
 }
 
 const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallengeProps>(
-  ({ siteKey, onVerify, onError, onExpire }, ref) => {
+  ({ siteKey, onVerify, onError, onExpire, onReady }, ref) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const widgetIdRef = useRef<string | null>(null);
     const [loadError, setLoadError] = useState<string | null>(null);
@@ -122,6 +123,7 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
               onExpire();
             },
           });
+          onReady?.();
         } catch (error) {
           if (!cancelled) {
             setLoadError(error instanceof Error ? error.message : 'No se pudo cargar Turnstile.');
@@ -138,7 +140,7 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
           widgetIdRef.current = null;
         }
       };
-    }, [onError, onExpire, onVerify, siteKey]);
+    }, [onError, onExpire, onReady, onVerify, siteKey]);
 
     return (
       <div className="grid gap-2">

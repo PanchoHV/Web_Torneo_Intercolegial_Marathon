@@ -1,5 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Building2, CheckCircle2, Loader2, LockKeyhole, Send, UserRound } from 'lucide-react';
+import {
+  Building2,
+  CheckCircle2,
+  Loader2,
+  LockKeyhole,
+  Send,
+  ShieldCheck,
+  UserRound,
+} from 'lucide-react';
 import { type ReactNode, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -36,6 +44,9 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState('');
   const [pendingValues, setPendingValues] = useState<RegistrationSchemaValues | null>(null);
+  const [turnstileState, setTurnstileState] = useState<
+    'loading' | 'ready' | 'verifying' | 'verified' | 'error'
+  >('loading');
   const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
@@ -88,12 +99,18 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       setPendingValues(null);
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
+      if (hasTurnstile) {
+        setTurnstileState('ready');
+      }
       onSubmitSuccess(result);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
       setTurnstileToken('');
       setValue('turnstileToken', '');
       turnstileRef.current?.reset();
+      if (hasTurnstile) {
+        setTurnstileState('error');
+      }
     }
   };
 
@@ -102,6 +119,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
     if (hasTurnstile && !turnstileToken) {
       setPendingValues(values);
+      setTurnstileState('verifying');
       turnstileRef.current?.execute();
       return;
     }
@@ -266,18 +284,89 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
           {hasTurnstile && turnstileSiteKey ? (
             <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
-              <p className="text-sm font-semibold text-marathon-blue">
-                Verificación final antes del envío
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
-                Antes de enviar la inscripción validamos que el envío proviene de una persona real.
-              </p>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-marathon-blue">
+                    Verificación final antes del envío
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+                    Protegido por Cloudflare Turnstile para reducir bots, spam y envíos automáticos.
+                  </p>
+                </div>
+
+                <div
+                  className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] ${
+                    turnstileState === 'verified'
+                      ? 'bg-emerald-50 text-emerald-700'
+                      : turnstileState === 'verifying'
+                      ? 'bg-marathon-blue/8 text-marathon-blue'
+                      : turnstileState === 'error'
+                      ? 'bg-red-50 text-red-700'
+                      : 'bg-marathon-blue/8 text-marathon-blue'
+                  }`}
+                >
+                  {turnstileState === 'verifying' ? (
+                    <Loader2 size={14} className="animate-spin" />
+                  ) : turnstileState === 'verified' ? (
+                    <CheckCircle2 size={14} />
+                  ) : (
+                    <ShieldCheck size={14} />
+                  )}
+                  {turnstileState === 'loading'
+                    ? 'Protección cargando'
+                    : turnstileState === 'verifying'
+                    ? 'Verificando seguridad'
+                    : turnstileState === 'verified'
+                    ? 'Formulario protegido'
+                    : turnstileState === 'error'
+                    ? 'Requiere nueva validación'
+                    : 'Protección activa'}
+                </div>
+              </div>
+
+              <div className="mt-4 rounded-2xl border border-marathon-blue/10 bg-[linear-gradient(180deg,#FFFFFF_0%,#F6FAFF_100%)] p-4">
+                <div className="flex items-center gap-3">
+                  <div className="relative inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-marathon-blue text-white">
+                    {turnstileState === 'verifying' ? (
+                      <>
+                        <span className="absolute inset-0 rounded-2xl border border-marathon-blue/25 animate-ping" />
+                        <Loader2 size={18} className="relative animate-spin" />
+                      </>
+                    ) : turnstileState === 'verified' ? (
+                      <CheckCircle2 size={18} />
+                    ) : (
+                      <ShieldCheck size={18} />
+                    )}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-marathon-blue">
+                      {turnstileState === 'verifying'
+                        ? 'Revisando la protección del envío'
+                        : turnstileState === 'verified'
+                        ? 'Verificación completada'
+                        : 'Protección inteligente habilitada'}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+                      {turnstileState === 'verifying'
+                        ? 'Estamos validando este envío antes de registrar la inscripción.'
+                        : turnstileState === 'verified'
+                        ? 'La validación pasó correctamente y el envío puede continuar.'
+                        : 'La comprobación se ejecuta justo antes de enviar, sin fricción innecesaria para usuarios reales.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div className="mt-4">
                 <TurnstileChallenge
                   ref={turnstileRef}
                   siteKey={turnstileSiteKey}
+                  onReady={() => {
+                    setTurnstileState('ready');
+                  }}
                   onVerify={(token) => {
                     setTurnstileToken(token);
+                    setTurnstileState('verified');
                     setValue('turnstileToken', token, { shouldValidate: false });
 
                     if (pendingValues) {
@@ -293,6 +382,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     }
                   }}
                   onError={() => {
+                    setTurnstileState('error');
                     setSubmitError(
                       'No pudimos completar la verificación de seguridad. Intenta nuevamente.'
                     );
@@ -301,6 +391,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     setValue('turnstileToken', '');
                   }}
                   onExpire={() => {
+                    setTurnstileState('ready');
                     setPendingValues(null);
                     setTurnstileToken('');
                     setValue('turnstileToken', '');
