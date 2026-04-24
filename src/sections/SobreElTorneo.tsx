@@ -1,96 +1,167 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy, BookOpen, Users, ClipboardList } from 'lucide-react';
+import {
+  CalendarRange,
+  Flag,
+  MapPinned,
+  ShieldCheck,
+  Trophy,
+  Users,
+  Volleyball,
+} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* ─── Tipado estricto con Discriminated Union ─── */
+type Stat =
+  | {
+      id: string;
+      type: 'number';
+      value: number;
+      suffix: string;
+      label: string;
+      icon: LucideIcon;
+    }
+  | {
+      id: string;
+      type: 'text';
+      display: string;
+      label: string;
+      icon: LucideIcon;
+    };
+
 const features = [
   {
-    icon: Trophy,
-    title: 'Competencia de Alto Nivel',
+    icon: MapPinned,
+    title: 'Cobertura Nacional',
     description:
-      'Más de 50 colegios participantes en disciplinas deportivas organizadas con estándares profesionales de arbitraje y logística.',
+      'Un torneo que conecta instituciones educativas de Costa, Sierra y Amazonía en una competencia de alcance nacional.',
   },
   {
-    icon: BookOpen,
-    title: 'Formación Integral',
+    icon: Flag,
+    title: 'Camino a la Final Nacional',
     description:
-      'Promovemos el deporte como herramienta de educación. Nuestro torneo incluye charlas de liderazgo y valores para los participantes.',
+      'Cada colegio compite desde fases regionales hasta alcanzar la gran final nacional del Torneo Intercolegial Marathon.',
   },
   {
-    icon: Users,
-    title: 'Comunidad Educativa',
+    icon: Volleyball,
+    title: 'Competencia en 5 Categorías',
     description:
-      'Un espacio donde colegios, familias y estudiantes se unen alrededor del deporte escolar, creando lazos que trascienden la competencia.',
+      'Participa en categorías masculinas y femeninas diseñadas para impulsar talento, formación y alto nivel competitivo.',
   },
   {
-    icon: ClipboardList,
-    title: 'Organización Profesional',
+    icon: ShieldCheck,
+    title: 'La Copa Colegial más Grande del Ecuador',
     description:
-      'Sistema de inscripción digital, reglamentos claros, calendario estructurado y comunicación directa con cada colegio participante.',
+      'Formación, comunidad y una experiencia deportiva única para colegios, jugadores y sus familias.',
   },
-];
+] as const;
 
-const stats = [
-  { value: '50+', label: 'COLEGIOS' },
-  { value: '12+', label: 'DISCIPLINAS' },
-  { value: '3000+', label: 'ESTUDIANTES' },
-  { value: '15', label: 'AÑOS' },
-];
+const stats: readonly Stat[] = [
+  { id: 'equipos', type: 'number', value: 600, suffix: '+', label: 'Equipos', icon: Users },
+  { id: 'jugadores', type: 'number', value: 12000, suffix: '+', label: 'Jugadores', icon: Trophy },
+  { id: 'partidos', type: 'number', value: 1400, suffix: '+', label: 'Partidos', icon: Volleyball },
+  { id: 'duracion', type: 'text', display: 'Jul 2026 - Ene 2027', label: 'Duración del torneo', icon: CalendarRange },
+] as const;
+
+/* ─── CountUp optimizado con ref (sin re-renders) ─── */
+function CountUpValue({
+  value,
+  suffix = '',
+  active,
+}: {
+  value: number;
+  suffix?: string;
+  active: boolean;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!active || !ref.current) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      ref.current.textContent = new Intl.NumberFormat('es-EC').format(value) + suffix;
+      return;
+    }
+
+    const state = { current: 0 };
+    const tween = gsap.to(state, {
+      current: value,
+      duration: 1.6,
+      ease: 'power2.out',
+      onUpdate: () => {
+        if (ref.current) {
+          ref.current.textContent =
+            new Intl.NumberFormat('es-EC').format(Math.round(state.current)) + suffix;
+        }
+      },
+    });
+
+    return () => {
+      tween.kill();
+    };
+  }, [active, value, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export default function SobreElTorneo() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [statsActive, setStatsActive] = useState(false);
 
   useEffect(() => {
     if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.about-header',
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.about-header',
-            start: 'top 80%',
-          },
+          scrollTrigger: { trigger: '.about-header', start: 'top 84%' },
         }
       );
 
       gsap.fromTo(
         '.about-card',
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 22 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
+          stagger: 0.08,
           ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: '.about-grid',
-            start: 'top 80%',
-          },
+          scrollTrigger: { trigger: '.about-grid', start: 'top 84%' },
         }
       );
 
       gsap.fromTo(
         '.about-stat',
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 30, scale: 0.95 },
         {
           opacity: 1,
           y: 0,
+          scale: 1,
           duration: 0.8,
+          stagger: 0.12,
           ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: '.about-stats',
-            start: 'top 85%',
-          },
+          scrollTrigger: { trigger: '.about-stats', start: 'top 86%' },
         }
       );
+
+      ScrollTrigger.create({
+        trigger: '.about-stats',
+        start: 'top 86%',
+        once: true,
+        onEnter: () => setStatsActive(true),
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -100,59 +171,113 @@ export default function SobreElTorneo() {
     <section
       id="sobre-el-torneo"
       ref={sectionRef}
-      className="relative overflow-hidden bg-white"
-      style={{ padding: 'clamp(4rem, 10vw, 8rem) 0' }}
+      className="relative overflow-hidden bg-gradient-to-b from-white to-[#f8fbff] py-[clamp(4rem,10vw,7rem)]"
     >
-      <div className="absolute -top-24 -left-20 w-72 h-72 rounded-full bg-marathon-red/10 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-20 w-80 h-80 rounded-full bg-marathon-blue/10 blur-3xl pointer-events-none" />
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="about-header text-center mb-16">
-          <span className="inline-block bg-white/85 border border-marathon-blue/10 text-marathon-blue font-inter font-semibold text-xs tracking-[0.1em] rounded-full px-5 py-2 mb-6 shadow-card">
-            SOBRE NOSOTROS
+      <div className="pointer-events-none absolute -left-20 top-10 h-64 w-64 rounded-full bg-marathon-red/8 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-marathon-blue/8 blur-3xl" />
+
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+        <div className="about-header mx-auto max-w-[760px] text-center">
+          <span className="inline-flex rounded-full border border-marathon-blue/10 bg-white px-5 py-2 text-xs font-semibold tracking-[0.12em] text-marathon-blue shadow-[0_10px_24px_rgba(6,42,79,0.05)]">
+            EL TORNEO INTERCOLEGIAL MÁS GRANDE DE ECUADOR
           </span>
-          <h2 className="font-montserrat font-extrabold text-marathon-blue uppercase tracking-[0.02em] text-[clamp(1.9rem,4vw,3.15rem)] leading-[1.08] mb-6">
-            MÁS QUE UN TORNEO, UNA EXPERIENCIA
+          <h2 className="mt-5 font-montserrat text-[clamp(2rem,4vw,3.25rem)] font-extrabold uppercase leading-[1.05] tracking-[0.02em] text-marathon-blue">
+            Sobre el Torneo
           </h2>
-          <p className="font-inter text-marathon-gray text-lg leading-relaxed max-w-[760px] mx-auto">
-            El Torneo Intercolegial Marathon reúne a los mejores colegios del país en una competencia que va más allá del deporte. Fomentamos valores, trabajo en equipo y excelencia académica a través del deporte escolar.
+          <p className="mx-auto mt-5 max-w-[680px] text-base leading-relaxed text-marathon-gray sm:text-lg">
+            Una competencia nacional que conecta colegios, talento y pasión por el fútbol en todo Ecuador.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="about-grid grid grid-cols-1 md:grid-cols-2 gap-7 mb-16">
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="about-card bg-white/80 backdrop-blur-md border border-marathon-blue/10 rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1.5"
-            >
-              <div className="w-14 h-14 rounded-2xl gradient-sports flex items-center justify-center mb-5 shadow-[0_10px_24px_rgba(226,27,45,0.22)]">
-                <feature.icon size={26} className="text-white" />
-              </div>
-              <h3 className="font-montserrat font-bold text-lg text-marathon-blue mb-3 tracking-[0.01em]">
-                {feature.title}
-              </h3>
-              <p className="font-inter text-marathon-gray leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <div className="about-grid mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 xl:gap-5">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            const accentBorder =
+              index % 2 === 0 ? 'before:bg-marathon-red' : 'before:bg-marathon-blue';
+
+            return (
+              <article
+                key={feature.title}
+                className={`about-card relative overflow-hidden rounded-[1.6rem] border border-marathon-blue/10 bg-white p-5 shadow-[0_18px_40px_rgba(6,42,79,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_48px_rgba(6,42,79,0.1)] before:absolute before:inset-y-0 before:left-0 before:w-1 ${accentBorder} sm:p-6`}
+              >
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,rgba(0,80,164,0.12),rgba(0,80,164,0.04))] text-marathon-blue">
+                  <Icon size={22} />
+                </div>
+                <h3 className="mt-5 font-montserrat text-[1.05rem] font-bold leading-tight text-marathon-blue sm:text-[1.15rem]">
+                  {feature.title}
+                </h3>
+                <p className="mt-3 max-w-[38ch] text-sm leading-relaxed text-marathon-gray sm:text-[0.96rem]">
+                  {feature.description}
+                </p>
+              </article>
+            );
+          })}
         </div>
 
-        {/* Stats Banner */}
-        <div className="about-stats relative overflow-hidden gradient-institutional rounded-3xl p-8 sm:p-10 border border-white/20 shadow-[0_24px_60px_rgba(6,42,79,0.28)]">
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0)_45%)] pointer-events-none" />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, i) => (
-              <div key={i} className="about-stat bg-white/10 rounded-xl py-5 px-3 border border-white/10">
-                <div className="font-montserrat font-black text-3xl sm:text-4xl text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="font-inter font-medium text-sm text-white/90 tracking-wide">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+        {/* ═══════════════════════════════════════════════════
+            BARRA DE STATS PREMIUM — REDISEÑADA
+            ═══════════════════════════════════════════════════ */}
+        <div
+          className={`about-stats mt-14 transition-all duration-1000 delay-200 ${
+            statsActive ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}
+        >
+          <div className="relative overflow-hidden rounded-[2rem] border border-marathon-blue/10 bg-gradient-to-br from-white via-white to-[#f0f7ff] p-2 shadow-[0_28px_60px_rgba(6,42,79,0.12)] sm:p-3">
+            {/* Glow decorativo de fondo */}
+            <div className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-marathon-blue/5 blur-[60px]" />
+            <div className="pointer-events-none absolute -right-10 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-marathon-red/5 blur-[60px]" />
+
+            <div className="relative grid grid-cols-2 lg:grid-cols-4">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                const isNumber = stat.type === 'number';
+
+                return (
+                  <article
+                    key={stat.id}
+                    className={`about-stat group relative flex flex-col items-center gap-4 px-4 py-7 text-center sm:px-6 sm:py-8 lg:items-start lg:text-left ${
+                      index < stats.length - 1
+                        ? 'lg:after:absolute lg:after:right-0 lg:after:top-1/2 lg:after:h-16 lg:after:w-px lg:after:-translate-y-1/2 lg:after:bg-gradient-to-b lg:after:from-transparent lg:after:via-marathon-blue/20 lg:after:to-transparent'
+                        : ''
+                    }`}
+                  >
+                    {/* Icono Premium: gradiente + glass */}
+                    <div className="relative">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-marathon-blue to-[#0050a4] shadow-lg shadow-marathon-blue/25 transition-all duration-500 group-hover:shadow-marathon-blue/40 group-hover:scale-105">
+                        <Icon size={24} className="text-white drop-shadow-sm" />
+                      </div>
+                      {/* Anillo decorativo sutil */}
+                      <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-marathon-blue/20 to-transparent opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100" />
+                    </div>
+
+                    {/* Número / Texto principal */}
+                    <div className="flex flex-col gap-1">
+                      <div className="font-montserrat text-[clamp(1.8rem,4vw,2.8rem)] font-black leading-none tracking-tight text-marathon-blue drop-shadow-sm">
+                        {isNumber ? (
+                          <CountUpValue
+                            value={stat.value}
+                            suffix={stat.suffix}
+                            active={statsActive}
+                          />
+                        ) : (
+                          <span className="text-[clamp(1.1rem,2.4vw,1.5rem)] leading-tight">
+                            {stat.display}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Label con pill elegante */}
+                      <div className="mt-1 inline-flex items-center gap-2 self-center rounded-full border border-marathon-blue/10 bg-marathon-blue/[0.03] px-3 py-1 lg:self-start">
+                        <span className="h-1.5 w-1.5 rounded-full bg-marathon-red shadow-[0_0_6px_rgba(220,38,38,0.4)]" />
+                        <span className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-marathon-gray/80">
+                          {stat.label}
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -41,12 +41,13 @@ export default function CTAFinal() {
       className="relative min-h-[50vh] flex items-center justify-center gradient-cta sports-lines-pattern overflow-hidden"
       style={{ padding: 'clamp(4rem, 10vw, 8rem) 0' }}
     >
-      <div className="cta-content relative z-10 max-w-[700px] mx-auto px-4 sm:px-6 text-center">
+      <div className="cta-content relative z-10 mx-auto max-w-[760px] px-4 sm:px-6 text-center">
+        <div className="rounded-[1.9rem] border border-white/18 bg-white/26 px-5 py-8 shadow-[0_26px_60px_rgba(6,42,79,0.12)] backdrop-blur-md sm:px-8 sm:py-10">
         <h2 className="font-montserrat font-black text-marathon-blue uppercase tracking-[0.02em] text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] mb-4">
           ¿LISTO PARA COMPETIR?
         </h2>
         <p className="font-inter text-marathon-blue/85 text-base sm:text-xl leading-relaxed mb-8 sm:mb-10">
-          Inscribe a tu colegio hoy y asegura tu lugar en la Copa Nacional Marathon Intercolegial 2026. Los cupos son limitados.
+          Preinscribe a tu colegio hoy y asegura tu lugar en la Copa Nacional Marathon Intercolegial 2026. Los cupos son limitados.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
@@ -54,7 +55,7 @@ export default function CTAFinal() {
             onClick={() => navigate('/inscripciones')}
             className="w-full sm:w-auto justify-center bg-marathon-red text-white font-montserrat font-bold rounded-full px-7 sm:px-10 py-3.5 sm:py-4 shadow-button hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 text-base sm:text-lg"
           >
-            Inscribir mi Colegio Ahora <ArrowRight size={20} />
+            Preinscribir mi Colegio Ahora <ArrowRight size={20} />
           </button>
           <button
             onClick={() => handleNavClick('#comunicacion')}
@@ -62,6 +63,7 @@ export default function CTAFinal() {
           >
             <MessageCircle size={20} /> Contactar por WhatsApp
           </button>
+        </div>
         </div>
       </div>
     </section>

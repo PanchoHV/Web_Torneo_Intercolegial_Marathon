@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, AlertCircle } from 'lucide-react';
+import { ArrowRight, AlertCircle, BadgeCheck, FileCheck2, UsersRound } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,27 +11,30 @@ const steps = [
     number: '01',
     title: 'Registra tu Colegio',
     description:
-      'Completa el formulario de inscripción institucional con los datos de tu colegio y del delegado deportivo.',
-    cta: 'Formulario de Inscripción',
+      'Completa el formulario de preinscripción institucional con los datos de tu colegio y del delegado deportivo.',
+    cta: 'Formulario de Preinscripción',
     href: '/inscripciones',
+    icon: FileCheck2,
   },
   {
     number: '02',
-    title: 'Inscribe a tus Jugadores',
+    title: 'Confirmación de cupo y participación',
     description:
-      'Accede a nuestra plataforma y registra a cada jugador con sus datos personales, foto y certificado médico.',
+      'Nuestros ejecutivos se pondrán en contacto para la confirmación de los cupos y las participaciones en las categorías correspondientes.',
     cta: 'Ver Tutorial de Registro',
     href: '#tutoriales',
+    icon: BadgeCheck,
   },
   {
     number: '03',
-    title: 'Confirma tu Participación',
+    title: 'Inscripción de jugadores',
     description:
-      'Realiza el pago de la inscripción y recibe la confirmación oficial con tu grupo asignado y calendario de partidos.',
-    cta: 'Métodos de Pago',
-    href: '#',
+      'En este paso los responsables de cada entidad recibirán por los medios verificados la información para la inscripción de cada uno de los jugadores en sus respectivas categorías.',
+    cta: 'Tutoriales del Torneo',
+    href: '#tutoriales',
+    icon: UsersRound,
   },
-];
+] as const;
 
 export default function ComoInscribirse() {
   const navigate = useNavigate();
@@ -39,41 +42,30 @@ export default function ComoInscribirse() {
 
   useEffect(() => {
     if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.inscripcion-header',
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.75,
           ease: 'power3.out',
-          scrollTrigger: { trigger: '.inscripcion-header', start: 'top 80%' },
+          scrollTrigger: { trigger: '.inscripcion-header', start: 'top 82%' },
         }
       );
 
       gsap.fromTo(
         '.inscripcion-step',
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 28 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.75,
           ease: 'power3.out',
-          stagger: 0.15,
-          scrollTrigger: { trigger: '.inscripcion-steps', start: 'top 80%' },
-        }
-      );
-
-      gsap.fromTo(
-        '.inscripcion-nota',
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: '.inscripcion-nota', start: 'top 85%' },
+          stagger: 0.12,
+          scrollTrigger: { trigger: '.inscripcion-steps', start: 'top 84%' },
         }
       );
     }, sectionRef);
@@ -86,76 +78,98 @@ export default function ComoInscribirse() {
       navigate(href);
       return;
     }
-    if (href.startsWith('#')) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
+
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
       id="como-inscribirse"
       ref={sectionRef}
-      className="bg-white"
-      style={{ padding: 'clamp(4rem, 10vw, 8rem) 0' }}
+      className="relative overflow-hidden bg-white py-[clamp(4rem,10vw,7rem)]"
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="inscripcion-header text-center mb-16">
-          <span className="inline-block bg-marathon-red/10 text-marathon-red font-inter font-semibold text-xs tracking-[0.08em] rounded-full px-5 py-2 mb-6">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(248,251,255,0.95),rgba(255,255,255,0))]" />
+      <div className="pointer-events-none absolute -left-16 top-32 h-56 w-56 rounded-full bg-marathon-blue/6 blur-3xl" />
+      <div className="pointer-events-none absolute -right-16 bottom-16 h-56 w-56 rounded-full bg-marathon-red/6 blur-3xl" />
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+        <div className="inscripcion-header mx-auto max-w-[760px] text-center">
+          <span className="inline-flex rounded-full border border-marathon-red/15 bg-marathon-red/8 px-5 py-2 text-xs font-semibold tracking-[0.12em] text-marathon-red">
             PROCESO DE INSCRIPCIÓN
           </span>
-          <h2 className="font-montserrat font-extrabold text-marathon-blue uppercase tracking-[0.02em] text-[clamp(1.75rem,4vw,3rem)] leading-[1.1] mb-6">
-            INSCRIBE A TU COLEGIO EN 3 PASOS
+          <h2 className="mt-5 font-montserrat text-[clamp(1.9rem,4vw,3.15rem)] font-extrabold uppercase leading-[1.05] tracking-[0.02em] text-marathon-blue">
+            Preinscribe a tu colegio en 3 pasos
           </h2>
-          <p className="font-inter text-marathon-gray text-lg leading-relaxed max-w-[700px] mx-auto">
-            El proceso de inscripción es completamente digital. Sigue estos pasos y asegura la participación de tu colegio en la Copa Nacional Marathon Intercolegial 2026.
+          <p className="mt-5 text-base leading-relaxed text-marathon-gray sm:text-lg">
+            El proceso de preinscripción es completamente digital. Sigue estos pasos y asegura la
+            participación de tu colegio en la Copa Nacional Marathon Intercolegial 2026.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="inscripcion-steps relative">
-          {/* Connector line - desktop only */}
-          <div className="hidden lg:block absolute top-8 left-[16.67%] right-[16.67%] h-0.5 bg-marathon-red/30" />
+        <div className="inscripcion-steps relative mt-12 sm:mt-14">
+          <div className="absolute left-1/2 top-10 hidden h-px w-[72%] -translate-x-1/2 bg-[linear-gradient(90deg,rgba(226,27,45,0.12),rgba(226,27,45,0.4),rgba(226,27,45,0.12))] lg:block" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-            {steps.map((step, i) => (
-              <div key={i} className="inscripcion-step text-center relative">
-                {/* Number */}
-                <div className="w-16 h-16 rounded-full gradient-sports flex items-center justify-center mx-auto mb-6 relative z-10">
-                  <span className="font-montserrat font-black text-white text-2xl">
-                    {step.number}
-                  </span>
-                </div>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
+            {steps.map((step) => {
+              const Icon = step.icon;
 
-                <h3 className="font-montserrat font-bold text-xl text-marathon-blue mb-3">
-                  {step.title}
-                </h3>
-                <p className="font-inter text-marathon-gray leading-relaxed mb-6 max-w-[320px] mx-auto">
-                  {step.description}
-                </p>
-
-                <button
-                  onClick={() => handleNavClick(step.href)}
-                  className={`font-inter font-semibold text-sm flex items-center gap-1 mx-auto transition-all duration-300 ${
-                    i === 0
-                      ? 'bg-marathon-red text-white rounded-full px-6 py-3 shadow-button hover:scale-[1.02]'
-                      : 'text-marathon-red hover:gap-2'
-                  }`}
+              return (
+                <article
+                  key={step.number}
+                  className="inscripcion-step group relative overflow-hidden rounded-[1.7rem] border border-marathon-blue/10 bg-[linear-gradient(180deg,#FFFFFF_0%,#F8FBFF_100%)] p-5 shadow-[0_18px_38px_rgba(6,42,79,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_54px_rgba(6,42,79,0.1)] sm:p-6"
                 >
-                  {step.cta} <ArrowRight size={16} />
-                </button>
-              </div>
-            ))}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,rgba(226,27,45,0.9),rgba(0,80,164,0.8))] opacity-80" />
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-marathon-blue text-white shadow-[0_14px_28px_rgba(0,80,164,0.22)]">
+                      <Icon size={24} />
+                    </div>
+                    <span className="rounded-full border border-marathon-red/15 bg-marathon-red/6 px-3 py-1 text-xs font-black tracking-[0.14em] text-marathon-red">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 font-montserrat text-xl font-bold leading-tight text-marathon-blue">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-marathon-gray sm:text-[0.96rem]">
+                    {step.description}
+                  </p>
+
+                  <div className="mt-6 border-t border-marathon-blue/8 pt-5">
+                    <button
+                      type="button"
+                      onClick={() => handleNavClick(step.href)}
+                      className={`inline-flex min-h-11 items-center gap-2 rounded-full text-sm font-bold transition-all duration-200 ${
+                        step.number === '01'
+                          ? 'bg-marathon-red px-5 py-3 text-white shadow-[0_14px_28px_rgba(226,27,45,0.22)] hover:scale-[1.01]'
+                          : 'text-marathon-red hover:gap-3'
+                      }`}
+                    >
+                      {step.cta}
+                      <ArrowRight size={16} />
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
 
-        {/* Nota importante */}
-        <div className="inscripcion-nota mt-16 bg-marathon-red/5 border border-marathon-red/15 rounded-2xl p-6 flex items-start gap-4 max-w-[800px] mx-auto">
-          <AlertCircle className="text-marathon-red shrink-0 mt-0.5" size={22} />
-          <p className="font-inter font-medium text-marathon-blue">
-            Fecha límite de inscripción: 30 de junio, 2026. Las inscripciones son por orden de llegada y los cupos son limitados.
-          </p>
+        <div className="mt-10 rounded-[1.7rem] border border-marathon-red/15 bg-[linear-gradient(135deg,rgba(226,27,45,0.08),rgba(255,255,255,0.98))] p-5 shadow-[0_18px_40px_rgba(226,27,45,0.08)] sm:mt-12 sm:p-6">
+          <div className="flex items-start gap-4">
+            <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-marathon-red text-white">
+              <AlertCircle size={20} />
+            </div>
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.12em] text-marathon-red">
+                Cupos limitados
+              </p>
+              <p className="mt-2 text-sm font-medium leading-relaxed text-marathon-blue sm:text-base">
+                Fecha límite de preinscripción: 30 de junio de 2026. Las preinscripciones avanzan por
+                orden de llegada y la confirmación final depende de disponibilidad por categoría.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

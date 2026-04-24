@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/table';
 import { useAdminAuth } from '@/lib/auth/adminAuth';
 import { formatDateTime } from '@/lib/auth/adminFormatters';
-import { CITY_OPTIONS, SCHOOL_TYPE_OPTIONS } from '@/lib/constants/registrationOptions';
+import { CITY_OPTIONS_FLAT, SCHOOL_TYPE_OPTIONS } from '@/lib/constants/registrationOptions';
 import { exportRegistrations } from '@/services/admin/export';
 import { fetchRegistrations } from '@/services/admin/registrations';
 import { EMPTY_ADMIN_FILTERS, ONBOARDING_STATUS_OPTIONS, type AdminRegistration } from '@/types/admin';
@@ -210,7 +210,7 @@ export default function OnboardingDashboard() {
             label="Ciudad"
             value={filters.city}
             placeholder="Todas"
-            options={CITY_OPTIONS}
+            options={CITY_OPTIONS_FLAT}
             onChange={(value) => {
               setPage(1);
               setFilters((current) => ({ ...current, city: value }));

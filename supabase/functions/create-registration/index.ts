@@ -14,6 +14,7 @@ type RegistrationPayload = {
   contact_email: string;
   contact_phone: string;
   city: string;
+  tournament_categories?: string[];
   status: "new" | "qualified" | "contacted" | "won" | "lost";
   source: string;
   website?: string;
@@ -306,24 +307,47 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const { data, error } = await admin
+    const registrationInsert = {
+      school_name: payload.school_name,
+      school_address: payload.school_address,
+      contact_name: payload.contact_name,
+      applicant_role: payload.applicant_role,
+      applicant_role_other: payload.applicant_role_other,
+      school_type: payload.school_type,
+      contact_id_number: payload.contact_id_number,
+      contact_email: payload.contact_email,
+      contact_phone: payload.contact_phone,
+      city: payload.city,
+      tournament_categories: Array.isArray(payload.tournament_categories)
+        ? payload.tournament_categories
+        : [],
+      status: payload.status,
+      source: payload.source,
+    };
+
+    let data: { id: string; created_at: string };
+    let error: SupabaseMutationError | null = null;
+
+    const firstInsert = await admin
       .from("school_registrations")
-      .insert({
-        school_name: payload.school_name,
-        school_address: payload.school_address,
-        contact_name: payload.contact_name,
-        applicant_role: payload.applicant_role,
-        applicant_role_other: payload.applicant_role_other,
-        school_type: payload.school_type,
-        contact_id_number: payload.contact_id_number,
-        contact_email: payload.contact_email,
-        contact_phone: payload.contact_phone,
-        city: payload.city,
-        status: payload.status,
-        source: payload.source,
-      })
+      .insert(registrationInsert)
       .select("id, created_at")
       .single();
+
+    data = firstInsert.data;
+    error = firstInsert.error;
+
+    if (error && isMissingColumnError(error)) {
+      const { tournament_categories: _unusedCategories, ...fallbackInsert } = registrationInsert;
+      const fallbackInsertResult = await admin
+        .from("school_registrations")
+        .insert(fallbackInsert)
+        .select("id, created_at")
+        .single();
+
+      data = fallbackInsertResult.data;
+      error = fallbackInsertResult.error;
+    }
 
     if (error) {
       await logRegistrationAttempt({
@@ -425,6 +449,11 @@ Deno.serve(async (req: Request) => {
                 <li>Encargado: ${escapeHtml(payload.contact_name)}</li>
                 <li>Cargo: ${escapeHtml(payload.applicant_role)}</li>
                 <li>Tipo de colegio: ${escapeHtml(payload.school_type)}</li>
+                <li>Categorías: ${escapeHtml(
+                  Array.isArray(payload.tournament_categories) && payload.tournament_categories.length > 0
+                    ? payload.tournament_categories.join(", ")
+                    : "No especificadas"
+                )}</li>
                 <li>Cédula: ${escapeHtml(payload.contact_id_number)}</li>
                 <li>Email: ${escapeHtml(payload.contact_email)}</li>
                 <li>Teléfono: ${escapeHtml(payload.contact_phone)}</li>

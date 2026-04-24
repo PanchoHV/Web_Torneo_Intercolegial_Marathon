@@ -17,6 +17,7 @@ const mapRegistrationInsert = (values: RegistrationFormValues): RegistrationInse
   contact_email: values.email,
   contact_phone: values.phone,
   city: values.city,
+  tournament_categories: values.categories,
   status: 'new',
   source: 'landing_inscripciones',
 });

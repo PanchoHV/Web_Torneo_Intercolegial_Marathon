@@ -37,7 +37,7 @@ export default function RegistrationHero() {
             <Trophy size={14} /> CONVOCATORIA OFICIAL 2026
           </span>
           <h1 className="max-w-3xl text-[clamp(1.55rem,6.8vw,3.7rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
-            Inscripción de colegios
+            Preinscripción de colegios
           </h1>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/90 sm:mt-3 sm:text-lg">
             Completa el registro oficial del Torneo Intercolegial Marathon Ecuador 2026. Te contactaremos para continuar el proceso.

@@ -9,7 +9,7 @@ export default function RegistrationIntro() {
           Bienvenida oficial a colegios participantes
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-marathon-gray">
-          Marathon invita a colegios de Quito, Cuenca y Santo Domingo a formar parte del Torneo Intercolegial Ecuador 2026. Completa este formulario oficial de inscripción y un ejecutivo del torneo se pondrá en contacto contigo.
+          Marathon invita a colegios de Ecuador a formar parte del Torneo Intercolegial Ecuador 2026. Completa este formulario oficial de preinscripción y un ejecutivo del torneo se pondrá en contacto contigo.
         </p>
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-marathon-blue/10 bg-marathon-ice p-5">
@@ -19,7 +19,7 @@ export default function RegistrationIntro() {
           <li>Datos completos de la institución educativa.</li>
           <li>Persona encargada autorizada para recibir contacto oficial.</li>
           <li>Cédula, correo y celular válidos para seguimiento.</li>
-          <li>Ciudad participante: Quito, Cuenca o Santo Domingo.</li>
+          <li>Ciudad participante dentro de nuestras regiones habilitadas.</li>
         </ul>
       </div>
     </section>

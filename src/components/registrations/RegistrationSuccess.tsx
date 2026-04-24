@@ -18,7 +18,7 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
         <CheckCircle2 size={28} />
       </div>
       <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-black uppercase tracking-[0.02em] text-marathon-blue">
-        ¡Inscripción recibida con éxito!
+        ¡Preinscripción recibida con éxito!
       </h2>
       <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-marathon-gray">
         Gracias por registrar a tu institución. Nuestro equipo revisará la información y se pondrá en contacto contigo pronto para continuar con el proceso.

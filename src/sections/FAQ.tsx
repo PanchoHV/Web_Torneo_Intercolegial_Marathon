@@ -7,9 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faqs = [
   {
-    question: '¿Cuál es el costo de inscripción por colegio?',
+    question: '¿Cuál es el costo de preinscripción por colegio?',
     answer:
-      'El costo de inscripción es de USD 35 por colegio, que incluye participación en hasta 3 disciplinas. Cada disciplina adicional tiene un costo de USD 10. El pago se realiza mediante transferencia bancaria o canales oficiales del torneo.',
+      'El costo de preinscripción es de USD 35 por colegio, que incluye participación en hasta 3 disciplinas. Cada disciplina adicional tiene un costo de USD 10. El pago se realiza mediante transferencia bancaria o canales oficiales del torneo.',
   },
   {
     question: '¿Cuántos jugadores puedo inscribir por equipo?',
@@ -34,7 +34,7 @@ const faqs = [
   {
     question: '¿Cómo recibo la comunicación oficial del torneo?',
     answer:
-      'Cada colegio tiene un grupo exclusivo de WhatsApp donde enviamos toda la comunicación oficial: cambios de horario, resultados, convocatorias y comunicados importantes. También enviamos emails a los delegados registrados.',
+      'La comunicación oficial se comparte por el canal oficial del torneo y por correo a los delegados registrados. Allí recibirás novedades, avisos importantes, resultados, convocatorias y comunicados del equipo organizador.',
   },
 ];
 
@@ -52,19 +52,25 @@ function AccordionItem({
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="bg-marathon-cream rounded-xl overflow-hidden">
+    <div
+      className={`overflow-hidden rounded-[1.35rem] border transition-all duration-300 ${
+        isOpen
+          ? 'border-marathon-red/18 bg-[linear-gradient(180deg,#FFFFFF_0%,#FFF8F8_100%)] shadow-[0_20px_42px_rgba(226,27,45,0.08)]'
+          : 'border-marathon-blue/8 bg-marathon-cream shadow-[0_12px_30px_rgba(6,42,79,0.04)]'
+      }`}
+    >
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer"
+        className="w-full cursor-pointer flex items-center justify-between gap-4 p-5 text-left"
         aria-expanded={isOpen}
       >
-        <span className="font-inter font-semibold text-marathon-blue">
+        <span className="font-inter font-semibold text-marathon-blue sm:text-[1.02rem]">
           {question}
         </span>
         <ChevronDown
           size={20}
-          className={`text-marathon-gray shrink-0 transition-transform duration-400 ${
-            isOpen ? 'rotate-180' : ''
+          className={`shrink-0 transition-all duration-400 ${
+            isOpen ? 'rotate-180 text-marathon-red' : 'text-marathon-gray'
           }`}
         />
       </button>
@@ -77,7 +83,7 @@ function AccordionItem({
           opacity: isOpen ? 1 : 0,
         }}
       >
-        <div className="px-5 pb-5 font-inter text-marathon-gray leading-relaxed">
+        <div className="px-5 pb-5 font-inter leading-relaxed text-marathon-gray">
           {answer}
         </div>
       </div>
@@ -125,9 +131,10 @@ export default function FAQ() {
     <section
       id="preguntas"
       ref={sectionRef}
-      className="bg-white"
+      className="relative overflow-hidden bg-white"
       style={{ padding: 'clamp(4rem, 10vw, 8rem) 0' }}
     >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(180deg,rgba(248,251,255,0.9),rgba(255,255,255,0))]" />
       <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="faq-header text-center mb-16">

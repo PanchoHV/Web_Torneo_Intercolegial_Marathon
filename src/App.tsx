@@ -8,7 +8,6 @@ import SobreElTorneo from '@/sections/SobreElTorneo';
 import ComoInscribirse from '@/sections/ComoInscribirse';
 import Tutoriales from '@/sections/Tutoriales';
 import Comunicacion from '@/sections/Comunicacion';
-import Calendario from '@/sections/Calendario';
 import FAQ from '@/sections/FAQ';
 import CTAFinal from '@/sections/CTAFinal';
 import Footer from '@/sections/Footer';
@@ -39,7 +38,6 @@ function HomeLanding() {
         <ComoInscribirse />
         <Tutoriales />
         <Comunicacion />
-        <Calendario />
         <FAQ />
         <CTAFinal />
       </main>

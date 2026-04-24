@@ -4,7 +4,24 @@ export type DelegateRole = 'Rector' | 'Entrenador' | 'Docente' | 'Otros';
 
 export type SchoolType = 'Privado' | 'Público';
 
-export type RegistrationCity = 'Quito' | 'Cuenca' | 'Santo Domingo';
+export type RegistrationCity =
+  | 'Guayaquil (Guayas)'
+  | 'Manta'
+  | 'Portoviejo'
+  | 'Esmeraldas'
+  | 'Machala'
+  | 'Quito (Pichincha)'
+  | 'Ibarra'
+  | 'Ambato'
+  | 'Cuenca'
+  | 'Tena';
+
+export type RegistrationCategory =
+  | 'Sub 13 Masculino'
+  | 'Sub 15 Masculino'
+  | 'Sub 17 Masculino'
+  | 'Sub 15 Femenino'
+  | 'Sub 17 Femenino';
 
 export type RegistrationResult = {
   id: string | null;
@@ -22,6 +39,7 @@ export interface RegistrationFormValues {
   email: string;
   phone: string;
   city: RegistrationCity;
+  categories: RegistrationCategory[];
   termsAccepted: boolean;
   website: string;
   turnstileToken: string;
@@ -38,6 +56,7 @@ export interface RegistrationInsert {
   contact_email: string;
   contact_phone: string;
   city: string;
+  tournament_categories?: RegistrationCategory[];
   status: RegistrationStatus;
   source: string;
 }

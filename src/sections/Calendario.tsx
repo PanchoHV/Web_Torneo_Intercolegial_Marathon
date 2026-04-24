@@ -19,8 +19,8 @@ type CalendarEvent = {
 const events: CalendarEvent[] = [
   {
     date: '15 MAR - 30 JUN',
-    title: 'Período de Inscripciones',
-    description: 'Inscribe a tu colegio y registra a todos tus jugadores antes del cierre.',
+    title: 'Período de Preinscripciones',
+    description: 'Preinscribe a tu colegio y registra a todos tus jugadores antes del cierre.',
     startMonth: 3,
     startDay: 15,
     endMonth: 6,
