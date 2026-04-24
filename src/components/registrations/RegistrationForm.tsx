@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
-import { type ReactNode, useRef, useState } from 'react';
+import { type ReactNode, useCallback, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import TurnstileChallenge, {
@@ -52,7 +52,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
 
-  const getTurnstileMessage = (errorCode?: string | null) => {
+  const getTurnstileMessage = useCallback((errorCode?: string | null) => {
     if (!errorCode) {
       return 'No pudimos completar la verificación de seguridad. Intenta nuevamente.';
     }
@@ -82,7 +82,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     }
 
     return `No pudimos completar la verificación de seguridad. Código Cloudflare: ${errorCode}.`;
-  };
+  }, []);
 
   const {
     register,
@@ -160,6 +160,42 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       }
     }
   });
+
+  const handleTurnstileReady = useCallback(() => {
+    setTurnstileReady(true);
+    setTurnstileErrorCode(null);
+    setTurnstileState('ready');
+  }, []);
+
+  const handleTurnstileVerify = useCallback(
+    (token: string) => {
+      setTurnstileToken(token);
+      setTurnstileErrorCode(null);
+      setTurnstileState('verified');
+      setSubmitError(null);
+      setValue('turnstileToken', token, { shouldValidate: false });
+    },
+    [setValue]
+  );
+
+  const handleTurnstileError = useCallback(
+    (errorCode?: string) => {
+      setTurnstileToken('');
+      setTurnstileErrorCode(errorCode ?? null);
+      setValue('turnstileToken', '');
+      setTurnstileState('error');
+      setSubmitError(getTurnstileMessage(errorCode));
+    },
+    [getTurnstileMessage, setValue]
+  );
+
+  const handleTurnstileExpire = useCallback(() => {
+    setTurnstileToken('');
+    setTurnstileErrorCode(null);
+    setValue('turnstileToken', '');
+    setTurnstileState('ready');
+    setSubmitError('La verificación de seguridad expiró. Complétala nuevamente antes de enviar.');
+  }, [setValue]);
 
   return (
     <section
@@ -435,34 +471,10 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 <TurnstileChallenge
                   ref={turnstileRef}
                   siteKey={turnstileSiteKey}
-                  onReady={() => {
-                    setTurnstileReady(true);
-                    setTurnstileErrorCode(null);
-                    setTurnstileState('ready');
-                  }}
-                  onVerify={(token) => {
-                    setTurnstileToken(token);
-                    setTurnstileErrorCode(null);
-                    setTurnstileState('verified');
-                    setSubmitError(null);
-                    setValue('turnstileToken', token, { shouldValidate: false });
-                  }}
-                  onError={(errorCode) => {
-                    setTurnstileToken('');
-                    setTurnstileErrorCode(errorCode ?? null);
-                    setValue('turnstileToken', '');
-                    setTurnstileState('error');
-                    setSubmitError(getTurnstileMessage(errorCode));
-                  }}
-                  onExpire={() => {
-                    setTurnstileToken('');
-                    setTurnstileErrorCode(null);
-                    setValue('turnstileToken', '');
-                    setTurnstileState('ready');
-                    setSubmitError(
-                      'La verificación de seguridad expiró. Complétala nuevamente antes de enviar.'
-                    );
-                  }}
+                  onReady={handleTurnstileReady}
+                  onVerify={handleTurnstileVerify}
+                  onError={handleTurnstileError}
+                  onExpire={handleTurnstileExpire}
                 />
               </div>
             </div>
