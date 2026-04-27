@@ -67,8 +67,8 @@ export default function UsersPage() {
   }, []);
 
   return (
-    <div className="grid gap-6">
-      <section className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
+    <div className="grid min-w-0 gap-6">
+      <section className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/60">
             Administración interna
@@ -92,8 +92,8 @@ export default function UsersPage() {
         </Button>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
-        <div className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
+      <section className="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+        <div className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
           <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
             Crear usuario
           </h3>
@@ -209,8 +209,8 @@ export default function UsersPage() {
           </div>
         </div>
 
-        <div className="grid gap-6">
-          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
+        <div className="grid min-w-0 gap-6">
+          <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
             <div className="flex items-center justify-between gap-4">
               <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
                 Usuarios activos
@@ -221,7 +221,7 @@ export default function UsersPage() {
             </div>
 
             <div className="mt-5">
-              <Table>
+              <Table className="min-w-[760px]">
                 <TableHeader>
                   <TableRow>
                     <TableHead>Nombre</TableHead>

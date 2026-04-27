@@ -124,8 +124,8 @@ export default function OnboardingDashboard() {
   );
 
   return (
-    <div className="grid gap-6">
-      <section className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
+    <div className="grid min-w-0 gap-6">
+      <section className="grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
         <div className="min-w-0">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/65">
             Base interna
@@ -175,7 +175,7 @@ export default function OnboardingDashboard() {
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid min-w-0 gap-4 md:grid-cols-3">
         {summary.map((item) => (
           <div
             key={item.label}
@@ -189,8 +189,8 @@ export default function OnboardingDashboard() {
         ))}
       </section>
 
-      <section className="grid gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
-        <div className="grid gap-4 xl:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))]">
+      <section className="grid min-w-0 gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))]">
           <label className="grid gap-2">
             <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
               Buscar
@@ -271,7 +271,7 @@ export default function OnboardingDashboard() {
         )}
       </section>
 
-      <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
+      <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
         <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-semibold text-marathon-gray">
             Mostrando {showingFrom}-{showingTo} de {count} registros
@@ -299,7 +299,7 @@ export default function OnboardingDashboard() {
           </div>
         </div>
 
-        <div className="grid gap-3 lg:hidden">
+        <div className="grid gap-3 2xl:hidden">
           {loading ? (
             <div className="rounded-2xl border border-marathon-blue/10 bg-marathon-ice/45 px-4 py-8 text-center text-sm font-semibold text-marathon-gray">
               Cargando base de inscripciones...
@@ -381,8 +381,8 @@ export default function OnboardingDashboard() {
           )}
         </div>
 
-        <div className="hidden lg:block">
-          <Table>
+        <div className="hidden min-w-0 2xl:block">
+          <Table className="min-w-[1420px]">
             <TableHeader>
               <TableRow>
                 <TableHead>Institución</TableHead>

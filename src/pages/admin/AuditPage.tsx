@@ -44,9 +44,9 @@ export default function AuditPage() {
   }, [loadAudit]);
 
   return (
-    <div className="grid gap-6">
-      <section className="flex flex-col gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card lg:flex-row lg:items-end lg:justify-between">
-        <div>
+    <div className="grid min-w-0 gap-6">
+      <section className="flex min-w-0 flex-col gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card lg:flex-row lg:items-end lg:justify-between">
+        <div className="min-w-0">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/60">
             Auditoría interna
           </p>
@@ -75,8 +75,8 @@ export default function AuditPage() {
         </p>
       )}
 
-      <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
-        <Table>
+      <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
+        <Table className="min-w-[1120px]">
           <TableHeader>
             <TableRow>
               <TableHead>Usuario</TableHead>

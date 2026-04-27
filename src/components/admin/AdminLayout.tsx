@@ -10,9 +10,9 @@ export default function AdminLayout() {
   const { profile, signOut, isAdmin } = useAdminAuth();
 
   return (
-    <div className="min-h-screen bg-marathon-cream">
+    <div className="min-h-screen w-full overflow-x-hidden bg-marathon-cream">
       <div className="border-b border-marathon-blue/10 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-[1360px] flex-col gap-4 px-3 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-[1360px] min-w-0 flex-col gap-4 px-3 py-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="min-w-0">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/65">
@@ -65,7 +65,7 @@ export default function AdminLayout() {
         </div>
       </div>
 
-      <main className="mx-auto max-w-[1360px] px-3 py-5 sm:px-6 sm:py-6 lg:px-8">
+      <main className="mx-auto w-full max-w-[1360px] min-w-0 px-3 py-5 sm:px-6 sm:py-6 lg:px-8">
         <Outlet />
       </main>
     </div>

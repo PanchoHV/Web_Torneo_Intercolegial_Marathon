@@ -133,7 +133,7 @@ export default function OnboardingDetail() {
     : 'Sin categorías registradas';
 
   return (
-    <div className="grid gap-6">
+    <div className="grid min-w-0 gap-6">
       <section className="flex flex-col gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="min-w-0">
           <Button
@@ -190,8 +190,8 @@ export default function OnboardingDetail() {
         </p>
       )}
 
-      <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-6">
+      <section className="grid min-w-0 gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+        <div className="grid min-w-0 gap-6">
           <DataSection
             title="Datos institucionales"
             items={[
@@ -227,8 +227,8 @@ export default function OnboardingDetail() {
           />
         </div>
 
-        <div className="grid gap-6">
-          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+        <div className="grid min-w-0 gap-6">
+          <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
             <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
               Gestión interna
             </h3>
@@ -389,7 +389,7 @@ export default function OnboardingDetail() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+          <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
             <div className="flex items-center gap-2">
               <UserRound size={18} className="text-marathon-blue" />
               <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
@@ -474,7 +474,7 @@ function DataSection({
   items: Array<[string, string]>;
 }) {
   return (
-    <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+    <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
       <h3 className="break-words text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
         {title}
       </h3>
