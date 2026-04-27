@@ -29,7 +29,7 @@ const roleOptions: Array<{ value: AdminRole; label: string }> = [
   { value: 'viewer', label: 'Viewer' },
 ];
 
-const PROTECTED_SUPERADMIN_EMAIL = 'fvasquez@treicreatividad.com';
+const PROTECTED_SUPERADMIN_EMAIL = 'copaintercolegial@fundacionmarathon.com';
 
 export default function UsersPage() {
   const [users, setUsers] = useState<AdminUserProfile[]>([]);

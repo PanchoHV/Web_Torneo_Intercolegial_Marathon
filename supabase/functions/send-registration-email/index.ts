@@ -17,7 +17,7 @@ Deno.serve(async (req: Request) => {
       Deno.env.get("RESEND_FROM_EMAIL") ??
       "Torneo Intercolegial Marathon <info@torneo.fundacionmarathon.org.ec>";
     const RESEND_EXECUTIVE_EMAIL =
-      Deno.env.get("RESEND_EXECUTIVE_EMAIL") ?? "fvasquez@treicreatividad.com";
+      Deno.env.get("RESEND_EXECUTIVE_EMAIL") ?? "copaintercolegial@fundacionmarathon.com";
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
 

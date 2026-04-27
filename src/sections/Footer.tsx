@@ -29,7 +29,7 @@ const participantHubs = [
 const officialLinks = [
   {
     label: 'WhatsApp',
-    href: 'https://wa.me/593995307806?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.',
+    href: 'https://wa.me/593989655352?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.',
     icon: MessageCircle,
     color: 'hover:bg-green-500/20 hover:text-green-400',
   },

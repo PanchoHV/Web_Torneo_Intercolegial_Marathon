@@ -24,7 +24,7 @@ const highlights = [
 ] as const;
 
 const officialChannelUrl =
-  'https://wa.me/593995307806?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.';
+  'https://wa.me/593989655352?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.';
 const whatsappLogo =
   'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-WP_ICon.webp';
 

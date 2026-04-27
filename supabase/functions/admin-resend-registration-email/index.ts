@@ -4,6 +4,8 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { buildApplicantConfirmationEmail } from "../create-registration/applicantConfirmationEmail.ts";
 import { corsHeaders, jsonResponse, requireInternalUser } from "../_shared/admin.ts";
 
+const DEFAULT_EXECUTIVE_EMAIL = "copaintercolegial@fundacionmarathon.com";
+
 type ResendEmailResult = {
   id?: string;
   [key: string]: unknown;
@@ -72,14 +74,10 @@ Deno.serve(async (req: Request) => {
     const resendFrom =
       Deno.env.get("RESEND_FROM_EMAIL") ??
       "Torneo Nacional Intercolegial <info@torneo.fundacionmarathon.org.ec>";
-    const executiveEmail = Deno.env.get("RESEND_EXECUTIVE_EMAIL");
+    const executiveEmail = Deno.env.get("RESEND_EXECUTIVE_EMAIL") ?? DEFAULT_EXECUTIVE_EMAIL;
 
     if (!resendApiKey) {
       return jsonResponse({ error: "Missing RESEND_API_KEY." }, 500);
-    }
-
-    if (!executiveEmail) {
-      return jsonResponse({ error: "Missing RESEND_EXECUTIVE_EMAIL." }, 500);
     }
 
     const { data: registration, error: registrationError } = await admin
@@ -112,7 +110,7 @@ Deno.serve(async (req: Request) => {
         : [],
       createdAt: registration.created_at,
       registrationCode: `TM-2026-${String(registration.id).slice(0, 8).toUpperCase()}`,
-      whatsappNumber: "+593995307806",
+      whatsappNumber: "+593989655352",
     });
 
     const participantResult = await sendResendEmail({

@@ -3,7 +3,7 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 import { corsHeaders, jsonResponse, requireInternalUser } from "../_shared/admin.ts";
 
-const protectedEmail = "fvasquez@treicreatividad.com";
+const protectedEmail = "copaintercolegial@fundacionmarathon.com";
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {

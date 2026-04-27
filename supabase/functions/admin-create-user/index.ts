@@ -5,6 +5,7 @@ import { corsHeaders, jsonResponse, requireInternalUser } from "../_shared/admin
 
 const allowedRoles = new Set(["admin", "onboarding", "viewer"]);
 const DEFAULT_LOGIN_URL = "https://torneo.fundacionmarathon.org.ec/admin/login";
+const DEFAULT_SUPPORT_EMAIL = "copaintercolegial@fundacionmarathon.com";
 
 function escapeHtml(value: unknown) {
   return String(value ?? "")
@@ -297,9 +298,17 @@ async function sendInvitationEmail({
   const fromEmail =
     Deno.env.get("RESEND_FROM_EMAIL") ??
     "Torneo Intercolegial Marathon <info@torneo.fundacionmarathon.org.ec>";
+  const replyToEmail =
+    Deno.env.get("RESEND_REPLY_TO_EMAIL") ??
+    Deno.env.get("RESEND_EXECUTIVE_EMAIL") ??
+    DEFAULT_SUPPORT_EMAIL;
 
   if (!resendApiKey) {
-    throw new Error("Falta RESEND_API_KEY.");
+    throw new Error("Falta RESEND_API_KEY; no se intentó enviar la invitación.");
+  }
+
+  if (!Deno.env.get("RESEND_FROM_EMAIL")) {
+    console.warn("RESEND_FROM_EMAIL is not configured; using fallback sender.");
   }
 
   const loginUrl = `${Deno.env.get("PUBLIC_SITE_URL") ?? "https://torneo.fundacionmarathon.org.ec"}/admin/login`
@@ -314,6 +323,7 @@ async function sendInvitationEmail({
     body: JSON.stringify({
       from: fromEmail,
       to: [email],
+      reply_to: replyToEmail,
       subject: "Te han invitado al módulo privado del Torneo Marathon",
       html: buildInvitationEmail({
         fullName,
@@ -328,7 +338,12 @@ async function sendInvitationEmail({
   const payload = await response.json().catch(() => null);
 
   if (!response.ok) {
-    throw new Error(payload?.message || payload?.error || "No se pudo enviar el correo de invitación.");
+    const providerMessage = payload?.message || payload?.error || JSON.stringify(payload);
+    throw new Error(
+      providerMessage
+        ? `Resend no aceptó el correo de invitación: ${providerMessage}`
+        : "Resend no aceptó el correo de invitación."
+    );
   }
 
   return payload;

@@ -3,6 +3,8 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.8";
 import { buildApplicantConfirmationEmail } from "./applicantConfirmationEmail.ts";
 
+const DEFAULT_EXECUTIVE_EMAIL = "copaintercolegial@fundacionmarathon.com";
+
 type RegistrationPayload = {
   school_name: string;
   school_address: string;
@@ -377,7 +379,7 @@ Deno.serve(async (req: Request) => {
     const resendFrom =
       Deno.env.get("RESEND_FROM_EMAIL") ??
       "Torneo Nacional Intercolegial <info@torneo.fundacionmarathon.org.ec>";
-    const executiveEmail = Deno.env.get("RESEND_EXECUTIVE_EMAIL");
+    const executiveEmail = Deno.env.get("RESEND_EXECUTIVE_EMAIL") ?? DEFAULT_EXECUTIVE_EMAIL;
 
     let applicantSent = false;
     let executiveSent = false;
@@ -395,8 +397,8 @@ Deno.serve(async (req: Request) => {
       emailAuditWarnings.push("Missing RESEND_FROM_EMAIL; fallback sender was used.");
     }
 
-    if (!executiveEmail) {
-      emailAuditWarnings.push("Missing RESEND_EXECUTIVE_EMAIL; executive email was not attempted.");
+    if (!Deno.env.get("RESEND_EXECUTIVE_EMAIL")) {
+      emailAuditWarnings.push("Missing RESEND_EXECUTIVE_EMAIL; fallback executive email was used.");
     }
 
     const replyTo = executiveEmail;
@@ -418,7 +420,7 @@ Deno.serve(async (req: Request) => {
             : [],
           createdAt: data.created_at,
           registrationCode: `TM-2026-${String(data.id).slice(0, 8).toUpperCase()}`,
-          whatsappNumber: "+593995307806",
+          whatsappNumber: "+593989655352",
         });
         const participantResult = await sendResendEmail({
           apiKey: resendApiKey,
