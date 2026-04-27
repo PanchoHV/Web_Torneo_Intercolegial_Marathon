@@ -36,6 +36,7 @@ const exportColumns = [
 function applyFilters(query: any, filters: Record<string, unknown>) {
   const search = String(filters.search ?? "").trim();
   const city = String(filters.city ?? "").trim();
+  const category = String(filters.category ?? "").trim();
   const schoolType = String(filters.schoolType ?? "").trim();
   const onboardingStatus = String(filters.onboardingStatus ?? "").trim();
   const dateFrom = String(filters.dateFrom ?? "").trim();
@@ -50,6 +51,10 @@ function applyFilters(query: any, filters: Record<string, unknown>) {
 
   if (city) {
     query = query.eq("city", city);
+  }
+
+  if (category) {
+    query = query.contains("tournament_categories", [category]);
   }
 
   if (schoolType) {

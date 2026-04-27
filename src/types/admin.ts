@@ -69,6 +69,7 @@ export interface ExportAuditRecord {
 export interface AdminRegistrationFilters {
   search: string;
   city: string;
+  category: string;
   schoolType: string;
   onboardingStatus: '' | OnboardingStatus;
   dateFrom: string;
@@ -100,6 +101,7 @@ export const INTERNAL_PRIORITY_OPTIONS = [
 export const EMPTY_ADMIN_FILTERS: AdminRegistrationFilters = {
   search: '',
   city: '',
+  category: '',
   schoolType: '',
   onboardingStatus: '',
   dateFrom: '',

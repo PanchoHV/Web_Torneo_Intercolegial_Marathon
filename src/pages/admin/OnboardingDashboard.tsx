@@ -22,7 +22,11 @@ import {
 } from '@/components/ui/table';
 import { useAdminAuth } from '@/lib/auth/adminAuth';
 import { formatDateTime } from '@/lib/auth/adminFormatters';
-import { CITY_OPTIONS_FLAT, SCHOOL_TYPE_OPTIONS } from '@/lib/constants/registrationOptions';
+import {
+  CITY_OPTIONS_FLAT,
+  SCHOOL_TYPE_OPTIONS,
+  TOURNAMENT_CATEGORY_OPTIONS,
+} from '@/lib/constants/registrationOptions';
 import { exportRegistrations } from '@/services/admin/export';
 import { fetchRegistrations } from '@/services/admin/registrations';
 import { EMPTY_ADMIN_FILTERS, ONBOARDING_STATUS_OPTIONS, type AdminRegistration } from '@/types/admin';
@@ -190,7 +194,7 @@ export default function OnboardingDashboard() {
       </section>
 
       <section className="grid min-w-0 gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
-        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))]">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.3fr_repeat(6,minmax(0,1fr))]">
           <label className="grid gap-2">
             <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
               Buscar
@@ -225,6 +229,17 @@ export default function OnboardingDashboard() {
             onChange={(value) => {
               setPage(1);
               setFilters((current) => ({ ...current, schoolType: value }));
+            }}
+          />
+
+          <FilterSelect
+            label="Categoría"
+            value={filters.category}
+            placeholder="Todas"
+            options={TOURNAMENT_CATEGORY_OPTIONS}
+            onChange={(value) => {
+              setPage(1);
+              setFilters((current) => ({ ...current, category: value }));
             }}
           />
 

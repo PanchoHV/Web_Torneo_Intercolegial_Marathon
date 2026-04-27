@@ -41,6 +41,10 @@ function applyRegistrationFilters(
     query = query.eq('city', filters.city);
   }
 
+  if (filters.category) {
+    query = query.contains('tournament_categories', [filters.category]);
+  }
+
   if (filters.schoolType) {
     query = query.eq('school_type', filters.schoolType);
   }
