@@ -139,7 +139,7 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
 
     return (
       <div className="grid gap-2">
-        <div ref={containerRef} className="min-h-[65px]" />
+        <div ref={containerRef} className="min-h-[65px] max-w-full [&_iframe]:max-w-full" />
         {loadError && (
           <p className="text-xs font-semibold text-red-600">{loadError}</p>
         )}

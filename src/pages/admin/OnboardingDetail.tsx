@@ -128,11 +128,19 @@ export default function OnboardingDetail() {
     );
   }
 
+  const categoriesLabel = registration.tournament_categories?.length
+    ? registration.tournament_categories.join(', ')
+    : 'Sin categorías registradas';
+
   return (
     <div className="grid gap-6">
-      <section className="flex flex-col gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card lg:flex-row lg:items-start lg:justify-between">
-        <div>
-          <Button asChild variant="outline" className="rounded-full border-marathon-blue/15 text-marathon-blue">
+      <section className="flex flex-col gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5 lg:flex-row lg:items-start lg:justify-between">
+        <div className="min-w-0">
+          <Button
+            asChild
+            variant="outline"
+            className="min-h-11 rounded-full border-marathon-blue/15 text-marathon-blue"
+          >
             <Link to="/admin/onboarding">
               <ArrowLeft size={16} />
               Volver al listado
@@ -141,23 +149,31 @@ export default function OnboardingDetail() {
           <p className="mt-4 text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/60">
             Detalle de inscripción
           </p>
-          <h2 className="mt-2 text-3xl font-black uppercase tracking-[0.02em] text-marathon-blue">
+          <h2 className="mt-2 break-words text-2xl font-black uppercase tracking-[0.02em] text-marathon-blue sm:text-3xl">
             {registration.school_name}
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-marathon-gray">
+          <p className="mt-2 break-words text-sm leading-relaxed text-marathon-gray">
             Responsable: {registration.contact_name} · {registration.contact_email}
           </p>
         </div>
 
-        <div className="grid gap-3 lg:min-w-[280px]">
-          <div className="flex items-center justify-between rounded-2xl border border-marathon-blue/10 bg-marathon-ice px-4 py-3">
+        <div className="grid min-w-0 gap-3 lg:min-w-[280px]">
+          <div className="flex min-w-0 items-center justify-between gap-3 rounded-2xl border border-marathon-blue/10 bg-marathon-ice px-4 py-3">
             <span className="text-sm font-semibold text-marathon-gray">Onboarding</span>
             <StatusBadge status={registration.onboarding_status} />
           </div>
           <div className="rounded-2xl border border-marathon-blue/10 bg-white px-4 py-3 text-sm text-marathon-gray">
-            <p><strong className="text-marathon-blue">Asignado a:</strong> {assigneeLabel}</p>
-            <p className="mt-1"><strong className="text-marathon-blue">Registro:</strong> {formatDateTime(registration.created_at)}</p>
-            <p className="mt-1"><strong className="text-marathon-blue">Actualizado:</strong> {formatDateTime(registration.updated_at)}</p>
+            <p className="break-words">
+              <strong className="text-marathon-blue">Asignado a:</strong> {assigneeLabel}
+            </p>
+            <p className="mt-1">
+              <strong className="text-marathon-blue">Registro:</strong>{' '}
+              {formatDateTime(registration.created_at)}
+            </p>
+            <p className="mt-1">
+              <strong className="text-marathon-blue">Actualizado:</strong>{' '}
+              {formatDateTime(registration.updated_at)}
+            </p>
           </div>
         </div>
       </section>
@@ -182,6 +198,7 @@ export default function OnboardingDetail() {
               ['Institución', registration.school_name],
               ['Dirección', registration.school_address],
               ['Ciudad', registration.city],
+              ['Categorías', categoriesLabel],
               ['Tipo de colegio', registration.school_type],
               ['Fuente', registration.source || '—'],
             ]}
@@ -211,7 +228,7 @@ export default function OnboardingDetail() {
         </div>
 
         <div className="grid gap-6">
-          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
+          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
             <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
               Gestión interna
             </h3>
@@ -277,9 +294,9 @@ export default function OnboardingDetail() {
                 />
               </Field>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="grid gap-2 sm:flex sm:flex-wrap sm:gap-3">
                 <Button
-                  className="rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
+                  className="min-h-11 rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
                   disabled={!canManage || saving}
                   onClick={async () => {
                     setSaving(true);
@@ -311,7 +328,7 @@ export default function OnboardingDetail() {
 
                 <Button
                   variant="outline"
-                  className="rounded-full"
+                  className="min-h-11 rounded-full"
                   disabled={!canManage || resending}
                   onClick={async () => {
                     setResending(true);
@@ -338,7 +355,7 @@ export default function OnboardingDetail() {
 
                 <Button
                   variant="outline"
-                  className="rounded-full"
+                  className="min-h-11 rounded-full"
                   disabled={!canManage || markingContact}
                   onClick={async () => {
                     setMarkingContact(true);
@@ -372,7 +389,7 @@ export default function OnboardingDetail() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
+          <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
             <div className="flex items-center gap-2">
               <UserRound size={18} className="text-marathon-blue" />
               <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
@@ -388,9 +405,9 @@ export default function OnboardingDetail() {
                   placeholder="Agrega contexto interno para el equipo de onboarding..."
                   className="min-h-28 rounded-2xl border-marathon-blue/10 px-4 py-3"
                 />
-                <div className="flex justify-end">
+                <div className="grid sm:flex sm:justify-end">
                   <Button
-                    className="rounded-full bg-marathon-blue text-white hover:bg-marathon-blue/90"
+                    className="min-h-11 rounded-full bg-marathon-blue text-white hover:bg-marathon-blue/90"
                     disabled={postingNote || noteDraft.trim().length < 3}
                     onClick={async () => {
                       setPostingNote(true);
@@ -428,7 +445,9 @@ export default function OnboardingDetail() {
                     className="rounded-2xl border border-marathon-blue/10 bg-marathon-ice/45 px-4 py-4"
                   >
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                      <p className="text-sm font-bold text-marathon-blue">{note.author_email}</p>
+                      <p className="break-words text-sm font-bold text-marathon-blue">
+                        {note.author_email}
+                      </p>
                       <p className="text-xs font-semibold uppercase tracking-[0.1em] text-marathon-blue/55">
                         {formatDateTime(note.created_at)}
                       </p>
@@ -455,15 +474,20 @@ function DataSection({
   items: Array<[string, string]>;
 }) {
   return (
-    <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card">
-      <h3 className="text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">{title}</h3>
+    <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+      <h3 className="break-words text-xl font-black uppercase tracking-[0.02em] text-marathon-blue">
+        {title}
+      </h3>
       <div className="mt-5 grid gap-3 md:grid-cols-2">
         {items.map(([label, value]) => (
-          <div key={label} className="rounded-2xl border border-marathon-blue/10 bg-marathon-ice/35 px-4 py-3">
+          <div
+            key={label}
+            className="min-w-0 rounded-2xl border border-marathon-blue/10 bg-marathon-ice/35 px-4 py-3"
+          >
             <p className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/55">
               {label}
             </p>
-            <p className="mt-2 text-sm font-semibold leading-relaxed text-marathon-blue">
+            <p className="mt-2 break-words text-sm font-semibold leading-relaxed text-marathon-blue">
               {value}
             </p>
           </div>

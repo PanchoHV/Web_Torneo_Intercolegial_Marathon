@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export default function RegistrationHero() {
   return (
-    <section className="relative overflow-hidden rounded-[1.25rem] border border-white/60 bg-[linear-gradient(130deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_62%,rgba(226,27,45,0.88)_100%)] px-4 py-4 text-white shadow-[0_20px_52px_rgba(6,42,79,0.22)] sm:px-8 sm:py-7 lg:px-10">
+    <section className="relative min-w-0 overflow-hidden rounded-[1.25rem] border border-white/60 bg-[linear-gradient(130deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_62%,rgba(226,27,45,0.88)_100%)] px-4 py-4 text-white shadow-[0_20px_52px_rgba(6,42,79,0.22)] sm:px-8 sm:py-7 lg:px-10">
       <img
         src="/hero-background.webp"
         alt=""
@@ -14,7 +14,7 @@ export default function RegistrationHero() {
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-[length:54px_54px] opacity-20" />
       <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-marathon-red" />
 
-      <div className="relative grid gap-3 sm:gap-5 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+      <div className="relative grid min-w-0 gap-3 sm:gap-5 lg:grid-cols-[auto_1fr_auto] lg:items-center">
         <div className="flex items-center justify-between gap-4 lg:block">
           <Link to="/" className="inline-flex items-center gap-3">
             <img
@@ -32,11 +32,11 @@ export default function RegistrationHero() {
           </Link>
         </div>
 
-        <div className="max-w-3xl">
-          <span className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/35 bg-white/10 px-3 py-1.5 text-[0.62rem] font-bold tracking-[0.08em] sm:mb-3 sm:text-xs sm:tracking-[0.12em]">
+        <div className="min-w-0 max-w-3xl">
+          <span className="mb-2 inline-flex max-w-full items-center gap-2 rounded-full border border-white/35 bg-white/10 px-3 py-1.5 text-[0.62rem] font-bold tracking-[0.08em] sm:mb-3 sm:text-xs sm:tracking-[0.12em]">
             <Trophy size={14} /> CONVOCATORIA OFICIAL 2026
           </span>
-          <h1 className="max-w-3xl text-[clamp(1.55rem,6.8vw,3.7rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
+          <h1 className="max-w-3xl break-words text-[clamp(1.55rem,6.8vw,3.7rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
             Preinscripción de colegios
           </h1>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/90 sm:mt-3 sm:text-lg">

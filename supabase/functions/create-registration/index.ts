@@ -413,6 +413,9 @@ Deno.serve(async (req: Request) => {
           contactEmail: payload.contact_email,
           contactPhone: payload.contact_phone,
           applicantRole,
+          tournamentCategories: Array.isArray(payload.tournament_categories)
+            ? payload.tournament_categories
+            : [],
           createdAt: data.created_at,
           registrationCode: `TM-2026-${String(data.id).slice(0, 8).toUpperCase()}`,
           whatsappNumber: "+593995307806",

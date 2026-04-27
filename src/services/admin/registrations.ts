@@ -74,7 +74,7 @@ export async function fetchRegistrations(
   let query = client
     .from('school_registrations')
     .select(
-      'id, created_at, updated_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city, status, source, onboarding_status, assigned_to, last_contact_at, internal_priority, email_to_applicant_sent, email_to_executive_sent',
+      'id, created_at, updated_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city, tournament_categories, status, source, onboarding_status, assigned_to, last_contact_at, internal_priority, email_to_applicant_sent, email_to_executive_sent',
       { count: 'exact' }
     )
     .order('created_at', { ascending: false })
@@ -99,7 +99,7 @@ export async function fetchRegistrationById(id: string): Promise<AdminRegistrati
   const { data, error } = await client
     .from('school_registrations')
     .select(
-      'id, created_at, updated_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city, status, source, onboarding_status, assigned_to, last_contact_at, internal_priority, email_to_applicant_sent, email_to_executive_sent'
+      'id, created_at, updated_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city, tournament_categories, status, source, onboarding_status, assigned_to, last_contact_at, internal_priority, email_to_applicant_sent, email_to_executive_sent'
     )
     .eq('id', id)
     .single();

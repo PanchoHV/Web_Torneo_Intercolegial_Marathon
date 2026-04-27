@@ -56,6 +56,7 @@ export function buildApplicantConfirmationEmail(params: {
   contactEmail: string;
   contactPhone: string;
   applicantRole: string;
+  tournamentCategories?: string[];
   createdAt?: string;
   registrationCode?: string;
   whatsappNumber: string;
@@ -64,6 +65,12 @@ export function buildApplicantConfirmationEmail(params: {
   const contactName = escapeHtml(params.contactName);
   const contactEmail = escapeHtml(params.contactEmail);
   const contactPhone = escapeHtml(params.contactPhone);
+  const tournamentCategories = Array.isArray(params.tournamentCategories)
+    ? params.tournamentCategories.filter(Boolean)
+    : [];
+  const tournamentCategoriesText = escapeHtml(
+    tournamentCategories.length > 0 ? tournamentCategories.join(", ") : "No especificadas"
+  );
   const createdAt = escapeHtml(formatRegistrationDate(params.createdAt));
   const registrationCode = escapeHtml(params.registrationCode || "TM-2026-00001");
   const whatsappNumber = escapeHtml(params.whatsappNumber);
@@ -585,6 +592,13 @@ export function buildApplicantConfirmationEmail(params: {
                                 <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
                                   <div class="detail-label" style="color:#18243d; font-weight:800;">Teléfono registrado:</div>
                                   <div class="detail-value" style="color:#073b8c;">${contactPhone}</div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${summaryIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
+                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
+                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Categorías:</div>
+                                  <div class="detail-value" style="color:#073b8c;">${tournamentCategoriesText}</div>
                                 </td>
                               </tr>
                               <tr>

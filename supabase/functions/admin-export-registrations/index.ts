@@ -22,6 +22,7 @@ const exportColumns = [
   "contact_email",
   "contact_phone",
   "city",
+  "tournament_categories",
   "status",
   "onboarding_status",
   "internal_priority",

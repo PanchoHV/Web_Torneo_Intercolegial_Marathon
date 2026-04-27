@@ -85,7 +85,7 @@ Deno.serve(async (req: Request) => {
     const { data: registration, error: registrationError } = await admin
       .from("school_registrations")
       .select(
-        "id, created_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city"
+        "id, created_at, school_name, school_address, contact_name, applicant_role, applicant_role_other, school_type, contact_id_number, contact_email, contact_phone, city, tournament_categories"
       )
       .eq("id", registrationId)
       .single();
@@ -107,6 +107,9 @@ Deno.serve(async (req: Request) => {
       contactEmail: registration.contact_email,
       contactPhone: registration.contact_phone,
       applicantRole,
+      tournamentCategories: Array.isArray(registration.tournament_categories)
+        ? registration.tournament_categories
+        : [],
       createdAt: registration.created_at,
       registrationCode: `TM-2026-${String(registration.id).slice(0, 8).toUpperCase()}`,
       whatsappNumber: "+593995307806",
@@ -137,6 +140,11 @@ Deno.serve(async (req: Request) => {
           <li>Encargado: ${escapeHtml(registration.contact_name)}</li>
           <li>Cargo: ${escapeHtml(registration.applicant_role)}</li>
           <li>Tipo de colegio: ${escapeHtml(registration.school_type)}</li>
+          <li>Categorías: ${escapeHtml(
+            Array.isArray(registration.tournament_categories) && registration.tournament_categories.length > 0
+              ? registration.tournament_categories.join(", ")
+              : "No especificadas"
+          )}</li>
           <li>Cédula: ${escapeHtml(registration.contact_id_number)}</li>
           <li>Email: ${escapeHtml(registration.contact_email)}</li>
           <li>Teléfono: ${escapeHtml(registration.contact_phone)}</li>

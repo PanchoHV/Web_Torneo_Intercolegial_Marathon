@@ -126,11 +126,11 @@ export default function OnboardingDashboard() {
   return (
     <div className="grid gap-6">
       <section className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-        <div>
+        <div className="min-w-0">
           <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/65">
             Base interna
           </p>
-          <h2 className="mt-2 text-3xl font-black uppercase tracking-[0.02em] text-marathon-blue">
+          <h2 className="mt-2 break-words text-2xl font-black uppercase tracking-[0.02em] text-marathon-blue sm:text-3xl">
             Seguimiento de instituciones
           </h2>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-marathon-gray">
@@ -138,10 +138,10 @@ export default function OnboardingDashboard() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="grid gap-2 sm:flex sm:flex-wrap sm:gap-3">
           <Button
             variant="outline"
-            className="rounded-full border-marathon-blue/15 text-marathon-blue"
+            className="min-h-11 rounded-full border-marathon-blue/15 text-marathon-blue"
             onClick={() => void loadRegistrations(true)}
             disabled={refreshing}
           >
@@ -150,7 +150,7 @@ export default function OnboardingDashboard() {
           </Button>
           {canExport && (
             <Button
-              className="rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
+              className="min-h-11 rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
               onClick={async () => {
                 const purpose = window.prompt('Motivo de la exportación (opcional):', '') ?? '';
                 setExporting(true);
@@ -189,7 +189,7 @@ export default function OnboardingDashboard() {
         ))}
       </section>
 
-      <section className="grid gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+      <section className="grid gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
         <div className="grid gap-4 xl:grid-cols-[1.3fr_repeat(5,minmax(0,1fr))]">
           <label className="grid gap-2">
             <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
@@ -271,26 +271,26 @@ export default function OnboardingDashboard() {
         )}
       </section>
 
-      <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-4 shadow-card sm:p-5">
+      <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
         <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-semibold text-marathon-gray">
             Mostrando {showingFrom}-{showingTo} de {count} registros
           </p>
-          <div className="flex items-center gap-2">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:flex">
             <Button
               variant="outline"
-              className="rounded-full"
+              className="min-h-11 rounded-full"
               onClick={() => setPage((current) => Math.max(1, current - 1))}
               disabled={page === 1}
             >
               Anterior
             </Button>
-            <span className="text-sm font-semibold text-marathon-blue">
+            <span className="text-center text-sm font-semibold text-marathon-blue">
               Página {page} de {totalPages}
             </span>
             <Button
               variant="outline"
-              className="rounded-full"
+              className="min-h-11 rounded-full"
               onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
               disabled={page >= totalPages}
             >
@@ -299,77 +299,184 @@ export default function OnboardingDashboard() {
           </div>
         </div>
 
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Institución</TableHead>
-              <TableHead>Ciudad</TableHead>
-              <TableHead>Responsable</TableHead>
-              <TableHead>Cargo</TableHead>
-              <TableHead>Correo</TableHead>
-              <TableHead>Teléfono</TableHead>
-              <TableHead>Registro</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Onboarding</TableHead>
-              <TableHead>Correos</TableHead>
-              <TableHead className="text-right">Acciones</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {loading ? (
-              <TableRow>
-                <TableCell colSpan={11} className="py-10 text-center text-marathon-gray">
-                  Cargando base de inscripciones...
-                </TableCell>
-              </TableRow>
-            ) : registrations.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={11} className="py-10 text-center text-marathon-gray">
-                  No se encontraron registros con esos filtros.
-                </TableCell>
-              </TableRow>
-            ) : (
-              registrations.map((registration) => (
-                <TableRow key={registration.id}>
-                  <TableCell className="max-w-[220px] whitespace-normal">
-                    <div>
-                      <p className="font-bold text-marathon-blue">{registration.school_name}</p>
-                      <p className="mt-1 text-xs text-marathon-gray">{registration.school_type}</p>
-                    </div>
-                  </TableCell>
-                  <TableCell>{registration.city}</TableCell>
-                  <TableCell className="max-w-[180px] whitespace-normal">
+        <div className="grid gap-3 lg:hidden">
+          {loading ? (
+            <div className="rounded-2xl border border-marathon-blue/10 bg-marathon-ice/45 px-4 py-8 text-center text-sm font-semibold text-marathon-gray">
+              Cargando base de inscripciones...
+            </div>
+          ) : registrations.length === 0 ? (
+            <div className="rounded-2xl border border-marathon-blue/10 bg-marathon-ice/45 px-4 py-8 text-center text-sm font-semibold text-marathon-gray">
+              No se encontraron registros con esos filtros.
+            </div>
+          ) : (
+            registrations.map((registration) => (
+              <article
+                key={registration.id}
+                className="grid gap-4 rounded-2xl border border-marathon-blue/10 bg-marathon-ice/35 p-4"
+              >
+                <div className="min-w-0">
+                  <p className="break-words font-bold text-marathon-blue">
+                    {registration.school_name}
+                  </p>
+                  <p className="mt-1 text-sm text-marathon-gray">
+                    {registration.city} · {registration.school_type}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {registration.tournament_categories?.length ? (
+                    registration.tournament_categories.map((category) => (
+                      <span
+                        key={category}
+                        className="rounded-full bg-white px-2.5 py-1 text-xs font-bold text-marathon-blue"
+                      >
+                        {category}
+                      </span>
+                    ))
+                  ) : (
+                    <span className="text-sm font-semibold text-marathon-gray">
+                      Sin categorías
+                    </span>
+                  )}
+                </div>
+
+                <div className="grid gap-2 text-sm text-marathon-gray">
+                  <p>
+                    <strong className="text-marathon-blue">Responsable:</strong>{' '}
                     {registration.contact_name}
-                  </TableCell>
-                  <TableCell>{registration.applicant_role}</TableCell>
-                  <TableCell className="max-w-[220px] whitespace-normal text-xs">
+                  </p>
+                  <p className="break-words">
+                    <strong className="text-marathon-blue">Correo:</strong>{' '}
                     {registration.contact_email}
-                  </TableCell>
-                  <TableCell>{registration.contact_phone}</TableCell>
-                  <TableCell>{formatDateTime(registration.created_at)}</TableCell>
-                  <TableCell>{registration.status}</TableCell>
-                  <TableCell>
+                  </p>
+                  <p>
+                    <strong className="text-marathon-blue">Teléfono:</strong>{' '}
+                    {registration.contact_phone}
+                  </p>
+                  <p>
+                    <strong className="text-marathon-blue">Registro:</strong>{' '}
+                    {formatDateTime(registration.created_at)}
+                  </p>
+                </div>
+
+                <div className="grid gap-3 border-t border-marathon-blue/10 pt-3">
+                  <div className="flex flex-wrap items-center gap-2">
                     <StatusBadge status={registration.onboarding_status} />
-                  </TableCell>
-                  <TableCell className="max-w-[160px] whitespace-normal text-xs">
-                    <div className="flex flex-col gap-1">
-                      <span>Participante: {registration.email_to_applicant_sent ? 'Sí' : 'No'}</span>
-                      <span>Ejecutivo: {registration.email_to_executive_sent ? 'Sí' : 'No'}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell className="text-right">
-                    <Button asChild variant="outline" className="rounded-full">
-                      <Link to={`/admin/onboarding/${registration.id}`}>
-                        <Eye size={16} />
-                        Ver detalle
-                      </Link>
-                    </Button>
+                    <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-marathon-blue/70">
+                      Participante: {registration.email_to_applicant_sent ? 'Sí' : 'No'}
+                    </span>
+                    <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-marathon-blue/70">
+                      Ejecutivo: {registration.email_to_executive_sent ? 'Sí' : 'No'}
+                    </span>
+                  </div>
+                  <Button asChild variant="outline" className="min-h-11 rounded-full">
+                    <Link to={`/admin/onboarding/${registration.id}`}>
+                      <Eye size={16} />
+                      Ver detalle
+                    </Link>
+                  </Button>
+                </div>
+              </article>
+            ))
+          )}
+        </div>
+
+        <div className="hidden lg:block">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Institución</TableHead>
+                <TableHead>Ciudad</TableHead>
+                <TableHead>Categorías</TableHead>
+                <TableHead>Responsable</TableHead>
+                <TableHead>Cargo</TableHead>
+                <TableHead>Correo</TableHead>
+                <TableHead>Teléfono</TableHead>
+                <TableHead>Registro</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Onboarding</TableHead>
+                <TableHead>Correos</TableHead>
+                <TableHead className="text-right">Acciones</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {loading ? (
+                <TableRow>
+                  <TableCell colSpan={12} className="py-10 text-center text-marathon-gray">
+                    Cargando base de inscripciones...
                   </TableCell>
                 </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
+              ) : registrations.length === 0 ? (
+                <TableRow>
+                  <TableCell colSpan={12} className="py-10 text-center text-marathon-gray">
+                    No se encontraron registros con esos filtros.
+                  </TableCell>
+                </TableRow>
+              ) : (
+                registrations.map((registration) => (
+                  <TableRow key={registration.id}>
+                    <TableCell className="max-w-[220px] whitespace-normal">
+                      <div>
+                        <p className="font-bold text-marathon-blue">{registration.school_name}</p>
+                        <p className="mt-1 text-xs text-marathon-gray">
+                          {registration.school_type}
+                        </p>
+                      </div>
+                    </TableCell>
+                    <TableCell>{registration.city}</TableCell>
+                    <TableCell className="max-w-[220px] whitespace-normal text-xs">
+                      {registration.tournament_categories?.length ? (
+                        <div className="flex flex-wrap gap-1.5">
+                          {registration.tournament_categories.map((category) => (
+                            <span
+                              key={category}
+                              className="rounded-full bg-marathon-blue/8 px-2 py-1 font-bold text-marathon-blue"
+                            >
+                              {category}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span className="text-marathon-gray">Sin categorías</span>
+                      )}
+                    </TableCell>
+                    <TableCell className="max-w-[180px] whitespace-normal">
+                      {registration.contact_name}
+                    </TableCell>
+                    <TableCell>{registration.applicant_role}</TableCell>
+                    <TableCell className="max-w-[220px] whitespace-normal text-xs">
+                      {registration.contact_email}
+                    </TableCell>
+                    <TableCell>{registration.contact_phone}</TableCell>
+                    <TableCell>{formatDateTime(registration.created_at)}</TableCell>
+                    <TableCell>{registration.status}</TableCell>
+                    <TableCell>
+                      <StatusBadge status={registration.onboarding_status} />
+                    </TableCell>
+                    <TableCell className="max-w-[160px] whitespace-normal text-xs">
+                      <div className="flex flex-col gap-1">
+                        <span>
+                          Participante: {registration.email_to_applicant_sent ? 'Sí' : 'No'}
+                        </span>
+                        <span>
+                          Ejecutivo: {registration.email_to_executive_sent ? 'Sí' : 'No'}
+                        </span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      <Button asChild variant="outline" className="min-h-11 rounded-full">
+                        <Link to={`/admin/onboarding/${registration.id}`}>
+                          <Eye size={16} />
+                          Ver detalle
+                        </Link>
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))
+              )}
+            </TableBody>
+          </Table>
+        </div>
       </section>
     </div>
   );
@@ -395,7 +502,10 @@ function FilterSelect({
       <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
         {label}
       </span>
-      <Select value={value || '__all__'} onValueChange={(next) => onChange(next === '__all__' ? '' : next)}>
+      <Select
+        value={value || '__all__'}
+        onValueChange={(next) => onChange(next === '__all__' ? '' : next)}
+      >
         <SelectTrigger className="h-11 w-full rounded-2xl border-marathon-blue/10 bg-white">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>

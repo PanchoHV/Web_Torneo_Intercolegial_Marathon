@@ -27,26 +27,26 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-marathon-cream px-4 py-8 sm:px-6">
+    <div className="min-h-screen bg-marathon-cream px-3 py-6 sm:px-6 sm:py-8">
       <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-        <section className="relative overflow-hidden rounded-[1.5rem] border border-white/60 bg-[linear-gradient(135deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-6 text-white shadow-[0_24px_60px_rgba(6,42,79,0.28)] sm:p-8">
+        <section className="relative min-w-0 overflow-hidden rounded-[1.5rem] border border-white/60 bg-[linear-gradient(135deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-5 text-white shadow-[0_24px_60px_rgba(6,42,79,0.28)] sm:p-8">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-[length:46px_46px] opacity-20" />
           <div className="relative">
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/70">
               Acceso interno
             </p>
-            <h1 className="mt-3 text-[clamp(2rem,4vw,3.2rem)] font-black uppercase leading-[1.02] tracking-[0.02em]">
+            <h1 className="mt-3 break-words text-[clamp(1.75rem,9vw,3.2rem)] font-black uppercase leading-[1.02] tracking-[0.02em]">
               CRM de onboarding
             </h1>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/82 sm:text-base">
               Panel privado para seguimiento de instituciones, notas internas, auditoría y exportaciones controladas.
             </p>
 
-            <div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4">
-              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/14">
+            <div className="mt-8 flex min-w-0 items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-4">
+              <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/14">
                 <ShieldCheck size={22} />
               </div>
-              <div>
+              <div className="min-w-0">
                 <p className="text-sm font-bold uppercase tracking-[0.12em]">Acceso seguro</p>
                 <p className="mt-1 text-sm text-white/78">
                   Solo usuarios internos con rol activo pueden ingresar.
@@ -56,12 +56,12 @@ export default function AdminLogin() {
           </div>
         </section>
 
-        <section className="rounded-[1.5rem] border border-marathon-blue/10 bg-white p-6 shadow-card sm:p-8">
+        <section className="min-w-0 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-5 shadow-card sm:p-8">
           <div className="max-w-md">
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-marathon-blue/60">
               Iniciar sesión
             </p>
-            <h2 className="mt-3 text-3xl font-black uppercase tracking-[0.02em] text-marathon-blue">
+            <h2 className="mt-3 break-words text-2xl font-black uppercase tracking-[0.02em] text-marathon-blue sm:text-3xl">
               Equipo onboarding
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-marathon-gray">
@@ -141,7 +141,10 @@ export default function AdminLogin() {
               {submitting ? 'Ingresando...' : 'Entrar al panel'}
             </Button>
 
-            <Link to="/" className="text-sm font-semibold text-marathon-blue hover:text-marathon-red">
+            <Link
+              to="/"
+              className="inline-flex min-h-11 items-center text-sm font-semibold text-marathon-blue hover:text-marathon-red"
+            >
               Volver al sitio público
             </Link>
           </form>

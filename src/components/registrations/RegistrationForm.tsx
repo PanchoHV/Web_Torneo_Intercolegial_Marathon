@@ -204,14 +204,14 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
   return (
     <section
       id="formulario-inscripcion"
-      className="overflow-hidden rounded-[1.25rem] border border-marathon-blue/10 bg-white shadow-card sm:rounded-[1.5rem]"
+      className="min-w-0 overflow-hidden rounded-[1.25rem] border border-marathon-blue/10 bg-white shadow-card sm:rounded-[1.5rem]"
     >
-      <div className="grid lg:grid-cols-[0.62fr_1.38fr]">
-        <aside className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-4 text-white sm:p-7 lg:p-8">
+      <div className="grid min-w-0 lg:grid-cols-[0.62fr_1.38fr]">
+        <aside className="relative min-w-0 overflow-hidden bg-[linear-gradient(180deg,rgba(6,42,79,0.98)_0%,rgba(0,80,164,0.94)_100%)] p-4 text-white sm:p-7 lg:p-8">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.08)_50%,rgba(255,255,255,0.08)_75%,transparent_75%,transparent)] bg-[length:46px_46px] opacity-20" />
           <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-marathon-red" />
           <div className="relative">
-            <h2 className="text-[clamp(1.35rem,3vw,2.35rem)] font-black uppercase leading-tight tracking-[0.02em]">
+            <h2 className="max-w-full break-words text-[1.18rem] font-black uppercase leading-tight tracking-[0.01em] sm:text-[clamp(1.35rem,3vw,2.35rem)] sm:tracking-[0.02em]">
               Preinscribe a tu colegio
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-base">
@@ -238,7 +238,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         </aside>
 
         <form
-          className="grid gap-5 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-4 sm:gap-6 sm:p-7 lg:p-8"
+          className="grid min-w-0 gap-4 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-2 sm:gap-6 sm:p-7 lg:p-8"
           onSubmit={onSubmit}
           noValidate
         >
@@ -252,7 +252,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           />
           <input type="hidden" {...register('turnstileToken')} />
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid min-w-0 gap-4 sm:gap-5 md:grid-cols-2">
             <Field
               label="Nombre completo del Colegio"
               error={errors.institutionName?.message}
@@ -402,14 +402,14 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </Field>
           </div>
 
-          <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
+          <div className="rounded-2xl border border-marathon-blue/10 bg-white p-3 shadow-[0_10px_28px_rgba(6,42,79,0.05)] sm:p-4">
             <label className="flex items-start gap-3">
               <input
                 type="checkbox"
-                className="mt-1 h-4 w-4 accent-marathon-red"
+                className="mt-1 h-4 w-4 shrink-0 accent-marathon-red"
                 {...register('termsAccepted')}
               />
-              <span className="text-sm leading-relaxed text-marathon-gray">
+              <span className="min-w-0 flex-1 break-words text-sm leading-relaxed text-marathon-gray">
                 Acepto que Marathon utilice estos datos para gestionar la preinscripción y el
                 contacto oficial del torneo.
               </span>
@@ -422,19 +422,19 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           </div>
 
           {hasTurnstile && turnstileSiteKey ? (
-            <div className="rounded-2xl border border-marathon-blue/10 bg-white p-4 shadow-[0_10px_28px_rgba(6,42,79,0.05)]">
+            <div className="min-w-0 rounded-2xl border border-marathon-blue/10 bg-white p-2 shadow-[0_10px_28px_rgba(6,42,79,0.05)] sm:p-4">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-marathon-blue">
+                <div className="min-w-0">
+                  <p className="break-words text-sm font-semibold text-marathon-blue">
                     Verificación de envío seguro.
                   </p>
-                  <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+                  <p className="mt-1 break-words text-sm leading-relaxed text-marathon-gray">
                     Protegido por Cloudflare para evitar spam y proteger tu envío.
                   </p>
                 </div>
 
                 <div
-                  className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] ${
+                  className={`inline-flex max-w-full items-center gap-2 self-start rounded-full px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] sm:tracking-[0.12em] ${
                     turnstileState === 'verified'
                       ? 'bg-emerald-50 text-emerald-700'
                       : turnstileState === 'error'
@@ -443,38 +443,40 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                   }`}
                 >
                   {turnstileState === 'verified' ? (
-                    <CheckCircle2 size={14} />
+                    <CheckCircle2 size={14} className="shrink-0" />
                   ) : (
-                    <ShieldCheck size={14} />
+                    <ShieldCheck size={14} className="shrink-0" />
                   )}
-                  {turnstileState === 'loading'
-                    ? 'Protección cargando'
-                    : turnstileState === 'verified'
-                    ? 'Formulario protegido'
-                    : turnstileState === 'error'
-                    ? 'Verificación pendiente'
-                    : 'Protección activa'}
+                  <span className="min-w-0 truncate">
+                    {turnstileState === 'loading'
+                      ? 'Protección cargando'
+                      : turnstileState === 'verified'
+                      ? 'Formulario protegido'
+                      : turnstileState === 'error'
+                      ? 'Verificación pendiente'
+                      : 'Protección activa'}
+                  </span>
                 </div>
               </div>
 
-              <div className="mt-4 rounded-2xl border border-marathon-blue/10 bg-[linear-gradient(180deg,#FFFFFF_0%,#F6FAFF_100%)] p-4">
+              <div className="mt-4 rounded-2xl border border-marathon-blue/10 bg-[linear-gradient(180deg,#FFFFFF_0%,#F6FAFF_100%)] p-3 sm:p-4">
                 <div className="flex items-center gap-3">
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-marathon-blue text-white">
+                  <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-marathon-blue text-white">
                     {turnstileState === 'verified' ? (
                       <CheckCircle2 size={18} />
                     ) : (
                       <ShieldCheck size={18} />
                     )}
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-marathon-blue">
+                  <div className="min-w-0 flex-1">
+                    <p className="break-words text-sm font-semibold text-marathon-blue">
                       {turnstileState === 'verified'
                         ? 'Verificación completada'
                         : turnstileState === 'error'
                         ? 'Completa la verificación para continuar'
                         : 'Protección anti-spam habilitada'}
                     </p>
-                    <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+                    <p className="mt-1 break-words text-sm leading-relaxed text-marathon-gray">
                       {turnstileState === 'verified'
                         ? 'La validación pasó correctamente y el envío puede continuar.'
                         : turnstileState === 'error'
@@ -490,7 +492,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 </div>
               </div>
 
-              <div className="mt-4">
+              <div className="-mx-2 mt-4 max-w-none overflow-x-auto sm:mx-0 sm:max-w-full">
                 <TurnstileChallenge
                   ref={turnstileRef}
                   siteKey={turnstileSiteKey}
@@ -510,8 +512,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           )}
 
           <div className="flex flex-col gap-4 border-t border-marathon-blue/10 pt-5 sm:flex-row sm:items-center sm:justify-between sm:pt-6">
-            <p className="flex items-center gap-2 text-sm font-medium text-marathon-gray">
-              <LockKeyhole size={16} className="text-marathon-blue" />
+            <p className="flex min-w-0 items-center gap-2 text-sm font-medium text-marathon-gray">
+              <LockKeyhole size={16} className="shrink-0 text-marathon-blue" />
               Registro seguro para contacto oficial.
             </p>
             <Button
@@ -544,7 +546,7 @@ type FieldProps = {
 
 function Field({ label, error, children, required, className = '' }: FieldProps) {
   return (
-    <div className={`space-y-2 ${className}`}>
+    <div className={`min-w-0 space-y-2 ${className}`}>
       <label className="text-sm font-bold text-marathon-blue">
         {label}
         {required && <span className="ml-1 text-marathon-red">*</span>}
@@ -577,10 +579,10 @@ function SelectField({
 
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="h-[3.25rem] w-full rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] focus-visible:ring-marathon-blue/25">
+      <SelectTrigger className="h-[3.25rem] w-full min-w-0 rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] focus-visible:ring-marathon-blue/25 [&>span]:min-w-0 [&>span]:truncate">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent position="popper" className="max-h-64 rounded-2xl border-marathon-blue/10">
+      <SelectContent position="popper" className="max-h-64 max-w-[calc(100vw-1rem)] rounded-2xl border-marathon-blue/10">
         {groupedOptions
           ? groupedOptions.map((group) => (
               <div key={group.region} className="px-1 py-1.5">
@@ -640,11 +642,11 @@ function CategoryMultiSelect({
         <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-marathon-blue text-white shadow-[0_10px_24px_rgba(0,80,164,0.22)]">
           <CirclePlay size={18} />
         </div>
-        <div className="min-w-0">
-          <p className="text-sm font-semibold text-marathon-blue">
+        <div className="min-w-0 flex-1">
+          <p className="break-words text-sm font-semibold text-marathon-blue">
             Selecciona una o varias categorías
           </p>
-          <p className="mt-1 text-sm leading-relaxed text-marathon-gray">
+          <p className="mt-1 break-words text-sm leading-relaxed text-marathon-gray">
             Marca todas las categorías en las que tu colegio desea participar.
           </p>
         </div>
@@ -666,7 +668,7 @@ function CategoryMultiSelect({
                   : 'border-marathon-blue/10 bg-white hover:-translate-y-0.5 hover:border-marathon-blue/25 hover:shadow-[0_14px_28px_rgba(6,42,79,0.08)]'
               }`}
             >
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-sm font-black uppercase tracking-[0.08em] text-marathon-blue/45">
                   Categoria
                 </div>
@@ -694,10 +696,10 @@ function CategoryMultiSelect({
           value.map((item) => (
             <span
               key={item}
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-emerald-700"
+              className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.08em] text-emerald-700"
             >
               <CheckCircle2 size={13} />
-              {item}
+              <span className="min-w-0 truncate">{item}</span>
             </span>
           ))
         ) : (

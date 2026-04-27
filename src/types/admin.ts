@@ -33,6 +33,7 @@ export interface AdminRegistration {
   contact_email: string;
   contact_phone: string;
   city: string;
+  tournament_categories: string[];
   status: string;
   source: string | null;
   onboarding_status: OnboardingStatus;
