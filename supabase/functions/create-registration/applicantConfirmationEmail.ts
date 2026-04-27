@@ -1,22 +1,6 @@
 const mailingAssetsBaseUrl =
   "https://cdn.jsdelivr.net/gh/PanchoHV/Web_Torneo_Intercolegial_Marathon@5e77cd2/public/images/mailing";
 const logoUrl = `${mailingAssetsBaseUrl}/logo.png`;
-const tiktokIconUrl = `${mailingAssetsBaseUrl}/tiktok.png`;
-const instagramIconUrl = `${mailingAssetsBaseUrl}/instagram.png`;
-const facebookIconUrl = `${mailingAssetsBaseUrl}/facebook.png`;
-const heroMailingUrl =
-  "https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Hero%20Mailing.webp";
-const heroMobileUrl = encodeURI(
-  "https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Deseño Mobile 1098 x 1920 (3).webp"
-);
-const summaryIconUrl = `${mailingAssetsBaseUrl}/summary.png`;
-const nextStepsIconUrl = `${mailingAssetsBaseUrl}/next-steps.png`;
-const institutionIconUrl = `${mailingAssetsBaseUrl}/institution.png`;
-const responsibleIconUrl = `${mailingAssetsBaseUrl}/responsible.png`;
-const emailIconUrl = `${mailingAssetsBaseUrl}/mail.png`;
-const phoneIconUrl = `${mailingAssetsBaseUrl}/phone.png`;
-const dateIconUrl = `${mailingAssetsBaseUrl}/date.png`;
-const codeIconUrl = `${mailingAssetsBaseUrl}/code.png`;
 const whatsappIconUrl = `${mailingAssetsBaseUrl}/whatsapp.png`;
 
 function escapeHtml(value: unknown) {
@@ -50,6 +34,45 @@ function buildWhatsAppLink(phone: string) {
   )}`;
 }
 
+function buildDetailRow(label: string, value: string) {
+  return `
+    <tr>
+      <td style="padding:12px 0; border-bottom:1px solid #e4edf8;">
+        <div style="font-size:12px; line-height:16px; font-weight:800; letter-spacing:0.8px; text-transform:uppercase; color:#6b7c95;">${escapeHtml(label)}</div>
+        <div style="padding-top:4px; font-size:16px; line-height:23px; font-weight:700; color:#073b8c; word-break:break-word;">${value}</div>
+      </td>
+    </tr>
+  `;
+}
+
+function buildCategoryBadges(categories: string[]) {
+  if (categories.length === 0) {
+    return `
+      <tr>
+        <td style="padding:0 6px 8px 0;">
+          <span style="display:inline-block; border-radius:999px; background:#eef4fb; color:#5d6f86; font-size:13px; line-height:17px; font-weight:800; padding:8px 12px;">
+            No especificadas
+          </span>
+        </td>
+      </tr>
+    `;
+  }
+
+  return categories
+    .map(
+      (category) => `
+        <tr>
+          <td style="padding:0 6px 8px 0;">
+            <span style="display:inline-block; border-radius:999px; background:#eaf2ff; border:1px solid #c9dcf8; color:#073b8c; font-size:13px; line-height:17px; font-weight:900; padding:8px 12px;">
+              ${escapeHtml(category)}
+            </span>
+          </td>
+        </tr>
+      `
+    )
+    .join("");
+}
+
 export function buildApplicantConfirmationEmail(params: {
   schoolName: string;
   contactName: string;
@@ -65,12 +88,10 @@ export function buildApplicantConfirmationEmail(params: {
   const contactName = escapeHtml(params.contactName);
   const contactEmail = escapeHtml(params.contactEmail);
   const contactPhone = escapeHtml(params.contactPhone);
+  const applicantRole = escapeHtml(params.applicantRole);
   const tournamentCategories = Array.isArray(params.tournamentCategories)
     ? params.tournamentCategories.filter(Boolean)
     : [];
-  const tournamentCategoriesText = escapeHtml(
-    tournamentCategories.length > 0 ? tournamentCategories.join(", ") : "No especificadas"
-  );
   const createdAt = escapeHtml(formatRegistrationDate(params.createdAt));
   const registrationCode = escapeHtml(params.registrationCode || "TM-2026-00001");
   const whatsappNumber = escapeHtml(params.whatsappNumber);
@@ -83,359 +104,54 @@ export function buildApplicantConfirmationEmail(params: {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="x-apple-disable-message-reformatting" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
     <title>${subject}</title>
     <style>
-      .container {
-        width: 100%;
-        max-width: 1180px;
-      }
-      img {
-        max-width: 100%;
-      }
-      .mobile-footer-social-row {
-        display: none;
-        max-height: 0;
-        overflow: hidden;
-        mso-hide: all;
-      }
-      @media only screen and (max-width: 720px) {
-        .container {
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-        .mobile-padding {
-          padding-left: 18px !important;
-          padding-right: 18px !important;
-        }
-        .mobile-stack,
-        .mobile-stack td {
-          display: block !important;
-          width: 100% !important;
-        }
-        .mobile-center {
-          text-align: center !important;
-        }
-        .mobile-hide {
-          display: none !important;
-        }
-        .desktop-social-cell {
-          display: none !important;
-          width: 0 !important;
-          max-height: 0 !important;
-          overflow: hidden !important;
-        }
-        .top-strip {
-          padding-top: 12px !important;
-          padding-bottom: 12px !important;
-          text-align: center !important;
-          font-size: 12px !important;
-          line-height: 17px !important;
-        }
-        .header-wrap {
-          padding-top: 18px !important;
-          padding-bottom: 18px !important;
-          border-bottom-width: 3px !important;
-        }
-        .brand-table {
-          margin: 0 auto !important;
-        }
-        .brand-row,
-        .brand-row td {
-          display: block !important;
-          width: 100% !important;
-        }
-        .brand-logo-cell {
-          width: 100% !important;
-          padding-right: 0 !important;
-          padding-bottom: 10px !important;
-          text-align: center !important;
-        }
-        .brand-logo {
-          width: 82px !important;
-          max-width: 82px !important;
-          margin: 0 auto !important;
-        }
-        .brand-title {
-          font-size: 15px !important;
-          line-height: 19px !important;
-          letter-spacing: 1px !important;
-          text-align: center !important;
-          white-space: nowrap !important;
-        }
-        .brand-subtitle {
-          font-size: 19px !important;
-          line-height: 23px !important;
-          letter-spacing: 0.5px !important;
-          text-align: center !important;
-          white-space: nowrap !important;
-        }
-        .social-cell {
-          padding-top: 18px !important;
-          text-align: center !important;
-        }
-        .social-table {
-          margin: 0 auto !important;
-          float: none !important;
-        }
-        .social-label {
-          display: block !important;
-          padding: 0 0 10px 0 !important;
-          text-align: center !important;
-          font-size: 12px !important;
-          line-height: 16px !important;
-        }
-        .social-icon {
-          width: 38px !important;
-        }
-        .hero-cell {
-          background-image: url('${heroMobileUrl}') !important;
-          background-size: cover !important;
-          background-position: center top !important;
-        }
-        .hero-copy {
-          padding: 30px 20px 132px 20px !important;
-        }
-        .hero-inner {
-          width: 100% !important;
-        }
-        .hero-check {
-          width: 52px !important;
-          height: 52px !important;
-          line-height: 52px !important;
-          font-size: 30px !important;
-          border-width: 3px !important;
-        }
-        .hero-title {
-          font-size: 28px !important;
-          line-height: 32px !important;
-          padding-bottom: 16px !important;
-        }
-        .hero-divider {
-          width: 74px !important;
-          height: 4px !important;
-          line-height: 4px !important;
-        }
-        .hero-text {
-          font-size: 13px !important;
-          line-height: 19px !important;
-          padding-top: 13px !important;
-          max-width: 245px !important;
-        }
-        .summary-card {
-          margin-top: 0 !important;
-        }
-        .summary-shell {
-          padding-top: 18px !important;
-        }
-        .summary-column {
-          border-right: 0 !important;
-          border-bottom: 1px solid #dbe5f1 !important;
-          padding: 24px 18px !important;
-        }
-        .steps-column {
-          padding: 24px 18px !important;
-        }
-        .section-icon {
-          width: 44px !important;
-        }
-        .section-icon-cell {
-          width: 54px !important;
-        }
-        .section-title {
-          font-size: 17px !important;
-          line-height: 21px !important;
-        }
-        .section-subtitle {
-          font-size: 14px !important;
-          line-height: 20px !important;
-        }
-        .details-table {
-          font-size: 13px !important;
-          line-height: 18px !important;
-          margin-top: 20px !important;
-        }
-        .detail-icon-cell {
-          width: 24px !important;
-          padding-top: 8px !important;
-          padding-bottom: 8px !important;
-          vertical-align: top !important;
-        }
-        .detail-icon {
-          width: 15px !important;
-        }
-        .detail-content-cell {
-          padding-top: 6px !important;
-          padding-bottom: 6px !important;
-        }
-        .detail-label {
-          display: block !important;
-          width: auto !important;
-          padding: 0 !important;
-          white-space: normal !important;
-          font-size: 13px !important;
-          line-height: 17px !important;
-        }
-        .detail-value {
-          display: block !important;
-          width: auto !important;
-          padding-top: 2px !important;
-          padding-bottom: 0 !important;
-          word-break: break-word !important;
-        }
-        .detail-value {
-          color: #073b8c !important;
-        }
-        .code-badge {
-          font-size: 12px !important;
-          line-height: 16px !important;
-          padding: 5px 7px !important;
-        }
-        .step-number-cell {
-          width: 36px !important;
-        }
-        .step-title {
-          font-size: 15px !important;
-          line-height: 20px !important;
-        }
-        .step-copy {
-          font-size: 14px !important;
-          line-height: 20px !important;
-        }
-        .whatsapp-card,
-        .info-card,
-        .cta-card {
-          border-radius: 8px !important;
-        }
-        .whatsapp-icon-cell {
-          padding: 22px 18px 0 18px !important;
-          text-align: center !important;
-        }
-        .whatsapp-icon {
-          width: 62px !important;
-          margin: 0 auto !important;
-        }
-        .whatsapp-copy-cell {
-          padding: 12px 18px 0 18px !important;
-          text-align: center !important;
-          box-sizing: border-box !important;
-        }
-        .whatsapp-action-cell {
-          padding: 14px 18px 18px 18px !important;
-          border-left: 0 !important;
-          text-align: center !important;
-          box-sizing: border-box !important;
-        }
-        .whatsapp-number {
-          font-size: 18px !important;
-          line-height: 24px !important;
-          overflow-wrap: anywhere !important;
-          word-break: break-word !important;
-        }
-        .button-link {
-          display: block !important;
-          width: auto !important;
-          max-width: 240px !important;
-          margin-left: auto !important;
-          margin-right: auto !important;
-          text-align: center !important;
-          box-sizing: border-box !important;
-          padding-left: 14px !important;
-          padding-right: 14px !important;
-        }
-        .info-icon-cell {
-          width: 48px !important;
-          padding-left: 18px !important;
-        }
-        .info-copy {
-          padding-right: 18px !important;
-          font-size: 14px !important;
-          line-height: 20px !important;
-        }
-        .cta-icon-cell {
-          padding: 18px 14px 0 14px !important;
-          text-align: center !important;
-        }
-        .cta-icon {
-          margin: 0 auto !important;
-        }
-        .cta-copy {
-          padding: 12px 20px 0 20px !important;
-          text-align: center !important;
-          font-size: 15px !important;
-          line-height: 22px !important;
-          box-sizing: border-box !important;
-        }
-        .cta-button-cell {
-          border-left: 0 !important;
-          padding: 16px 20px 20px 20px !important;
-          box-sizing: border-box !important;
-        }
-        .footer-logo-cell {
-          padding-right: 0 !important;
-          padding-bottom: 22px !important;
-        }
-        .footer-logo-table {
-          margin: 0 auto !important;
-        }
-        .footer-brand-row,
-        .footer-brand-row td {
-          display: block !important;
-          width: 100% !important;
-          text-align: center !important;
-        }
-        .footer-brand-logo-cell {
-          padding-right: 0 !important;
-          padding-bottom: 10px !important;
-        }
-        .footer-brand-logo {
-          margin: 0 auto !important;
-        }
-        .footer-links-cell {
-          padding-left: 0 !important;
-          border-left: 0 !important;
-          text-align: center !important;
-        }
-        .mobile-footer-social-row {
-          display: table-row !important;
-          max-height: none !important;
-          overflow: visible !important;
-        }
-        .mobile-footer-social-cell {
-          display: table-cell !important;
-          padding: 22px 0 0 0 !important;
-          text-align: center !important;
-        }
-        .footer-social-table {
-          margin: 0 auto !important;
-        }
-        .footer-social-icon {
-          width: 38px !important;
-        }
-        .footer-bottom {
-          font-size: 13px !important;
-          line-height: 20px !important;
-        }
+      body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+      img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
+      table { border-collapse: collapse !important; }
+      body { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+      @media screen and (max-width: 680px) {
+        .container { width: 100% !important; max-width: 100% !important; }
+        .outer-pad { padding: 12px !important; }
+        .section-pad { padding: 22px 18px !important; }
+        .hero-title { font-size: 28px !important; line-height: 32px !important; }
+        .hero-copy { font-size: 15px !important; line-height: 22px !important; }
+        .two-col, .two-col td { display: block !important; width: 100% !important; }
+        .mobile-gap { padding-top: 14px !important; }
+        .button-link { display: block !important; width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
       }
     </style>
   </head>
-  <body style="margin:0; padding:0; background:#f3f6fb; font-family:Arial, Helvetica, sans-serif; color:#18243d;">
+  <body style="margin:0; padding:0; background:#eef3f8; font-family:Arial, Helvetica, sans-serif; color:#18243d;">
     <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
-      Hemos recibido correctamente la inscripción de su institución.
+      Hemos recibido correctamente la inscripción de ${schoolName}. Categorías registradas: ${
+        tournamentCategories.length > 0
+          ? escapeHtml(tournamentCategories.join(", "))
+          : "No especificadas"
+      }.
     </div>
 
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f3f6fb;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#eef3f8;">
       <tr>
-        <td align="center">
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="container" style="width:100%; max-width:1180px; background:#ffffff;">
+        <td align="center" class="outer-pad" style="padding:28px 14px;">
+          <table role="presentation" width="640" cellspacing="0" cellpadding="0" border="0" class="container" style="width:640px; max-width:640px; background:#ffffff; border-radius:18px; overflow:hidden; box-shadow:0 18px 48px rgba(6,42,79,0.12);">
             <tr>
-              <td style="background:#f7f8fb; padding:18px 54px; font-size:14px; line-height:18px; color:#1d2740;" class="mobile-padding top-strip">
+              <td style="background:#ffffff; border-bottom:5px solid #ed1c24; padding:22px 24px;">
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                   <tr>
-                    <td align="left">Hemos recibido correctamente la inscripción de su institución.</td>
-                    <td align="right" class="mobile-hide">
-                      <a href="https://torneo.fundacionmarathon.org.ec/" target="_blank" style="color:#1d2740; text-decoration:underline;">Ver en el navegador</a>
+                    <td valign="middle" style="width:84px;">
+                      <img src="${logoUrl}" alt="Copa Nacional Intercolegial" width="72" style="display:block; width:72px; max-width:72px; height:auto;" />
+                    </td>
+                    <td valign="middle">
+                      <div style="font-size:12px; line-height:16px; font-weight:900; letter-spacing:1.4px; color:#073b8c; text-transform:uppercase;">
+                        Torneo Nacional
+                      </div>
+                      <div style="font-size:22px; line-height:26px; font-weight:900; color:#ed1c24; text-transform:uppercase;">
+                        Intercolegial
+                      </div>
                     </td>
                   </tr>
                 </table>
@@ -443,55 +159,32 @@ export function buildApplicantConfirmationEmail(params: {
             </tr>
 
             <tr>
-              <td style="padding:28px 54px 28px 54px; background:#ffffff; border-bottom:5px solid #ed1c24;" class="mobile-padding header-wrap">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tr class="mobile-stack">
-                    <td valign="middle" style="width:58%;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="brand-table">
-                        <tr class="brand-row">
-                          <td valign="middle" style="padding-right:24px;" class="brand-logo-cell">
-                            <img
-                              src="${logoUrl}"
-                              alt="Copa Nacional Intercolegial"
-                              width="132"
-                              class="brand-logo"
-                              style="display:block; width:132px; max-width:132px; height:auto; border:0;"
-                            />
-                          </td>
-                          <td valign="middle">
-                            <div class="brand-title" style="font-size:26px; line-height:30px; font-weight:900; color:#082b75; text-transform:uppercase; letter-spacing:2px; text-align:center;">
-                              Torneo Nacional
-                            </div>
-                            <div class="brand-subtitle" style="font-size:30px; line-height:34px; font-weight:900; color:#ed1c24; text-transform:uppercase; letter-spacing:1px; text-align:center;">
-                              Intercolegial
-                            </div>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                    <td valign="middle" align="right" class="social-cell desktop-social-cell" style="width:42%;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="right" class="social-table">
-                        <tr>
-                          <td class="social-label" style="font-size:15px; line-height:22px; color:#111b3a; font-weight:700; text-transform:uppercase; letter-spacing:2px; padding-right:22px;">
-                            Síguenos
-                          </td>
-                          <td style="padding-left:10px;">
-                            <a href="https://www.facebook.com/profile.php?id=61575560775997" target="_blank">
-                              <img src="${facebookIconUrl}" alt="Facebook" width="48" class="social-icon" style="display:block; width:48px; max-width:48px; height:auto; border:0;" />
-                            </a>
-                          </td>
-                          <td style="padding-left:14px;">
-                            <a href="https://www.instagram.com/copamarathonec" target="_blank">
-                              <img src="${instagramIconUrl}" alt="Instagram" width="48" class="social-icon" style="display:block; width:48px; max-width:48px; height:auto; border:0;" />
-                            </a>
-                          </td>
-                          <td style="padding-left:14px;">
-                            <a href="https://www.tiktok.com/@copamarathonec" target="_blank">
-                              <img src="${tiktokIconUrl}" alt="TikTok" width="48" class="social-icon" style="display:block; width:48px; max-width:48px; height:auto; border:0;" />
-                            </a>
-                          </td>
-                        </tr>
-                      </table>
+              <td class="section-pad" style="background:#062a4f; padding:36px 34px;">
+                <div style="display:inline-block; border-radius:999px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); color:#ffffff; font-size:12px; line-height:16px; font-weight:900; letter-spacing:1px; text-transform:uppercase; padding:8px 12px;">
+                  Inscripción recibida
+                </div>
+                <h1 class="hero-title" style="margin:18px 0 0 0; color:#ffffff; font-size:36px; line-height:40px; font-weight:900; text-transform:uppercase;">
+                  Hemos recibido su registro
+                </h1>
+                <p class="hero-copy" style="margin:16px 0 0 0; color:#d9e8fb; font-size:17px; line-height:26px; font-weight:700;">
+                  Gracias por registrar a su institución en el Torneo Nacional Intercolegial. Su solicitud ingresó al proceso de validación y nuestro equipo se pondrá en contacto para continuar.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="section-pad" style="padding:30px 34px 8px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f7fbff; border:1px solid #d6e4f5; border-radius:14px;">
+                  <tr>
+                    <td style="padding:22px 22px 18px 22px;">
+                      <div style="font-size:13px; line-height:17px; font-weight:900; letter-spacing:1px; color:#ed1c24; text-transform:uppercase;">
+                        Categorías seleccionadas
+                      </div>
+                      <div style="padding-top:12px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                          ${buildCategoryBadges(tournamentCategories)}
+                        </table>
+                      </div>
                     </td>
                   </tr>
                 </table>
@@ -499,45 +192,62 @@ export function buildApplicantConfirmationEmail(params: {
             </tr>
 
             <tr>
-              <td
-                background="${heroMailingUrl}"
-                class="hero-cell"
-                style="background-color:#061f4e; background-image:url('${heroMailingUrl}'); background-position:center top; background-repeat:no-repeat; background-size:100% auto;"
-              >
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+              <td class="section-pad" style="padding:18px 34px 8px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="two-col">
                   <tr>
-                    <td class="hero-copy" style="padding:48px 74px 170px 74px;">
-                      <table role="presentation" width="448" cellspacing="0" cellpadding="0" border="0" class="hero-inner" style="width:448px; max-width:100%;">
+                    <td valign="top" style="width:50%; padding-right:10px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#ffffff; border:1px solid #dfe9f5; border-radius:14px;">
                         <tr>
-                          <td style="padding-bottom:24px;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                          <td style="padding:20px;">
+                            <div style="font-size:18px; line-height:23px; color:#073b8c; font-weight:900; text-transform:uppercase;">
+                              Resumen
+                            </div>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:10px;">
+                              ${buildDetailRow("Institución", schoolName)}
+                              ${buildDetailRow("Responsable", contactName)}
+                              ${buildDetailRow("Cargo", applicantRole)}
+                              ${buildDetailRow("Correo", contactEmail)}
+                              ${buildDetailRow("Teléfono", contactPhone)}
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="top" class="mobile-gap" style="width:50%; padding-left:10px;">
+                      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#ffffff; border:1px solid #dfe9f5; border-radius:14px;">
+                        <tr>
+                          <td style="padding:20px;">
+                            <div style="font-size:18px; line-height:23px; color:#073b8c; font-weight:900; text-transform:uppercase;">
+                              Próximos pasos
+                            </div>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:14px;">
                               <tr>
-                                <td align="center" class="hero-check" style="width:70px; height:70px; border:4px solid #079cff; border-radius:50%; color:#ffffff; font-size:38px; line-height:70px; font-weight:800;">
-                                  ✓
+                                <td valign="top" style="width:34px; padding-bottom:16px;">
+                                  <div style="width:26px; height:26px; line-height:26px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:13px; font-weight:900;">1</div>
+                                </td>
+                                <td style="padding-bottom:16px; color:#34425a; font-size:15px; line-height:22px;">
+                                  Revisaremos los datos enviados y las categorías solicitadas.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top" style="width:34px; padding-bottom:16px;">
+                                  <div style="width:26px; height:26px; line-height:26px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:13px; font-weight:900;">2</div>
+                                </td>
+                                <td style="padding-bottom:16px; color:#34425a; font-size:15px; line-height:22px;">
+                                  Validaremos la información institucional y disponibilidad por categoría.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top" style="width:34px;">
+                                  <div style="width:26px; height:26px; line-height:26px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:13px; font-weight:900;">3</div>
+                                </td>
+                                <td style="color:#34425a; font-size:15px; line-height:22px;">
+                                  Un ejecutivo se comunicará para continuar con el proceso.
                                 </td>
                               </tr>
                             </table>
                           </td>
                         </tr>
-                        <tr>
-                          <td class="hero-title" style="font-size:44px; line-height:48px; color:#ffffff; font-weight:900; text-transform:uppercase; letter-spacing:0; padding-bottom:22px;">
-                            ¡Inscripción<br />
-                            <span style="color:#1098ff;">recibida!</span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="hero-divider" style="width:110px; height:6px; line-height:6px; background:#f2272d; border-radius:12px; font-size:0;">&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td class="hero-text" style="padding-top:24px; font-size:18px; line-height:27px; color:#ffffff; font-weight:700;">
-                            Confirmamos la correcta recepción de la inscripción de su institución en el Torneo Nacional Intercolegial.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="hero-text" style="padding-top:18px; font-size:18px; line-height:27px; color:#ffffff; font-weight:700;">
-                            Su registro ha ingresado al proceso de validación institucional y en los próximos días un ejecutivo se pondrá en contacto con ustedes.
-                          </td>
-                        </tr>
                       </table>
                     </td>
                   </tr>
@@ -546,242 +256,47 @@ export function buildApplicantConfirmationEmail(params: {
             </tr>
 
             <tr>
-              <td style="background:#ffffff; padding:0 54px 0 54px;" class="mobile-padding summary-shell">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="summary-card" style="margin-top:-132px; position:relative;">
+              <td class="section-pad" style="padding:18px 34px 8px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#eaf2ff; border:1px solid #c8dbf5; border-radius:14px;">
                   <tr>
-                    <td style="background:#ffffff; border-radius:10px; box-shadow:0 10px 24px rgba(9,37,80,0.14);">
+                    <td style="padding:20px;">
+                      <div style="font-size:12px; line-height:16px; font-weight:900; letter-spacing:1px; color:#6b7c95; text-transform:uppercase;">
+                        Código de inscripción
+                      </div>
+                      <div style="padding-top:8px; font-size:20px; line-height:26px; color:#073b8c; font-weight:900; word-break:break-word;">
+                        ${registrationCode}
+                      </div>
+                      <div style="padding-top:8px; font-size:14px; line-height:21px; color:#53657b;">
+                        Fecha de recepción: ${createdAt}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="section-pad" style="padding:18px 34px 34px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f7fbff; border:1px solid #d6e4f5; border-radius:14px;">
+                  <tr>
+                    <td style="padding:20px;">
                       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                        <tr class="mobile-stack">
-                          <td valign="top" class="summary-column" style="width:57%; padding:36px 34px; border-right:1px solid #dbe5f1;">
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                              <tr>
-                                <td valign="top" class="section-icon-cell" style="width:72px;">
-                                  <img src="${summaryIconUrl}" alt="" width="56" class="section-icon" style="display:block; width:56px; max-width:56px; height:auto; border:0;" />
-                                </td>
-                                <td valign="top">
-                                  <div class="section-title" style="font-size:21px; line-height:25px; color:#0b3f91; font-weight:900; text-transform:uppercase; letter-spacing:0.8px;">Resumen de su inscripción</div>
-                                  <div class="section-subtitle" style="font-size:16px; line-height:24px; color:#0d3476; padding-top:4px;">Por favor verifique que los datos sean correctos</div>
-                                </td>
-                              </tr>
-                            </table>
-
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="details-table" style="margin-top:28px; font-size:16px; line-height:22px;">
-                              <tr>
-                                <td class="detail-icon-cell" style="width:34px; padding:8px 0;"><img src="${institutionIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Institución:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${schoolName}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${responsibleIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Responsable:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${contactName}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${emailIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Correo registrado:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${contactEmail}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${phoneIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Teléfono registrado:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${contactPhone}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${summaryIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Categorías:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${tournamentCategoriesText}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${dateIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Fecha de registro:</div>
-                                  <div class="detail-value" style="color:#073b8c;">${createdAt}</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="detail-icon-cell" style="padding:8px 0;"><img src="${codeIconUrl}" alt="" width="18" class="detail-icon" style="display:block; width:18px; max-width:18px; height:auto; border:0;" /></td>
-                                <td class="detail-content-cell" colspan="2" style="padding:8px 0;">
-                                  <div class="detail-label" style="color:#18243d; font-weight:800;">Código de inscripción:</div>
-                                  <div class="detail-value">
-                                    <span class="code-badge" style="display:inline-block; background:#dbe9ff; border-radius:4px; color:#073b8c; font-size:18px; line-height:22px; font-weight:900; padding:8px 12px;">${registrationCode}</span>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-
-                          <td valign="top" class="steps-column" style="width:43%; padding:36px 34px;">
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                              <tr>
-                                <td valign="top" class="section-icon-cell" style="width:72px;">
-                                  <img src="${nextStepsIconUrl}" alt="" width="56" class="section-icon" style="display:block; width:56px; max-width:56px; height:auto; border:0;" />
-                                </td>
-                                <td valign="middle">
-                                  <div class="section-title" style="font-size:21px; line-height:25px; color:#0b3f91; font-weight:900; text-transform:uppercase; letter-spacing:0.8px;">Próximos pasos</div>
-                                </td>
-                              </tr>
-                            </table>
-
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:28px;">
-                              <tr>
-                                <td valign="top" class="step-number-cell" style="width:42px; padding-bottom:20px;">
-                                  <div style="width:28px; height:28px; line-height:28px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:14px; font-weight:900;">1</div>
-                                </td>
-                                <td valign="top" style="padding-bottom:20px;">
-                                  <div class="step-title" style="font-size:17px; line-height:22px; color:#18243d; font-weight:900;">Verificación de la información</div>
-                                  <div class="step-copy" style="font-size:15px; line-height:22px; color:#3c4962;">Nuestro equipo revisará los datos enviados.</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td valign="top" class="step-number-cell" style="width:42px; padding-bottom:20px;">
-                                  <div style="width:28px; height:28px; line-height:28px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:14px; font-weight:900;">2</div>
-                                </td>
-                                <td valign="top" style="padding-bottom:20px;">
-                                  <div class="step-title" style="font-size:17px; line-height:22px; color:#18243d; font-weight:900;">Validación institucional</div>
-                                  <div class="step-copy" style="font-size:15px; line-height:22px; color:#3c4962;">Evaluaremos los criterios de participación.</div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td valign="top" class="step-number-cell" style="width:42px;">
-                                  <div style="width:28px; height:28px; line-height:28px; border-radius:50%; background:#004899; color:#ffffff; text-align:center; font-size:14px; font-weight:900;">3</div>
-                                </td>
-                                <td valign="top">
-                                  <div class="step-title" style="font-size:17px; line-height:22px; color:#18243d; font-weight:900;">Comunicación de siguientes etapas</div>
-                                  <div class="step-copy" style="font-size:15px; line-height:22px; color:#3c4962;">Un ejecutivo se contactará para continuar el proceso.</div>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="padding:24px 54px 0 54px; background:#ffffff;" class="mobile-padding">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="whatsapp-card" style="background:#f7fbff; border:1px solid #8bbaf1; border-radius:10px;">
-                  <tr class="mobile-stack">
-                    <td valign="middle" style="width:15%; padding:28px 0 28px 28px;" class="mobile-center whatsapp-icon-cell">
-                      <img src="${whatsappIconUrl}" alt="" width="78" class="whatsapp-icon" style="display:block; width:78px; height:auto; border:0;" />
-                    </td>
-                    <td valign="middle" class="whatsapp-copy-cell" style="width:47%; padding:28px 24px 28px 0;">
-                      <div style="font-size:17px; line-height:22px; color:#0b3f91; font-weight:900; text-transform:uppercase; letter-spacing:0.6px;">¿Necesita actualizar información?</div>
-                      <div style="font-size:15px; line-height:22px; color:#34425a; padding-top:10px;">
-                        Si alguno de los datos registrados no es correcto o requiere más información, por favor comuníquese con nuestro equipo a través de WhatsApp.
-                      </div>
-                    </td>
-                    <td valign="middle" class="whatsapp-action-cell" style="width:38%; padding:28px 30px; border-left:1px solid #dce6f3;">
-                      <div style="font-size:14px; line-height:18px; color:#0b3f91; font-weight:900; text-transform:uppercase; letter-spacing:1px;">WhatsApp oficial</div>
-                      <div class="whatsapp-number" style="font-size:27px; line-height:33px; color:#0c2a5b; font-weight:900; padding-top:4px;">${whatsappNumber}</div>
-                      <div style="padding-top:14px;">
-                        <a href="${whatsappUrl}" target="_blank" class="button-link" style="display:inline-block; background:#12b84f; color:#ffffff; text-decoration:none; font-size:15px; line-height:18px; font-weight:900; border-radius:999px; padding:12px 24px;">Escribir por WhatsApp</a>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="padding:24px 54px 0 54px; background:#ffffff;" class="mobile-padding">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="info-card" style="background:#f4f7fb; border-radius:10px;">
-                  <tr>
-                    <td valign="middle" class="info-icon-cell" style="width:70px; padding:24px 0 24px 28px;">
-                      <div style="width:42px; height:42px; line-height:42px; border-radius:50%; background:#39a3ff; color:#ffffff; text-align:center; font-size:23px; font-weight:900;">i</div>
-                    </td>
-                    <td class="info-copy" style="padding:24px 28px 24px 0; font-size:16px; line-height:23px; color:#2d374d;">
-                      <strong style="color:#102b5c;">Importante:</strong>
-                      La recepción de esta inscripción constituye el inicio del proceso de evaluación institucional y no representa aún la aceptación definitiva al torneo.
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="padding:24px 54px 28px 54px; background:#ffffff;" class="mobile-padding">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" class="cta-card" style="background:#004195; border-radius:10px;">
-                  <tr class="mobile-stack">
-                    <td valign="middle" style="width:100px; padding:24px 0 24px 28px;" class="mobile-center cta-icon-cell">
-                      <div class="cta-icon" style="width:64px; height:64px; line-height:64px; border-radius:50%; border:2px solid #1d82df; color:#ffffff; text-align:center; font-size:35px;">♜</div>
-                    </td>
-                    <td valign="middle" class="cta-copy" style="width:58%; padding:24px 26px; font-size:20px; line-height:30px; color:#ffffff; font-weight:900;">
-                      Agradecemos su interés en ser parte del<br class="mobile-hide" />
-                      Torneo Nacional Intercolegial 2026.
-                    </td>
-                    <td valign="middle" align="center" class="cta-button-cell" style="width:32%; padding:24px 28px; border-left:1px solid rgba(255,255,255,0.2);">
-                      <a href="https://torneo.fundacionmarathon.org.ec/" target="_blank" class="button-link" style="display:inline-block; background:#f52e30; color:#ffffff; text-decoration:none; font-size:16px; line-height:20px; font-weight:900; border-radius:4px; padding:17px 28px;">Conoce más del torneo&nbsp;›</a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <tr>
-              <td style="background:#004195; padding:26px 54px;" class="mobile-padding">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tr class="mobile-stack">
-                    <td valign="middle" class="footer-logo-cell" style="width:52%; padding-right:38px;">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="footer-logo-table">
-                        <tr class="footer-brand-row">
-                          <td valign="middle" class="footer-brand-logo-cell" style="padding-right:16px;">
-                            <img
-                              src="${logoUrl}"
-                              alt="Copa Nacional Intercolegial"
-                              width="96"
-                              class="footer-brand-logo"
-                              style="display:block; width:96px; max-width:96px; height:auto; border:0;"
-                            />
-                          </td>
-                          <td valign="middle">
-                            <div style="font-size:15px; line-height:19px; font-weight:900; color:#ffffff; text-transform:uppercase; letter-spacing:1px; text-align:center;">Torneo Nacional</div>
-                            <div style="font-size:23px; line-height:27px; font-weight:900; color:#ff3d38; text-transform:uppercase; text-align:center;">Intercolegial</div>
-                          </td>
-                        </tr>
-                      </table>
-                    </td>
-                    <td valign="top" class="footer-links-cell" style="width:48%; padding-left:42px; border-left:1px solid rgba(255,255,255,0.22); color:#ffffff; font-size:15px; line-height:25px;">
-                      <div style="font-size:17px; line-height:22px; color:#37a9ff; font-weight:900; padding-bottom:8px;">Enlaces rápidos</div>
-                      <a href="https://torneo.fundacionmarathon.org.ec/" target="_blank" style="color:#ffffff; text-decoration:none;">Página oficial del torneo</a><br />
-                      <a href="https://torneo.fundacionmarathon.org.ec/" target="_blank" style="color:#ffffff; text-decoration:none;">Bases y reglamento</a><br />
-                      <a href="${whatsappUrl}" target="_blank" style="color:#ffffff; text-decoration:none;">Contacto</a><br />
-                      <a href="https://torneo.fundacionmarathon.org.ec/" target="_blank" style="color:#ffffff; text-decoration:none;">Preguntas frecuentes</a>
-                    </td>
-                  </tr>
-                  <tr class="mobile-footer-social-row">
-                    <td colspan="2" class="mobile-footer-social-cell">
-                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="footer-social-table">
                         <tr>
-                          <td style="font-size:13px; line-height:18px; color:#ffffff; font-weight:800; text-transform:uppercase; letter-spacing:1.4px; padding-right:16px;">
-                            Síguenos
+                          <td valign="top" style="width:54px;">
+                            <img src="${whatsappIconUrl}" alt="" width="42" style="display:block; width:42px; height:auto;" />
                           </td>
-                          <td style="padding-left:8px;">
-                            <a href="https://www.facebook.com/profile.php?id=61575560775997" target="_blank">
-                              <img src="${facebookIconUrl}" alt="Facebook" width="38" class="footer-social-icon" style="display:block; width:38px; max-width:38px; height:auto; border:0;" />
-                            </a>
-                          </td>
-                          <td style="padding-left:10px;">
-                            <a href="https://www.instagram.com/copamarathonec" target="_blank">
-                              <img src="${instagramIconUrl}" alt="Instagram" width="38" class="footer-social-icon" style="display:block; width:38px; max-width:38px; height:auto; border:0;" />
-                            </a>
-                          </td>
-                          <td style="padding-left:10px;">
-                            <a href="https://www.tiktok.com/@copamarathonec" target="_blank">
-                              <img src="${tiktokIconUrl}" alt="TikTok" width="38" class="footer-social-icon" style="display:block; width:38px; max-width:38px; height:auto; border:0;" />
-                            </a>
+                          <td valign="top">
+                            <div style="font-size:17px; line-height:22px; color:#073b8c; font-weight:900;">
+                              ¿Necesita actualizar información?
+                            </div>
+                            <div style="padding-top:6px; font-size:15px; line-height:22px; color:#34425a;">
+                              Escríbanos al WhatsApp oficial ${whatsappNumber} si algún dato requiere corrección.
+                            </div>
+                            <div style="padding-top:14px;">
+                              <a href="${whatsappUrl}" target="_blank" class="button-link" style="display:inline-block; background:#12b84f; color:#ffffff; text-decoration:none; font-size:15px; line-height:18px; font-weight:900; border-radius:999px; padding:13px 20px;">
+                                Escribir por WhatsApp
+                              </a>
+                            </div>
                           </td>
                         </tr>
                       </table>
@@ -792,10 +307,20 @@ export function buildApplicantConfirmationEmail(params: {
             </tr>
 
             <tr>
-              <td style="padding:20px 54px 24px 54px; background:#f3f6fb; color:#8b94a8; font-size:15px; line-height:23px; text-align:center;" class="mobile-padding footer-bottom">
+              <td style="background:#004195; padding:22px 24px; text-align:center;">
+                <div style="font-size:14px; line-height:20px; color:#ffffff; font-weight:800;">
+                  Torneo Nacional Intercolegial 2026
+                </div>
+                <div style="padding-top:6px; font-size:13px; line-height:20px; color:#bfd6f6;">
+                  La recepción de esta inscripción inicia el proceso de evaluación institucional y no representa aún la aceptación definitiva al torneo.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:18px 24px 22px 24px; background:#f3f6fb; color:#8b94a8; font-size:13px; line-height:20px; text-align:center;">
                 Torneo Nacional Intercolegial es una iniciativa de <strong>Fundación Marathon.</strong><br />
-                © 2026 Todos los derechos reservados.<br />
-                Desarrollado por Trei Creatividad Digital.
+                © 2026 Todos los derechos reservados.
               </td>
             </tr>
           </table>
