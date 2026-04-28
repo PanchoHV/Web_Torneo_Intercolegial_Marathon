@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   Calendar,
   ExternalLink,
+  Images,
   Instagram,
   LayoutDashboard,
   MessageCircle,
@@ -35,7 +36,7 @@ const officialLinks = [
   },
   {
     label: 'Facebook',
-    href: 'https://www.facebook.com/copamarathon',
+    href: 'https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/',
     icon: ExternalLink,
     color: 'hover:bg-blue-500/20 hover:text-blue-400',
   },
@@ -47,9 +48,15 @@ const officialLinks = [
   },
   {
     label: 'TikTok',
-    href: 'https://www.tiktok.com/@copamarathon',
+    href: 'https://www.tiktok.com/@copamarathonec',
     icon: ExternalLink,
     color: 'hover:bg-purple-500/20 hover:text-purple-400',
+  },
+  {
+    label: 'Flickr',
+    href: 'https://www.flickr.com/photos/203541641@N03/albums/',
+    icon: Images,
+    color: 'hover:bg-sky-500/20 hover:text-sky-300',
   },
 ] as const;
 

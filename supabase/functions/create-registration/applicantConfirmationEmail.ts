@@ -5,9 +5,10 @@ const whatsappIconUrl = `${mailingAssetsBaseUrl}/whatsapp.png`;
 const facebookIconUrl = `${mailingAssetsBaseUrl}/facebook.png`;
 const instagramIconUrl = `${mailingAssetsBaseUrl}/instagram.png`;
 const tiktokIconUrl = `${mailingAssetsBaseUrl}/tiktok.png`;
-const facebookUrl = "https://www.facebook.com/copamarathon";
+const facebookUrl = "https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/";
 const instagramUrl = "https://www.instagram.com/copamarathonec/";
-const tiktokUrl = "https://www.tiktok.com/@copamarathon";
+const tiktokUrl = "https://www.tiktok.com/@copamarathonec";
+const flickrUrl = "https://www.flickr.com/photos/203541641@N03/albums/";
 
 function escapeHtml(value: unknown) {
   return String(value ?? "")
@@ -340,6 +341,11 @@ export function buildApplicantConfirmationEmail(params: {
                     <td style="padding-left:10px;">
                       <a href="${tiktokUrl}" target="_blank">
                         <img src="${tiktokIconUrl}" alt="TikTok" width="34" style="display:block; width:34px; max-width:34px; height:auto; border:0;" />
+                      </a>
+                    </td>
+                    <td style="padding-left:12px;">
+                      <a href="${flickrUrl}" target="_blank" style="display:inline-block; color:#ffffff; font-size:12px; line-height:16px; font-weight:900; text-decoration:none; text-transform:uppercase; letter-spacing:0.8px;">
+                        Flickr
                       </a>
                     </td>
                   </tr>
