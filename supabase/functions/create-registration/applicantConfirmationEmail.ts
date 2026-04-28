@@ -5,6 +5,7 @@ const whatsappIconUrl = `${mailingAssetsBaseUrl}/whatsapp.png`;
 const facebookIconUrl = `${mailingAssetsBaseUrl}/facebook.png`;
 const instagramIconUrl = `${mailingAssetsBaseUrl}/instagram.png`;
 const tiktokIconUrl = `${mailingAssetsBaseUrl}/tiktok.png`;
+const flickrIconUrl = "https://www.flickrhelp.com/hc/article_attachments/4419907666708";
 const facebookUrl = "https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/";
 const instagramUrl = "https://www.instagram.com/copamarathonec/";
 const tiktokUrl = "https://www.tiktok.com/@copamarathonec";
@@ -344,8 +345,8 @@ export function buildApplicantConfirmationEmail(params: {
                       </a>
                     </td>
                     <td style="padding-left:12px;">
-                      <a href="${flickrUrl}" target="_blank" style="display:inline-block; color:#ffffff; font-size:12px; line-height:16px; font-weight:900; text-decoration:none; text-transform:uppercase; letter-spacing:0.8px;">
-                        Flickr
+                      <a href="${flickrUrl}" target="_blank">
+                        <img src="${flickrIconUrl}" alt="Flickr" width="34" style="display:block; width:34px; max-width:34px; height:auto; border:0;" />
                       </a>
                     </td>
                   </tr>

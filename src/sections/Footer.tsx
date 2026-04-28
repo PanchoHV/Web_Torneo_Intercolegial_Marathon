@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import {
   Calendar,
   ExternalLink,
-  Images,
   Instagram,
   LayoutDashboard,
   MessageCircle,
@@ -55,7 +54,7 @@ const officialLinks = [
   {
     label: 'Flickr',
     href: 'https://www.flickr.com/photos/203541641@N03/albums/',
-    icon: Images,
+    iconUrl: '/images/mailing/flickr.png',
     color: 'hover:bg-sky-500/20 hover:text-sky-300',
   },
 ] as const;
@@ -215,7 +214,7 @@ export default function Footer() {
             <FooterColumn title="Canales Oficiales" delay={300}>
               <div className="flex flex-col gap-2">
                 {officialLinks.map((link) => {
-                  const Icon = link.icon;
+                  const Icon = 'icon' in link ? link.icon : null;
                   return (
                     <a
                       key={link.label}
@@ -225,7 +224,11 @@ export default function Footer() {
                       className={`group -mx-2.5 inline-flex min-h-11 items-center gap-2.5 rounded-xl px-2.5 py-2 font-inter text-sm text-white/65 transition-all duration-300 ${link.color}`}
                     >
                       <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 transition-colors duration-300 group-hover:bg-white/10">
-                        <Icon size={15} />
+                        {'iconUrl' in link ? (
+                          <img src={link.iconUrl} alt="" className="h-5 w-5 object-contain" />
+                        ) : (
+                          Icon && <Icon size={15} />
+                        )}
                       </span>
                       <span className="relative">
                         {link.label}
