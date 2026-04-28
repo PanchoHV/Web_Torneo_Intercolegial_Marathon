@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { buildApplicantConfirmationEmail } from "../create-registration/applicantConfirmationEmail.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -42,6 +43,8 @@ Deno.serve(async (req: Request) => {
       contact_email,
       contact_phone,
       city,
+      tournament_categories,
+      created_at,
     } = body;
 
     if (!registrationId) {
@@ -61,6 +64,20 @@ Deno.serve(async (req: Request) => {
     const from = RESEND_FROM_EMAIL;
     const executiveEmail = RESEND_EXECUTIVE_EMAIL;
     const replyTo = executiveEmail;
+    const { subject: participantSubject, html: participantHtml } =
+      buildApplicantConfirmationEmail({
+        schoolName: school_name,
+        contactName: contact_name,
+        contactEmail: contact_email,
+        contactPhone: contact_phone,
+        applicantRole: applicant_role,
+        tournamentCategories: Array.isArray(tournament_categories)
+          ? tournament_categories
+          : [],
+        createdAt: created_at,
+        registrationCode: `TM-2026-${String(registrationId).slice(0, 8).toUpperCase()}`,
+        whatsappNumber: "+593989655352",
+      });
 
     const participantResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -72,25 +89,8 @@ Deno.serve(async (req: Request) => {
         from,
         to: [contact_email],
         reply_to: replyTo,
-        subject: "Hemos recibido la inscripción de tu colegio",
-        html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.5;">
-            <h2>Inscripción recibida</h2>
-            <p>Hola <strong>${contact_name}</strong>,</p>
-            <p>Hemos recibido correctamente la inscripción de <strong>${school_name}</strong>.</p>
-            <p>Un ejecutivo del Torneo Intercolegial Marathon se pondrá en contacto contigo pronto para continuar con el proceso.</p>
-            <hr />
-            <p><strong>Resumen de la inscripción:</strong></p>
-            <ul>
-              <li>Colegio: ${school_name}</li>
-              <li>Ciudad: ${city}</li>
-              <li>Encargado: ${contact_name}</li>
-              <li>Cargo: ${applicant_role}</li>
-              <li>Correo: ${contact_email}</li>
-              <li>Celular: ${contact_phone}</li>
-            </ul>
-          </div>
-        `,
+        subject: participantSubject,
+        html: participantHtml,
       }),
     });
 
