@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import gsap from 'gsap';
 
-const TARGET_DATE = new Date('2026-06-30T23:59:59');
+const TARGET_DATE = new Date('2026-07-17T23:59:59');
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   const prevValue = useRef(value);

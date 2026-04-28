@@ -35,19 +35,19 @@ const officialLinks = [
   },
   {
     label: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/copamarathon',
     icon: ExternalLink,
     color: 'hover:bg-blue-500/20 hover:text-blue-400',
   },
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/copamarathonec/',
     icon: Instagram,
     color: 'hover:bg-pink-500/20 hover:text-pink-400',
   },
   {
-    label: 'Linktree',
-    href: '#',
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@copamarathon',
     icon: ExternalLink,
     color: 'hover:bg-purple-500/20 hover:text-purple-400',
   },
