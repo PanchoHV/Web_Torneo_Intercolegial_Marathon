@@ -2,6 +2,12 @@ const mailingAssetsBaseUrl =
   "https://cdn.jsdelivr.net/gh/PanchoHV/Web_Torneo_Intercolegial_Marathon@5e77cd2/public/images/mailing";
 const logoUrl = `${mailingAssetsBaseUrl}/logo.png`;
 const whatsappIconUrl = `${mailingAssetsBaseUrl}/whatsapp.png`;
+const facebookIconUrl = `${mailingAssetsBaseUrl}/facebook.png`;
+const instagramIconUrl = `${mailingAssetsBaseUrl}/instagram.png`;
+const tiktokIconUrl = `${mailingAssetsBaseUrl}/tiktok.png`;
+const facebookUrl = "https://www.facebook.com/copamarathon";
+const instagramUrl = "https://www.instagram.com/copamarathonec/";
+const tiktokUrl = "https://www.tiktok.com/@copamarathon";
 
 function escapeHtml(value: unknown) {
   return String(value ?? "")
@@ -122,6 +128,8 @@ export function buildApplicantConfirmationEmail(params: {
         .two-col, .two-col td { display: block !important; width: 100% !important; }
         .mobile-gap { padding-top: 14px !important; }
         .button-link { display: block !important; width: 100% !important; box-sizing: border-box !important; text-align: center !important; }
+        .social-footer-table { margin: 0 auto !important; }
+        .social-footer-label { display: block !important; padding: 0 0 10px 0 !important; text-align: center !important; }
       }
     </style>
   </head>
@@ -314,6 +322,28 @@ export function buildApplicantConfirmationEmail(params: {
                 <div style="padding-top:6px; font-size:13px; line-height:20px; color:#bfd6f6;">
                   La recepción de esta inscripción inicia el proceso de evaluación institucional y no representa aún la aceptación definitiva al torneo.
                 </div>
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="social-footer-table" style="margin:18px auto 0 auto;">
+                  <tr>
+                    <td class="social-footer-label" style="font-size:12px; line-height:16px; color:#ffffff; font-weight:900; text-transform:uppercase; letter-spacing:1.2px; padding-right:14px;">
+                      Síguenos
+                    </td>
+                    <td style="padding-left:8px;">
+                      <a href="${facebookUrl}" target="_blank">
+                        <img src="${facebookIconUrl}" alt="Facebook" width="34" style="display:block; width:34px; max-width:34px; height:auto; border:0;" />
+                      </a>
+                    </td>
+                    <td style="padding-left:10px;">
+                      <a href="${instagramUrl}" target="_blank">
+                        <img src="${instagramIconUrl}" alt="Instagram" width="34" style="display:block; width:34px; max-width:34px; height:auto; border:0;" />
+                      </a>
+                    </td>
+                    <td style="padding-left:10px;">
+                      <a href="${tiktokUrl}" target="_blank">
+                        <img src="${tiktokIconUrl}" alt="TikTok" width="34" style="display:block; width:34px; max-width:34px; height:auto; border:0;" />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
 
