@@ -1,61 +1,63 @@
 import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronDown } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
-
 const faqs = [
   {
     question: '¿Cuál es el costo de preinscripción por colegio?',
-    answer:
-      'El costo de preinscripción es de USD 35 por colegio, que incluye participación en hasta 3 disciplinas. Cada disciplina adicional tiene un costo de USD 10. El pago se realiza mediante transferencia bancaria o canales oficiales del torneo.',
+    answer: `La preinscripción para colegios privados en la Copa Nacional Intercolegial Marathon tiene un costo de
+USD 170 por cada categoría inscrita (más IVA).
+Los colegios fiscales y fiscomisionales no pagan costo de preinscripción.`,
   },
   {
     question: '¿Cuántos jugadores puedo inscribir por equipo?',
-    answer:
-      'El límite es de 20 jugadores por equipo en fútbol, 12 en baloncesto, 15 en vóley, 10 en natación y 8 en atletismo. Todos los jugadores deben estar matriculados en el colegio representado.',
-  },
-  {
-    question: '¿Qué documentos necesito para inscribir a un jugador?',
-    answer:
-      'Cada jugador necesita: (1) Foto tamaño pasaporte digital, (2) Certificado médico vigente, (3) Constancia de estudios del colegio, (4) Autorización firmada por el padre o apoderado.',
-  },
-  {
-    question: '¿Puedo modificar mi lista de jugadores después de inscribirlos?',
-    answer:
-      'Sí, existe un período de modificaciones del 1 al 10 de julio. Después de esa fecha, la lista queda cerrada y no se permiten cambios para garantizar la integridad de la competencia.',
-  },
-  {
-    question: '¿Dónde se juegan los partidos?',
-    answer:
-      'Las sedes del torneo están distribuidas en Ecuador y se confirman por ciudad, deporte y grupo. Cada colegio recibe su sede oficial junto con el calendario de competencia.',
-  },
+    answer: `Fútbol 9 (F9): hasta 20 jugadores por equipo
+Fútbol 11 (F11): hasta 25 jugadores por equipo
   {
     question: '¿Cómo recibo la comunicación oficial del torneo?',
-    answer:
-      'La comunicación oficial se comparte por el canal oficial del torneo y por correo a los delegados registrados. Allí recibirás novedades, avisos importantes, resultados, convocatorias y comunicados del equipo organizador.',
   },
-];
+  {
+    question: '¿Qué documentación necesito para inscribir la nómina de jugadores?',
+    answer: `Para registrar la nómina oficial de un equipo en la Copa Nacional Intercolegial Marathon, el colegio debe presentar:
+    answer:
 
 function AccordionItem({
+  },
+  {
+    question: '¿Qué es la Copa Marathon Ecuador 2026?',
+    answer: `La Copa Marathon Ecuador 2026 es un torneo nacional intercolegial de fútbol que reúne a instituciones educativas de distintas regiones del país. El torneo está planteado con participación de equipos de la Costa, Sierra y Amazonía, en categorías masculinas y femeninas seleccionadas.
   question,
   answer,
+  },
+  {
+    question: '¿De qué fecha a qué fecha se desarrollará el torneo?',
+    answer: `La Copa Marathon Ecuador 2026 está prevista para desarrollarse desde el 27 de julio de 2026 hasta el 30 de enero de 2027.
   isOpen,
   onClick,
+  },
+  {
+    question: '¿Cuándo inician los torneos en Costa, Sierra y Amazonía?',
+    answer: `En la Región Costa, las inscripciones están previstas desde el 4 de mayo de 2026 y los partidos iniciarían desde el 27 de julio de 2026, dependiendo de la sede.
 }: {
   question: string;
   answer: string;
   isOpen: boolean;
+  },
+  {
+    question: '¿Qué categorías participarán en la Copa Marathon?',
+    answer: `La planificación contempla las siguientes categorías:
   onClick: () => void;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
+  },
+  {
+    question: '¿Las fechas y sedes están confirmadas definitivamente?',
+    answer: `Las fechas, sedes y categorías forman parte de la planificación técnica inicial, pero no deben entenderse como definitivas hasta su confirmación oficial.
     <div
       className={`overflow-hidden rounded-[1.35rem] border transition-all duration-300 ${
         isOpen
           ? 'border-marathon-red/18 bg-[linear-gradient(180deg,#FFFFFF_0%,#FFF8F8_100%)] shadow-[0_20px_42px_rgba(226,27,45,0.08)]'
+  },
+];
           : 'border-marathon-blue/8 bg-marathon-cream shadow-[0_12px_30px_rgba(6,42,79,0.04)]'
       }`}
     >
