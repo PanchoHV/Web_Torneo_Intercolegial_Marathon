@@ -340,7 +340,8 @@ Deno.serve(async (req: Request) => {
     error = firstInsert.error;
 
     if (error && isMissingColumnError(error)) {
-      const { tournament_categories: _unusedCategories, ...fallbackInsert } = registrationInsert;
+      const fallbackInsert = { ...registrationInsert };
+      delete fallbackInsert.tournament_categories;
       const fallbackInsertResult = await admin
         .from("school_registrations")
         .insert(fallbackInsert)
@@ -415,6 +416,8 @@ Deno.serve(async (req: Request) => {
           contactEmail: payload.contact_email,
           contactPhone: payload.contact_phone,
           applicantRole,
+          city: payload.city,
+          schoolType: payload.school_type,
           tournamentCategories: Array.isArray(payload.tournament_categories)
             ? payload.tournament_categories
             : [],

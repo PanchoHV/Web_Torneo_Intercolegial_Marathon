@@ -21,9 +21,18 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
         ¡Preinscripción recibida con éxito!
       </h2>
       <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-marathon-gray">
-        Gracias por registrar a tu institución. Nuestro equipo revisará la información y se pondrá en contacto contigo pronto para continuar con el proceso.
+        Gracias por registrar a tu institución. Tu colegio ya quedó dentro del proceso de
+        preinscripción. Nuestro equipo revisará la información y notificará los siguientes pasos de
+        acuerdo con la ciudad, región y categorías seleccionadas.
       </p>
-      <p className="mt-4 text-sm font-semibold text-marathon-blue">Hemos recibido tu solicitud correctamente.</p>
+      <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-marathon-gray">
+        Recuerda que la confirmación oficial de participación estará sujeta a validación de
+        requisitos, disponibilidad de cupos, calendario de la sede y confirmación oficial de la
+        organización.
+      </p>
+      <p className="mt-4 text-sm font-semibold text-marathon-blue">
+        Hemos recibido tu preinscripción correctamente.
+      </p>
       {hasReceipt && (
         <div className="mt-3 space-y-1 text-sm text-marathon-gray">
           <p>

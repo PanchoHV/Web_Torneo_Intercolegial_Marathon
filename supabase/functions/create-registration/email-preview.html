@@ -17,7 +17,6 @@
         display: none;
         max-height: 0;
         overflow: hidden;
-        mso-hide: all;
       }
       @media only screen and (max-width: 720px) {
         .container {
@@ -338,9 +337,16 @@
         }
       }
     </style>
+    <!--[if mso]>
+    <style>
+      .mobile-footer-social-row {
+        mso-hide: all;
+      }
+    </style>
+    <![endif]-->
   </head>
   <body style="margin:0; padding:0; background:#f3f6fb; font-family:Arial, Helvetica, sans-serif; color:#18243d;">
-    <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+    <div class="mobile-footer-social-row" style="opacity:0;">
       Hemos recibido correctamente la inscripción de su institución.
     </div>
 

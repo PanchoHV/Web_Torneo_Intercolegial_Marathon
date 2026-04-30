@@ -173,9 +173,15 @@ export default function Hero() {
         </div>
 
         {/* Date */}
-        <div className="hero-date mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-2 text-marathon-blue font-inter font-semibold text-sm sm:text-base">
-          <Calendar size={20} className="text-marathon-red" />
-          <span>Inicio del Torneo: 15 de Julio, 2026</span>
+        <div className="hero-date mt-8 sm:mt-10 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-2 text-marathon-blue font-inter font-semibold text-sm sm:text-base">
+            <Calendar size={20} className="text-marathon-red" />
+            <span>Inicio del Torneo: 27 de julio de 2026</span>
+            <span className="text-marathon-blue/70">Calendario progresivo por región: Costa, Sierra y Amazonía.</span>
+          </div>
+          <p className="mx-auto mt-2 max-w-[720px] font-inter text-xs leading-relaxed text-marathon-blue/70 sm:text-sm">
+            Las fechas podrán ajustarse por calendario escolar, logística deportiva, clima, disponibilidad de escenarios o razones de fuerza mayor.
+          </p>
         </div>
       </div>
     </section>
