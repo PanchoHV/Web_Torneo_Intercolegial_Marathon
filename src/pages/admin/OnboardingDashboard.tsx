@@ -153,28 +153,52 @@ export default function OnboardingDashboard() {
             Actualizar
           </Button>
           {canExport && (
-            <Button
-              className="min-h-11 rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
-              onClick={async () => {
-                const purpose = window.prompt('Motivo de la exportación (opcional):', '') ?? '';
-                setExporting(true);
-                try {
-                  await exportRegistrations(filters, purpose);
-                } catch (exportError) {
-                  setError(
-                    exportError instanceof Error
-                      ? exportError.message
-                      : 'No se pudo exportar la base.'
-                  );
-                } finally {
-                  setExporting(false);
-                }
-              }}
-              disabled={exporting}
-            >
-              <Download size={16} />
-              {exporting ? 'Exportando...' : 'Exportar CSV'}
-            </Button>
+            <>
+              <Button
+                className="min-h-11 rounded-full bg-marathon-red text-white shadow-button hover:bg-marathon-red/90"
+                onClick={async () => {
+                  const purpose = window.prompt('Motivo de la exportación (opcional):', '') ?? '';
+                  setExporting(true);
+                  try {
+                    await exportRegistrations(filters, purpose, 'csv');
+                  } catch (exportError) {
+                    setError(
+                      exportError instanceof Error
+                        ? exportError.message
+                        : 'No se pudo exportar la base.'
+                    );
+                  } finally {
+                    setExporting(false);
+                  }
+                }}
+                disabled={exporting}
+              >
+                <Download size={16} />
+                {exporting ? 'Exportando...' : 'Exportar CSV'}
+              </Button>
+              <Button
+                className="min-h-11 rounded-full bg-marathon-blue text-white shadow-button hover:bg-marathon-blue/90"
+                onClick={async () => {
+                  const purpose = window.prompt('Motivo de la exportación (opcional):', '') ?? '';
+                  setExporting(true);
+                  try {
+                    await exportRegistrations(filters, purpose, 'xlsx');
+                  } catch (exportError) {
+                    setError(
+                      exportError instanceof Error
+                        ? exportError.message
+                        : 'No se pudo exportar la base.'
+                    );
+                  } finally {
+                    setExporting(false);
+                  }
+                }}
+                disabled={exporting}
+              >
+                <Download size={16} />
+                {exporting ? 'Exportando...' : 'Exportar Excel'}
+              </Button>
+            </>
           )}
         </div>
       </section>

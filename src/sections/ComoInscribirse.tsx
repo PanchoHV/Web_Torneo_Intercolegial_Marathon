@@ -139,11 +139,10 @@ export default function ComoInscribirse() {
                     <button
                       type="button"
                       onClick={() => handleNavClick(step.href)}
-                      className={`inline-flex min-h-11 items-center gap-2 rounded-full text-sm font-bold transition-all duration-200 ${
-                        step.number === '01'
+                      className={`inline-flex min-h-11 items-center gap-2 rounded-full text-sm font-bold transition-all duration-200 ${step.number === '01'
                           ? 'bg-marathon-red px-5 py-3 text-white shadow-[0_14px_28px_rgba(226,27,45,0.22)] hover:scale-[1.01]'
                           : 'text-marathon-red hover:gap-3'
-                      }`}
+                        }`}
                     >
                       {step.cta}
                       <ArrowRight size={16} />
@@ -165,8 +164,8 @@ export default function ComoInscribirse() {
                 Cupos limitados
               </p>
               <p className="mt-2 text-sm font-medium leading-relaxed text-marathon-blue sm:text-base">
-                Fecha límite de preinscripción: 30 de junio de 2026. Las preinscripciones avanzan por
-                orden de llegada y la confirmación final depende de disponibilidad por categoría.
+                Las preinscripciones se revisarán por orden de llegada, de acuerdo con la ciudad, región y calendario correspondiente. Las fechas de cierre serán comunicadas oficialmente por la organización para cada bloque regional.
+                La confirmación final dependerá de cupos disponibles, categorías habilitadas y cumplimiento de requisitos.
               </p>
             </div>
           </div>

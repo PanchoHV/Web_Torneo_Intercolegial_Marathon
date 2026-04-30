@@ -117,21 +117,6 @@ function escapeHtml(value: unknown) {
     .replace(/'/g, "&#039;");
 }
 
-function formatRegistrationDate(dateString?: string) {
-  if (!dateString) return "";
-  try {
-    return new Intl.DateTimeFormat("es-EC", {
-      dateStyle: "long",
-      timeStyle: "short",
-      timeZone: "America/Guayaquil",
-    })
-      .format(new Date(dateString))
-      .replace(",", " ·");
-  } catch {
-    return dateString;
-  }
-}
-
 function buildWhatsAppLink(phone: string) {
   const digits = String(phone || "").replace(/\D/g, "");
   return `https://wa.me/${digits}?text=${encodeURIComponent(

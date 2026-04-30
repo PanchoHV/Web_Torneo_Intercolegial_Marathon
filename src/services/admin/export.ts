@@ -1,6 +1,8 @@
 import { supabase } from '@/lib/supabase/client';
 import type { AdminRegistrationFilters } from '@/types/admin';
 
+export type ExportFormat = 'csv' | 'xlsx';
+
 function requireSupabase() {
   if (!supabase) {
     throw new Error('Supabase no está configurado para el módulo admin.');
@@ -21,16 +23,17 @@ function getFunctionUrl(functionName: string) {
 
 function getDownloadFileName(contentDisposition: string | null) {
   if (!contentDisposition) {
-    return 'registrations_export.csv';
+    return '';
   }
 
-  const match = contentDisposition.match(/filename="?(?<name>[^"]+)"?/i);
-  return match?.groups?.name ?? 'registrations_export.csv';
+  const match = contentDisposition.match(/filename="?([^"]+)"?/i);
+  return match?.[1] ?? '';
 }
 
 export async function exportRegistrations(
   filters: AdminRegistrationFilters,
-  purpose: string
+  purpose: string,
+  format: ExportFormat = 'csv'
 ) {
   const client = requireSupabase();
   const {
@@ -55,7 +58,7 @@ export async function exportRegistrations(
     },
     body: JSON.stringify({
       filters,
-      format: 'csv',
+      format,
       purpose,
     }),
   });
@@ -69,7 +72,8 @@ export async function exportRegistrations(
   const downloadUrl = window.URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = downloadUrl;
-  link.download = getDownloadFileName(response.headers.get('Content-Disposition'));
+  link.download =
+    getDownloadFileName(response.headers.get('Content-Disposition')) || `registrations_export.${format}`;
   document.body.appendChild(link);
   link.click();
   link.remove();

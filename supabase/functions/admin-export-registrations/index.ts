@@ -1,5 +1,6 @@
 // @ts-nocheck
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import * as XLSX from "https://esm.sh/xlsx@0.18.5";
 
 import {
   buildCsv,
@@ -10,7 +11,7 @@ import {
   sanitizeFileSegment,
 } from "../_shared/admin.ts";
 
-const exportColumns = [
+const sourceColumns = [
   "created_at",
   "school_name",
   "school_address",
@@ -32,6 +33,86 @@ const exportColumns = [
   "email_to_applicant_sent",
   "email_to_executive_sent",
 ];
+
+const exportColumns = [
+  "created_at",
+  "school_name",
+  "school_address",
+  "contact_name",
+  "applicant_role",
+  "applicant_role_other",
+  "school_type",
+  "contact_id_number",
+  "contact_email",
+  "contact_phone",
+  "city",
+  "categoria_1",
+  "categoria_2",
+  "categoria_3",
+  "categoria_4",
+  "categoria_5",
+  "status",
+  "onboarding_status",
+  "internal_priority",
+  "assigned_to",
+  "last_contact_at",
+  "source",
+  "email_to_applicant_sent",
+  "email_to_executive_sent",
+];
+
+function normalizeCategories(value: unknown) {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+  }
+
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+
+    if (!trimmed) {
+      return [];
+    }
+
+    if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+      try {
+        const parsed = JSON.parse(trimmed);
+
+        if (Array.isArray(parsed)) {
+          return parsed.map((item) => String(item ?? "").trim()).filter(Boolean);
+        }
+      } catch {
+        // Fall through to comma-separated parsing.
+      }
+    }
+
+    return trimmed.split(",").map((item) => item.trim()).filter(Boolean);
+  }
+
+  return [];
+}
+
+function mapExportRow(row: Record<string, unknown>) {
+  const categories = normalizeCategories(row.tournament_categories);
+
+  return {
+    ...row,
+    categoria_1: categories[0] ?? "",
+    categoria_2: categories[1] ?? "",
+    categoria_3: categories[2] ?? "",
+    categoria_4: categories[3] ?? "",
+    categoria_5: categories[4] ?? "",
+  };
+}
+
+function buildXlsx(columns: string[], rows: Record<string, unknown>[]) {
+  const worksheet = XLSX.utils.aoa_to_sheet([
+    columns,
+    ...rows.map((row) => columns.map((column) => row[column] ?? "")),
+  ]);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Registros");
+  return XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+}
 
 function applyFilters(query: any, filters: Record<string, unknown>) {
   const search = String(filters.search ?? "").trim();
@@ -101,12 +182,12 @@ Deno.serve(async (req: Request) => {
     const format = String(body.format ?? "csv").trim().toLowerCase();
     const purpose = body.purpose ? String(body.purpose).trim() : null;
 
-    if (format !== "csv") {
-      return jsonResponse({ error: "Only csv export is currently supported." }, 400);
+    if (format !== "csv" && format !== "xlsx") {
+      return jsonResponse({ error: "Only csv and xlsx exports are currently supported." }, 400);
     }
 
     const admin = getSupabaseAdminClient();
-    let query = admin.from("school_registrations").select(exportColumns.join(",")).order("created_at", {
+    let query = admin.from("school_registrations").select(sourceColumns.join(",")).order("created_at", {
       ascending: false,
     });
     query = applyFilters(query, filters);
@@ -117,11 +198,16 @@ Deno.serve(async (req: Request) => {
       return jsonResponse({ error: error.message }, 400);
     }
 
-    const rows = data ?? [];
-    const csv = buildCsv(exportColumns, rows);
-    const fileName = sanitizeFileSegment(
-      `registrations_${new Date().toISOString().replace(/[:.]/g, "-")}.csv`
+    const rows = (data ?? []).map((row: Record<string, unknown>) => mapExportRow(row));
+    const baseFileName = sanitizeFileSegment(
+      `registrations_${new Date().toISOString().replace(/[:.]/g, "-")}`
     );
+    const fileName = `${baseFileName}.${format}`;
+    const bodyContent = format === "csv" ? buildCsv(exportColumns, rows) : buildXlsx(exportColumns, rows);
+    const contentType =
+      format === "csv"
+        ? "text/csv; charset=utf-8"
+        : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
     const { data: auditRecord, error: auditError } = await admin
       .from("registration_exports_audit")
@@ -142,11 +228,11 @@ Deno.serve(async (req: Request) => {
       return jsonResponse({ error: auditError.message }, 500);
     }
 
-    return new Response(csv, {
+    return new Response(bodyContent, {
       status: 200,
       headers: {
         ...corsHeaders,
-        "Content-Type": "text/csv; charset=utf-8",
+        "Content-Type": contentType,
         "Content-Disposition": `attachment; filename="${fileName}"`,
         "X-Export-Audit-Id": auditRecord.id,
       },
