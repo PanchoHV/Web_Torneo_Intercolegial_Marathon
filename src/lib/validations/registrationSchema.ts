@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const delegateRoleValues = ['Rector', 'Entrenador', 'Docente', 'Otros'] as const;
-const schoolTypeValues = ['Privado', 'Público'] as const;
+const schoolTypeValues = ['Privado', 'Fiscal', 'Fiscomisional'] as const;
 const cityValues = [
   'Guayaquil (Guayas)',
   'Manta',

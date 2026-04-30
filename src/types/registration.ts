@@ -1,8 +1,16 @@
-export type RegistrationStatus = 'new' | 'qualified' | 'contacted' | 'won' | 'lost';
+export type RegistrationStatus =
+  | 'new'
+  | 'pending_regional_review'
+  | 'regional_window_pending'
+  | 'documentation_requested'
+  | 'qualified'
+  | 'contacted'
+  | 'won'
+  | 'lost';
 
 export type DelegateRole = 'Rector' | 'Entrenador' | 'Docente' | 'Otros';
 
-export type SchoolType = 'Privado' | 'Público';
+export type SchoolType = 'Privado' | 'Fiscal' | 'Fiscomisional';
 
 export type RegistrationCity =
   | 'Guayaquil (Guayas)'
@@ -59,6 +67,11 @@ export interface RegistrationInsert {
   tournament_categories?: RegistrationCategory[];
   status: RegistrationStatus;
   source: string;
+  region?: string;
+  inscription_start_label?: string;
+  match_start_label?: string;
+  calendar_message?: string;
+  pre_registration_status?: 'pending_regional_review';
 }
 
 export interface RegistrationCreateRequest extends RegistrationInsert {

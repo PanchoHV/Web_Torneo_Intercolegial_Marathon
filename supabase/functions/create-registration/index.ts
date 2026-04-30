@@ -11,16 +11,31 @@ type RegistrationPayload = {
   contact_name: string;
   applicant_role: "Rector" | "Entrenador" | "Docente" | "Otros";
   applicant_role_other: string | null;
-  school_type: "Privado" | "Publico" | "Público";
+  school_type: "Privado" | "Fiscal" | "Fiscomisional" | "Publico" | "Público";
   contact_id_number: string;
   contact_email: string;
   contact_phone: string;
   city: string;
   tournament_categories?: string[];
-  status: "new" | "qualified" | "contacted" | "won" | "lost";
+  status:
+    | "new"
+    | "pending_regional_review"
+    | "regional_window_pending"
+    | "documentation_requested"
+    | "qualified"
+    | "contacted"
+    | "won"
+    | "lost";
   source: string;
   website?: string;
   turnstile_token?: string;
+};
+
+type RegionalScheduleInfo = {
+  region: "Costa" | "Sierra" | "Amazonía";
+  inscriptionStart: string;
+  matchStart: string;
+  calendarMessage: string;
 };
 
 type ResendEmailResult = {
@@ -59,6 +74,89 @@ function escapeHtml(value: unknown) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function getRegionalSchedule(city: string): RegionalScheduleInfo {
+  const schedules: Record<string, RegionalScheduleInfo> = {
+    "Guayaquil (Guayas)": {
+      region: "Costa",
+      inscriptionStart: "4 de mayo de 2026",
+      matchStart: "27 de julio de 2026",
+      calendarMessage: "Tu sede forma parte del primer bloque de activación de la Región Costa.",
+    },
+    Manta: {
+      region: "Costa",
+      inscriptionStart: "4 de mayo de 2026",
+      matchStart: "14 de septiembre de 2026",
+      calendarMessage:
+        "Tu sede forma parte del bloque Costa con activación deportiva programada para septiembre.",
+    },
+    Portoviejo: {
+      region: "Costa",
+      inscriptionStart: "4 de mayo de 2026",
+      matchStart: "14 de septiembre de 2026",
+      calendarMessage:
+        "Tu sede forma parte del bloque Costa con activación deportiva programada para septiembre.",
+    },
+    Esmeraldas: {
+      region: "Costa",
+      inscriptionStart: "4 de mayo de 2026",
+      matchStart: "27 de julio de 2026",
+      calendarMessage: "Tu sede forma parte del primer bloque de activación de la Región Costa.",
+    },
+    Machala: {
+      region: "Costa",
+      inscriptionStart: "4 de mayo de 2026",
+      matchStart: "27 de julio de 2026",
+      calendarMessage: "Tu sede forma parte del primer bloque de activación de la Región Costa.",
+    },
+    "Quito (Pichincha)": {
+      region: "Sierra",
+      inscriptionStart: "7 de septiembre de 2026",
+      matchStart: "12 de octubre de 2026",
+      calendarMessage: "Tu sede se activará según el calendario escolar de Sierra.",
+    },
+    Ibarra: {
+      region: "Sierra",
+      inscriptionStart: "7 de septiembre de 2026",
+      matchStart: "19 de octubre de 2026",
+      calendarMessage: "Tu sede se activará según el calendario escolar de Sierra.",
+    },
+    Ambato: {
+      region: "Sierra",
+      inscriptionStart: "7 de septiembre de 2026",
+      matchStart: "19 de octubre de 2026",
+      calendarMessage: "Tu sede se activará según el calendario escolar de Sierra.",
+    },
+    Cuenca: {
+      region: "Sierra",
+      inscriptionStart: "7 de septiembre de 2026",
+      matchStart: "12 de octubre de 2026",
+      calendarMessage: "Tu sede se activará según el calendario escolar de Sierra.",
+    },
+    Tena: {
+      region: "Amazonía",
+      inscriptionStart: "7 de septiembre de 2026",
+      matchStart: "19 de octubre de 2026",
+      calendarMessage:
+        "Tu sede forma parte del bloque Amazonía y se activará según su calendario correspondiente.",
+    },
+  };
+
+  return schedules[city] ?? {
+    region: "Costa",
+    inscriptionStart: "Por confirmar",
+    matchStart: "Por confirmar",
+    calendarMessage: "La organización confirmará el calendario correspondiente a tu sede.",
+  };
+}
+
+function getSchoolTypeCostMessage(schoolType: string) {
+  if (schoolType === "Privado") {
+    return "Para instituciones privadas, la preinscripción tiene un valor de USD 170 por categoría inscrita, más IVA. El equipo organizador confirmará los pasos correspondientes una vez revisada la información.";
+  }
+
+  return "Los colegios fiscales y fiscomisionales no pagan costo de preinscripción. La participación estará sujeta a revisión de requisitos, cupos disponibles y calendario oficial de la sede.";
 }
 
 function isMissingColumnError(error: SupabaseMutationError) {
@@ -309,6 +407,9 @@ Deno.serve(async (req: Request) => {
       );
     }
 
+    const schedule = getRegionalSchedule(payload.city);
+    const schoolTypeCostMessage = getSchoolTypeCostMessage(payload.school_type);
+
     const registrationInsert = {
       school_name: payload.school_name,
       school_address: payload.school_address,
@@ -323,8 +424,13 @@ Deno.serve(async (req: Request) => {
       tournament_categories: Array.isArray(payload.tournament_categories)
         ? payload.tournament_categories
         : [],
-      status: payload.status,
+      status: "pending_regional_review",
       source: payload.source,
+      region: schedule.region,
+      inscription_start_label: schedule.inscriptionStart,
+      match_start_label: schedule.matchStart,
+      calendar_message: schedule.calendarMessage,
+      pre_registration_status: "pending_regional_review",
     };
 
     let data: { id: string; created_at: string };
@@ -340,7 +446,13 @@ Deno.serve(async (req: Request) => {
     error = firstInsert.error;
 
     if (error && isMissingColumnError(error)) {
-      const { tournament_categories: _unusedCategories, ...fallbackInsert } = registrationInsert;
+      const fallbackInsert = { ...registrationInsert };
+      delete fallbackInsert.tournament_categories;
+      delete fallbackInsert.region;
+      delete fallbackInsert.inscription_start_label;
+      delete fallbackInsert.match_start_label;
+      delete fallbackInsert.calendar_message;
+      delete fallbackInsert.pre_registration_status;
       const fallbackInsertResult = await admin
         .from("school_registrations")
         .insert(fallbackInsert)
@@ -421,6 +533,13 @@ Deno.serve(async (req: Request) => {
           createdAt: data.created_at,
           registrationCode: `TM-2026-${String(data.id).slice(0, 8).toUpperCase()}`,
           whatsappNumber: "+593989655352",
+          city: payload.city,
+          region: schedule.region,
+          inscriptionStart: schedule.inscriptionStart,
+          matchStart: schedule.matchStart,
+          calendarMessage: schedule.calendarMessage,
+          schoolType: payload.school_type,
+          schoolTypeCostMessage,
         });
         const participantResult = await sendResendEmail({
           apiKey: resendApiKey,
@@ -454,6 +573,10 @@ Deno.serve(async (req: Request) => {
                 <li>Encargado: ${escapeHtml(payload.contact_name)}</li>
                 <li>Cargo: ${escapeHtml(payload.applicant_role)}</li>
                 <li>Tipo de colegio: ${escapeHtml(payload.school_type)}</li>
+                <li>Región: ${escapeHtml(schedule.region)}</li>
+                <li>Inicio de inscripciones: ${escapeHtml(schedule.inscriptionStart)}</li>
+                <li>Inicio estimado de partidos: ${escapeHtml(schedule.matchStart)}</li>
+                <li>Estado interno: pending_regional_review</li>
                 <li>Categorías: ${escapeHtml(
                   Array.isArray(payload.tournament_categories) && payload.tournament_categories.length > 0
                     ? payload.tournament_categories.join(", ")

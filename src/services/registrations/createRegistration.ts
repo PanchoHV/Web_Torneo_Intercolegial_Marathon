@@ -18,7 +18,7 @@ const mapRegistrationInsert = (values: RegistrationFormValues): RegistrationInse
   contact_phone: values.phone,
   city: values.city,
   tournament_categories: values.categories,
-  status: 'new',
+  status: 'pending_regional_review',
   source: 'landing_inscripciones',
 });
 

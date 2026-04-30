@@ -11,7 +11,7 @@ import {
   UserRound,
 } from 'lucide-react';
 import { type ReactNode, useCallback, useRef, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm, useWatch } from 'react-hook-form';
 
 import TurnstileChallenge, {
   type TurnstileChallengeHandle,
@@ -35,6 +35,10 @@ import {
   registrationSchema,
   type RegistrationSchemaValues,
 } from '@/lib/validations/registrationSchema';
+import {
+  getRegionalSchedule,
+  getSchoolTypeCostMessage,
+} from '@/lib/registrations/regionalSchedule';
 import { normalizeDigits, normalizePhone, normalizeText } from '@/lib/utils/formFormatters';
 import { createRegistration } from '@/services/registrations/createRegistration';
 import type { RegistrationResult } from '@/types/registration';
@@ -112,6 +116,14 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       turnstileToken: '',
     },
   });
+
+  const selectedCity = useWatch({ control, name: 'city' });
+  const selectedSchoolType = useWatch({ control, name: 'schoolType' });
+
+  const selectedSchedule = selectedCity ? getRegionalSchedule(selectedCity) : null;
+  const selectedCostMessage = selectedSchoolType
+    ? getSchoolTypeCostMessage(selectedSchoolType)
+    : null;
 
   const onSubmit = handleSubmit(async (values) => {
     setSubmitError(null);
@@ -280,6 +292,16 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               />
             </Field>
 
+            {selectedSchedule && (
+              <div className="md:col-span-2 rounded-2xl border border-marathon-blue/10 bg-blue-50 px-4 py-3 text-sm leading-relaxed text-marathon-blue">
+                <strong>{selectedSchedule.region}:</strong> {selectedSchedule.calendarMessage}{' '}
+                Inscripciones previstas desde el{' '}
+                <strong>{selectedSchedule.inscriptionStart}</strong> y partidos desde el{' '}
+                <strong>{selectedSchedule.matchStart}</strong>. Fechas sujetas a confirmación
+                oficial.
+              </div>
+            )}
+
             <Field
               label="Dirección del colegio"
               error={errors.institutionAddress?.message}
@@ -333,6 +355,12 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 )}
               />
             </Field>
+
+            {selectedCostMessage && (
+              <div className="md:col-span-2 rounded-2xl border border-marathon-blue/10 bg-white px-4 py-3 text-sm leading-relaxed text-marathon-gray">
+                {selectedCostMessage}
+              </div>
+            )}
 
             <Field
               label="Cédula de la persona a cargo"

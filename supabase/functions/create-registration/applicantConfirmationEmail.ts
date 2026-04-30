@@ -91,6 +91,13 @@ export function buildApplicantConfirmationEmail(params: {
   createdAt?: string;
   registrationCode?: string;
   whatsappNumber: string;
+  city: string;
+  region: string;
+  inscriptionStart: string;
+  matchStart: string;
+  calendarMessage: string;
+  schoolType: string;
+  schoolTypeCostMessage: string;
 }) {
   const schoolName = escapeHtml(params.schoolName);
   const contactName = escapeHtml(params.contactName);
@@ -104,9 +111,16 @@ export function buildApplicantConfirmationEmail(params: {
   const registrationCode = escapeHtml(params.registrationCode || "TM-2026-00001");
   const whatsappNumber = escapeHtml(params.whatsappNumber);
   const whatsappUrl = escapeHtml(buildWhatsAppLink(params.whatsappNumber));
+  const city = escapeHtml(params.city);
+  const region = escapeHtml(params.region);
+  const inscriptionStart = escapeHtml(params.inscriptionStart);
+  const matchStart = escapeHtml(params.matchStart);
+  const calendarMessage = escapeHtml(params.calendarMessage);
+  const schoolType = escapeHtml(params.schoolType);
+  const schoolTypeCostMessage = escapeHtml(params.schoolTypeCostMessage);
 
   const subject =
-    "Confirmación de recepción de inscripción | Torneo Nacional Intercolegial";
+    "Preinscripción recibida | Copa Nacional Intercolegial Marathon";
 
   const html = `<!DOCTYPE html>
 <html lang="es">
@@ -137,11 +151,7 @@ export function buildApplicantConfirmationEmail(params: {
   </head>
   <body style="margin:0; padding:0; background:#eef3f8; font-family:Arial, Helvetica, sans-serif; color:#18243d;">
     <div style="display:none; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
-      Hemos recibido correctamente la inscripción de ${schoolName}. Categorías registradas: ${
-        tournamentCategories.length > 0
-          ? escapeHtml(tournamentCategories.join(", "))
-          : "No especificadas"
-      }.
+      Hemos recibido correctamente la preinscripción de ${schoolName}. La organización revisará la información y notificará los siguientes pasos según la ciudad y región seleccionada.
     </div>
 
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#eef3f8;">
@@ -171,13 +181,13 @@ export function buildApplicantConfirmationEmail(params: {
             <tr>
               <td class="section-pad" style="background:#062a4f; padding:36px 34px;">
                 <div style="display:inline-block; border-radius:999px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22); color:#ffffff; font-size:12px; line-height:16px; font-weight:900; letter-spacing:1px; text-transform:uppercase; padding:8px 12px;">
-                  Inscripción recibida
+                  Preinscripción recibida
                 </div>
                 <h1 class="hero-title" style="margin:18px 0 0 0; color:#ffffff; font-size:36px; line-height:40px; font-weight:900; text-transform:uppercase;">
-                  Hemos recibido su registro
+                  Tu colegio ya está en proceso de revisión
                 </h1>
                 <p class="hero-copy" style="margin:16px 0 0 0; color:#d9e8fb; font-size:17px; line-height:26px; font-weight:700;">
-                  Gracias por registrar a su institución en el Torneo Nacional Intercolegial. Su solicitud ingresó al proceso de validación y nuestro equipo se pondrá en contacto para continuar.
+                  Gracias por preinscribir a su institución en la Copa Nacional Intercolegial Marathon. La información enviada ingresó al proceso inicial de revisión. Nuestro equipo notificará los siguientes pasos de acuerdo con la ciudad, región y categorías seleccionadas.
                 </p>
               </td>
             </tr>
@@ -194,6 +204,47 @@ export function buildApplicantConfirmationEmail(params: {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                           ${buildCategoryBadges(tournamentCategories)}
                         </table>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="section-pad" style="padding:18px 34px 8px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#fff8ea; border:1px solid #f0d49a; border-radius:14px;">
+                  <tr>
+                    <td style="padding:20px;">
+                      <div style="font-size:13px; line-height:17px; font-weight:900; letter-spacing:1px; color:#ed1c24; text-transform:uppercase;">
+                        Calendario de tu sede
+                      </div>
+                      <div style="padding-top:10px; font-size:16px; line-height:24px; color:#34425a;">
+                        Ciudad: <strong>${city}</strong><br />
+                        Región: <strong>${region}</strong><br />
+                        Inicio de inscripciones previsto: <strong>${inscriptionStart}</strong><br />
+                        Inicio estimado de partidos: <strong>${matchStart}</strong>
+                      </div>
+                      <div style="padding-top:10px; font-size:14px; line-height:22px; color:#53657b;">
+                        ${calendarMessage} Las fechas pueden ajustarse por razones de fuerza mayor, calendario escolar, clima, disponibilidad de escenarios, logística o disposiciones de la organización.
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="section-pad" style="padding:18px 34px 8px 34px;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f7fbff; border:1px solid #d6e4f5; border-radius:14px;">
+                  <tr>
+                    <td style="padding:20px;">
+                      <div style="font-size:13px; line-height:17px; font-weight:900; letter-spacing:1px; color:#073b8c; text-transform:uppercase;">
+                        Condición de preinscripción
+                      </div>
+                      <div style="padding-top:10px; font-size:15px; line-height:23px; color:#34425a;">
+                        Tipo de institución: <strong>${schoolType}</strong><br />
+                        ${schoolTypeCostMessage}
                       </div>
                     </td>
                   </tr>
@@ -322,7 +373,7 @@ export function buildApplicantConfirmationEmail(params: {
                   Torneo Nacional Intercolegial 2026
                 </div>
                 <div style="padding-top:6px; font-size:13px; line-height:20px; color:#bfd6f6;">
-                  La recepción de esta inscripción inicia el proceso de evaluación institucional y no representa aún la aceptación definitiva al torneo.
+                  La recepción de esta preinscripción inicia el proceso de evaluación institucional. No representa aún la aceptación definitiva al torneo. La participación final estará sujeta a revisión de información, cupos disponibles, requisitos, calendario de sede y, cuando corresponda, validación del proceso de pago.
                 </div>
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="social-footer-table" style="margin:18px auto 0 auto;">
                   <tr>

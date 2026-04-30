@@ -2,7 +2,7 @@ import type { DelegateRole, RegistrationCategory, RegistrationCity, SchoolType }
 
 export const DELEGATE_ROLE_OPTIONS: DelegateRole[] = ['Rector', 'Entrenador', 'Docente', 'Otros'];
 
-export const SCHOOL_TYPE_OPTIONS: SchoolType[] = ['Privado', 'Público'];
+export const SCHOOL_TYPE_OPTIONS: SchoolType[] = ['Privado', 'Fiscal', 'Fiscomisional'];
 
 export const CITY_OPTIONS: Array<{
   region: string;
