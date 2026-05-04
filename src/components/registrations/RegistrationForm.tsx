@@ -219,8 +219,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               Preinscribe a tu colegio
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-base">
-              Toma menos de dos minutos. Necesitamos los datos del colegio y de la persona
-              responsable para dar seguimiento.
+              Déjanos tus datos y los de tu colegio para contactarte y asesorarte en el proceso de inscripción.
             </p>
 
             <div className="mt-6 hidden gap-3 sm:grid">
@@ -423,8 +422,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 {...register('termsAccepted')}
               />
               <span className="min-w-0 flex-1 break-words text-sm leading-relaxed text-marathon-gray">
-                Acepto que Marathon utilice estos datos para gestionar la preinscripción y el
-                contacto oficial del torneo.
+                Acepto que la Copa Intercolegial organizada por la fundación Marathon utilice estos datos para gestionar la preinscripción y el contrato oficial del torneo.
               </span>
             </label>
             {errors.termsAccepted?.message && (

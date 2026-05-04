@@ -20,7 +20,7 @@ export default function RegistrationHero() {
             <img
               src="/marathon-logo.webp"
               alt="Copa Nacional Marathon Intercolegial 2026"
-              className="h-10 w-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.28)] sm:h-16 lg:h-[67px]"
+              className="h-14 w-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.28)] sm:h-20 lg:h-[120px]"
             />
           </Link>
           <Link
@@ -36,11 +36,11 @@ export default function RegistrationHero() {
           <span className="mb-2 inline-flex max-w-full items-center gap-2 rounded-full border border-white/35 bg-white/10 px-3 py-1.5 text-[0.62rem] font-bold tracking-[0.08em] sm:mb-3 sm:text-xs sm:tracking-[0.12em]">
             <Trophy size={14} /> CONVOCATORIA OFICIAL 2026
           </span>
-          <h1 className="max-w-3xl break-words text-[clamp(1.55rem,6.8vw,3.7rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
+          <h1 className="max-w-3xl break-words text-[clamp(1.35rem,5.8vw,3.2rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
             Preinscripción de colegios
           </h1>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/90 sm:mt-3 sm:text-lg">
-            Completa el registro oficial del Torneo Intercolegial Marathon Ecuador 2026. Te contactaremos para continuar el proceso.
+            Completa el registro oficial de la Copa Nacional Intercolegial Marathon 2026.
           </p>
         </div>
 

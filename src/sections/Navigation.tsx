@@ -105,7 +105,11 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-[400ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+        style={{
+          transitionDuration: '400ms',
+          transitionTimingFunction: 'cubic-bezier(0.25,0.1,0.25,1)',
+        }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all ${
           scrolled
             ? 'bg-white/[0.92] backdrop-blur-xl border-b border-marathon-blue/10 shadow-[0_18px_44px_rgba(6,42,79,0.1)]'
             : 'bg-transparent'
