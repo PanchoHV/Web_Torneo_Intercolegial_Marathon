@@ -17,6 +17,15 @@ type RegistrationUpdatePayload = {
   lastContactAt?: string | null;
 };
 
+type RegistrationFilterQuery<TSelf> = {
+  or(filters: string): TSelf;
+  in(column: string, values: string[]): TSelf;
+  overlaps(column: string, values: string[]): TSelf;
+  eq(column: string, value: string): TSelf;
+  gte(column: string, value: string): TSelf;
+  lt(column: string, value: string): TSelf;
+};
+
 function requireSupabase() {
   if (!supabase) {
     throw new Error('Supabase no está configurado para el módulo admin.');
@@ -25,8 +34,8 @@ function requireSupabase() {
   return supabase;
 }
 
-function applyRegistrationFilters(
-  query: any,
+function applyRegistrationFilters<TQuery extends RegistrationFilterQuery<TQuery>>(
+  query: TQuery,
   filters: AdminRegistrationFilters
 ) {
   const search = filters.search.trim();
@@ -37,12 +46,12 @@ function applyRegistrationFilters(
     );
   }
 
-  if (filters.city) {
-    query = query.eq('city', filters.city);
+  if (filters.cities.length > 0) {
+    query = query.in('city', filters.cities);
   }
 
-  if (filters.category) {
-    query = query.contains('tournament_categories', [filters.category]);
+  if (filters.categories.length > 0) {
+    query = query.overlaps('tournament_categories', filters.categories);
   }
 
   if (filters.schoolType) {

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import * as XLSX from "https://esm.sh/xlsx@0.18.5";
 
@@ -61,6 +60,15 @@ const exportColumns = [
   "email_to_executive_sent",
 ];
 
+type ExportFilterQuery<TSelf> = {
+  or(filters: string): TSelf;
+  in(column: string, values: string[]): TSelf;
+  overlaps(column: string, values: string[]): TSelf;
+  eq(column: string, value: string): TSelf;
+  gte(column: string, value: string): TSelf;
+  lt(column: string, value: string): TSelf;
+};
+
 function normalizeCategories(value: unknown) {
   if (Array.isArray(value)) {
     return value.map((item) => String(item ?? "").trim()).filter(Boolean);
@@ -91,6 +99,15 @@ function normalizeCategories(value: unknown) {
   return [];
 }
 
+function normalizeStringArray(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value.map((item) => String(item ?? "").trim()).filter(Boolean);
+  }
+
+  const single = String(value ?? "").trim();
+  return single ? [single] : [];
+}
+
 function mapExportRow(row: Record<string, unknown>) {
   const categories = normalizeCategories(row.tournament_categories);
 
@@ -114,10 +131,13 @@ function buildXlsx(columns: string[], rows: Record<string, unknown>[]) {
   return XLSX.write(workbook, { bookType: "xlsx", type: "array" });
 }
 
-function applyFilters(query: any, filters: Record<string, unknown>) {
+function applyFilters<TQuery extends ExportFilterQuery<TQuery>>(
+  query: TQuery,
+  filters: Record<string, unknown>
+) {
   const search = String(filters.search ?? "").trim();
-  const city = String(filters.city ?? "").trim();
-  const category = String(filters.category ?? "").trim();
+  const cities = normalizeStringArray(filters.cities ?? filters.city);
+  const categories = normalizeStringArray(filters.categories ?? filters.category);
   const schoolType = String(filters.schoolType ?? "").trim();
   const onboardingStatus = String(filters.onboardingStatus ?? "").trim();
   const dateFrom = String(filters.dateFrom ?? "").trim();
@@ -130,12 +150,12 @@ function applyFilters(query: any, filters: Record<string, unknown>) {
     );
   }
 
-  if (city) {
-    query = query.eq("city", city);
+  if (cities.length > 0) {
+    query = query.in("city", cities);
   }
 
-  if (category) {
-    query = query.contains("tournament_categories", [category]);
+  if (categories.length > 0) {
+    query = query.overlaps("tournament_categories", categories);
   }
 
   if (schoolType) {

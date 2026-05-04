@@ -1,5 +1,5 @@
-import { Download, Eye, RefreshCw, Search } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Check, ChevronDown, Download, Eye, RefreshCw, Search, X } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router';
 
 import StatusBadge from '@/components/admin/StatusBadge';
@@ -46,6 +46,27 @@ export default function OnboardingDashboard() {
   const [exporting, setExporting] = useState(false);
 
   const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));
+
+  const hasActiveFilters = useMemo(
+    () =>
+      Boolean(
+        searchDraft.trim() ||
+          filters.search.trim() ||
+          filters.cities.length ||
+          filters.categories.length ||
+          filters.schoolType ||
+          filters.onboardingStatus ||
+          filters.dateFrom ||
+          filters.dateTo
+      ),
+    [filters, searchDraft]
+  );
+
+  const clearFilters = () => {
+    setPage(1);
+    setSearchDraft('');
+    setFilters(EMPTY_ADMIN_FILTERS);
+  };
 
   const loadRegistrations = useCallback(
     async (showRefreshing = false) => {
@@ -218,7 +239,7 @@ export default function OnboardingDashboard() {
       </section>
 
       <section className="grid min-w-0 gap-4 rounded-[1.5rem] border border-marathon-blue/10 bg-white p-3 shadow-card sm:p-5">
-        <div className="grid min-w-0 gap-4 xl:grid-cols-[1.3fr_repeat(6,minmax(0,1fr))]">
+        <div className="grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-[1.3fr_repeat(6,minmax(0,1fr))]">
           <label className="grid gap-2">
             <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
               Buscar
@@ -234,14 +255,14 @@ export default function OnboardingDashboard() {
             </div>
           </label>
 
-          <FilterSelect
+          <MultiFilterSelect
             label="Ciudad"
-            value={filters.city}
+            values={filters.cities}
             placeholder="Todas"
             options={CITY_OPTIONS_FLAT}
-            onChange={(value) => {
+            onChange={(values) => {
               setPage(1);
-              setFilters((current) => ({ ...current, city: value }));
+              setFilters((current) => ({ ...current, cities: values }));
             }}
           />
 
@@ -256,14 +277,14 @@ export default function OnboardingDashboard() {
             }}
           />
 
-          <FilterSelect
-            label="Categoría"
-            value={filters.category}
+          <MultiFilterSelect
+            label="Categorías"
+            values={filters.categories}
             placeholder="Todas"
             options={TOURNAMENT_CATEGORY_OPTIONS}
-            onChange={(value) => {
+            onChange={(values) => {
               setPage(1);
-              setFilters((current) => ({ ...current, category: value }));
+              setFilters((current) => ({ ...current, categories: values }));
             }}
           />
 
@@ -302,6 +323,20 @@ export default function OnboardingDashboard() {
             }}
           />
         </div>
+
+        {hasActiveFilters && (
+          <div className="flex justify-end">
+            <Button
+              type="button"
+              variant="outline"
+              className="min-h-10 rounded-full border-marathon-blue/10 text-marathon-blue"
+              onClick={clearFilters}
+            >
+              <X size={15} />
+              Limpiar filtros
+            </Button>
+          </div>
+        )}
 
         {error && (
           <p className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
@@ -379,16 +414,16 @@ export default function OnboardingDashboard() {
                   )}
                 </div>
 
-                <div className="grid gap-2 text-sm text-marathon-gray">
-                  <p>
+                <div className="grid min-w-0 gap-2 text-sm text-marathon-gray">
+                  <p className="min-w-0 break-words">
                     <strong className="text-marathon-blue">Responsable:</strong>{' '}
                     {registration.contact_name}
                   </p>
-                  <p className="break-words">
+                  <p className="min-w-0 break-all">
                     <strong className="text-marathon-blue">Correo:</strong>{' '}
                     {registration.contact_email}
                   </p>
-                  <p>
+                  <p className="min-w-0 break-words">
                     <strong className="text-marathon-blue">Teléfono:</strong>{' '}
                     {registration.contact_phone}
                   </p>
@@ -420,8 +455,8 @@ export default function OnboardingDashboard() {
           )}
         </div>
 
-        <div className="hidden min-w-0 2xl:block">
-          <Table className="min-w-[1420px]">
+        <div className="hidden min-w-0 overflow-x-auto 2xl:block">
+          <Table className="min-w-[1520px]">
             <TableHeader>
               <TableRow>
                 <TableHead>Institución</TableHead>
@@ -483,10 +518,12 @@ export default function OnboardingDashboard() {
                       {registration.contact_name}
                     </TableCell>
                     <TableCell>{registration.applicant_role}</TableCell>
-                    <TableCell className="max-w-[220px] whitespace-normal text-xs">
+                    <TableCell className="max-w-[260px] whitespace-normal break-all text-xs">
                       {registration.contact_email}
                     </TableCell>
-                    <TableCell>{registration.contact_phone}</TableCell>
+                    <TableCell className="max-w-[150px] whitespace-normal break-words">
+                      {registration.contact_phone}
+                    </TableCell>
                     <TableCell>{formatDateTime(registration.created_at)}</TableCell>
                     <TableCell>{registration.status}</TableCell>
                     <TableCell>
@@ -517,6 +554,147 @@ export default function OnboardingDashboard() {
           </Table>
         </div>
       </section>
+    </div>
+  );
+}
+
+function MultiFilterSelect({
+  label,
+  values,
+  placeholder,
+  options,
+  onChange,
+  optionLabelMap,
+}: {
+  label: string;
+  values: string[];
+  placeholder: string;
+  options: readonly string[];
+  onChange: (values: string[]) => void;
+  optionLabelMap?: Record<string, string>;
+}) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, [open]);
+
+  const displayValue = useMemo(() => {
+    if (values.length === 0) {
+      return placeholder;
+    }
+
+    if (values.length === 1) {
+      return optionLabelMap?.[values[0]] ?? values[0];
+    }
+
+    return `${values.length} seleccionadas`;
+  }, [optionLabelMap, placeholder, values]);
+
+  const toggleValue = (value: string) => {
+    const nextValues = values.includes(value)
+      ? values.filter((item) => item !== value)
+      : [...values, value];
+
+    onChange(nextValues);
+  };
+
+  const clearValues = () => {
+    onChange([]);
+  };
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative grid gap-2"
+    >
+      <span className="text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/60">
+        {label}
+      </span>
+      <button
+        type="button"
+        className="flex h-11 w-full min-w-0 items-center justify-between gap-2 rounded-2xl border border-marathon-blue/10 bg-white px-3 text-left text-sm font-medium text-marathon-blue shadow-xs transition hover:bg-marathon-ice/45 focus:outline-none focus:ring-2 focus:ring-marathon-blue/20"
+        aria-expanded={open}
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span className={values.length ? 'truncate' : 'truncate text-marathon-gray'}>
+          {displayValue}
+        </span>
+        <ChevronDown
+          size={16}
+          className={`shrink-0 text-marathon-blue/55 transition ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-50 mt-2 w-[min(20rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-marathon-blue/10 bg-white shadow-[0_18px_42px_rgba(6,42,79,0.18)] md:w-full md:min-w-[18rem]">
+          <div className="grid gap-2 border-b border-marathon-blue/10 px-3 py-2 sm:flex sm:items-center sm:justify-between">
+            <span className="min-w-0 break-words text-xs font-bold uppercase tracking-[0.12em] text-marathon-blue/55">
+              {label}
+            </span>
+            <button
+              type="button"
+              className="w-fit rounded-full px-2 py-1 text-xs font-bold text-marathon-red transition hover:bg-marathon-red/8 disabled:cursor-not-allowed disabled:text-marathon-gray"
+              onClick={clearValues}
+              disabled={values.length === 0}
+            >
+              Limpiar
+            </button>
+          </div>
+
+          <div className="max-h-64 overflow-y-auto p-2">
+            {options.map((option) => {
+              const checked = values.includes(option);
+
+              return (
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold text-marathon-blue transition hover:bg-marathon-ice"
+                >
+                  <span
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${
+                      checked
+                        ? 'border-marathon-blue bg-marathon-blue text-white'
+                        : 'border-marathon-blue/20 bg-white text-transparent'
+                    }`}
+                    aria-hidden="true"
+                  >
+                    <Check size={13} strokeWidth={3} />
+                  </span>
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={checked}
+                    onChange={() => toggleValue(option)}
+                  />
+                  <span className="min-w-0 flex-1 break-words">
+                    {optionLabelMap?.[option] ?? option}
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

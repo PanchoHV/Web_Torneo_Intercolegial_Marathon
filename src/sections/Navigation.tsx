@@ -4,10 +4,10 @@ import { useNavigate, useLocation } from 'react-router';
 
 const navLinks = [
   { label: 'El Torneo', href: '#sobre-el-torneo' },
+  { label: 'Sedes', href: '#sedes' },
   { label: 'Preinscripción', href: '/inscripciones' },
   { label: 'Tutoriales', href: '#tutoriales' },
-  { label: 'Comunicación', href: '#comunicacion' },
-  { label: 'Preguntas', href: '#preguntas' },
+  { label: 'Preguntas', href: '#faq' },
 ];
 
 // Toggle temporal para ocultar/desactivar el acceso a tutoriales

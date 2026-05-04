@@ -68,8 +68,8 @@ export interface ExportAuditRecord {
 
 export interface AdminRegistrationFilters {
   search: string;
-  city: string;
-  category: string;
+  cities: string[];
+  categories: string[];
   schoolType: string;
   onboardingStatus: '' | OnboardingStatus;
   dateFrom: string;
@@ -100,8 +100,8 @@ export const INTERNAL_PRIORITY_OPTIONS = [
 
 export const EMPTY_ADMIN_FILTERS: AdminRegistrationFilters = {
   search: '',
-  city: '',
-  category: '',
+  cities: [],
+  categories: [],
   schoolType: '',
   onboardingStatus: '',
   dateFrom: '',
