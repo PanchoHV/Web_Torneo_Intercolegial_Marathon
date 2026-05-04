@@ -63,9 +63,9 @@ const extraTutorials = [
 ] as const;
 
 export default function Tutoriales() {
-  if (!SHOW_TUTORIALS) return null;
   const sectionRef = useRef<HTMLDivElement>(null);
   const [showMore, setShowMore] = useState(false);
+
 
   const tutorials = showMore ? [...primaryTutorials, ...extraTutorials] : primaryTutorials;
 
@@ -101,6 +101,8 @@ export default function Tutoriales() {
 
     return () => ctx.revert();
   }, [showMore]);
+
+  if (!SHOW_TUTORIALS) return null;
 
   return (
     <section

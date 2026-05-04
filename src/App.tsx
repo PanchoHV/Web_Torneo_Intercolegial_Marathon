@@ -6,6 +6,7 @@ import Navigation from '@/sections/Navigation';
 import Hero from '@/sections/Hero';
 import SobreElTorneo from '@/sections/SobreElTorneo';
 import ComoInscribirse from '@/sections/ComoInscribirse';
+import SedesCalendario from '@/sections/SedesCalendario';
 import Tutoriales from '@/sections/Tutoriales';
 import Comunicacion from '@/sections/Comunicacion';
 import FAQ from '@/sections/FAQ';
@@ -35,6 +36,7 @@ function HomeLanding() {
       <main>
         <Hero />
         <SobreElTorneo />
+        <SedesCalendario />
         <ComoInscribirse />
         <Tutoriales />
         <Comunicacion />
