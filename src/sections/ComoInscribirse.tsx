@@ -6,6 +6,9 @@ import { ArrowRight, AlertCircle, BadgeCheck, FileCheck2, UsersRound } from 'luc
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Toggle temporal para ocultar/desactivar acceso a tutoriales
+const SHOW_TUTORIALS = false;
+
 const steps = [
   {
     number: '01',
@@ -136,17 +139,29 @@ export default function ComoInscribirse() {
                   </p>
 
                   <div className="mt-6 border-t border-marathon-blue/8 pt-5">
-                    <button
-                      type="button"
-                      onClick={() => handleNavClick(step.href)}
-                      className={`inline-flex min-h-11 items-center gap-2 rounded-full text-sm font-bold transition-all duration-200 ${step.number === '01'
-                          ? 'bg-marathon-red px-5 py-3 text-white shadow-[0_14px_28px_rgba(226,27,45,0.22)] hover:scale-[1.01]'
-                          : 'text-marathon-red hover:gap-3'
-                        }`}
-                    >
-                      {step.cta}
-                      <ArrowRight size={16} />
-                    </button>
+                    {
+                      (() => {
+                        const isTutorialStep = step.href === '#tutoriales' && !SHOW_TUTORIALS;
+                        return (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              if (isTutorialStep) return;
+                              handleNavClick(step.href);
+                            }}
+                            aria-disabled={isTutorialStep}
+                            className={`inline-flex min-h-11 items-center gap-2 rounded-full text-sm font-bold transition-all duration-200 ${
+                              step.number === '01'
+                                ? 'bg-marathon-red px-5 py-3 text-white shadow-[0_14px_28px_rgba(226,27,45,0.22)] hover:scale-[1.01]'
+                                : 'text-marathon-red hover:gap-3'
+                            } ${isTutorialStep ? 'pointer-events-none opacity-50' : ''}`}
+                          >
+                            {step.cta}
+                            <ArrowRight size={16} />
+                          </button>
+                        );
+                      })()
+                    }
                   </div>
                 </article>
               );

@@ -10,6 +10,9 @@ const navLinks = [
   { label: 'Preguntas', href: '#preguntas' },
 ];
 
+// Toggle temporal para ocultar/desactivar el acceso a tutoriales
+const SHOW_TUTORIALS = false;
+
 export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -132,27 +135,34 @@ export default function Navigation() {
 
           {/* Desktop Links */}
           <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
-                  activeSection === link.href
-                    ? 'text-marathon-red'
-                    : 'text-marathon-blue hover:text-marathon-red'
-                }`}
-              >
-                {link.label}
-                {/* FIX 5: Indicador activo animado (punto flotante) */}
-                <span
-                  className={`absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-marathon-red transition-all duration-300 ${
-                    activeSection === link.href
-                      ? 'opacity-100 scale-100'
-                      : 'opacity-0 scale-0 group-hover:opacity-60 group-hover:scale-75'
-                  }`}
-                />
-              </button>
-            ))}
+              {navLinks.map((link) => {
+                const isTutorialDisabled = link.href === '#tutoriales' && !SHOW_TUTORIALS;
+                return (
+                  <button
+                    key={link.href}
+                    onClick={() => {
+                      if (isTutorialDisabled) return;
+                      handleNavClick(link.href);
+                    }}
+                    aria-disabled={isTutorialDisabled}
+                    className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
+                      activeSection === link.href
+                        ? 'text-marathon-red'
+                        : 'text-marathon-blue hover:text-marathon-red'
+                    } ${isTutorialDisabled ? 'pointer-events-none opacity-50' : ''}`}
+                  >
+                    {link.label}
+                    {/* FIX 5: Indicador activo animado (punto flotante) */}
+                    <span
+                      className={`absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-marathon-red transition-all duration-300 ${
+                        activeSection === link.href
+                          ? 'opacity-100 scale-100'
+                          : 'opacity-0 scale-0 group-hover:opacity-60 group-hover:scale-75'
+                      }`}
+                    />
+                  </button>
+                );
+              })}
           </div>
 
           {/* Desktop CTA */}
@@ -186,22 +196,29 @@ export default function Navigation() {
         }`}
       >
         <div className="flex min-h-full flex-col items-center justify-center gap-4 px-4 py-20">
-          {navLinks.map((link, i) => (
-            <button
-              key={link.href}
-              onClick={() => handleNavClick(link.href)}
-              style={{
-                transitionDelay: mobileOpen ? `${i * 60 + 100}ms` : '0ms',
-              }}
-              className={`w-full max-w-[320px] rounded-2xl border border-marathon-blue/10 bg-marathon-cream/65 px-5 py-4 font-montserrat text-xl font-bold text-marathon-blue shadow-[0_12px_28px_rgba(6,42,79,0.04)] transition-all duration-500 hover:border-marathon-red/25 hover:text-marathon-red ${
-                mobileOpen
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-6 opacity-0'
-              }`}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link, i) => {
+            const isTutorialDisabled = link.href === '#tutoriales' && !SHOW_TUTORIALS;
+            return (
+              <button
+                key={link.href}
+                onClick={() => {
+                  if (isTutorialDisabled) return;
+                  handleNavClick(link.href);
+                }}
+                aria-disabled={isTutorialDisabled}
+                style={{
+                  transitionDelay: mobileOpen ? `${i * 60 + 100}ms` : '0ms',
+                }}
+                className={`w-full max-w-[320px] rounded-2xl border border-marathon-blue/10 bg-marathon-cream/65 px-5 py-4 font-montserrat text-xl font-bold text-marathon-blue shadow-[0_12px_28px_rgba(6,42,79,0.04)] transition-all duration-500 hover:border-marathon-red/25 hover:text-marathon-red ${
+                  mobileOpen
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-6 opacity-0'
+                } ${isTutorialDisabled ? 'pointer-events-none opacity-50' : ''}`}
+              >
+                {link.label}
+              </button>
+            );
+          })}
           <button
             onClick={() => {
               setMobileOpen(false);

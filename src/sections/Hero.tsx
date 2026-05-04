@@ -4,6 +4,8 @@ import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import gsap from 'gsap';
 
+// Toggle temporal para ocultar/desactivar acceso a tutoriales
+const SHOW_TUTORIALS = false;
 const TARGET_DATE = new Date('2026-07-17T23:59:59');
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
@@ -159,8 +161,14 @@ export default function Hero() {
             Preinscribir a mi Colegio <ArrowRight size={18} />
           </button>
           <button
-            onClick={() => handleNavClick('#tutoriales')}
-            className="w-full sm:w-auto justify-center bg-transparent border border-marathon-blue/35 text-marathon-blue font-inter font-semibold rounded-full px-6 sm:px-7 py-3 sm:py-3.5 hover:bg-white/65 hover:border-marathon-blue/50 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
+            onClick={() => {
+              if (!SHOW_TUTORIALS) return;
+              handleNavClick('#tutoriales');
+            }}
+            aria-disabled={!SHOW_TUTORIALS}
+            className={`w-full sm:w-auto justify-center bg-transparent border border-marathon-blue/35 text-marathon-blue font-inter font-semibold rounded-full px-6 sm:px-7 py-3 sm:py-3.5 hover:bg-white/65 hover:border-marathon-blue/50 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base ${
+              !SHOW_TUTORIALS ? 'pointer-events-none opacity-50' : ''
+            }`}
           >
             <Play size={18} /> Ver Tutorial de Preinscripción
           </button>

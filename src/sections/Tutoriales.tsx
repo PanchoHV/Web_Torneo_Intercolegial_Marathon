@@ -5,6 +5,9 @@ import { ArrowRight, CirclePlay, Clock3, LayoutTemplate, Sparkles } from 'lucide
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Toggle para ocultar temporalmente la sección de tutoriales (no eliminar)
+const SHOW_TUTORIALS = false;
+
 const primaryTutorials = [
   {
     title: 'Tutorial de Bienvenida al torneo',
@@ -60,6 +63,7 @@ const extraTutorials = [
 ] as const;
 
 export default function Tutoriales() {
+  if (!SHOW_TUTORIALS) return null;
   const sectionRef = useRef<HTMLDivElement>(null);
   const [showMore, setShowMore] = useState(false);
 
