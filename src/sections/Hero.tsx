@@ -24,14 +24,14 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
   }, [value]);
 
   return (
-    <div className="w-full min-w-0 bg-white rounded-2xl px-3 py-4 sm:w-auto sm:min-w-[90px] sm:px-6 sm:py-5 shadow-card text-center">
+    <div className="w-full min-w-0 rounded-xl border border-white/15 bg-[#061a38]/78 px-2 py-2 text-center shadow-[0_18px_42px_rgba(0,0,0,0.24)] sm:w-auto sm:min-w-[90px] sm:rounded-2xl sm:px-6 sm:py-5">
       <div
         ref={numRef}
-        className="font-montserrat font-black text-marathon-red tabular-nums text-[clamp(1.75rem,6vw,3.5rem)] leading-none"
+        className="font-montserrat font-black text-marathon-gold tabular-nums text-[clamp(1.25rem,6.4vw,1.95rem)] leading-none sm:text-[clamp(1.75rem,6vw,3.5rem)]"
       >
         {String(value).padStart(2, '0')}
       </div>
-      <div className="font-inter font-medium text-[0.7rem] sm:text-xs text-marathon-gray mt-1 sm:mt-2 uppercase tracking-wide">
+      <div className="mt-0.5 font-inter text-[0.56rem] font-bold uppercase tracking-wide text-white/68 sm:mt-2 sm:text-xs">
         {label}
       </div>
     </div>
@@ -88,42 +88,49 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[100svh] flex flex-col items-center justify-center bg-marathon-cream overflow-hidden"
+      className="relative flex h-[100svh] flex-col items-stretch justify-center overflow-hidden bg-[#020817]"
     >
-      <img
-        src="/hero-background.webp"
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.90] pointer-events-none select-none"
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(244,248,252,0.98)_0%,rgba(244,248,252,0.9)_42%,rgba(244,248,252,0.72)_100%),radial-gradient(circle_at_top,rgba(0,80,164,0.18),transparent_34rem)] pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-marathon-cream to-transparent pointer-events-none" />
+      <picture className="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
+        <source
+          media="(max-width: 767px)"
+          srcSet="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-ChatGPT%20Image%205%20may%202026%2C%2011_11_08%20a.webp"
+        />
+        <img
+          src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-ChatGPT%20Image%205%20may%202026%2C%2011_11_08%20a.webp"
+          alt=""
+          className="h-full w-full object-cover object-center opacity-100"
+        />
+      </picture>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(2,8,23,0.82)_0%,rgba(2,8,23,0.58)_36%,rgba(2,8,23,0.92)_100%)] lg:bg-[linear-gradient(90deg,rgba(2,8,23,0.98)_0%,rgba(3,18,48,0.93)_35%,rgba(3,18,48,0.54)_60%,rgba(2,8,23,0.18)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_42%,rgba(0,80,164,0.22),transparent_30rem),radial-gradient(circle_at_82%_22%,rgba(226,27,45,0.2),transparent_26rem)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020817] via-[#020817]/60 to-transparent" />
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-marathon-red via-marathon-gold to-marathon-blue" />
 
       {/* SVG diagonal lines pattern */}
-      <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.07]" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="diagonalLines" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M-10 50 L50 -10" stroke="#0050A4" strokeWidth="1" />
+            <path d="M-10 50 L50 -10" stroke="rgba(255,255,255,0.5)" strokeWidth="1" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#diagonalLines)" />
       </svg>
 
-      <div className="relative z-10 w-full max-w-[min(960px,100vw)] mx-auto px-5 sm:px-6 text-center pt-[96px] sm:pt-[120px] pb-12 sm:pb-16">
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1200px] items-start px-4 pb-2 pt-[78px] sm:px-6 sm:pb-8 sm:pt-[94px] lg:px-8 lg:pt-[104px]">
+        <div className="w-full max-w-[33rem] text-center sm:max-w-[630px] lg:text-left">
         {/* Badge */}
-        <div className="hero-badge inline-flex max-w-full flex-wrap items-center justify-center gap-2 bg-white/80 text-center text-marathon-blue font-inter font-bold text-[0.66rem] leading-snug sm:text-xs tracking-[0.06em] sm:tracking-[0.12em] rounded-full px-4 sm:px-5 py-2 mb-6 sm:mb-8 border border-marathon-blue/10 shadow-card backdrop-blur">
+        <div className="hero-badge mb-2 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/18 bg-[#061a38]/72 px-3 py-1.5 text-center font-inter text-[0.56rem] font-bold leading-snug tracking-[0.06em] !text-white shadow-[0_16px_36px_rgba(0,0,0,0.22)] sm:mb-4 sm:px-5 sm:py-2 sm:text-xs sm:tracking-[0.12em] lg:mb-5">
           <span className="h-2 w-2 shrink-0 rounded-full bg-marathon-red" /> EDICIÓN 2026 - PREINSCRIPCIONES ABIERTAS
         </div>
 
         {/* Title */}
-        <h1 className="hero-title mx-auto flex max-w-full flex-col items-center font-montserrat font-black uppercase text-marathon-blue tracking-[0.01em] sm:tracking-[0.02em] text-[clamp(2rem,9.2vw,3.35rem)] sm:text-[clamp(3.25rem,7vw,4.7rem)] leading-[1.02] mb-5">
-          <span className="block max-w-full whitespace-nowrap">COPA NACIONAL</span>
-          <span className="block max-w-full whitespace-nowrap">INTERCOLEGIAL</span>
+        <h1 className="hero-title mb-2 flex max-w-full flex-col items-center font-montserrat text-[clamp(1.85rem,8.8vw,2.8rem)] font-black uppercase leading-[0.95] tracking-[0.01em] !text-white sm:mb-3 sm:text-[clamp(3rem,5.6vw,4.45rem)] sm:tracking-[0.02em] lg:items-start">
+          <span className="block max-w-full">COPA NACIONAL</span>
+          <span className="block max-w-full !text-white">INTERCOLEGIAL</span>
           <img
             src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Vigia-Logos-2.webp"
             alt="Marathon"
-            className="mt-2 h-[clamp(2.25rem,10vw,3rem)] w-auto max-w-[72vw] sm:h-[clamp(3rem,5vw,4.25rem)] sm:max-w-none"
+            className="mt-2 h-[clamp(2.65rem,11vw,3.55rem)] w-auto max-w-[82vw] rounded-xl bg-white/92 px-3 py-1.5 shadow-[0_16px_38px_rgba(0,0,0,0.28)] sm:mt-2.5 sm:h-[clamp(3.65rem,5.4vw,4.85rem)] sm:max-w-none sm:px-4 sm:py-2"
             loading="eager"
             fetchPriority="high"
             onError={(e) => {
@@ -133,17 +140,17 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="hero-subtitle font-inter text-marathon-gray text-base sm:text-xl leading-relaxed max-w-[680px] mx-auto mb-8 sm:mb-10">
+        <p className="hero-subtitle mx-auto mb-3 max-w-[34rem] font-inter text-[0.8rem] leading-snug !text-white/90 sm:mb-5 sm:text-[1.05rem] sm:leading-relaxed lg:mx-0 lg:mb-6">
           El torneo intercolegial más grande del Ecuador. Preinscribe a tu colegio y sé parte de una experiencia nacional con nivel de copa.
         </p>
 
         {/* Countdown */}
-        <div className="hero-countdown mx-auto mb-8 max-w-full rounded-[1.25rem] bg-white/55 border border-white/70 shadow-card px-3 py-5 backdrop-blur-md sm:mb-10 sm:rounded-3xl sm:px-6 sm:py-7" aria-live="polite">
-          <p className="font-inter font-semibold text-xs tracking-[0.1em] text-marathon-gray uppercase mb-4">
+        <div className="hero-countdown mx-auto mb-3 max-w-[34rem] rounded-[1rem] border border-white/15 bg-[#03122b]/72 px-2 py-2.5 shadow-[0_22px_58px_rgba(0,0,0,0.28)] sm:mb-5 sm:max-w-[630px] sm:rounded-3xl sm:px-5 sm:py-4 lg:mx-0 lg:mb-6" aria-live="polite">
+          <p className="mb-2 font-inter text-[0.58rem] font-bold uppercase tracking-[0.1em] !text-white/70 sm:mb-4 sm:text-xs">
             {isExpired ? 'PREINSCRIPCIONES CERRADAS' : 'CIERRE DE PREINSCRIPCIONES EN:'}
           </p>
           {!isExpired && (
-            <div className="mx-auto grid max-w-[320px] grid-cols-2 justify-center gap-3 sm:flex sm:max-w-none sm:flex-wrap sm:gap-4">
+            <div className="grid max-w-[20rem] grid-cols-4 justify-center gap-1.5 sm:flex sm:max-w-none sm:flex-wrap sm:gap-4">
               <CountdownUnit value={days} label="DÍAS" />
               <CountdownUnit value={hours} label="HORAS" />
               <CountdownUnit value={minutes} label="MINUTOS" />
@@ -153,43 +160,40 @@ export default function Hero() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="hero-buttons flex flex-col sm:flex-row sm:flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4">
+        <div className="hero-buttons flex flex-col items-stretch gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 lg:justify-start">
           <button
             onClick={() => navigate('/inscripciones')}
-            className="w-full sm:w-auto justify-center bg-marathon-red text-white font-montserrat font-bold rounded-full px-7 sm:px-9 py-3.5 sm:py-4 shadow-button hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
+            className="flex w-full justify-center gap-2 rounded-full bg-marathon-red px-6 py-2.5 font-montserrat text-sm font-bold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] sm:w-auto sm:px-9 sm:py-4 sm:text-base"
           >
             Preinscribir a mi Colegio <ArrowRight size={18} />
           </button>
-          <button
-            onClick={() => {
-              if (!SHOW_TUTORIALS) return;
-              handleNavClick('#tutoriales');
-            }}
-            aria-disabled={!SHOW_TUTORIALS}
-            className={`w-full sm:w-auto justify-center bg-transparent border border-marathon-blue/35 text-marathon-blue font-inter font-semibold rounded-full px-6 sm:px-7 py-3 sm:py-3.5 hover:bg-white/65 hover:border-marathon-blue/50 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base ${
-              !SHOW_TUTORIALS ? 'pointer-events-none opacity-50' : ''
-            }`}
-          >
-            <Play size={18} /> Ver Tutorial de Preinscripción
-          </button>
+          {SHOW_TUTORIALS && (
+            <button
+              onClick={() => handleNavClick('#tutoriales')}
+              className="w-full justify-center rounded-full border border-white/25 bg-white/8 px-6 py-3 font-inter text-sm font-semibold text-white transition-all duration-300 hover:border-white/45 hover:bg-white/12 sm:w-auto sm:px-7 sm:py-3.5 sm:text-base"
+            >
+              <Play size={18} /> Ver Tutorial de Preinscripción
+            </button>
+          )}
           <button
             onClick={() => handleNavClick('#comunicacion')}
-            className="w-full sm:w-auto justify-center text-marathon-blue/90 font-inter font-semibold rounded-full px-4 py-2.5 hover:text-marathon-blue hover:bg-white/45 transition-all duration-300 flex items-center gap-2 text-sm sm:text-base"
+            className="flex w-full justify-center gap-2 rounded-full px-4 py-1.5 font-inter text-sm font-semibold !text-white/86 transition-all duration-300 hover:bg-white/10 hover:!text-white sm:w-auto sm:py-2.5 sm:text-base"
           >
             <MessageCircle size={18} className="text-marathon-green" /> Canal oficial
           </button>
         </div>
 
         {/* Date */}
-        <div className="hero-date mt-8 sm:mt-10 text-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-marathon-blue font-inter font-semibold text-sm sm:text-base">
-            <Calendar size={20} className="text-marathon-red" />
+        <div className="hero-date mt-2 text-center sm:mt-5 lg:w-[calc(100vw-4rem)] lg:max-w-[1136px] lg:text-left">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 font-inter text-xs font-semibold !text-white sm:gap-2 sm:text-base lg:justify-start">
+            <Calendar size={18} className="text-marathon-red sm:size-5" />
             <span>Inicio del Torneo: 27 de julio de 2026</span>
-            <span className="text-marathon-blue/70">Calendario progresivo por región: Costa, Sierra y Amazonía.</span>
+            <span className="hidden !text-white/70 sm:inline">Calendario progresivo por región: Costa, Sierra y Amazonía.</span>
           </div>
-          <p className="mx-auto mt-2 max-w-[720px] font-inter text-xs leading-relaxed text-marathon-blue/70 sm:text-sm">
+          <p className="mx-auto mt-1 hidden max-w-[640px] font-inter text-[0.68rem] leading-relaxed !text-white/65 sm:mt-2 sm:block sm:text-sm lg:mx-0 lg:max-w-none">
             Las fechas podrán ajustarse por calendario escolar, logística deportiva, clima, disponibilidad de escenarios o razones de fuerza mayor.
           </p>
+        </div>
         </div>
       </div>
     </section>

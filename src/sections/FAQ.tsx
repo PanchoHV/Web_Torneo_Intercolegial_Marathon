@@ -204,7 +204,7 @@ export default function FAQ() {
                 <div className="overflow-hidden rounded-2xl border border-marathon-blue/10 bg-white shadow-[0_10px_24px_rgba(6,42,79,0.05)]">
                   <div className="grid grid-cols-3 bg-[linear-gradient(135deg,rgba(6,42,79,0.96),rgba(0,80,164,0.92))] px-4 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white">
                     <div>Región</div>
-                    <div>Inicio de inscripciones</div>
+                    <div>Inicio de preinscripciones</div>
                     <div>Inicio estimado de partidos</div>
                   </div>
                   <div className="grid grid-cols-3 border-t border-marathon-blue/10 px-4 py-3 text-sm">
@@ -214,7 +214,7 @@ export default function FAQ() {
                   </div>
                   <div className="grid grid-cols-3 border-t border-marathon-blue/10 px-4 py-3 text-sm">
                     <div className="font-semibold text-marathon-blue">Sierra y Amazonía</div>
-                    <div>7 de septiembre de 2026</div>
+                    <div>4 de mayo de 2026</div>
                     <div>Desde el 12 de octubre de 2026</div>
                   </div>
                 </div>

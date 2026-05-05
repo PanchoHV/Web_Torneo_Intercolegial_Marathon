@@ -115,7 +115,7 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto flex h-[60px] max-w-[1200px] items-center justify-between px-3 sm:px-6 lg:h-[72px] lg:px-8">
+        <div className="mx-auto flex h-[70px] max-w-[1200px] items-center justify-between px-3 sm:px-6 lg:h-[84px] lg:px-8">
           {/* FIX 4: Logo sin recarga de página */}
           <button
             onClick={() => {
@@ -127,12 +127,16 @@ export default function Navigation() {
             <img
               src="/marathon-logo.webp"
               alt="Copa Nacional Marathon Intercolegial 2026"
-              className="h-11 w-auto drop-shadow-[0_10px_18px_rgba(6,42,79,0.16)] sm:h-[50px] lg:h-[58px]"
+              className="h-[52px] w-auto drop-shadow-[0_10px_18px_rgba(6,42,79,0.16)] sm:h-[61px] lg:h-[71px]"
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
             />
-            <span className="hidden font-montserrat text-sm font-extrabold uppercase leading-tight tracking-[0.08em] text-marathon-navy sm:block lg:text-base">
+            <span
+              className={`hidden font-montserrat text-sm font-extrabold uppercase leading-tight tracking-[0.08em] sm:block lg:text-base ${
+                scrolled ? 'text-marathon-navy' : 'text-white'
+              }`}
+            >
               Copa Nacional
             </span>
           </button>
@@ -152,7 +156,9 @@ export default function Navigation() {
                     className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
                       activeSection === link.href
                         ? 'text-marathon-red'
-                        : 'text-marathon-blue hover:text-marathon-red'
+                        : scrolled
+                          ? 'text-marathon-blue hover:text-marathon-red'
+                          : 'text-white hover:text-marathon-gold'
                     } ${isTutorialDisabled ? 'pointer-events-none opacity-50' : ''}`}
                   >
                     {link.label}
@@ -180,7 +186,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 text-marathon-blue lg:hidden"
+            className={`p-2 lg:hidden ${scrolled ? 'text-marathon-blue' : 'text-white'}`}
             aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={mobileOpen}
           >
