@@ -255,11 +255,11 @@ export default function SobreElTorneo() {
                 />
 
                 <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#dbe4f0] bg-[#f9fbff] shadow-[0_12px_24px_rgba(13,79,163,0.08)] sm:h-20 sm:w-20">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#0a3f86] bg-[#0d4fa3] shadow-[0_12px_24px_rgba(13,79,163,0.22)] sm:h-20 sm:w-20">
                     <img
                       src={feature.icon}
                       alt={feature.title}
-                      className="h-10 w-10 object-contain sm:h-12 sm:w-12"
+                      className="h-10 w-10 object-contain brightness-0 invert sm:h-12 sm:w-12"
                       loading="lazy"
                     />
                   </div>
@@ -308,7 +308,7 @@ export default function SobreElTorneo() {
                       />
                     </div>
 
-                    <div className="mt-4 font-montserrat text-3xl font-black leading-none tracking-tight text-[#082f73] sm:text-4xl lg:text-5xl">
+                    <div className="mt-4 font-montserrat text-3xl font-black leading-none tracking-tight text-marathon-gold sm:text-4xl lg:text-5xl">
                       {isNumber ? (
                         <CountUpValue
                           value={stat.value}
