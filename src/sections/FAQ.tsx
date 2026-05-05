@@ -1,38 +1,69 @@
+const FAQ_BACKGROUND_URL =
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-ChatGPT Image 5 may 2026, 12_31_16 p.webp';
+
+const faqItemClass =
+  'group relative overflow-hidden rounded-2xl border border-[#dbe4f0] bg-white shadow-[0_12px_32px_rgba(13,79,163,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_42px_rgba(13,79,163,0.12)] open:bg-white';
+
+const summaryClass =
+  'flex cursor-pointer list-none items-start gap-3 px-4 py-4 text-left outline-none [&::-webkit-details-marker]:hidden sm:gap-4 sm:px-5 sm:py-5';
+
+const questionClass =
+  'min-w-0 flex-1 font-montserrat text-sm font-black uppercase leading-snug tracking-wide text-[#0d4fa3] sm:text-base lg:text-lg';
+
+const numberClass =
+  'flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0d4fa3] text-sm font-black text-white shadow-[0_10px_22px_rgba(13,79,163,0.25)] sm:h-9 sm:w-9';
+
+const chevronClass =
+  'mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#bcd1ef] bg-[#f8fbff] text-[#0d4fa3] transition-transform duration-300 group-open:rotate-180';
+
+const answerClass =
+  'space-y-4 border-t border-[#e6edf7] px-5 pb-5 pt-4 text-sm leading-7 text-[#5b6c84] sm:px-6 sm:text-base';
+
 export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-[radial-gradient(circle_at_top,#f7efe5_0%,#fffaf4_42%,#ffffff_100%)] py-[clamp(4rem,10vw,7rem)]"
+      className="relative overflow-hidden bg-[#f7f9fc] py-20 sm:py-24 lg:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(6,42,79,0.03)_0%,transparent_35%,rgba(250,65,30,0.04)_100%)]" />
-      <div className="mx-auto max-w-[1040px] px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/75 px-5 py-10 shadow-[0_26px_60px_rgba(6,42,79,0.08)] backdrop-blur-md sm:px-8 lg:px-12">
-          <div className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-marathon-red/15 bg-marathon-red/8 px-5 py-2 text-xs font-semibold tracking-[0.14em] text-marathon-red shadow-sm">
-              CENTRO DE AYUDA
-            </span>
-            <h2 className="mt-5 font-montserrat text-[clamp(1.95rem,4vw,3.15rem)] font-extrabold uppercase leading-[1.02] tracking-[0.03em] text-marathon-blue">
-              Preguntas Frecuentes
-            </h2>
-            <p className="mx-auto mt-4 max-w-[760px] text-base leading-relaxed text-marathon-gray sm:text-lg">
-              Información clara sobre inscripción, categorías, documentación y condiciones generales del torneo.
-            </p>
-          </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-75"
+        style={{ backgroundImage: `url("${FAQ_BACKGROUND_URL}")` }}
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-white/58" />
+      <div className="pointer-events-none absolute -left-20 top-12 h-72 w-72 rounded-full bg-marathon-red/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-20 h-80 w-80 rounded-full bg-marathon-blue/10 blur-3xl" />
 
-          <div className="mt-10 grid gap-4">
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    1
-                  </span>
-                  <span>¿Qué es la Copa Nacional Intercolegial Marathon?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <span className="inline-flex items-center rounded-full border border-marathon-red/20 bg-white/80 px-5 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-marathon-red shadow-sm backdrop-blur-sm">
+            CENTRO DE AYUDA
+          </span>
+          <h2 className="mt-5 text-center font-montserrat text-4xl font-black uppercase leading-[0.95] tracking-tight text-[#0d4fa3] drop-shadow-[0_8px_18px_rgba(13,79,163,0.08)] sm:text-5xl lg:text-6xl">
+            PREGUNTAS FRECUENTES
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-7 text-[#5b6c84] sm:text-lg">
+            Información clara sobre inscripción, categorías, documentación y condiciones generales del torneo.
+          </p>
+          <div className="mx-auto mt-6 flex w-full max-w-[220px] items-center justify-center gap-3">
+            <span className="h-px flex-1 bg-marathon-red/45" />
+            <span className="h-2.5 w-2.5 rounded-full bg-marathon-red shadow-[0_0_16px_rgba(240,40,53,0.35)]" />
+            <span className="h-px flex-1 bg-marathon-red/45" />
+          </div>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-4xl rounded-[32px] border border-[#dbe4f0] bg-white/90 p-4 shadow-[0_28px_80px_rgba(13,79,163,0.12)] backdrop-blur-sm sm:p-6 lg:p-7">
+          <div className="grid gap-4">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>1</span>
+                <span className={questionClass}>¿Qué es la Copa Nacional Intercolegial Marathon?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   La Copa Nacional Intercolegial Marathon es un torneo de fútbol escolar que reúne a colegios de distintas regiones del país en una experiencia deportiva, formativa y competitiva.
                 </p>
@@ -45,19 +76,16 @@ export default function FAQ() {
               </div>
             </details>
 
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    2
-                  </span>
-                  <span>¿Cuál es el costo de preinscripción por colegio?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>2</span>
+                <span className={questionClass}>¿Cuál es el costo de preinscripción por colegio?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   Para los colegios privados, la preinscripción tiene un costo de USD 170 por cada categoría inscrita, más IVA.
                 </p>
@@ -70,19 +98,16 @@ export default function FAQ() {
               </div>
             </details>
 
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    3
-                  </span>
-                  <span>¿Cuántos jugadores puedo inscribir por equipo?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>3</span>
+                <span className={questionClass}>¿Cuántos jugadores puedo inscribir por equipo?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   Cada equipo podrá inscribir su nómina de jugadores según la modalidad de competencia correspondiente:
                 </p>
@@ -106,19 +131,16 @@ export default function FAQ() {
               </div>
             </details>
 
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    4
-                  </span>
-                  <span>¿Qué documentación necesito para inscribir la nómina de jugadores?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>4</span>
+                <span className={questionClass}>¿Qué documentación necesito para inscribir la nómina de jugadores?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   Para registrar la nómina oficial de un equipo, el colegio deberá presentar la siguiente documentación:
                 </p>
@@ -146,19 +168,16 @@ export default function FAQ() {
               </div>
             </details>
 
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    5
-                  </span>
-                  <span>¿Qué categorías podrán participar?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>5</span>
+                <span className={questionClass}>¿Qué categorías podrán participar?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   La planificación contempla categorías masculinas y femeninas, según la sede y la modalidad habilitada por la organización.
                 </p>
@@ -182,19 +201,16 @@ export default function FAQ() {
               </div>
             </details>
 
-            <details className="group rounded-[1.5rem] border border-marathon-blue/10 bg-white/90 p-5 shadow-[0_14px_36px_rgba(6,42,79,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(6,42,79,0.1)] open:bg-white">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 outline-none">
-                <span className="flex min-w-0 items-start gap-3 font-montserrat text-lg font-extrabold uppercase tracking-[0.02em] text-marathon-blue sm:text-xl">
-                  <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-marathon-blue text-xs font-black text-white shadow-[0_10px_22px_rgba(6,42,79,0.2)]">
-                    6
-                  </span>
-                  <span>¿Cuándo inicia la Copa Nacional Intercolegial Marathon?</span>
-                </span>
-                <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-marathon-blue/10 bg-marathon-cream text-marathon-blue transition-transform duration-200 group-open:rotate-180">
+            <details className={faqItemClass}>
+              <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
+              <summary className={summaryClass}>
+                <span className={numberClass}>6</span>
+                <span className={questionClass}>¿Cuándo inicia la Copa Nacional Intercolegial Marathon?</span>
+                <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
-              <div className="mt-4 space-y-4 border-t border-marathon-blue/8 pt-4 text-sm leading-relaxed text-marathon-gray sm:text-[0.98rem]">
+              <div className={answerClass}>
                 <p>
                   La Copa Nacional Intercolegial Marathon está planificada para iniciar su calendario general el 27 de julio de 2026 y desarrollarse hasta el 30 de enero de 2027.
                 </p>
