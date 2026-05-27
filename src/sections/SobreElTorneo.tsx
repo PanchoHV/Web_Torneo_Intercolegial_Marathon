@@ -255,11 +255,11 @@ export default function SobreElTorneo() {
                 />
 
                 <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-[#0a3f86] bg-[#0d4fa3] shadow-[0_12px_24px_rgba(13,79,163,0.22)] sm:h-20 sm:w-20">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/18 bg-[#0d4fa3] shadow-[0_14px_28px_rgba(13,79,163,0.24)] ring-1 ring-white/8 sm:h-20 sm:w-20">
                     <img
                       src={feature.icon}
                       alt={feature.title}
-                      className="h-10 w-10 object-contain brightness-0 invert sm:h-12 sm:w-12"
+                      className="h-10 w-10 object-contain brightness-0 invert drop-shadow-[0_2px_6px_rgba(255,255,255,0.18)] sm:h-12 sm:w-12"
                       loading="lazy"
                     />
                   </div>
