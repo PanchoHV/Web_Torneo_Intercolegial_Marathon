@@ -93,10 +93,10 @@ export default function Hero() {
       <picture className="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
         <source
           media="(max-width: 767px)"
-          srcSet="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-ChatGPT%20Image%205%20may%202026%2C%2011_11_08%20a.webp"
+          srcSet="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Esquema%20Pichazos%20(1).webp"
         />
         <img
-          src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-ChatGPT%20Image%205%20may%202026%2C%2011_11_08%20a.webp"
+          src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Esquema%20Pichazos%20(1).webp"
           alt=""
           className="h-full w-full object-cover object-center opacity-100"
         />
