@@ -3,6 +3,7 @@ import { Calendar, ArrowRight, Play, MessageCircle } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import gsap from 'gsap';
+import { trackCtaClick, trackPreinscriptionStart } from '@/lib/analytics/gtm';
 
 // Toggle temporal para ocultar/desactivar acceso a tutoriales
 const SHOW_TUTORIALS = false;
@@ -162,7 +163,13 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="hero-buttons flex flex-col items-stretch gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4 lg:justify-start">
           <button
-            onClick={() => navigate('/inscripciones')}
+            onClick={() => {
+              trackPreinscriptionStart({
+                cta_location: 'hero',
+                destination: '/inscripciones',
+              });
+              navigate('/inscripciones');
+            }}
             className="flex w-full justify-center gap-2 rounded-full bg-marathon-red px-6 py-2.5 font-montserrat text-sm font-bold text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] sm:w-auto sm:px-9 sm:py-4 sm:text-base"
           >
             Preinscribir a mi Colegio <ArrowRight size={18} />
@@ -176,7 +183,14 @@ export default function Hero() {
             </button>
           )}
           <button
-            onClick={() => handleNavClick('#comunicacion')}
+            onClick={() => {
+              trackCtaClick({
+                cta_name: 'canal_oficial',
+                cta_location: 'hero',
+                destination: '#comunicacion',
+              });
+              handleNavClick('#comunicacion');
+            }}
             className="flex w-full justify-center gap-2 rounded-full px-4 py-1.5 font-inter text-sm font-semibold !text-white/86 transition-all duration-300 hover:bg-white/10 hover:!text-white sm:w-auto sm:py-2.5 sm:text-base"
           >
             <MessageCircle size={18} className="text-marathon-green" /> Canal oficial

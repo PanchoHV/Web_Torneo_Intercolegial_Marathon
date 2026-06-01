@@ -3,12 +3,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { useNavigate } from 'react-router';
+import { trackCtaClick, trackPreinscriptionStart } from '@/lib/analytics/gtm';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTAFinal() {
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
+  const whatsappUrl =
+    'https://wa.me/593989655352?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.';
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -30,11 +33,6 @@ export default function CTAFinal() {
     return () => ctx.revert();
   }, []);
 
-  const handleNavClick = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -52,13 +50,26 @@ export default function CTAFinal() {
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
           <button
-            onClick={() => navigate('/inscripciones')}
+            onClick={() => {
+              trackPreinscriptionStart({
+                cta_location: 'cta_final',
+                destination: '/inscripciones',
+              });
+              navigate('/inscripciones');
+            }}
             className="w-full sm:w-auto justify-center bg-marathon-red text-white font-montserrat font-bold rounded-full px-7 sm:px-10 py-3.5 sm:py-4 shadow-button hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 text-base sm:text-lg"
           >
             Preinscribir mi Colegio Ahora <ArrowRight size={20} />
           </button>
           <button
-            onClick={() => handleNavClick('#comunicacion')}
+            onClick={() => {
+              trackCtaClick({
+                cta_name: 'contactar_whatsapp',
+                cta_location: 'cta_final',
+                destination: '#comunicacion',
+              });
+              window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            }}
             className="w-full sm:w-auto justify-center bg-marathon-green text-white font-montserrat font-bold rounded-full px-7 sm:px-10 py-3.5 sm:py-4 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2 text-base sm:text-lg shadow-[0_12px_28px_rgba(7,150,105,0.28)]"
           >
             <MessageCircle size={20} /> Contactar por WhatsApp

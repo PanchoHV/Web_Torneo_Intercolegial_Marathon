@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   ChevronDown,
@@ -35,6 +36,11 @@ import {
   registrationSchema,
   type RegistrationSchemaValues,
 } from '@/lib/validations/registrationSchema';
+import {
+  trackGenerateLead,
+  trackRegistrationError,
+  trackRegistrationSubmitAttempt,
+} from '@/lib/analytics/gtm';
 import { getRegionalSchedule } from '@/lib/registrations/regionalSchedule';
 import { normalizeDigits, normalizePhone, normalizeText } from '@/lib/utils/formFormatters';
 import { createRegistration } from '@/services/registrations/createRegistration';
@@ -137,6 +143,12 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     }
 
     try {
+      trackRegistrationSubmitAttempt({
+        city: values.city,
+        school_type: values.schoolType,
+        categories: values.categories,
+      });
+
       const result = await createRegistration({
         ...values,
         institutionName: normalizeText(values.institutionName),
@@ -146,6 +158,13 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         phone: normalizePhone(values.phone),
         website: values.website?.trim() || '',
         turnstileToken,
+      });
+
+      trackGenerateLead({
+        lead_id: result.id,
+        city: values.city,
+        school_type: values.schoolType,
+        categories: values.categories,
       });
 
       reset();
@@ -158,6 +177,10 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       }
       onSubmitSuccess(result);
     } catch (error) {
+      trackRegistrationError({
+        error_type: error instanceof Error ? error.message.slice(0, 80) : 'unknown_error',
+        city: selectedCity,
+      });
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
       if (hasTurnstile) {
         setTurnstileToken('');

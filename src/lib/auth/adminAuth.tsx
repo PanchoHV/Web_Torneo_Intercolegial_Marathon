@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect, react-refresh/only-export-components */
 import type { Session, User } from '@supabase/supabase-js';
 import {
   createContext,

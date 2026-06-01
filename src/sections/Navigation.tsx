@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router';
+import {
+  trackNavigationClick,
+  trackPreinscriptionStart,
+} from '@/lib/analytics/gtm';
 
 const navLinks = [
   { label: 'El Torneo', href: '#sobre-el-torneo' },
@@ -85,7 +89,12 @@ export default function Navigation() {
     []
   );
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, navLocation: 'desktop' | 'mobile' | 'logo' = 'desktop') => {
+    trackNavigationClick({
+      nav_label: href,
+      nav_target: href,
+      nav_location: navLocation,
+    });
     setMobileOpen(false);
     if (!href.startsWith('#')) {
       navigate(href);
@@ -119,6 +128,11 @@ export default function Navigation() {
           {/* FIX 4: Logo sin recarga de página */}
           <button
             onClick={() => {
+              trackNavigationClick({
+                nav_label: '/',
+                nav_target: '/',
+                nav_location: 'logo',
+              });
               navigate('/');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -150,7 +164,7 @@ export default function Navigation() {
                     key={link.href}
                     onClick={() => {
                       if (isTutorialDisabled) return;
-                      handleNavClick(link.href);
+                      handleNavClick(link.href, 'desktop');
                     }}
                     aria-disabled={isTutorialDisabled}
                     className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
@@ -177,7 +191,13 @@ export default function Navigation() {
 
           {/* Desktop CTA */}
           <button
-            onClick={() => navigate('/inscripciones')}
+            onClick={() => {
+              trackPreinscriptionStart({
+                cta_location: 'navigation_desktop',
+                destination: '/inscripciones',
+              });
+              navigate('/inscripciones');
+            }}
             className="hidden rounded-full bg-marathon-red px-6 py-2.5 font-montserrat text-sm font-bold text-white shadow-[0_16px_32px_rgba(226,27,45,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] lg:block"
           >
             Preinscribir mi Equipo
@@ -213,7 +233,7 @@ export default function Navigation() {
                 key={link.href}
                 onClick={() => {
                   if (isTutorialDisabled) return;
-                  handleNavClick(link.href);
+                  handleNavClick(link.href, 'mobile');
                 }}
                 aria-disabled={isTutorialDisabled}
                 style={{
@@ -232,6 +252,10 @@ export default function Navigation() {
           <button
             onClick={() => {
               setMobileOpen(false);
+              trackPreinscriptionStart({
+                cta_location: 'navigation_mobile',
+                destination: '/inscripciones',
+              });
               navigate('/inscripciones');
             }}
             style={{

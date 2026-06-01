@@ -13,6 +13,7 @@ import FAQ from '@/sections/FAQ';
 import CTAFinal from '@/sections/CTAFinal';
 import Footer from '@/sections/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import InscripcionesPage from '@/pages/InscripcionesPage';
 import AdminLogin from '@/pages/admin/Login';
 import AuditPage from '@/pages/admin/AuditPage';
@@ -51,6 +52,7 @@ function HomeLanding() {
 function App() {
   return (
     <>
+      <RouteAnalytics />
       <Routes>
         <Route path="/" element={<HomeLanding />} />
         <Route path="/inscripciones" element={<InscripcionesPage />} />
