@@ -27,3 +27,6 @@ export const TOURNAMENT_CATEGORY_OPTIONS: RegistrationCategory[] = [
   'Sub 15 Femenino',
   'Sub 17 Femenino',
 ];
+
+// Ciudades con cupos llenos
+export const CITIES_WITH_FULL_QUOTA: RegistrationCity[] = ['Guayaquil (Guayas)'];

@@ -84,6 +84,13 @@ const TurnstileChallenge = forwardRef<TurnstileChallengeHandle, TurnstileChallen
     useEffect(() => {
       let cancelled = false;
 
+      if (import.meta.env.DEV) {
+        console.info('Turnstile debug', {
+          hostname: window.location.hostname,
+          hasSiteKey: Boolean(siteKey),
+        });
+      }
+
       const mountWidget = async () => {
         try {
           await loadTurnstileScript();

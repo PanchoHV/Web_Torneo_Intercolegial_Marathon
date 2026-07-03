@@ -28,6 +28,7 @@ import {
 } from '@/components/ui/select';
 import {
   CITY_OPTIONS,
+  CITIES_WITH_FULL_QUOTA,
   DELEGATE_ROLE_OPTIONS,
   SCHOOL_TYPE_OPTIONS,
   TOURNAMENT_CATEGORY_OPTIONS,
@@ -68,7 +69,9 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     }
 
     if (errorCode.startsWith('110200')) {
-      return 'Cloudflare está rechazando este dominio para el captcha. Revisa que el hostname actual esté autorizado en Turnstile.';
+      const hostname = typeof window !== 'undefined' ? window.location.hostname : 'este dominio';
+
+      return `El captcha no está autorizado para este dominio. Agrega el hostname actual en Cloudflare Turnstile: ${hostname}`;
     }
 
     if (
@@ -122,6 +125,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
   const selectedCity = useWatch({ control, name: 'city' });
   const selectedSchedule = selectedCity ? getRegionalSchedule(selectedCity) : null;
+  const isQuotaFull = selectedCity ? CITIES_WITH_FULL_QUOTA.includes(selectedCity) : false;
 
   const onSubmit = handleSubmit(async (values) => {
     setSubmitError(null);
@@ -285,7 +289,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               required
             >
               <Input
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                disabled={isQuotaFull}
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="Unidad Educativa Marathon"
                 {...register('institutionName', { setValueAs: normalizeText })}
               />
@@ -315,13 +320,23 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               </div>
             )}
 
+            {isQuotaFull && (
+              <div className="md:col-span-2 rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm leading-relaxed text-red-700 font-semibold flex items-center gap-3">
+                <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                </svg>
+                Lo sentimos, los cupos para esta ciudad están llenos.
+              </div>
+            )}
+
             <Field
               label="Dirección del colegio"
               error={errors.institutionAddress?.message}
               required
             >
               <Input
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                disabled={isQuotaFull}
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="Av. principal, sector, referencia"
                 {...register('institutionAddress', { setValueAs: normalizeText })}
               />
@@ -333,7 +348,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               required
             >
               <Input
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                disabled={isQuotaFull}
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="Nombre y apellido"
                 {...register('delegateName', { setValueAs: normalizeText })}
               />
@@ -349,6 +365,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     placeholder="Selecciona el cargo"
                     value={field.value}
                     onValueChange={field.onChange}
+                    disabled={isQuotaFull}
                   />
                 )}
               />
@@ -364,6 +381,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     placeholder="Selecciona el tipo"
                     value={field.value}
                     onValueChange={field.onChange}
+                    disabled={isQuotaFull}
                   />
                 )}
               />
@@ -375,7 +393,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               required
             >
               <Input
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                disabled={isQuotaFull}
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 inputMode="numeric"
                 maxLength={10}
                 onInput={(event) => {
@@ -392,7 +411,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               required
             >
               <Input
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                disabled={isQuotaFull}
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 inputMode="tel"
                 maxLength={10}
                 onInput={(event) => {
@@ -410,8 +430,9 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               className="md:col-span-2"
             >
               <Input
+                disabled={isQuotaFull}
                 type="email"
-                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25"
+                className="h-[3.25rem] rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] transition placeholder:font-medium placeholder:text-marathon-gray/55 focus-visible:ring-marathon-blue/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 placeholder="encargado@colegio.edu.ec"
                 {...register('email')}
               />
@@ -431,6 +452,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                     options={TOURNAMENT_CATEGORY_OPTIONS}
                     value={field.value ?? []}
                     onChange={field.onChange}
+                    disabled={isQuotaFull}
                   />
                 )}
               />
@@ -441,7 +463,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             <label className="flex items-start gap-3">
               <input
                 type="checkbox"
-                className="mt-1 h-4 w-4 shrink-0 accent-marathon-red"
+                disabled={isQuotaFull}
+                className="mt-1 h-4 w-4 shrink-0 accent-marathon-red disabled:opacity-50 disabled:cursor-not-allowed"
                 {...register('termsAccepted')}
               />
               <span className="min-w-0 flex-1 break-words text-sm leading-relaxed text-marathon-gray">
@@ -552,8 +575,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
             </p>
             <Button
               type="submit"
-              className="h-12 w-full rounded-full bg-marathon-red px-8 font-montserrat text-base font-bold text-white shadow-button hover:bg-marathon-red/90 sm:w-auto"
-              disabled={isSubmitting}
+              className="h-12 w-full rounded-full bg-marathon-red px-8 font-montserrat text-base font-bold text-white shadow-button hover:bg-marathon-red/90 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isSubmitting || isQuotaFull}
             >
               {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
               {isSubmitting ? 'Enviando...' : 'Enviar preinscripción'}
@@ -596,6 +619,7 @@ function SelectField({
   placeholder,
   value,
   onValueChange,
+  disabled = false,
 }: {
   options:
     | readonly string[]
@@ -606,14 +630,15 @@ function SelectField({
   placeholder: string;
   value?: string;
   onValueChange: (value: string) => void;
+  disabled?: boolean;
 }) {
   const groupedOptions = options.every((option) => typeof option !== 'string')
     ? (options as ReadonlyArray<{ region: string; options: readonly string[] }>)
     : null;
 
   return (
-    <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="h-[3.25rem] w-full min-w-0 rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] focus-visible:ring-marathon-blue/25 [&>span]:min-w-0 [&>span]:truncate">
+    <Select value={value} onValueChange={onValueChange} disabled={disabled}>
+      <SelectTrigger className="h-[3.25rem] w-full min-w-0 rounded-2xl border-marathon-blue/10 bg-white px-4 font-semibold text-marathon-blue shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_10px_28px_rgba(6,42,79,0.06)] focus-visible:ring-marathon-blue/25 [&>span]:min-w-0 [&>span]:truncate disabled:opacity-50 disabled:cursor-not-allowed">
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent position="popper" className="max-h-64 max-w-[calc(100vw-1rem)] rounded-2xl border-marathon-blue/10">
@@ -654,14 +679,17 @@ function CategoryMultiSelect({
   options,
   value,
   onChange,
+  disabled = false,
 }: {
   options: readonly string[];
   value: string[];
   onChange: (value: string[]) => void;
+  disabled?: boolean;
 }) {
   const selected = new Set(value);
 
   const toggleOption = (option: string) => {
+    if (disabled) return;
     if (selected.has(option)) {
       onChange(value.filter((item) => item !== option));
       return;
@@ -695,9 +723,12 @@ function CategoryMultiSelect({
               key={option}
               type="button"
               onClick={() => toggleOption(option)}
+              disabled={disabled}
               aria-pressed={isSelected}
               className={`group flex min-h-[84px] w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left transition-all duration-200 ${
-                isSelected
+                disabled
+                  ? 'opacity-50 cursor-not-allowed border-marathon-blue/10 bg-white'
+                  : isSelected
                   ? 'border-emerald-500/45 bg-[linear-gradient(135deg,rgba(16,185,129,0.12),rgba(255,255,255,0.98))] shadow-[0_16px_32px_rgba(16,185,129,0.14)]'
                   : 'border-marathon-blue/10 bg-white hover:-translate-y-0.5 hover:border-marathon-blue/25 hover:shadow-[0_14px_28px_rgba(6,42,79,0.08)]'
               }`}

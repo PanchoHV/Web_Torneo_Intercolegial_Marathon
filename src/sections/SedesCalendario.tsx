@@ -171,7 +171,11 @@ export default function SedesCalendario() {
               <>
                 <div className="grid gap-2 sm:flex sm:flex-wrap sm:items-start sm:justify-between">
                   <div className="min-w-0">
-                    <span className="inline-flex max-w-full rounded-full bg-[#ecf2ff] px-2.5 py-1 text-xs font-bold text-marathon-blue">
+                    <span className={`inline-flex max-w-full rounded-full px-2.5 py-1 text-xs font-bold ${
+                      selectedVenue.statusLabel === 'Cupos Llenos' 
+                        ? 'bg-red-50 text-red-700' 
+                        : 'bg-[#ecf2ff] text-marathon-blue'
+                    }`}>
                       {selectedVenue.statusLabel}
                     </span>
                     <h3 className="mt-2 break-words font-montserrat text-xl font-black">{selectedVenue.displayName}</h3>

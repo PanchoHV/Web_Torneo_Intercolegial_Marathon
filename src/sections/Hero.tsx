@@ -7,7 +7,7 @@ import { trackCtaClick, trackPreinscriptionStart } from '@/lib/analytics/gtm';
 
 // Toggle temporal para ocultar/desactivar acceso a tutoriales
 const SHOW_TUTORIALS = false;
-const TARGET_DATE = new Date('2026-07-17T23:59:59');
+const TARGET_DATE = new Date('2026-07-31T23:59:59');
 
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   const prevValue = useRef(value);
@@ -201,7 +201,7 @@ export default function Hero() {
         <div className="hero-date mt-2 text-center sm:mt-5 lg:w-[calc(100vw-4rem)] lg:max-w-[1136px] lg:text-left">
           <div className="flex flex-wrap items-center justify-center gap-1.5 font-inter text-xs font-semibold !text-white sm:gap-2 sm:text-base lg:justify-start">
             <Calendar size={18} className="text-marathon-red sm:size-5" />
-            <span>Inicio del Torneo: 27 de julio de 2026</span>
+            <span>Cierre de preinscripciones: 31 de julio de 2026</span>
             <span className="hidden !text-white/70 sm:inline">Calendario progresivo por región: Costa, Sierra y Amazonía.</span>
           </div>
           <p className="mx-auto mt-1 hidden max-w-[640px] font-inter text-[0.68rem] leading-relaxed !text-white/65 sm:mt-2 sm:block sm:text-sm lg:mx-0 lg:max-w-none">

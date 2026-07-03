@@ -212,7 +212,7 @@ export default function FAQ() {
               </summary>
               <div className={answerClass}>
                 <p>
-                  La Copa Nacional Intercolegial Marathon está planificada para iniciar su calendario general el 27 de julio de 2026 y desarrollarse hasta el 30 de enero de 2027.
+                  La Copa Nacional Intercolegial Marathon está planificada para iniciar su calendario general el 17 de agosto de 2026 y desarrollarse hasta el 12 de diciembre de 2026.
                 </p>
                 <p>
                   El inicio puede variar según la región y la sede:
@@ -226,7 +226,7 @@ export default function FAQ() {
                   <div className="grid grid-cols-3 border-t border-marathon-blue/10 px-4 py-3 text-sm">
                     <div className="font-semibold text-marathon-blue">Costa</div>
                     <div>4 de mayo de 2026</div>
-                    <div>Desde el 27 de julio de 2026</div>
+                    <div>Desde el 17 de agosto de 2026</div>
                   </div>
                   <div className="grid grid-cols-3 border-t border-marathon-blue/10 px-4 py-3 text-sm">
                     <div className="font-semibold text-marathon-blue">Sierra y Amazonía</div>
