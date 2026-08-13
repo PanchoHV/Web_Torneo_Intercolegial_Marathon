@@ -281,15 +281,23 @@ Task size:
 
 SMALL
 
+Outcome:
+
+Apply the design system to the shared public chrome: Navigation, Footer, and PublicLayout.
+
 Status:
 
-NOT_STARTED
+DONE
 
 ### LOOP 2E — Design System Integration QA
 
 Task size:
 
 SMALL
+
+Outcome:
+
+Complete visual and interaction QA for the shared chrome and verify mobile behavior.
 
 Status:
 

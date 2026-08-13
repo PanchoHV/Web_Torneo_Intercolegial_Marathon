@@ -1032,7 +1032,7 @@
       "label": "PublicLayout()",
       "file_type": "code",
       "source_file": "src/components/layout/PublicLayout.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast"
     },
     {
@@ -5296,7 +5296,7 @@
       "label": "tournamentLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "_origin": "ast"
     },
     {
@@ -5304,7 +5304,7 @@
       "label": "participantHubs",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "_origin": "ast"
     },
     {
@@ -5312,7 +5312,7 @@
       "label": "officialLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L30",
+      "source_location": "L33",
       "_origin": "ast"
     },
     {
@@ -5320,7 +5320,7 @@
       "label": "trustStats",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L63",
+      "source_location": "L66",
       "_origin": "ast"
     },
     {
@@ -5328,7 +5328,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L69",
+      "source_location": "L72",
       "_origin": "ast"
     },
     {
@@ -5336,7 +5336,7 @@
       "label": "FooterColumn()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L286",
+      "source_location": "L305",
       "_origin": "ast"
     },
     {
@@ -5384,7 +5384,7 @@
       "label": "navLinks",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast"
     },
     {
@@ -5392,7 +5392,7 @@
       "label": "Navigation()",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast"
     },
     {
@@ -7472,7 +7472,7 @@
       "label": "LOOP 2D — Public Chrome Visual Foundation",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L274",
+      "source_location": "L278",
       "_origin": "ast"
     },
     {
@@ -7480,15 +7480,15 @@
       "label": "LOOP 2E — Design System Integration QA",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L284",
+      "source_location": "L288",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone_294",
+      "id": "project_roadmap_next_authorized_milestone_298",
       "label": "Next authorized milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L294",
+      "source_location": "L298",
       "_origin": "ast"
     },
     {
@@ -7496,7 +7496,7 @@
       "label": "Roadmap rule",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L298",
+      "source_location": "L302",
       "_origin": "ast"
     },
     {
@@ -7880,7 +7880,7 @@
       "label": "8. Current route contracts",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L137",
+      "source_location": "L138",
       "_origin": "ast"
     },
     {
@@ -7888,7 +7888,7 @@
       "label": "9. Closure status",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L152",
+      "source_location": "L153",
       "_origin": "ast"
     },
     {
@@ -10458,7 +10458,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/PublicLayout.tsx",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -10468,7 +10468,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/PublicLayout.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -10477,7 +10477,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/PublicLayout.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -20373,7 +20373,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -20383,7 +20383,67 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L14",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -20392,7 +20452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L16",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -20401,7 +20461,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -20410,7 +20470,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L30",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -20419,7 +20479,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L63",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -20428,7 +20488,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L69",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -20437,7 +20497,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L286",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -20589,12 +20649,72 @@
     },
     {
       "source": "src_sections_navigation",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
       "target": "src_lib_analytics_gtm",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L4",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -20604,17 +20724,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_navigation",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L4",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -20623,7 +20733,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -20632,7 +20742,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -24147,7 +24257,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L274",
+      "source_location": "L278",
       "weight": 1.0
     },
     {
@@ -24156,16 +24266,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L284",
+      "source_location": "L288",
       "weight": 1.0
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_294",
+      "target": "project_roadmap_next_authorized_milestone_298",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L294",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -24174,7 +24284,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L298",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -24570,7 +24680,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -24579,7 +24689,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L152",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -24966,16 +25076,6 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/admin/UsersPage.tsx",
       "source_location": "L55",
-      "weight": 1.0
-    },
-    {
-      "source": "users_pancho_desarrollo_intercolegial_marathon_src_sections_navigation_handlenavclick",
-      "target": "src_lib_analytics_gtm_tracknavigationclick",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -28020,7 +28120,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L66",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -28064,18 +28164,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_navigation_navigation",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L149",
+      "source_location": "L56",
       "weight": 1.0
     },
     {

@@ -130,7 +130,8 @@ Explicit human approval is required for:
 - LOOP 2A: DONE
 - LOOP 2B: DONE
 - LOOP 2C: DONE
-- Next loop: 2D — Public Chrome Visual Foundation
+- LOOP 2D: DONE
+- Next loop: 2E — Design System Integration QA
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -166,3 +167,7 @@ Compatibility contract:
 - M2 status: IN_PROGRESS
 - M2 requires explicit human authorization for closure
 - Design system primitives: IMPLEMENTED
+- Public chrome: VISUAL FOUNDATION APPLIED
+- Materials:
+  - Navigation: STADIUM
+  - Footer: STADIUM

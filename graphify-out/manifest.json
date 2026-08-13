@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786638561.7357328,
-    "ast_hash": "79a755dc85cd17fd02f46b8a5f414059",
+    "mtime": 1786639625.972164,
+    "ast_hash": "6277fd3b86e532d154212147440f08b1",
     "semantic_hash": ""
   },
   "components.json": {
@@ -495,8 +495,8 @@
     "semantic_hash": "86fcb1b78914ed84303f9e955d739d73"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1786632230.3338583,
-    "ast_hash": "50ff17aae3893847a539f8278bc62122",
+    "mtime": 1786641464.3276753,
+    "ast_hash": "6c0120609212ec3616f318b7f50fb9b1",
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
@@ -505,8 +505,8 @@
     "semantic_hash": "3d091325da897a7c6a7813eb956345bd"
   },
   "src/sections/Navigation.tsx": {
-    "mtime": 1786632253.3193784,
-    "ast_hash": "85a3c44649ff75046e018c713626825c",
+    "mtime": 1786641407.9038455,
+    "ast_hash": "5d9d548226989343b78a34edd7a9f507",
     "semantic_hash": ""
   },
   "src/sections/SedesCalendario.tsx": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786638561.4835203,
-    "ast_hash": "c1126ba7c278c05c6ccddaf28e363bfa",
+    "mtime": 1786639625.8212752,
+    "ast_hash": "8eded8dbde25fe839f08e99e4e1db7af",
     "semantic_hash": ""
   },
   "README.md": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786638561.8707025,
-    "ast_hash": "170b9a54361a818cdf19ce23ede7171b",
+    "mtime": 1786639626.108834,
+    "ast_hash": "c9f840facff1ef5c58a6d39499f7ba8e",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
@@ -890,8 +890,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/PublicLayout.tsx": {
-    "mtime": 1786632134.9573026,
-    "ast_hash": "2e1ab4489144a4de912cb3d450ca064f",
+    "mtime": 1786641477.6223295,
+    "ast_hash": "11955971b5fb3648e9a6e9dee30253fc",
     "semantic_hash": ""
   },
   "src/components/ui/container.tsx": {

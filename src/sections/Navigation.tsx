@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router';
-import {
-  trackNavigationClick,
-  trackPreinscriptionStart,
-} from '@/lib/analytics/gtm';
+import { useLocation, useNavigate } from 'react-router';
+
+import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
+import { Surface } from '@/components/ui/surface';
+import { trackNavigationClick } from '@/lib/analytics/gtm';
 
 const navLinks = [
   { label: 'La Copa', href: '/la-copa' },
@@ -12,214 +13,205 @@ const navLinks = [
   { label: 'Preinscripciones', href: '/preinscripciones' },
   { label: 'Fan App', href: '/fan-app' },
   { label: 'FAQ', href: '/faq' },
-];
+] as const;
 
 export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const overlayRef = useRef<HTMLDivElement>(null);
 
-  /* ─── Scroll detection ─── */
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  /* ─── FIX 1: Bloquear scroll del body cuando menú está abierto ─── */
   useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
     };
   }, [mobileOpen]);
 
-  /* ─── FIX 2: Cerrar con tecla Escape ─── */
   useEffect(() => {
     if (!mobileOpen) return;
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMobileOpen(false);
+
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMobileOpen(false);
+      }
     };
+
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, [mobileOpen]);
 
-  /* ─── FIX 3: Cerrar al hacer click fuera del overlay ─── */
-  const handleOverlayClick = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (e.target === overlayRef.current) {
-        setMobileOpen(false);
-      }
+  const handleNavigate = useCallback(
+    (href: string, navLocation: 'desktop' | 'mobile' | 'logo', navLabel: string) => {
+      trackNavigationClick({
+        nav_label: navLabel,
+        nav_target: href,
+        nav_location: navLocation,
+      });
+      setMobileOpen(false);
+      navigate(href);
     },
-    []
+    [navigate]
   );
 
-  const handleNavClick = (href: string, navLocation: 'desktop' | 'mobile' | 'logo' = 'desktop') => {
-    trackNavigationClick({
-      nav_label: href,
-      nav_target: href,
-      nav_location: navLocation,
-    });
-    setMobileOpen(false);
-    navigate(href);
-  };
+  const handleLogoClick = useCallback(() => {
+    handleNavigate('/', 'logo', 'Inicio');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [handleNavigate]);
 
   return (
     <>
-      <nav
-        style={{
-          transitionDuration: '400ms',
-          transitionTimingFunction: 'cubic-bezier(0.25,0.1,0.25,1)',
-        }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all ${
-          scrolled
-            ? 'bg-white/[0.92] backdrop-blur-xl border-b border-marathon-blue/10 shadow-[0_18px_44px_rgba(6,42,79,0.1)]'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="mx-auto flex h-[70px] max-w-[1200px] items-center justify-between px-3 sm:px-6 lg:h-[84px] lg:px-8">
-          {/* FIX 4: Logo sin recarga de página */}
-          <button
-            onClick={() => {
-              trackNavigationClick({
-                nav_label: '/',
-                nav_target: '/',
-                nav_location: 'logo',
-              });
-              navigate('/');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className="flex items-center gap-3 rounded-full pr-3 transition-transform duration-200 hover:scale-[1.01]"
-          >
-            <img
-              src="/marathon-logo.webp"
-              alt="Copa Nacional Marathon Intercolegial 2026"
-              className="h-[52px] w-auto drop-shadow-[0_10px_18px_rgba(6,42,79,0.16)] sm:h-[61px] lg:h-[71px]"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
-            />
-            <span
-              className={`hidden font-montserrat text-sm font-extrabold uppercase leading-tight tracking-[0.08em] sm:block lg:text-base ${
-                scrolled ? 'text-marathon-navy' : 'text-white'
-              }`}
+      <nav aria-label="Navegación principal" className="fixed inset-x-0 top-0 z-50">
+        <Surface
+          variant="stadium"
+          className={`border-b border-white/10 text-white transition-shadow duration-300 ${
+            scrolled ? 'shadow-elevated' : 'shadow-surface'
+          }`}
+        >
+          <Container className="flex min-h-[var(--header-height)] items-center gap-4">
+            <button
+              type="button"
+              onClick={handleLogoClick}
+              className="flex min-w-0 items-center gap-3 rounded-lg p-1 text-left transition-transform duration-200 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              aria-label="Ir al inicio"
             >
-              Copa Nacional
-            </span>
-          </button>
+              <img
+                src="/marathon-logo.webp"
+                alt="Copa Nacional Marathon Intercolegial 2026"
+                className="h-12 w-auto shrink-0 sm:h-14 lg:h-16"
+                onError={(event) => {
+                  (event.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              <span className="hidden min-w-0 flex-col leading-tight sm:flex">
+                <span className="font-montserrat text-[0.72rem] font-black uppercase tracking-[0.22em] text-white/75">
+                  Copa Nacional
+                </span>
+                <span className="font-montserrat text-sm font-black uppercase tracking-[0.12em] text-white">
+                  Marathon 2026
+                </span>
+              </span>
+            </button>
 
-          {/* Desktop Links */}
-          <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.href;
-              return (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href, 'desktop')}
-                  className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
-                    isActive
-                      ? 'text-marathon-red'
-                      : scrolled
-                        ? 'text-marathon-blue hover:text-marathon-red'
-                        : 'text-white hover:text-marathon-gold'
-                  }`}
-                >
-                  {link.label}
-                  <span
-                    className={`absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-marathon-red transition-all duration-300 ${
-                      isActive
-                        ? 'opacity-100 scale-100'
-                        : 'opacity-0 scale-0 group-hover:opacity-60 group-hover:scale-75'
+            <div className="hidden flex-1 items-center justify-center gap-1 lg:flex">
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.href;
+
+                return (
+                  <Button
+                    key={link.href}
+                    type="button"
+                    variant="ghost"
+                    onClick={() => handleNavigate(link.href, 'desktop', link.label)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`h-11 rounded-lg px-4 font-inter text-sm font-semibold text-white/78 transition-colors hover:bg-white/10 hover:text-white ${
+                      isActive ? 'bg-white/10 text-white' : ''
                     }`}
-                  />
-                </button>
-              );
-            })}
-          </div>
+                  >
+                    {link.label}
+                  </Button>
+                );
+              })}
+            </div>
 
-          {/* Desktop CTA */}
-          <button
-            onClick={() => {
-              trackPreinscriptionStart({
-                cta_location: 'navigation_desktop',
-                destination: '/preinscripciones',
-              });
-              navigate('/preinscripciones');
-            }}
-            className="hidden rounded-full bg-marathon-red px-6 py-2.5 font-montserrat text-sm font-bold text-white shadow-[0_16px_32px_rgba(226,27,45,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] lg:block"
-          >
-            Preinscribir mi Equipo
-          </button>
+            <div className="ml-auto hidden items-center gap-3 lg:flex">
+              <Button
+                type="button"
+                variant="action"
+                size="cta"
+                onClick={() => handleNavigate('/fan-app', 'desktop', 'Abrir Fan App')}
+                className="rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
+              >
+                Abrir Fan App
+              </Button>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-2 lg:hidden ${scrolled ? 'text-marathon-blue' : 'text-white'}`}
-            aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+            <button
+              type="button"
+              onClick={() => setMobileOpen((value) => !value)}
+              className="ml-auto inline-flex h-touch-target w-touch-target items-center justify-center rounded-lg border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 lg:hidden"
+              aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation-panel"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </Container>
+        </Surface>
       </nav>
 
-      {/* Mobile Overlay con stagger animation */}
       <div
-        ref={overlayRef}
-        onClick={handleOverlayClick}
-        className={`fixed inset-0 z-40 overflow-y-auto bg-white/98 backdrop-blur-sm transition-all duration-500 lg:hidden ${
-          mobileOpen
-            ? 'pointer-events-auto opacity-100'
-            : 'pointer-events-none opacity-0'
+        id="mobile-navigation-panel"
+        aria-hidden={!mobileOpen}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            setMobileOpen(false);
+          }
+        }}
+        className={`fixed inset-x-0 top-[var(--header-height)] z-40 overflow-y-auto transition-opacity duration-300 lg:hidden ${
+          mobileOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex min-h-full flex-col items-center justify-center gap-4 px-4 py-20">
-          {navLinks.map((link, i) => {
-            const isActive = location.pathname === link.href;
-            return (
-              <button
-                key={link.href}
-                onClick={() => {
-                  handleNavClick(link.href, 'mobile');
-                }}
-                style={{
-                  transitionDelay: mobileOpen ? `${i * 60 + 100}ms` : '0ms',
-                }}
-                className={`w-full max-w-[320px] rounded-2xl border border-marathon-blue/10 bg-marathon-cream/65 px-5 py-4 font-montserrat text-xl font-bold text-marathon-blue shadow-[0_12px_28px_rgba(6,42,79,0.04)] transition-all duration-500 hover:border-marathon-red/25 hover:text-marathon-red ${
-                  mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-                } ${isActive ? 'border-marathon-red/25 text-marathon-red' : ''}`}
+        <Surface variant="stadium" className="min-h-[calc(100vh-var(--header-height))] border-t border-white/10">
+          <Container className="flex min-h-[inherit] flex-col py-6">
+            <div className="flex items-center justify-between gap-3 pb-5">
+              <div className="min-w-0">
+                <p className="font-montserrat text-[0.72rem] font-black uppercase tracking-[0.22em] text-white/60">
+                  Menú principal
+                </p>
+                <p className="mt-2 font-inter text-sm text-white/55">
+                  Navegación oficial del torneo
+                </p>
+              </div>
+              <span className="rounded-full border border-white/10 px-3 py-1 font-inter text-xs text-white/55">
+                Pulsa el icono para cerrar
+              </span>
+            </div>
+
+            <div className="grid gap-3">
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.href;
+
+                return (
+                  <button
+                    key={link.href}
+                    type="button"
+                    onClick={() => handleNavigate(link.href, 'mobile', link.label)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`flex min-h-touch-target items-center justify-between rounded-lg border px-5 py-4 text-left font-montserrat text-lg font-black tracking-[0.02em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
+                      isActive
+                        ? 'border-white/20 bg-white/10 text-white'
+                        : 'border-white/10 bg-white/5 text-white hover:border-white/20 hover:bg-white/10'
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    <span className="text-white/45">→</span>
+                  </button>
+                );
+              })}
+
+              <Button
+                type="button"
+                variant="action"
+                size="cta"
+                onClick={() => handleNavigate('/fan-app', 'mobile', 'Abrir Fan App')}
+                className="mt-3 w-full justify-center rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
               >
-                {link.label}
-              </button>
-            );
-          })}
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              trackPreinscriptionStart({
-                cta_location: 'navigation_mobile',
-                destination: '/preinscripciones',
-              });
-              navigate('/preinscripciones');
-            }}
-            style={{
-              transitionDelay: mobileOpen ? `${navLinks.length * 60 + 100}ms` : '0ms',
-            }}
-            className={`mt-3 w-full max-w-[280px] rounded-full bg-marathon-red px-7 py-3 font-montserrat text-base font-bold text-white shadow-button transition-all duration-500 ${
-              mobileOpen
-                ? 'translate-y-0 opacity-100'
-                : 'translate-y-6 opacity-0'
-            }`}
-          >
-            Preinscribir mi Equipo
-          </button>
-        </div>
+                Abrir Fan App
+              </Button>
+            </div>
+          </Container>
+        </Surface>
       </div>
     </>
   );
