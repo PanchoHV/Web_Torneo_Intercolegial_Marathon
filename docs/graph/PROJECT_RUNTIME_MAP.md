@@ -16,6 +16,11 @@
 ### CURRENT
 
 - `/`
+- `/la-copa`
+- `/sedes`
+- `/preinscripciones`
+- `/fan-app`
+- `/faq`
 - `/inscripciones`
 - `/admin/login`
 - `/admin`
@@ -28,11 +33,6 @@
 
 ### PLANNED
 
-- `/la-copa`
-- `/sedes`
-- `/preinscripciones`
-- `/fan-app`
-- `/faq`
 - `/regiones/:slug`
 - `/colegios/:slug`
 - `/categorias/:slug`
@@ -62,5 +62,7 @@
 ## 6. Runtime notes
 
 - Public landing page is composed in `src/App.tsx`.
+- Public shell is composed by `src/components/layout/PublicLayout.tsx`.
+- `/preinscripciones` and `/inscripciones` both resolve to `InscripcionesPage`.
 - Admin runtime is protected by `ProtectedAdminRoute` and `AdminLayout`.
 - Runtime evidence is verified from source and Graph; no `.env` values were read.

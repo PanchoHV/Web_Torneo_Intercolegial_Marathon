@@ -45,3 +45,12 @@ Future routing/layout work affecting the application shell must validate that th
 - `/admin/auditoria`
 
 No browser QA was run in this loop. This map is documentation only.
+
+## 5. LOOP 1D technical QA evidence
+
+- Source assertions: PASS
+- Graph validator: PASS
+- Lint: PASS
+- Build: PASS
+- Local HTTP smoke: PASS on `/`, `/la-copa`, `/sedes`, `/preinscripciones`, `/fan-app`, `/faq`, `/inscripciones`, `/admin/login`
+- Browser runtime QA: not available in this environment; human visual acceptance remains pending

@@ -5,7 +5,7 @@
     "redesign_branch": "feat/copa-2026-redesign"
   },
   "current_milestone": "M1",
-  "current_loop": "1C",
+  "current_loop": "1D",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -59,6 +59,8 @@
     "default": "DENIED"
   },
   "last_completed_loop": "1C",
-  "next_proposed_loop": "1D",
-  "notes": []
+  "next_proposed_loop": "1D-HUMAN-ACCEPTANCE",
+  "notes": [
+    "M1 technical QA passed; human visual acceptance pending."
+  ]
 }
