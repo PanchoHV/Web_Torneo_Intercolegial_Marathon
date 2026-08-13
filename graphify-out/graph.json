@@ -1608,7 +1608,7 @@
       "label": "Button()",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L40",
+      "source_location": "L47",
       "_origin": "ast"
     },
     {
@@ -2025,6 +2025,22 @@
       "file_type": "code",
       "source_file": "src/components/ui/command.tsx",
       "source_location": "L156",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_container",
+      "label": "container.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_container_container",
+      "label": "Container()",
+      "file_type": "code",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L5",
       "_origin": "ast"
     },
     {
@@ -3444,6 +3460,54 @@
       "_origin": "ast"
     },
     {
+      "id": "src_components_ui_section_label",
+      "label": "section-label.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_section_label_sectionlabelvariants",
+      "label": "sectionLabelVariants",
+      "file_type": "code",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_section_label_sectionlabel",
+      "label": "SectionLabel()",
+      "file_type": "code",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_section",
+      "label": "section.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_section_sectionvariants",
+      "label": "sectionVariants",
+      "file_type": "code",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_section_section",
+      "label": "Section()",
+      "file_type": "code",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
       "id": "src_components_ui_select",
       "label": "select.tsx",
       "file_type": "code",
@@ -3921,6 +3985,54 @@
       "file_type": "code",
       "source_file": "src/components/ui/spinner.tsx",
       "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_status_badge",
+      "label": "status-badge.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_status_badge_statusbadgevariants",
+      "label": "statusBadgeVariants",
+      "file_type": "code",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_status_badge_statusbadge",
+      "label": "StatusBadge()",
+      "file_type": "code",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_surface",
+      "label": "surface.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_surface_surfacevariants",
+      "label": "surfaceVariants",
+      "file_type": "code",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_surface_surface",
+      "label": "Surface()",
+      "file_type": "code",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -7332,11 +7444,51 @@
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone_236",
-      "label": "Next authorized milestone",
+      "id": "project_roadmap_loop_2a_design_system_audit_token_plan",
+      "label": "LOOP 2A — Design System Audit & Token Plan",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L236",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2b_design_token_foundation",
+      "label": "LOOP 2B — Design Token Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L250",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2c_core_ui_primitives",
+      "label": "LOOP 2C — Core UI Primitives",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L264",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2d_public_chrome_visual_foundation",
+      "label": "LOOP 2D — Public Chrome Visual Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L274",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2e_design_system_integration_qa",
+      "label": "LOOP 2E — Design System Integration QA",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L284",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_next_authorized_milestone_294",
+      "label": "Next authorized milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L294",
       "_origin": "ast"
     },
     {
@@ -7344,7 +7496,7 @@
       "label": "Roadmap rule",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L240",
+      "source_location": "L298",
       "_origin": "ast"
     },
     {
@@ -7728,7 +7880,7 @@
       "label": "8. Current route contracts",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L134",
+      "source_location": "L137",
       "_origin": "ast"
     },
     {
@@ -7736,7 +7888,7 @@
       "label": "9. Closure status",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L149",
+      "source_location": "L152",
       "_origin": "ast"
     },
     {
@@ -11759,7 +11911,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L40",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11769,7 +11921,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L57",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -12655,6 +12807,45 @@
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/command.tsx",
       "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_container",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_container",
+      "target": "src_lib_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_container",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_container",
+      "target": "src_components_ui_container_container",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -15293,6 +15484,142 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_section_label",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label",
+      "target": "ref_class_variance_authority",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label",
+      "target": "src_lib_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label",
+      "target": "src_components_ui_section_label_sectionlabelvariants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_label_sectionlabel",
+      "target": "src_components_ui_section_label_sectionlabelvariants",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "ref_class_variance_authority",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "src_lib_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "src_components_ui_section_sectionvariants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section",
+      "target": "src_components_ui_section_section",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_section",
+      "target": "src_components_ui_section_sectionvariants",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_select",
       "target": "ref_react",
       "relation": "imports_from",
@@ -16338,6 +16665,142 @@
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/spinner.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "ref_class_variance_authority",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "src_lib_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "src_components_ui_status_badge_statusbadgevariants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge",
+      "target": "src_components_ui_status_badge_statusbadge",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge_statusbadge",
+      "target": "src_components_ui_status_badge_statusbadgevariants",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "ref_class_variance_authority",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "src_lib_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "src_lib_utils_cn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "src_components_ui_surface_surfacevariants",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface",
+      "target": "src_components_ui_surface_surface",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface_surface",
+      "target": "src_components_ui_surface_surfacevariants",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -23652,12 +24115,57 @@
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_236",
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_2a_design_system_audit_token_plan",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_2b_design_token_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L250",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_2c_core_ui_primitives",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_2d_public_chrome_visual_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_2e_design_system_integration_qa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L284",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_next_authorized_milestone_294",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
@@ -23666,7 +24174,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L240",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -24062,7 +24570,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L134",
+      "source_location": "L137",
       "weight": 1.0
     },
     {
@@ -24071,7 +24579,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L149",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -24982,7 +25490,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ui/button.tsx",
-      "source_location": "L57",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -25280,6 +25788,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/ui/command.tsx",
       "source_location": "L163",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_container_container",
+      "target": "src_lib_utils_cn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/container.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -26460,6 +26979,28 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_section_label_sectionlabel",
+      "target": "src_lib_utils_cn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/section-label.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_section_section",
+      "target": "src_lib_utils_cn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/section.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_select_selecttrigger",
       "target": "src_lib_utils_cn",
       "relation": "calls",
@@ -26908,6 +27449,28 @@
       "confidence_score": 1.0,
       "source_file": "src/components/ui/spinner.tsx",
       "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_status_badge_statusbadge",
+      "target": "src_lib_utils_cn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/status-badge.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_surface_surface",
+      "target": "src_lib_utils_cn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/surface.tsx",
+      "source_location": "L34",
       "weight": 1.0
     },
     {

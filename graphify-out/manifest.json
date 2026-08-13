@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786633830.2718215,
-    "ast_hash": "4f951005fb2a437db628855cc591f322",
+    "mtime": 1786638561.7357328,
+    "ast_hash": "79a755dc85cd17fd02f46b8a5f414059",
     "semantic_hash": ""
   },
   "components.json": {
@@ -130,9 +130,9 @@
     "semantic_hash": "06ae5fab0a97d2e01b9906eaeb4887e8"
   },
   "src/components/ui/button.tsx": {
-    "mtime": 1780324970.692828,
-    "ast_hash": "5f318aedbb9d2a1a1f430414136adc28",
-    "semantic_hash": "5f318aedbb9d2a1a1f430414136adc28"
+    "mtime": 1786639367.8438847,
+    "ast_hash": "70554d633781cf223d75b3054a4a64c2",
+    "semantic_hash": ""
   },
   "src/components/ui/calendar.tsx": {
     "mtime": 1776800987.0,
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786633830.0464966,
-    "ast_hash": "ea36e38bb9243a4c916f2238d9a8918e",
+    "mtime": 1786638561.4835203,
+    "ast_hash": "c1126ba7c278c05c6ccddaf28e363bfa",
     "semantic_hash": ""
   },
   "README.md": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786633830.4050448,
-    "ast_hash": "102994eeb7642da8f563dbbf40016a20",
+    "mtime": 1786638561.8707025,
+    "ast_hash": "170b9a54361a818cdf19ce23ede7171b",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
@@ -892,6 +892,31 @@
   "src/components/layout/PublicLayout.tsx": {
     "mtime": 1786632134.9573026,
     "ast_hash": "2e1ab4489144a4de912cb3d450ca064f",
+    "semantic_hash": ""
+  },
+  "src/components/ui/container.tsx": {
+    "mtime": 1786639368.026741,
+    "ast_hash": "d0fe1870757ade7d2f004f1b57068cda",
+    "semantic_hash": ""
+  },
+  "src/components/ui/section-label.tsx": {
+    "mtime": 1786639516.9597929,
+    "ast_hash": "c06e951f84ba947bdafb6577e0e8c3f4",
+    "semantic_hash": ""
+  },
+  "src/components/ui/section.tsx": {
+    "mtime": 1786639516.6554444,
+    "ast_hash": "17d1412bea5477c8bc95de5aa95bbafd",
+    "semantic_hash": ""
+  },
+  "src/components/ui/status-badge.tsx": {
+    "mtime": 1786639517.1314385,
+    "ast_hash": "b02afa04a08b41289814099a9eb2b991",
+    "semantic_hash": ""
+  },
+  "src/components/ui/surface.tsx": {
+    "mtime": 1786639516.8002717,
+    "ast_hash": "70fdbe9eb63d0eb667fb46f01b9177d3",
     "semantic_hash": ""
   }
 }

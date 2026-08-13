@@ -267,9 +267,13 @@ Task size:
 
 SMALL
 
+Outcome:
+
+Add the public UI primitive layer for container, section, surface, labels, badges, and button extensions.
+
 Status:
 
-NOT_STARTED
+DONE
 
 ### LOOP 2D — Public Chrome Visual Foundation
 

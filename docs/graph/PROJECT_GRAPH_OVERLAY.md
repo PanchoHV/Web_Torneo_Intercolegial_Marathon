@@ -129,7 +129,8 @@ Explicit human approval is required for:
 - LOOP 1D: DONE
 - LOOP 2A: DONE
 - LOOP 2B: DONE
-- Next loop: 2C — Core UI Primitives
+- LOOP 2C: DONE
+- Next loop: 2D — Public Chrome Visual Foundation
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -164,3 +165,4 @@ Compatibility contract:
 - Next proposed milestone: M3 — Home
 - M2 status: IN_PROGRESS
 - M2 requires explicit human authorization for closure
+- Design system primitives: IMPLEMENTED
