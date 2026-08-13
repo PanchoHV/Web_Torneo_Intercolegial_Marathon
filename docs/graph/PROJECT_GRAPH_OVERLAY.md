@@ -122,7 +122,7 @@ Explicit human approval is required for:
 
 - M0: DONE
 - M1: DONE
-- M2: IN_PROGRESS
+- M2: DONE
 - LOOP 1A: DONE
 - LOOP 1B: DONE
 - LOOP 1C: DONE
@@ -131,7 +131,8 @@ Explicit human approval is required for:
 - LOOP 2B: DONE
 - LOOP 2C: DONE
 - LOOP 2D: DONE
-- Next loop: 2E — Design System Integration QA
+- LOOP 2E: DONE
+- Next loop: 3A — Home
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -171,3 +172,7 @@ Compatibility contract:
 - Materials:
   - Navigation: STADIUM
   - Footer: STADIUM
+- Responsive foundation: PASS
+- Accessibility foundation: PASS
+- Human chrome acceptance: PASS
+- M2 milestone closure: DONE

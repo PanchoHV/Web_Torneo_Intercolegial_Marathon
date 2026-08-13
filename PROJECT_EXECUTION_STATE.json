@@ -5,7 +5,7 @@
     "redesign_branch": "feat/copa-2026-redesign"
   },
   "current_milestone": "M2",
-  "current_loop": "2D",
+  "current_loop": "2E",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -25,12 +25,13 @@
     "2A",
     "2B",
     "2C",
-    "2D"
+    "2D",
+    "2E"
   ],
   "milestones": {
     "M0": "DONE",
     "M1": "DONE",
-    "M2": "IN_PROGRESS",
+    "M2": "DONE",
     "M3": "NOT_STARTED",
     "M4": "NOT_STARTED",
     "M5": "NOT_STARTED",
@@ -63,12 +64,13 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "2D",
-  "next_proposed_loop": "2E",
+  "last_completed_loop": "2E",
+  "next_proposed_loop": "3A",
   "notes": [
     "M1 technical QA and human visual acceptance passed.",
     "M2 token foundation implemented.",
     "M2 public UI primitives implemented.",
-    "M2 public chrome visual foundation implemented."
+    "M2 public chrome visual foundation implemented.",
+    "M2 design system integration QA completed."
   ]
 }

@@ -64,6 +64,8 @@
 - Public landing page is composed in `src/App.tsx`.
 - Public shell is composed by `src/components/layout/PublicLayout.tsx`.
 - PublicLayout is implemented and accepted.
+- PublicLayout owns Navigation, main, Outlet, and Footer.
+- Navigation and Footer use the design system foundation.
 - Public routes are:
   - `/`
   - `/la-copa`
@@ -77,3 +79,4 @@
 - Admin isolation: PASS
 - Admin runtime is protected by `ProtectedAdminRoute` and `AdminLayout`.
 - Runtime evidence is verified from source and Graph; no `.env` values were read.
+- M2 design system milestone: CLOSED

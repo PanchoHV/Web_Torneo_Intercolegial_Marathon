@@ -46,7 +46,7 @@ Objetivo:
 
 Estado:
 
-- `NOT_STARTED`
+- `DONE`
 
 ### M3 — Home
 
@@ -233,7 +233,7 @@ Status:
 
 DONE
 
-### LOOP 2A — Design System Audit & Token Plan
+### LOOP 2A — Visual System Audit
 
 Task size:
 
@@ -274,6 +274,50 @@ Add the public UI primitive layer for container, section, surface, labels, badge
 Status:
 
 DONE
+
+### LOOP 2D — Public Chrome Visual Foundation
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Apply the design system to the shared public chrome: Navigation, Footer, and PublicLayout.
+
+Status:
+
+DONE
+
+### LOOP 2E — Design System Integration QA
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Validate the public design system and close M2 only when tokens, primitives, chrome, responsiveness, accessibility, build, and Graph remain stable.
+
+Status:
+
+DONE
+
+## Current milestone
+
+M2 — Design System
+
+## Next proposed milestone
+
+M3 — Home
+
+## Next authorized milestone
+
+NONE
+
+## Roadmap rule
+
+A milestone can only move to `DONE` when its closure conditions are validated.
 
 ### LOOP 2D — Public Chrome Visual Foundation
 
