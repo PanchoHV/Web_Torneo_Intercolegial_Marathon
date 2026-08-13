@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786628139.5433757,
-    "ast_hash": "fedeac6b51576a748c1abecd5801a283",
+    "mtime": 1786628674.8821113,
+    "ast_hash": "13a1f3a50a7b9c3107d3b70f72469d19",
     "semantic_hash": ""
   },
   "components.json": {
@@ -25,9 +25,9 @@
     "semantic_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0"
   },
   "src/App.tsx": {
-    "mtime": 1780323721.057189,
-    "ast_hash": "8a565d7f25326530a8ae7c54cad93f28",
-    "semantic_hash": "8a565d7f25326530a8ae7c54cad93f28"
+    "mtime": 1786631360.4235334,
+    "ast_hash": "dfe514bd1d0e225237175779f9a4be90",
+    "semantic_hash": ""
   },
   "src/components/ScrollToTop.tsx": {
     "mtime": 1776822894.5658128,
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786626937.5348563,
-    "ast_hash": "9439dcce2afb9bcfabb7230245928f00",
+    "mtime": 1786628674.752293,
+    "ast_hash": "81c72a9c1ac3dc7805c44b7d16553482",
     "semantic_hash": ""
   },
   "README.md": {
@@ -845,8 +845,8 @@
     "semantic_hash": ""
   },
   "PROJECT_GRAPH_INDEX.md": {
-    "mtime": 1786627730.2747085,
-    "ast_hash": "690bc5ce50f122604dc9bbd1f715d09a",
+    "mtime": 1786628674.3807504,
+    "ast_hash": "bb151aad27248638924355b5daab8110",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_DEPLOYMENTS.md": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786628138.9105308,
-    "ast_hash": "67fe4bfbb27be5e6fbf50e9d04b38a39",
+    "mtime": 1786628674.6215384,
+    "ast_hash": "2b15759a338a57b985e2d3a24e42ff84",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
@@ -867,6 +867,26 @@
   "docs/graph/PROJECT_RUNTIME_MAP.md": {
     "mtime": 1786628139.1531525,
     "ast_hash": "b9755e8c870a6436ebdeb2d4287be3cb",
+    "semantic_hash": ""
+  },
+  "src/pages/FAQPage.tsx": {
+    "mtime": 1786631324.88779,
+    "ast_hash": "c94a4dbf1ff8f046c314c936314c6eb7",
+    "semantic_hash": ""
+  },
+  "src/pages/FanAppPage.tsx": {
+    "mtime": 1786631324.5537488,
+    "ast_hash": "752fc17cb302000a724269543e82f14e",
+    "semantic_hash": ""
+  },
+  "src/pages/LaCopaPage.tsx": {
+    "mtime": 1786631324.1091723,
+    "ast_hash": "572fbbf3a7d25cadc1f8c97de8bd663d",
+    "semantic_hash": ""
+  },
+  "src/pages/SedesPage.tsx": {
+    "mtime": 1786631324.2757611,
+    "ast_hash": "ffe047d04f761d346b870336f35b1eba",
     "semantic_hash": ""
   }
 }

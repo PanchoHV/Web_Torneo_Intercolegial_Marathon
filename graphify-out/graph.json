@@ -896,7 +896,7 @@
       "label": "HomeLanding()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "_origin": "ast"
     },
     {
@@ -904,7 +904,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L52",
+      "source_location": "L56",
       "_origin": "ast"
     },
     {
@@ -4740,6 +4740,38 @@
       "_origin": "ast"
     },
     {
+      "id": "src_pages_faqpage",
+      "label": "FAQPage.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/FAQPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_faqpage_faqpage",
+      "label": "FAQPage()",
+      "file_type": "code",
+      "source_file": "src/pages/FAQPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_fanapppage",
+      "label": "FanAppPage.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_fanapppage_fanapppage",
+      "label": "FanAppPage()",
+      "file_type": "code",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "src_pages_home",
       "label": "Home.tsx",
       "file_type": "code",
@@ -4769,6 +4801,38 @@
       "file_type": "code",
       "source_file": "src/pages/InscripcionesPage.tsx",
       "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_lacopapage",
+      "label": "LaCopaPage.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_lacopapage_lacopapage",
+      "label": "LaCopaPage()",
+      "file_type": "code",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_sedespage",
+      "label": "SedesPage.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_sedespage_sedespage",
+      "label": "SedesPage()",
+      "file_type": "code",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L1",
       "_origin": "ast"
     },
     {
@@ -7024,7 +7088,7 @@
       "label": "3. Graph statistics",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast"
     },
     {
@@ -7032,7 +7096,7 @@
       "label": "4. Graph artifacts",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast"
     },
     {
@@ -7040,7 +7104,7 @@
       "label": "Shared / candidate for versioning",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast"
     },
     {
@@ -7048,7 +7112,7 @@
       "label": "Local / ignored",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast"
     },
     {
@@ -7056,7 +7120,7 @@
       "label": "5. Critical entrypoints",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L40",
+      "source_location": "L41",
       "_origin": "ast"
     },
     {
@@ -7064,7 +7128,7 @@
       "label": "6. Graph usage rule",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L47",
+      "source_location": "L48",
       "_origin": "ast"
     },
     {
@@ -7072,7 +7136,7 @@
       "label": "7. Approved query patterns",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L61",
+      "source_location": "L62",
       "_origin": "ast"
     },
     {
@@ -7080,7 +7144,15 @@
       "label": "8. Graph update policy",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L70",
+      "source_location": "L71",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_graph_index_9_milestone_refresh_note",
+      "label": "9. Milestone refresh note",
+      "file_type": "document",
+      "source_file": "PROJECT_GRAPH_INDEX.md",
+      "source_location": "L94",
       "_origin": "ast"
     },
     {
@@ -7204,11 +7276,51 @@
       "_origin": "ast"
     },
     {
+      "id": "project_roadmap_planned_m1_execution_loops",
+      "label": "Planned M1 execution loops",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L159",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_1a_foundation_design_gate",
+      "label": "LOOP 1A — Foundation Design Gate",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L161",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_1b_public_route_shells",
+      "label": "LOOP 1B — Public Route Shells",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L173",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_1c_public_layout_foundation",
+      "label": "LOOP 1C — Public Layout Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L194",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_1d_foundation_integration_qa",
+      "label": "LOOP 1D — Foundation Integration QA",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L210",
+      "_origin": "ast"
+    },
+    {
       "id": "project_roadmap_roadmap_rule",
       "label": "Roadmap rule",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L159",
+      "source_location": "L220",
       "_origin": "ast"
     },
     {
@@ -7577,6 +7689,14 @@
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
       "source_location": "L109",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_7_current_operational_state",
+      "label": "7. Current operational state",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L115",
       "_origin": "ast"
     },
     {
@@ -9676,7 +9796,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_inscripcionespage",
+      "target": "src_pages_faqpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9686,7 +9806,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_login",
+      "target": "src_pages_fanapppage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9696,7 +9816,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_auditpage",
+      "target": "src_pages_lacopapage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9706,7 +9826,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_myaccesspage",
+      "target": "src_pages_inscripcionespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9716,7 +9836,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdashboard",
+      "target": "src_pages_admin_login",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9726,7 +9846,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdetail",
+      "target": "src_pages_admin_auditpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9736,7 +9856,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_userspage",
+      "target": "src_pages_admin_myaccesspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9746,11 +9866,51 @@
     },
     {
       "source": "src_app",
+      "target": "src_pages_admin_onboardingdashboard",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_admin_onboardingdetail",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_admin_userspage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
       "target": "src_app_homelanding",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -9759,7 +9919,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L52",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -17623,6 +17783,24 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_faqpage",
+      "target": "src_pages_faqpage_faqpage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FAQPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_fanapppage",
+      "target": "src_pages_fanapppage_fanapppage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_home",
       "target": "ref_react",
       "relation": "imports_from",
@@ -17718,6 +17896,24 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/InscripcionesPage.tsx",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_pages_lacopapage_lacopapage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_pages_sedespage_sedespage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -23124,7 +23320,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -23133,7 +23329,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -23142,7 +23338,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -23151,7 +23347,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -23160,7 +23356,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -23169,7 +23365,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -23178,7 +23374,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -23187,7 +23383,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L70",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "project_graph_index_copa_marathon_project_graph_index",
+      "target": "project_graph_index_9_milestone_refresh_note",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_GRAPH_INDEX.md",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -23318,11 +23523,56 @@
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_roadmap_rule",
+      "target": "project_roadmap_planned_m1_execution_loops",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_1a_foundation_design_gate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_1b_public_route_shells",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_1c_public_layout_foundation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_1d_foundation_integration_qa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_roadmap_rule",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -23704,6 +23954,15 @@
       "weight": 1.0
     },
     {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_7_current_operational_state",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
       "source": "docs_graph_project_invariants",
       "target": "docs_graph_project_invariants_copa_marathon_project_invariants",
       "relation": "contains",
@@ -23949,6 +24208,46 @@
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_faqpage_faqpage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_fanapppage_fanapppage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_lacopapage_lacopapage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_sedespage_sedespage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L27",
       "weight": 1.0
     },
     {

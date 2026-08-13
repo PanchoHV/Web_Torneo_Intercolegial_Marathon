@@ -4,8 +4,8 @@
     "repository": "PanchoHV/Web_Torneo_Intercolegial_Marathon",
     "redesign_branch": "feat/copa-2026-redesign"
   },
-  "current_milestone": "M0",
-  "current_loop": "0F",
+  "current_milestone": "M1",
+  "current_loop": "1B",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -17,11 +17,13 @@
     "0C",
     "0D",
     "0E",
-    "0F"
+    "0F",
+    "1A",
+    "1B"
   ],
   "milestones": {
     "M0": "DONE",
-    "M1": "NOT_STARTED",
+    "M1": "IN_PROGRESS",
     "M2": "NOT_STARTED",
     "M3": "NOT_STARTED",
     "M4": "NOT_STARTED",
@@ -55,7 +57,7 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "0F",
-  "next_proposed_loop": "1A",
+  "last_completed_loop": "1B",
+  "next_proposed_loop": "1C",
   "notes": []
 }

@@ -115,8 +115,24 @@ Explicit human approval is required for:
 ## 7. Current operational state
 
 - M0: DONE
+- M1: IN_PROGRESS
+- LOOP 1A: DONE
+- LOOP 1B: DONE
+- Next loop: 1C — Public Layout Foundation
 - Gate 0: PASSED
-- M1: NOT_STARTED
-- Next proposed milestone: M1 — Application Foundation
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
+
+## 8. Current route contracts
+
+- `/la-copa`
+- `/sedes`
+- `/preinscripciones`
+- `/fan-app`
+- `/faq`
+
+Compatibility contract:
+
+- `/inscripciones` remains operational.
+
+`/preinscripciones` currently aliases the existing `InscripcionesPage`.

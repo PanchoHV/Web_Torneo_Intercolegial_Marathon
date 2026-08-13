@@ -30,7 +30,7 @@ Objetivo:
 
 Estado:
 
-- `NOT_STARTED`
+- `IN_PROGRESS`
 
 ### M2 — Design System
 
@@ -150,7 +150,7 @@ Estado:
 
 ## Current milestone
 
-M0 — DONE
+M1 — Application Foundation
 
 ## Next authorized milestone
 
@@ -169,6 +169,10 @@ Outcome:
 Use Graph + source confirmation to define the exact routing/layout implementation plan and affected files.
 
 No broad implementation.
+
+Status:
+
+DONE
 
 ### LOOP 1B — Public Route Shells
 
@@ -189,7 +193,11 @@ Introduce only the public route shells required for:
 
 while preserving current Admin contracts.
 
-This loop must be further constrained by 1A before execution.
+Status:
+
+DONE
+
+This loop was constrained by 1A.
 
 ### LOOP 1C — Public Layout Foundation
 
@@ -207,6 +215,10 @@ Introduce reusable public layout structure such as:
 
 using the smallest viable file set approved by Graph impact analysis.
 
+Status:
+
+NOT_STARTED
+
 ### LOOP 1D — Foundation Integration QA
 
 Task size:
@@ -216,6 +228,14 @@ SMALL
 Outcome:
 
 Validate routing, admin regression, mobile shell, build, and Graph freshness, then determine whether M1 can close.
+
+Status:
+
+NOT_STARTED
+
+## Next authorized milestone
+
+NONE
 
 ## Roadmap rule
 

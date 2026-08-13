@@ -14,6 +14,9 @@ import CTAFinal from '@/sections/CTAFinal';
 import Footer from '@/sections/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
+import FAQPage from '@/pages/FAQPage';
+import FanAppPage from '@/pages/FanAppPage';
+import LaCopaPage from '@/pages/LaCopaPage';
 import InscripcionesPage from '@/pages/InscripcionesPage';
 import AdminLogin from '@/pages/admin/Login';
 import AuditPage from '@/pages/admin/AuditPage';
@@ -21,6 +24,7 @@ import MyAccessPage from '@/pages/admin/MyAccessPage';
 import OnboardingDashboard from '@/pages/admin/OnboardingDashboard';
 import OnboardingDetail from '@/pages/admin/OnboardingDetail';
 import UsersPage from '@/pages/admin/UsersPage';
+import SedesPage from '@/pages/SedesPage';
 
 function HomeLanding() {
   useEffect(() => {
@@ -55,6 +59,11 @@ function App() {
       <RouteAnalytics />
       <Routes>
         <Route path="/" element={<HomeLanding />} />
+        <Route path="/la-copa" element={<LaCopaPage />} />
+        <Route path="/sedes" element={<SedesPage />} />
+        <Route path="/preinscripciones" element={<InscripcionesPage />} />
+        <Route path="/fan-app" element={<FanAppPage />} />
+        <Route path="/faq" element={<FAQPage />} />
         <Route path="/inscripciones" element={<InscripcionesPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
@@ -66,11 +75,11 @@ function App() {
           }
         >
           <Route index element={<Navigate to="/admin/onboarding" replace />} />
-          <Route path="onboarding" element={<OnboardingDashboard />} />
-          <Route path="onboarding/:id" element={<OnboardingDetail />} />
-          <Route path="mi-acceso" element={<MyAccessPage />} />
+          <Route path="/admin/onboarding" element={<OnboardingDashboard />} />
+          <Route path="/admin/onboarding/:id" element={<OnboardingDetail />} />
+          <Route path="/admin/mi-acceso" element={<MyAccessPage />} />
           <Route
-            path="usuarios"
+            path="/admin/usuarios"
             element={
               <ProtectedAdminRoute allowedRoles={['admin']}>
                 <UsersPage />
@@ -78,7 +87,7 @@ function App() {
             }
           />
           <Route
-            path="auditoria"
+            path="/admin/auditoria"
             element={
               <ProtectedAdminRoute allowedRoles={['admin']}>
                 <AuditPage />
