@@ -1,0 +1,61 @@
+{
+  "project": {
+    "name": "Copa Nacional Intercolegial Marathon 2026",
+    "repository": "PanchoHV/Web_Torneo_Intercolegial_Marathon",
+    "redesign_branch": "feat/copa-2026-redesign"
+  },
+  "current_milestone": "M0",
+  "current_loop": "0F",
+  "status": "IN_PROGRESS",
+  "gate": {
+    "current": "GATE_0_BOOTSTRAP",
+    "passed": false
+  },
+  "completed_loops": [
+    "0A",
+    "0B",
+    "0C",
+    "0D",
+    "0E",
+    "0F"
+  ],
+  "milestones": {
+    "M0": "DONE",
+    "M1": "NOT_STARTED",
+    "M2": "NOT_STARTED",
+    "M3": "NOT_STARTED",
+    "M4": "NOT_STARTED",
+    "M5": "NOT_STARTED",
+    "M6": "NOT_STARTED",
+    "M7": "NOT_STARTED",
+    "M8": "NOT_STARTED",
+    "M9": "NOT_STARTED"
+  },
+  "bootstrap": {
+    "repository_initialized": true,
+    "instructions_present": true,
+    "secrets_excluded": true,
+    "roadmap_created": true,
+    "execution_state_created": true,
+    "architecture_baseline_created": true,
+    "invariants_documented": true,
+    "graph_index_created": true,
+    "initial_graph_built": true,
+    "graph_validator_created": true,
+    "graph_validation_passed": true,
+    "curated_overlay_created": true,
+    "qa_map_created": true,
+    "runtime_map_created": true,
+    "deployment_rules_documented": true
+  },
+  "deployment": {
+    "authorized": false,
+    "status": "NOT_AUTHORIZED"
+  },
+  "network": {
+    "default": "DENIED"
+  },
+  "last_completed_loop": "0F",
+  "next_proposed_loop": "1A",
+  "notes": []
+}

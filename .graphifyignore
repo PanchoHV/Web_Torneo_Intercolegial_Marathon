@@ -1,0 +1,17 @@
+.git/
+node_modules/
+dist/
+build/
+coverage/
+
+.env
+.env.*
+*.log
+
+supabase/.temp/
+
+graphify-out/
+
+.DS_Store
+*.tmp
+*.temp
