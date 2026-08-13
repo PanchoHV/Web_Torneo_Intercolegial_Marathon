@@ -7,6 +7,8 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
         marathon: {
@@ -18,6 +20,30 @@ module.exports = {
           green: '#079669',
           gold: '#D8A84B',
           ice: '#EAF2FB',
+          surface: {
+            stadium: 'rgb(var(--surface-stadium) / <alpha-value>)',
+            'stadium-raised': 'rgb(var(--surface-stadium-raised) / <alpha-value>)',
+            paper: 'rgb(var(--surface-paper) / <alpha-value>)',
+            'paper-muted': 'rgb(var(--surface-paper-muted) / <alpha-value>)',
+            scoreboard: 'rgb(var(--surface-scoreboard) / <alpha-value>)',
+            'scoreboard-raised': 'rgb(var(--surface-scoreboard-raised) / <alpha-value>)',
+          },
+          text: {
+            primary: 'rgb(var(--text-primary) / <alpha-value>)',
+            secondary: 'rgb(var(--text-secondary) / <alpha-value>)',
+            'on-dark': 'rgb(var(--text-on-dark) / <alpha-value>)',
+            muted: 'rgb(var(--text-muted) / <alpha-value>)',
+            accent: 'rgb(var(--text-accent) / <alpha-value>)',
+          },
+          action: {
+            primary: 'rgb(var(--action-primary) / <alpha-value>)',
+            'primary-hover': 'rgb(var(--action-primary-hover) / <alpha-value>)',
+            secondary: 'rgb(var(--action-secondary) / <alpha-value>)',
+          },
+          border: {
+            subtle: 'rgb(var(--border-subtle) / <alpha-value>)',
+            strong: 'rgb(var(--border-strong) / <alpha-value>)',
+          },
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -64,14 +90,37 @@ module.exports = {
         },
       },
       borderRadius: {
-        xl: "calc(var(--radius) + 4px)",
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        xs: "calc(var(--radius) - 6px)",
+        xl: "var(--radius-xl)",
+        lg: "var(--radius-lg)",
+        md: "var(--radius-md)",
+        sm: "var(--radius-sm)",
+        xs: "calc(var(--radius-sm) - 2px)",
+      },
+      spacing: {
+        gutter: 'var(--page-gutter)',
+        main: 'var(--container-main)',
+        'section-gap': 'var(--section-gap)',
+        'section-gap-lg': 'var(--section-gap-lg)',
+        'card-padding': 'var(--card-padding)',
+        'header-height': 'var(--header-height)',
+        'touch-target': 'var(--touch-target)',
+      },
+      maxWidth: {
+        main: 'var(--container-main)',
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        surface: 'var(--shadow-surface)',
+        elevated: 'var(--shadow-elevated)',
+      },
+      transitionDuration: {
+        fast: 'var(--duration-fast)',
+        base: 'var(--duration-base)',
+        slow: 'var(--duration-slow)',
+      },
+      transitionTimingFunction: {
+        standard: 'var(--ease-standard)',
+        emphatic: 'var(--ease-emphatic)',
       },
       keyframes: {
         "accordion-down": {

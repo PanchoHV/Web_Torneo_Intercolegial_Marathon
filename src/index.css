@@ -32,6 +32,60 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Copa Marathon semantic tokens */
+    --brand-red: 226 27 45;
+    --brand-blue: 0 80 164;
+    --brand-navy: 6 42 79;
+    --brand-cream: 244 248 252;
+    --brand-gold: 216 168 75;
+    --brand-green: 7 150 105;
+    --brand-gray: 93 107 124;
+
+    --surface-stadium: 2 8 23;
+    --surface-stadium-raised: 6 26 56;
+    --surface-paper: 244 248 252;
+    --surface-paper-muted: 234 242 251;
+    --surface-scoreboard: 0 80 164;
+    --surface-scoreboard-raised: 6 42 79;
+
+    --text-primary: var(--brand-navy);
+    --text-secondary: var(--brand-gray);
+    --text-on-dark: 255 255 255;
+    --text-muted: var(--brand-gray);
+    --text-accent: var(--brand-blue);
+
+    --border-subtle: var(--surface-paper-muted);
+    --border-strong: var(--brand-navy);
+    --focus-ring: var(--brand-blue);
+
+    --action-primary: var(--brand-red);
+    --action-primary-hover: 196 27 45;
+    --action-secondary: var(--brand-blue);
+
+    --page-gutter: clamp(0.75rem, 2.5vw, 2rem);
+    --container-main: min(75rem, calc(100vw - (var(--page-gutter) * 2)));
+    --section-gap: clamp(3rem, 6vw, 5rem);
+    --section-gap-lg: clamp(4rem, 8vw, 7rem);
+    --card-padding: clamp(1rem, 2.5vw, 1.5rem);
+    --header-height: clamp(4.375rem, 8vw, 5.25rem);
+    --touch-target: 2.75rem;
+
+    --radius-sm: calc(var(--radius) - 0.25rem);
+    --radius-md: var(--radius);
+    --radius-lg: calc(var(--radius) + 0.375rem);
+    --radius-xl: calc(var(--radius) + 0.875rem);
+
+    --shadow-surface: 0 12px 34px rgba(6, 42, 79, 0.1);
+    --shadow-elevated: 0 22px 56px rgba(6, 42, 79, 0.16);
+
+    --duration-fast: 120ms;
+    --duration-base: 220ms;
+    --duration-slow: 360ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --ease-emphatic: cubic-bezier(0.16, 1, 0.3, 1);
+    --reveal-distance: 0.75rem;
+    --stagger: 90ms;
   }
 
   * {
@@ -52,6 +106,18 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-montserrat;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --duration-fast: 1ms;
+      --duration-base: 1ms;
+      --duration-slow: 1ms;
+      --ease-standard: linear;
+      --ease-emphatic: linear;
+      --reveal-distance: 0px;
+      --stagger: 0ms;
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786632361.7147338,
-    "ast_hash": "27f76712ae7e95af2bb68c5a9fd5ee42",
+    "mtime": 1786633830.2718215,
+    "ast_hash": "4f951005fb2a437db628855cc591f322",
     "semantic_hash": ""
   },
   "components.json": {
@@ -660,9 +660,9 @@
     "semantic_hash": "bdd072b0a5d747e093fde4faa01a442e"
   },
   "tailwind.config.js": {
-    "mtime": 1776804979.7526834,
-    "ast_hash": "a5d0877dd8238717e938c140ef905029",
-    "semantic_hash": "a5d0877dd8238717e938c140ef905029"
+    "mtime": 1786638420.1924994,
+    "ast_hash": "d262436e78d49434e71ebf674b7f1cc1",
+    "semantic_hash": ""
   },
   "tsconfig.app.json": {
     "mtime": 1776822505.929695,
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786632362.007952,
-    "ast_hash": "5c4556058a462087786f29ae667ef35e",
+    "mtime": 1786633830.0464966,
+    "ast_hash": "ea36e38bb9243a4c916f2238d9a8918e",
     "semantic_hash": ""
   },
   "README.md": {
@@ -855,18 +855,18 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786632362.1424859,
-    "ast_hash": "4694c9a02e4ff273d6b767f7ab060426",
+    "mtime": 1786633830.4050448,
+    "ast_hash": "102994eeb7642da8f563dbbf40016a20",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
-    "mtime": 1786628139.2826967,
-    "ast_hash": "7bdf5934d0638d4da8b8089f01da8ec7",
+    "mtime": 1786633830.6700263,
+    "ast_hash": "7d792f6bde4dd5ba7407f687b00bfeca",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_RUNTIME_MAP.md": {
-    "mtime": 1786628139.1531525,
-    "ast_hash": "b9755e8c870a6436ebdeb2d4287be3cb",
+    "mtime": 1786633830.5362267,
+    "ast_hash": "5aaa79e35c0a55c91407ef8eac10c6ed",
     "semantic_hash": ""
   },
   "src/pages/FAQPage.tsx": {

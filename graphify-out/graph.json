@@ -7728,7 +7728,15 @@
       "label": "8. Current route contracts",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L133",
+      "source_location": "L134",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_9_closure_status",
+      "label": "9. Closure status",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L149",
       "_origin": "ast"
     },
     {
@@ -7852,6 +7860,22 @@
       "_origin": "ast"
     },
     {
+      "id": "docs_graph_project_qa_map_5_loop_1d_technical_qa_evidence",
+      "label": "5. LOOP 1D technical QA evidence",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_qa_map_m1_application_foundation_closure_evidence",
+      "label": "M1 Application Foundation — Closure Evidence",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L58",
+      "_origin": "ast"
+    },
+    {
       "id": "docs_graph_project_runtime_map",
       "label": "PROJECT_RUNTIME_MAP.md",
       "file_type": "document",
@@ -7896,7 +7920,7 @@
       "label": "PLANNED",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_RUNTIME_MAP.md",
-      "source_location": "L29",
+      "source_location": "L34",
       "_origin": "ast"
     },
     {
@@ -24038,7 +24062,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L133",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_9_closure_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L149",
       "weight": 1.0
     },
     {
@@ -24159,6 +24192,24 @@
       "weight": 1.0
     },
     {
+      "source": "docs_graph_project_qa_map_copa_marathon_qa_map",
+      "target": "docs_graph_project_qa_map_5_loop_1d_technical_qa_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_qa_map_copa_marathon_qa_map",
+      "target": "docs_graph_project_qa_map_m1_application_foundation_closure_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
       "source": "docs_graph_project_runtime_map",
       "target": "docs_graph_project_runtime_map_copa_marathon_runtime_map",
       "relation": "contains",
@@ -24200,7 +24251,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_RUNTIME_MAP.md",
-      "source_location": "L29",
+      "source_location": "L34",
       "weight": 1.0
     },
     {

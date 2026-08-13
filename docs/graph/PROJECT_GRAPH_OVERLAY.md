@@ -122,11 +122,14 @@ Explicit human approval is required for:
 
 - M0: DONE
 - M1: DONE
+- M2: IN_PROGRESS
 - LOOP 1A: DONE
 - LOOP 1B: DONE
 - LOOP 1C: DONE
 - LOOP 1D: DONE
-- Next loop: 2A — Design System
+- LOOP 2A: DONE
+- LOOP 2B: DONE
+- Next loop: 2C — Core UI Primitives
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -148,12 +151,16 @@ Compatibility contract:
 
 ## 9. Closure status
 
+- Token architecture: CSS semantic variables → Tailwind semantic aliases → React primitives
+- Token foundation: IMPLEMENTED
+- Three-material vocabulary: STADIUM / PAPER / SCOREBOARD
+- Existing Marathon palette: PRESERVED
 - PublicLayout: IMPLEMENTED AND ACCEPTED
 - Public navigation contracts: ACCEPTED
 - Registration aliases: PRESERVED
 - Admin boundary: PRESERVED
 - Mobile foundation: HUMAN ACCEPTED
 - Human acceptance: PASS
-- Next proposed milestone: M2 — Design System
-- M2 status: NOT_STARTED
-- M2 requires explicit human authorization
+- Next proposed milestone: M3 — Home
+- M2 status: IN_PROGRESS
+- M2 requires explicit human authorization for closure

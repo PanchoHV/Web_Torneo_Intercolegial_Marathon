@@ -150,7 +150,7 @@ Estado:
 
 ## Current milestone
 
-M1 — DONE
+M2 — Design System
 
 ## Next authorized milestone
 
@@ -232,6 +232,64 @@ Validate routing, admin regression, mobile shell, build, and Graph freshness, th
 Status:
 
 DONE
+
+### LOOP 2A — Design System Audit & Token Plan
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Audit the current visual system and define the minimum exact token plan.
+
+Status:
+
+DONE
+
+### LOOP 2B — Design Token Foundation
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Establish the semantic CSS + Tailwind token foundation while preserving visual compatibility.
+
+Status:
+
+DONE
+
+### LOOP 2C — Core UI Primitives
+
+Task size:
+
+SMALL
+
+Status:
+
+NOT_STARTED
+
+### LOOP 2D — Public Chrome Visual Foundation
+
+Task size:
+
+SMALL
+
+Status:
+
+NOT_STARTED
+
+### LOOP 2E — Design System Integration QA
+
+Task size:
+
+SMALL
+
+Status:
+
+NOT_STARTED
 
 ## Next authorized milestone
 
