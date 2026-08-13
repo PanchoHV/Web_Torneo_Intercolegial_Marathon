@@ -123,6 +123,7 @@ Explicit human approval is required for:
 - M0: DONE
 - M1: DONE
 - M2: DONE
+- M3: IN_PROGRESS
 - LOOP 1A: DONE
 - LOOP 1B: DONE
 - LOOP 1C: DONE
@@ -132,7 +133,9 @@ Explicit human approval is required for:
 - LOOP 2C: DONE
 - LOOP 2D: DONE
 - LOOP 2E: DONE
-- Next loop: 3A — Home
+- LOOP 3A: DONE
+- LOOP 3B: DONE
+- Next loop: 3C — Smart Copa Bar + Sponsor Boundary
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -165,8 +168,17 @@ Compatibility contract:
 - Mobile foundation: HUMAN ACCEPTED
 - Human acceptance: PASS
 - Next proposed milestone: M3 — Home
-- M2 status: IN_PROGRESS
-- M2 requires explicit human authorization for closure
+- M3 status: IN_PROGRESS
+- Home root: EXTRACTED TO HomePage
+- Hero: REBUILT
+- Hero material: STADIUM
+- Hero primary conversion: FAN APP
+- Hero motion: HIGH / CINEMATIC / 3D FOUNDATION
+- Three.js: NOT_USED
+- WebGL: NOT_USED
+- Mobile motion: REDUCED
+- M2 status: DONE
+- M2 milestone closure: DONE
 - Design system primitives: IMPLEMENTED
 - Public chrome: VISUAL FOUNDATION APPLIED
 - Materials:
@@ -175,4 +187,3 @@ Compatibility contract:
 - Responsive foundation: PASS
 - Accessibility foundation: PASS
 - Human chrome acceptance: PASS
-- M2 milestone closure: DONE

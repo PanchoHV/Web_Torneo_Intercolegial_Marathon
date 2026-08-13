@@ -30,7 +30,7 @@ Objetivo:
 
 Estado:
 
-- `IN_PROGRESS`
+- `DONE`
 
 ### M2 — Design System
 
@@ -57,7 +57,7 @@ Objetivo:
 
 Estado:
 
-- `NOT_STARTED`
+- `IN_PROGRESS`
 
 ### M4 — Core Public Pages
 
@@ -303,9 +303,37 @@ Status:
 
 DONE
 
+### LOOP 3A — Home Architecture & Asset Design Gate
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Map the current Home architecture, assets, data, and dependencies to prepare the exact implementation plan.
+
+Status:
+
+DONE
+
+### LOOP 3B — Home Root Extraction + Cinematic 3D Hero
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Extract Home into `HomePage.tsx` and rebuild the Hero as a cinematic, 3D-first Fan App lead surface.
+
+Status:
+
+DONE
+
 ## Current milestone
 
-M2 — Design System
+M3 — Home
 
 ## Next proposed milestone
 
@@ -314,43 +342,3 @@ M3 — Home
 ## Next authorized milestone
 
 NONE
-
-## Roadmap rule
-
-A milestone can only move to `DONE` when its closure conditions are validated.
-
-### LOOP 2D — Public Chrome Visual Foundation
-
-Task size:
-
-SMALL
-
-Outcome:
-
-Apply the design system to the shared public chrome: Navigation, Footer, and PublicLayout.
-
-Status:
-
-DONE
-
-### LOOP 2E — Design System Integration QA
-
-Task size:
-
-SMALL
-
-Outcome:
-
-Complete visual and interaction QA for the shared chrome and verify mobile behavior.
-
-Status:
-
-NOT_STARTED
-
-## Next authorized milestone
-
-NONE
-
-## Roadmap rule
-
-A milestone can only move to `DONE` when its closure conditions are validated.

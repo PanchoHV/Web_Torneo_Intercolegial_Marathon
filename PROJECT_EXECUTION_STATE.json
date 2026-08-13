@@ -4,8 +4,8 @@
     "repository": "PanchoHV/Web_Torneo_Intercolegial_Marathon",
     "redesign_branch": "feat/copa-2026-redesign"
   },
-  "current_milestone": "M2",
-  "current_loop": "2E",
+  "current_milestone": "M3",
+  "current_loop": "3B",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -26,13 +26,15 @@
     "2B",
     "2C",
     "2D",
-    "2E"
+    "2E",
+    "3A",
+    "3B"
   ],
   "milestones": {
     "M0": "DONE",
     "M1": "DONE",
     "M2": "DONE",
-    "M3": "NOT_STARTED",
+    "M3": "IN_PROGRESS",
     "M4": "NOT_STARTED",
     "M5": "NOT_STARTED",
     "M6": "NOT_STARTED",
@@ -64,13 +66,15 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "2E",
-  "next_proposed_loop": "3A",
+  "last_completed_loop": "3B",
+  "next_proposed_loop": "3C",
   "notes": [
     "M1 technical QA and human visual acceptance passed.",
     "M2 token foundation implemented.",
     "M2 public UI primitives implemented.",
     "M2 public chrome visual foundation implemented.",
-    "M2 design system integration QA completed."
+    "M2 design system integration QA completed.",
+    "M3 Home architecture mapped.",
+    "M3 Home root extracted and cinematic Hero rebuilt."
   ]
 }

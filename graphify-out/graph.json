@@ -892,19 +892,11 @@
       "_origin": "ast"
     },
     {
-      "id": "src_app_homelanding",
-      "label": "HomeLanding()",
-      "file_type": "code",
-      "source_file": "src/App.tsx",
-      "source_location": "L28",
-      "_origin": "ast"
-    },
-    {
       "id": "src_app_app",
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L51",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -4916,6 +4908,22 @@
       "_origin": "ast"
     },
     {
+      "id": "src_pages_homepage",
+      "label": "HomePage.tsx",
+      "file_type": "code",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_pages_homepage_homepage",
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
       "id": "src_pages_inscripcionespage",
       "label": "InscripcionesPage.tsx",
       "file_type": "code",
@@ -5348,19 +5356,11 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_hero_target_date",
-      "label": "TARGET_DATE",
+      "id": "src_sections_hero_broadcastpills",
+      "label": "broadcastPills",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L10",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_hero_countdownunit",
-      "label": "CountdownUnit()",
-      "file_type": "code",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L12",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -5368,7 +5368,7 @@
       "label": "Hero()",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L42",
+      "source_location": "L27",
       "_origin": "ast"
     },
     {
@@ -7444,8 +7444,8 @@
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_loop_2a_design_system_audit_token_plan",
-      "label": "LOOP 2A — Design System Audit & Token Plan",
+      "id": "project_roadmap_loop_2a_visual_system_audit",
+      "label": "LOOP 2A — Visual System Audit",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L236",
@@ -7480,15 +7480,31 @@
       "label": "LOOP 2E — Design System Integration QA",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L288",
+      "source_location": "L292",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone_298",
+      "id": "project_roadmap_current_milestone_306",
+      "label": "Current milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L306",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_next_proposed_milestone",
+      "label": "Next proposed milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L310",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_next_authorized_milestone_314",
       "label": "Next authorized milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L298",
+      "source_location": "L314",
       "_origin": "ast"
     },
     {
@@ -7496,7 +7512,39 @@
       "label": "Roadmap rule",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L302",
+      "source_location": "L318",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2d_public_chrome_visual_foundation_322",
+      "label": "LOOP 2D — Public Chrome Visual Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L322",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2e_design_system_integration_qa_336",
+      "label": "LOOP 2E — Design System Integration QA",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L336",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_next_authorized_milestone_350",
+      "label": "Next authorized milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L350",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_roadmap_rule_354",
+      "label": "Roadmap rule",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L354",
       "_origin": "ast"
     },
     {
@@ -7880,7 +7928,7 @@
       "label": "8. Current route contracts",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L138",
+      "source_location": "L140",
       "_origin": "ast"
     },
     {
@@ -7888,7 +7936,7 @@
       "label": "9. Closure status",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L153",
+      "source_location": "L155",
       "_origin": "ast"
     },
     {
@@ -8025,6 +8073,14 @@
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_QA_MAP.md",
       "source_location": "L58",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_qa_map_m2_design_system_closure_evidence",
+      "label": "M2 Design System — Closure Evidence",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L81",
       "_origin": "ast"
     },
     {
@@ -9844,7 +9900,7 @@
     },
     {
       "source": "src_app",
-      "target": "ref_react",
+      "target": "ref_react_router",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9854,7 +9910,7 @@
     },
     {
       "source": "src_app",
-      "target": "ref_react_router",
+      "target": "src_components_admin_adminlayout",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9864,7 +9920,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_admin_adminlayout",
+      "target": "src_components_admin_protectedadminroute",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9874,7 +9930,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_admin_protectedadminroute",
+      "target": "src_components_scrolltotop",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9884,7 +9940,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_hero",
+      "target": "src_components_analytics_routeanalytics",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9894,7 +9950,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_sobreeltorneo",
+      "target": "src_components_layout_publiclayout",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9904,7 +9960,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_comoinscribirse",
+      "target": "src_pages_homepage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9914,7 +9970,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_sedescalendario",
+      "target": "src_pages_faqpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9924,7 +9980,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_tutoriales",
+      "target": "src_pages_fanapppage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9934,7 +9990,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_comunicacion",
+      "target": "src_pages_lacopapage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9944,7 +10000,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_faq",
+      "target": "src_pages_inscripcionespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9954,7 +10010,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_ctafinal",
+      "target": "src_pages_admin_login",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9964,7 +10020,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_scrolltotop",
+      "target": "src_pages_admin_auditpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9974,7 +10030,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_analytics_routeanalytics",
+      "target": "src_pages_admin_myaccesspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9984,7 +10040,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_layout_publiclayout",
+      "target": "src_pages_admin_onboardingdashboard",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9994,7 +10050,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage",
+      "target": "src_pages_admin_onboardingdetail",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10004,7 +10060,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_fanapppage",
+      "target": "src_pages_admin_userspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10014,7 +10070,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_lacopapage",
+      "target": "src_pages_sedespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10024,100 +10080,11 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_inscripcionespage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_login",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_auditpage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_myaccesspage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_onboardingdashboard",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_onboardingdetail",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_admin_userspage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_sedespage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_app_homelanding",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L51",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -18378,6 +18345,105 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_homepage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_ctafinal",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_comoinscribirse",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_comunicacion",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_faq",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_hero",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_sedescalendario",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_sobreeltorneo",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_tutoriales",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_pages_homepage_homepage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_inscripcionespage",
       "target": "ref_react",
       "relation": "imports_from",
@@ -20502,42 +20568,12 @@
     },
     {
       "source": "src_sections_hero",
-      "target": "src_hooks_usecountdown",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_hooks_usecountdown_usecountdown",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
       "target": "ref_react",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L3",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -20547,7 +20583,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L4",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -20557,7 +20593,87 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -20567,7 +20683,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L6",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -20577,35 +20693,16 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_sections_hero_target_date",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
       "source_location": "L10",
       "weight": 1.0
     },
     {
       "source": "src_sections_hero",
-      "target": "src_sections_hero_countdownunit",
+      "target": "src_sections_hero_broadcastpills",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L12",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -20614,7 +20711,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L42",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -24226,7 +24323,7 @@
     },
     {
       "source": "project_roadmap_planned_m1_execution_loops",
-      "target": "project_roadmap_loop_2a_design_system_audit_token_plan",
+      "target": "project_roadmap_loop_2a_visual_system_audit",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
@@ -24266,16 +24363,34 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L288",
+      "source_location": "L292",
       "weight": 1.0
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_298",
+      "target": "project_roadmap_current_milestone_306",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L298",
+      "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_next_proposed_milestone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L310",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_next_authorized_milestone_314",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L314",
       "weight": 1.0
     },
     {
@@ -24284,7 +24399,43 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L302",
+      "source_location": "L318",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_roadmap_rule",
+      "target": "project_roadmap_loop_2d_public_chrome_visual_foundation_322",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_roadmap_rule",
+      "target": "project_roadmap_loop_2e_design_system_integration_qa_336",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_next_authorized_milestone_350",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L350",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_roadmap_rule_354",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L354",
       "weight": 1.0
     },
     {
@@ -24680,7 +24831,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L138",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -24689,7 +24840,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L153",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -24828,6 +24979,15 @@
       "weight": 1.0
     },
     {
+      "source": "docs_graph_project_qa_map_copa_marathon_qa_map",
+      "target": "docs_graph_project_qa_map_m2_design_system_closure_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
       "source": "docs_graph_project_runtime_map",
       "target": "docs_graph_project_runtime_map_copa_marathon_runtime_map",
       "relation": "contains",
@@ -24915,7 +25075,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L3",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -24925,17 +25085,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_sections_comunicacion_comunicacion",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L10",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -24945,7 +25095,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L13",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -24955,7 +25105,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -24965,7 +25115,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_pages_homepage_homepage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24975,7 +25135,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L16",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -24985,7 +25145,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L17",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -24995,7 +25155,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L18",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -25005,17 +25165,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L26",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
-      "source": "src_main",
-      "target": "src_app_app",
+      "source": "src_pages_homepage",
+      "target": "src_sections_comunicacion_comunicacion",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/main.tsx",
-      "source_location": "L6",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -25076,6 +25236,16 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/admin/UsersPage.tsx",
       "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "users_pancho_desarrollo_intercolegial_marathon_src_sections_hero_handlectaclick",
+      "target": "src_lib_analytics_gtm_trackctaclick",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -28125,35 +28295,13 @@
     },
     {
       "source": "src_sections_hero_hero",
-      "target": "src_hooks_usecountdown_usecountdown",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L44",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero_hero",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L167",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero_hero",
       "target": "src_lib_analytics_gtm_trackctaclick",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L187",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
