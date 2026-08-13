@@ -54,3 +54,26 @@ No browser QA was run in this loop. This map is documentation only.
 - Build: PASS
 - Local HTTP smoke: PASS on `/`, `/la-copa`, `/sedes`, `/preinscripciones`, `/fan-app`, `/faq`, `/inscripciones`, `/admin/login`
 - Browser runtime QA: not available in this environment; human visual acceptance remains pending
+
+## M1 Application Foundation — Closure Evidence
+
+Technical:
+
+- route/source assertions: PASS
+- lint: PASS
+- build: PASS
+- Graph validation: PASS
+- protected source boundaries: PASS
+
+Human:
+
+- public Header/Footer consistency: PASS
+- registration funnel visual acceptance: PASS
+- mobile menu open/close: PASS
+- admin login isolation: PASS
+
+Overall:
+
+M1 QA: PASS
+Human acceptance: PASS
+Milestone: CLOSED

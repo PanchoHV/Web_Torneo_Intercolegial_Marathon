@@ -63,6 +63,17 @@
 
 - Public landing page is composed in `src/App.tsx`.
 - Public shell is composed by `src/components/layout/PublicLayout.tsx`.
+- PublicLayout is implemented and accepted.
+- Public routes are:
+  - `/`
+  - `/la-copa`
+  - `/sedes`
+  - `/preinscripciones`
+  - `/fan-app`
+  - `/faq`
 - `/preinscripciones` and `/inscripciones` both resolve to `InscripcionesPage`.
+- Human runtime acceptance: PASS
+- Mobile public shell: PASS at approximately 390px
+- Admin isolation: PASS
 - Admin runtime is protected by `ProtectedAdminRoute` and `AdminLayout`.
 - Runtime evidence is verified from source and Graph; no `.env` values were read.

@@ -20,11 +20,12 @@
     "0F",
     "1A",
     "1B",
-    "1C"
+    "1C",
+    "1D"
   ],
   "milestones": {
     "M0": "DONE",
-    "M1": "IN_PROGRESS",
+    "M1": "DONE",
     "M2": "NOT_STARTED",
     "M3": "NOT_STARTED",
     "M4": "NOT_STARTED",
@@ -58,9 +59,9 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "1C",
-  "next_proposed_loop": "1D-HUMAN-ACCEPTANCE",
+  "last_completed_loop": "1D",
+  "next_proposed_loop": "2A",
   "notes": [
-    "M1 technical QA passed; human visual acceptance pending."
+    "M1 technical QA and human visual acceptance passed."
   ]
 }

@@ -150,11 +150,11 @@ Estado:
 
 ## Current milestone
 
-M1 — Application Foundation
+M1 — DONE
 
 ## Next authorized milestone
 
-M1 — Application Foundation
+NONE
 
 ## Planned M1 execution loops
 
@@ -231,7 +231,7 @@ Validate routing, admin regression, mobile shell, build, and Graph freshness, th
 
 Status:
 
-NOT_STARTED
+DONE
 
 ## Next authorized milestone
 

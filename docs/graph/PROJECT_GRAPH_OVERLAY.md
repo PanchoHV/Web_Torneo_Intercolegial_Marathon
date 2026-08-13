@@ -121,11 +121,12 @@ Explicit human approval is required for:
 ## 7. Current operational state
 
 - M0: DONE
-- M1: IN_PROGRESS
+- M1: DONE
 - LOOP 1A: DONE
 - LOOP 1B: DONE
 - LOOP 1C: DONE
-- Next loop: 1D — Foundation Integration QA
+- LOOP 1D: DONE
+- Next loop: 2A — Design System
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -144,3 +145,15 @@ Compatibility contract:
 - `/inscripciones` remains operational.
 
 `/preinscripciones` currently aliases the existing `InscripcionesPage`.
+
+## 9. Closure status
+
+- PublicLayout: IMPLEMENTED AND ACCEPTED
+- Public navigation contracts: ACCEPTED
+- Registration aliases: PRESERVED
+- Admin boundary: PRESERVED
+- Mobile foundation: HUMAN ACCEPTED
+- Human acceptance: PASS
+- Next proposed milestone: M2 — Design System
+- M2 status: NOT_STARTED
+- M2 requires explicit human authorization
