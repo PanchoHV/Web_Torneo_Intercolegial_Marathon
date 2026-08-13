@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786628674.8821113,
-    "ast_hash": "13a1f3a50a7b9c3107d3b70f72469d19",
+    "mtime": 1786632361.7147338,
+    "ast_hash": "27f76712ae7e95af2bb68c5a9fd5ee42",
     "semantic_hash": ""
   },
   "components.json": {
@@ -25,8 +25,8 @@
     "semantic_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0"
   },
   "src/App.tsx": {
-    "mtime": 1786631360.4235334,
-    "ast_hash": "dfe514bd1d0e225237175779f9a4be90",
+    "mtime": 1786632162.020767,
+    "ast_hash": "ac1c3372eec1060c70adf45efcbd921b",
     "semantic_hash": ""
   },
   "src/components/ScrollToTop.tsx": {
@@ -495,9 +495,9 @@
     "semantic_hash": "86fcb1b78914ed84303f9e955d739d73"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1777911742.8613627,
-    "ast_hash": "4b0dd714864c910b52a8ff51c4f08681",
-    "semantic_hash": "4b0dd714864c910b52a8ff51c4f08681"
+    "mtime": 1786632230.3338583,
+    "ast_hash": "50ff17aae3893847a539f8278bc62122",
+    "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
     "mtime": 1783096051.725046,
@@ -505,9 +505,9 @@
     "semantic_hash": "3d091325da897a7c6a7813eb956345bd"
   },
   "src/sections/Navigation.tsx": {
-    "mtime": 1780324168.6486986,
-    "ast_hash": "33c14fe87f32338c4bea065c40ecb2ed",
-    "semantic_hash": "33c14fe87f32338c4bea065c40ecb2ed"
+    "mtime": 1786632253.3193784,
+    "ast_hash": "85a3c44649ff75046e018c713626825c",
+    "semantic_hash": ""
   },
   "src/sections/SedesCalendario.tsx": {
     "mtime": 1783094817.599768,
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786628674.752293,
-    "ast_hash": "81c72a9c1ac3dc7805c44b7d16553482",
+    "mtime": 1786632362.007952,
+    "ast_hash": "5c4556058a462087786f29ae667ef35e",
     "semantic_hash": ""
   },
   "README.md": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786628674.6215384,
-    "ast_hash": "2b15759a338a57b985e2d3a24e42ff84",
+    "mtime": 1786632362.1424859,
+    "ast_hash": "4694c9a02e4ff273d6b767f7ab060426",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
@@ -887,6 +887,11 @@
   "src/pages/SedesPage.tsx": {
     "mtime": 1786631324.2757611,
     "ast_hash": "ffe047d04f761d346b870336f35b1eba",
+    "semantic_hash": ""
+  },
+  "src/components/layout/PublicLayout.tsx": {
+    "mtime": 1786632134.9573026,
+    "ast_hash": "2e1ab4489144a4de912cb3d450ca064f",
     "semantic_hash": ""
   }
 }

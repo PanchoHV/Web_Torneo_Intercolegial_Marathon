@@ -20,6 +20,12 @@ If they disagree:
 Current:
 
 - `/`
+- `/la-copa`
+- `/sedes`
+- `/preinscripciones`
+- `/fan-app`
+- `/faq`
+- `/inscripciones`
 
 Target:
 
@@ -109,8 +115,8 @@ Explicit human approval is required for:
 ## 6. Current caveats
 
 - CAVEAT-001: The initial Graph baseline required `graphify update . --no-cluster` after `extract` did not materialize output. Current Graph validated successfully.
-- CAVEAT-002: Current Graph represents source HEAD `06342f8716dfd98849eb10d246cd2168566351e6` plus no product source changes from the redesign yet.
-- CAVEAT-003: Target public routes documented in the architecture baseline are planned and not yet implemented.
+- CAVEAT-002: Current Graph represents the 1C public layout implementation and refreshed public route shells on top of the redesign baseline.
+- CAVEAT-003: Target public routes documented in the architecture baseline are now implemented, including the shared `PublicLayout`.
 
 ## 7. Current operational state
 
@@ -118,7 +124,8 @@ Explicit human approval is required for:
 - M1: IN_PROGRESS
 - LOOP 1A: DONE
 - LOOP 1B: DONE
-- Next loop: 1C — Public Layout Foundation
+- LOOP 1C: DONE
+- Next loop: 1D — Foundation Integration QA
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -130,6 +137,7 @@ Explicit human approval is required for:
 - `/preinscripciones`
 - `/fan-app`
 - `/faq`
+- `/inscripciones` compatibility alias
 
 Compatibility contract:
 

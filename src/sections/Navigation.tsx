@@ -7,53 +7,24 @@ import {
 } from '@/lib/analytics/gtm';
 
 const navLinks = [
-  { label: 'El Torneo', href: '#sobre-el-torneo' },
-  { label: 'Sedes', href: '#sedes' },
-  { label: 'Preinscripción', href: '/inscripciones' },
-  { label: 'Tutoriales', href: '#tutoriales' },
-  { label: 'Preguntas', href: '#faq' },
+  { label: 'La Copa', href: '/la-copa' },
+  { label: 'Sedes', href: '/sedes' },
+  { label: 'Preinscripciones', href: '/preinscripciones' },
+  { label: 'Fan App', href: '/fan-app' },
+  { label: 'FAQ', href: '/faq' },
 ];
-
-// Toggle temporal para ocultar/desactivar el acceso a tutoriales
-const SHOW_TUTORIALS = false;
 
 export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
   const overlayRef = useRef<HTMLDivElement>(null);
 
   /* ─── Scroll detection ─── */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  /* ─── Active section tracking (mejorado) ─── */
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 120;
-      let current = '';
-
-      navLinks.forEach((link) => {
-        if (!link.href.startsWith('#')) return;
-        const el = document.querySelector(link.href);
-        if (!el) return;
-        const top = (el as HTMLElement).offsetTop;
-        const height = (el as HTMLElement).offsetHeight;
-        if (scrollPos >= top && scrollPos < top + height) {
-          current = link.href;
-        }
-      });
-
-      setActiveSection(current);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // inicial
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -96,19 +67,7 @@ export default function Navigation() {
       nav_location: navLocation,
     });
     setMobileOpen(false);
-    if (!href.startsWith('#')) {
-      navigate(href);
-      return;
-    }
-    // Si estamos en otra página, ir a home primero
-    if (location.pathname !== '/') {
-      navigate(`/${href}`);
-      return;
-    }
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    navigate(href);
   };
 
   return (
@@ -157,36 +116,31 @@ export default function Navigation() {
 
           {/* Desktop Links */}
           <div className="hidden items-center gap-8 lg:flex">
-              {navLinks.map((link) => {
-                const isTutorialDisabled = link.href === '#tutoriales' && !SHOW_TUTORIALS;
-                return (
-                  <button
-                    key={link.href}
-                    onClick={() => {
-                      if (isTutorialDisabled) return;
-                      handleNavClick(link.href, 'desktop');
-                    }}
-                    aria-disabled={isTutorialDisabled}
-                    className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
-                      activeSection === link.href
-                        ? 'text-marathon-red'
-                        : scrolled
-                          ? 'text-marathon-blue hover:text-marathon-red'
-                          : 'text-white hover:text-marathon-gold'
-                    } ${isTutorialDisabled ? 'pointer-events-none opacity-50' : ''}`}
-                  >
-                    {link.label}
-                    {/* FIX 5: Indicador activo animado (punto flotante) */}
-                    <span
-                      className={`absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-marathon-red transition-all duration-300 ${
-                        activeSection === link.href
-                          ? 'opacity-100 scale-100'
-                          : 'opacity-0 scale-0 group-hover:opacity-60 group-hover:scale-75'
-                      }`}
-                    />
-                  </button>
-                );
-              })}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href, 'desktop')}
+                  className={`group relative rounded-full px-3 py-2 font-inter text-sm font-semibold transition-all duration-300 ${
+                    isActive
+                      ? 'text-marathon-red'
+                      : scrolled
+                        ? 'text-marathon-blue hover:text-marathon-red'
+                        : 'text-white hover:text-marathon-gold'
+                  }`}
+                >
+                  {link.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-marathon-red transition-all duration-300 ${
+                      isActive
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-0 scale-0 group-hover:opacity-60 group-hover:scale-75'
+                    }`}
+                  />
+                </button>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -194,9 +148,9 @@ export default function Navigation() {
             onClick={() => {
               trackPreinscriptionStart({
                 cta_location: 'navigation_desktop',
-                destination: '/inscripciones',
+                destination: '/preinscripciones',
               });
-              navigate('/inscripciones');
+              navigate('/preinscripciones');
             }}
             className="hidden rounded-full bg-marathon-red px-6 py-2.5 font-montserrat text-sm font-bold text-white shadow-[0_16px_32px_rgba(226,27,45,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.03] lg:block"
           >
@@ -227,23 +181,19 @@ export default function Navigation() {
       >
         <div className="flex min-h-full flex-col items-center justify-center gap-4 px-4 py-20">
           {navLinks.map((link, i) => {
-            const isTutorialDisabled = link.href === '#tutoriales' && !SHOW_TUTORIALS;
+            const isActive = location.pathname === link.href;
             return (
               <button
                 key={link.href}
                 onClick={() => {
-                  if (isTutorialDisabled) return;
                   handleNavClick(link.href, 'mobile');
                 }}
-                aria-disabled={isTutorialDisabled}
                 style={{
                   transitionDelay: mobileOpen ? `${i * 60 + 100}ms` : '0ms',
                 }}
                 className={`w-full max-w-[320px] rounded-2xl border border-marathon-blue/10 bg-marathon-cream/65 px-5 py-4 font-montserrat text-xl font-bold text-marathon-blue shadow-[0_12px_28px_rgba(6,42,79,0.04)] transition-all duration-500 hover:border-marathon-red/25 hover:text-marathon-red ${
-                  mobileOpen
-                    ? 'translate-y-0 opacity-100'
-                    : 'translate-y-6 opacity-0'
-                } ${isTutorialDisabled ? 'pointer-events-none opacity-50' : ''}`}
+                  mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+                } ${isActive ? 'border-marathon-red/25 text-marathon-red' : ''}`}
               >
                 {link.label}
               </button>
@@ -254,9 +204,9 @@ export default function Navigation() {
               setMobileOpen(false);
               trackPreinscriptionStart({
                 cta_location: 'navigation_mobile',
-                destination: '/inscripciones',
+                destination: '/preinscripciones',
               });
-              navigate('/inscripciones');
+              navigate('/preinscripciones');
             }}
             style={{
               transitionDelay: mobileOpen ? `${navLinks.length * 60 + 100}ms` : '0ms',

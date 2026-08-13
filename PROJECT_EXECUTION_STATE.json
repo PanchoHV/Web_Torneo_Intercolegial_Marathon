@@ -5,11 +5,11 @@
     "redesign_branch": "feat/copa-2026-redesign"
   },
   "current_milestone": "M1",
-  "current_loop": "1B",
+  "current_loop": "1C",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
-    "passed": false
+    "passed": true
   },
   "completed_loops": [
     "0A",
@@ -19,7 +19,8 @@
     "0E",
     "0F",
     "1A",
-    "1B"
+    "1B",
+    "1C"
   ],
   "milestones": {
     "M0": "DONE",
@@ -57,7 +58,7 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "1B",
-  "next_proposed_loop": "1C",
+  "last_completed_loop": "1C",
+  "next_proposed_loop": "1D",
   "notes": []
 }

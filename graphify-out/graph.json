@@ -896,7 +896,7 @@
       "label": "HomeLanding()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L29",
+      "source_location": "L28",
       "_origin": "ast"
     },
     {
@@ -904,7 +904,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L56",
+      "source_location": "L51",
       "_origin": "ast"
     },
     {
@@ -1017,6 +1017,22 @@
       "file_type": "code",
       "source_file": "src/components/analytics/RouteAnalytics.tsx",
       "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_layout_publiclayout",
+      "label": "PublicLayout.tsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_layout_publiclayout_publiclayout",
+      "label": "PublicLayout()",
+      "file_type": "code",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L5",
       "_origin": "ast"
     },
     {
@@ -5168,7 +5184,7 @@
       "label": "tournamentLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L18",
+      "source_location": "L16",
       "_origin": "ast"
     },
     {
@@ -5176,7 +5192,7 @@
       "label": "participantHubs",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L25",
+      "source_location": "L24",
       "_origin": "ast"
     },
     {
@@ -5184,7 +5200,7 @@
       "label": "officialLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
@@ -5192,7 +5208,7 @@
       "label": "trustStats",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L64",
+      "source_location": "L63",
       "_origin": "ast"
     },
     {
@@ -5200,7 +5216,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L70",
+      "source_location": "L69",
       "_origin": "ast"
     },
     {
@@ -5208,7 +5224,7 @@
       "label": "FooterColumn()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L308",
+      "source_location": "L286",
       "_origin": "ast"
     },
     {
@@ -5264,7 +5280,7 @@
       "label": "Navigation()",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L20",
+      "source_location": "L17",
       "_origin": "ast"
     },
     {
@@ -7296,7 +7312,7 @@
       "label": "LOOP 1B — Public Route Shells",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L173",
+      "source_location": "L177",
       "_origin": "ast"
     },
     {
@@ -7304,7 +7320,7 @@
       "label": "LOOP 1C — Public Layout Foundation",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L194",
+      "source_location": "L202",
       "_origin": "ast"
     },
     {
@@ -7312,7 +7328,15 @@
       "label": "LOOP 1D — Foundation Integration QA",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L210",
+      "source_location": "L222",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_next_authorized_milestone_236",
+      "label": "Next authorized milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L236",
       "_origin": "ast"
     },
     {
@@ -7320,7 +7344,7 @@
       "label": "Roadmap rule",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L220",
+      "source_location": "L240",
       "_origin": "ast"
     },
     {
@@ -7656,7 +7680,7 @@
       "label": "Admin runtime",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L33",
+      "source_location": "L39",
       "_origin": "ast"
     },
     {
@@ -7664,7 +7688,7 @@
       "label": "3. Fan App boundary",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L49",
+      "source_location": "L55",
       "_origin": "ast"
     },
     {
@@ -7672,7 +7696,7 @@
       "label": "4. Current milestone ownership",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L79",
+      "source_location": "L85",
       "_origin": "ast"
     },
     {
@@ -7680,7 +7704,7 @@
       "label": "5. Human approval gates",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L92",
+      "source_location": "L98",
       "_origin": "ast"
     },
     {
@@ -7688,7 +7712,7 @@
       "label": "6. Current caveats",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L109",
+      "source_location": "L115",
       "_origin": "ast"
     },
     {
@@ -7696,7 +7720,15 @@
       "label": "7. Current operational state",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L115",
+      "source_location": "L121",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_8_current_route_contracts",
+      "label": "8. Current route contracts",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L133",
       "_origin": "ast"
     },
     {
@@ -9676,7 +9708,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_navigation",
+      "target": "src_sections_hero",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9686,7 +9718,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_hero",
+      "target": "src_sections_sobreeltorneo",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9696,7 +9728,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_sobreeltorneo",
+      "target": "src_sections_comoinscribirse",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9706,7 +9738,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_comoinscribirse",
+      "target": "src_sections_sedescalendario",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9716,7 +9748,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_sedescalendario",
+      "target": "src_sections_tutoriales",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9726,7 +9758,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_tutoriales",
+      "target": "src_sections_comunicacion",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9736,7 +9768,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_comunicacion",
+      "target": "src_sections_faq",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9746,7 +9778,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_faq",
+      "target": "src_sections_ctafinal",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9756,7 +9788,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_ctafinal",
+      "target": "src_components_scrolltotop",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9766,7 +9798,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_sections_footer",
+      "target": "src_components_analytics_routeanalytics",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9776,7 +9808,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_scrolltotop",
+      "target": "src_components_layout_publiclayout",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9786,7 +9818,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_analytics_routeanalytics",
+      "target": "src_pages_faqpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9796,7 +9828,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage",
+      "target": "src_pages_fanapppage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9806,7 +9838,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_fanapppage",
+      "target": "src_pages_lacopapage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9816,7 +9848,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_lacopapage",
+      "target": "src_pages_inscripcionespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9826,7 +9858,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_inscripcionespage",
+      "target": "src_pages_admin_login",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9836,7 +9868,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_login",
+      "target": "src_pages_admin_auditpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9846,7 +9878,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_auditpage",
+      "target": "src_pages_admin_myaccesspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9856,7 +9888,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_myaccesspage",
+      "target": "src_pages_admin_onboardingdashboard",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9866,7 +9898,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdashboard",
+      "target": "src_pages_admin_onboardingdetail",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9876,7 +9908,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdetail",
+      "target": "src_pages_admin_userspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9886,7 +9918,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_userspage",
+      "target": "src_pages_sedespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -9896,21 +9928,11 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_sedespage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_app_homelanding",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -9919,7 +9941,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L56",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -10241,6 +10263,45 @@
       "confidence": "EXTRACTED",
       "source_file": "src/components/analytics/RouteAnalytics.tsx",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_publiclayout",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_publiclayout",
+      "target": "src_sections_footer",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_publiclayout",
+      "target": "src_sections_navigation",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_layout_publiclayout",
+      "target": "src_components_layout_publiclayout_publiclayout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/PublicLayout.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -19844,7 +19905,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L18",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -19853,7 +19914,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L25",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -19862,7 +19923,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L31",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -19871,7 +19932,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L64",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -19880,7 +19941,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L70",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -19889,7 +19950,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L308",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -20084,7 +20145,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L20",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -23545,7 +23606,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L173",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -23554,7 +23615,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L194",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -23563,7 +23624,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L210",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_next_authorized_milestone_236",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -23572,7 +23642,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L220",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -23914,7 +23984,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -23923,7 +23993,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L49",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -23932,7 +24002,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L79",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -23941,7 +24011,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L92",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -23950,7 +24020,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L109",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -23959,7 +24029,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L115",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_8_current_route_contracts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -24187,7 +24266,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -24197,7 +24276,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -24207,7 +24286,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_layout_publiclayout_publiclayout",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -24217,7 +24306,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -24227,7 +24316,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -24237,7 +24326,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -24247,7 +24336,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L27",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_main",
+      "target": "src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -24317,7 +24416,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L93",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -27307,7 +27406,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L67",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -27351,7 +27450,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L93",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -27362,7 +27461,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L195",
+      "source_location": "L149",
       "weight": 1.0
     },
     {

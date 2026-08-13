@@ -11,15 +11,14 @@ import {
   Trophy,
   Users,
 } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 
-// Toggle temporal para ocultar/desactivar acceso a tutoriales
-const SHOW_TUTORIALS = false;
 const tournamentLinks = [
-  { label: 'Sobre el Torneo', href: '#sobre-el-torneo' },
-  { label: 'Categorías', href: '/inscripciones' },
-  { label: 'Preinscripción', href: '/inscripciones' },
-  { label: 'Tutoriales', href: '#tutoriales' },
+  { label: 'La Copa', href: '/la-copa' },
+  { label: 'Sedes', href: '/sedes' },
+  { label: 'Preinscripciones', href: '/preinscripciones' },
+  { label: 'Fan App', href: '/fan-app' },
+  { label: 'FAQ', href: '/faq' },
 ] as const;
 
 const participantHubs = [
@@ -69,7 +68,6 @@ const trustStats = [
 
 export default function Footer() {
   const navigate = useNavigate();
-  const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
 
@@ -89,20 +87,7 @@ export default function Footer() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    if (!href.startsWith('#')) {
-      navigate(href);
-      return;
-    }
-
-    if (location.pathname !== '/') {
-      navigate(`/${href}`);
-      return;
-    }
-
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    navigate(href);
   };
 
   return (
@@ -184,27 +169,20 @@ export default function Footer() {
 
           <nav className="grid min-w-0 grid-cols-1 gap-8 sm:grid-cols-3 lg:gap-12">
             <FooterColumn title="El Torneo" delay={100}>
-              {tournamentLinks.map((link) => {
-                const isTutorialDisabled = link.href === '#tutoriales' && !SHOW_TUTORIALS;
-                return (
-                  <button
-                    key={link.label}
-                    onClick={() => {
-                      if (isTutorialDisabled) return;
-                      handleNavClick(link.href);
-                    }}
-                    aria-disabled={isTutorialDisabled}
-                    className={`group relative -mx-3 flex min-h-11 items-center rounded-xl px-3 text-left font-inter text-sm text-white/65 transition-all duration-300 hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 ${
-                      isTutorialDisabled ? 'pointer-events-none opacity-50' : ''
-                    }`}
-                  >
-                    <span className="relative">
-                      {link.label}
-                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
-                    </span>
-                  </button>
-                );
-              })}
+              {tournamentLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => {
+                    handleNavClick(link.href);
+                  }}
+                  className="group relative -mx-3 flex min-h-11 items-center rounded-xl px-3 text-left font-inter text-sm text-white/65 transition-all duration-300 hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                >
+                  <span className="relative">
+                    {link.label}
+                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+                  </span>
+                </button>
+              ))}
             </FooterColumn>
 
             <FooterColumn title="Sedes" delay={200}>

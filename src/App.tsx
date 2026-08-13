@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import AdminLayout from '@/components/admin/AdminLayout';
 import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
-import Navigation from '@/sections/Navigation';
 import Hero from '@/sections/Hero';
 import SobreElTorneo from '@/sections/SobreElTorneo';
 import ComoInscribirse from '@/sections/ComoInscribirse';
@@ -11,9 +10,9 @@ import Tutoriales from '@/sections/Tutoriales';
 import Comunicacion from '@/sections/Comunicacion';
 import FAQ from '@/sections/FAQ';
 import CTAFinal from '@/sections/CTAFinal';
-import Footer from '@/sections/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
+import PublicLayout from '@/components/layout/PublicLayout';
 import FAQPage from '@/pages/FAQPage';
 import FanAppPage from '@/pages/FanAppPage';
 import LaCopaPage from '@/pages/LaCopaPage';
@@ -36,20 +35,16 @@ function HomeLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-marathon-cream">
-      <Navigation />
-      <main>
-        <Hero />
-        <SobreElTorneo />
-        <SedesCalendario />
-        <ComoInscribirse />
-        <Tutoriales />
-        <Comunicacion />
-        <FAQ />
-        <CTAFinal />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Hero />
+      <SobreElTorneo />
+      <SedesCalendario />
+      <ComoInscribirse />
+      <Tutoriales />
+      <Comunicacion />
+      <FAQ />
+      <CTAFinal />
+    </>
   );
 }
 
@@ -58,13 +53,15 @@ function App() {
     <>
       <RouteAnalytics />
       <Routes>
-        <Route path="/" element={<HomeLanding />} />
-        <Route path="/la-copa" element={<LaCopaPage />} />
-        <Route path="/sedes" element={<SedesPage />} />
-        <Route path="/preinscripciones" element={<InscripcionesPage />} />
-        <Route path="/fan-app" element={<FanAppPage />} />
-        <Route path="/faq" element={<FAQPage />} />
-        <Route path="/inscripciones" element={<InscripcionesPage />} />
+        <Route element={<PublicLayout />}>
+          <Route index element={<HomeLanding />} />
+          <Route path="la-copa" element={<LaCopaPage />} />
+          <Route path="sedes" element={<SedesPage />} />
+          <Route path="preinscripciones" element={<InscripcionesPage />} />
+          <Route path="fan-app" element={<FanAppPage />} />
+          <Route path="faq" element={<FAQPage />} />
+          <Route path="inscripciones" element={<InscripcionesPage />} />
+        </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin"
