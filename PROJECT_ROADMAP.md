@@ -373,6 +373,26 @@ Implement the next Home section boundary only after Hero/Header lock, without mo
 
 Status:
 
+DONE
+
+Source:
+
+- Smart Copa Bar: MANUAL_CONFIG
+- Current state: UPCOMING
+- Sponsors: DEFERRED_PENDING_VERIFIED_DATA
+
+### LOOP 3D — Sobre la Copa
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Implement the next Home content section while preserving locked Hero/Header and the 3C broadcast boundary.
+
+Status:
+
 NOT_STARTED
 
 ## Current milestone
@@ -381,7 +401,7 @@ M3 — Home
 
 ## Next proposed milestone
 
-3C — Smart Copa Bar + Sponsor Boundary
+3D — Sobre la Copa
 
 ## Next authorized milestone
 

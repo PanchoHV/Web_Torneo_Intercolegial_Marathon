@@ -4920,7 +4920,7 @@
       "label": "HomePage()",
       "file_type": "code",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast"
     },
     {
@@ -5356,8 +5356,32 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_hero_broadcastpills",
-      "label": "broadcastPills",
+      "id": "src_sections_hero_hero_field",
+      "label": "HERO_FIELD",
+      "file_type": "code",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_hero_hero_elements",
+      "label": "HERO_ELEMENTS",
+      "file_type": "code",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_hero_hero_players",
+      "label": "HERO_PLAYERS",
+      "file_type": "code",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_hero_hero_phone",
+      "label": "HERO_PHONE",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
       "source_location": "L20",
@@ -5368,7 +5392,7 @@
       "label": "Hero()",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L27",
+      "source_location": "L188",
       "_origin": "ast"
     },
     {
@@ -5505,6 +5529,70 @@
       "file_type": "code",
       "source_file": "src/sections/Tutoriales.tsx",
       "source_location": "L65",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar",
+      "label": "SmartCopaBar.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar_copabarstate",
+      "label": "CopaBarState",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar_copabarconfig",
+      "label": "CopaBarConfig",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar_copa_bar_config",
+      "label": "COPA_BAR_CONFIG",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar_statelabels",
+      "label": "stateLabels",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_smartcopabar_smartcopabar",
+      "label": "SmartCopaBar()",
+      "file_type": "code",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection",
+      "label": "SponsorsSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_sponsorssection",
+      "label": "SponsorsSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L1",
       "_origin": "ast"
     },
     {
@@ -7484,11 +7572,43 @@
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_current_milestone_306",
-      "label": "Current milestone",
+      "id": "project_roadmap_loop_3a_home_architecture_asset_design_gate",
+      "label": "LOOP 3A — Home Architecture & Asset Design Gate",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L306",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3b_home_root_extraction_cinematic_3d_hero",
+      "label": "LOOP 3B — Home Root Extraction + Cinematic 3D Hero",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L320",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
+      "label": "LOOP 3B-CLOSE — Hero Visual Lock + Checkpoint",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L334",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary",
+      "label": "LOOP 3C — Smart Copa Bar + Sponsor Boundary",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L364",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_current_milestone_378",
+      "label": "Current milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L378",
       "_origin": "ast"
     },
     {
@@ -7496,55 +7616,15 @@
       "label": "Next proposed milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L310",
+      "source_location": "L382",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone_314",
+      "id": "project_roadmap_next_authorized_milestone_386",
       "label": "Next authorized milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L314",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_roadmap_rule",
-      "label": "Roadmap rule",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L318",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_2d_public_chrome_visual_foundation_322",
-      "label": "LOOP 2D — Public Chrome Visual Foundation",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L322",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_2e_design_system_integration_qa_336",
-      "label": "LOOP 2E — Design System Integration QA",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L336",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_next_authorized_milestone_350",
-      "label": "Next authorized milestone",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L350",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_roadmap_rule_354",
-      "label": "Roadmap rule",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L354",
+      "source_location": "L386",
       "_origin": "ast"
     },
     {
@@ -7924,19 +8004,27 @@
       "_origin": "ast"
     },
     {
-      "id": "docs_graph_project_graph_overlay_8_current_route_contracts",
-      "label": "8. Current route contracts",
+      "id": "docs_graph_project_graph_overlay_8_hero_header_visual_lock",
+      "label": "8. Hero/Header visual lock",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L140",
+      "source_location": "L144",
       "_origin": "ast"
     },
     {
-      "id": "docs_graph_project_graph_overlay_9_closure_status",
-      "label": "9. Closure status",
+      "id": "docs_graph_project_graph_overlay_9_current_route_contracts",
+      "label": "9. Current route contracts",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L155",
+      "source_location": "L162",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_10_closure_status",
+      "label": "10. Closure status",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L177",
       "_origin": "ast"
     },
     {
@@ -8081,6 +8169,14 @@
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_QA_MAP.md",
       "source_location": "L81",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_qa_map_m3_home_hero_visual_lock_evidence",
+      "label": "M3 Home — Hero Visual Lock Evidence",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L107",
       "_origin": "ast"
     },
     {
@@ -18406,7 +18502,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_sedescalendario",
+      "target": "src_sections_home_smartcopabar",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18416,7 +18512,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_sobreeltorneo",
+      "target": "src_sections_home_sponsorssection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18426,7 +18522,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_tutoriales",
+      "target": "src_sections_sedescalendario",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18436,11 +18532,31 @@
     },
     {
       "source": "src_pages_homepage",
+      "target": "src_sections_sobreeltorneo",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_tutoriales",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
       "target": "src_pages_homepage_homepage",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -20608,22 +20724,12 @@
     },
     {
       "source": "src_sections_hero",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
       "target": "src_components_ui_button",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -20633,47 +20739,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_components_ui_container",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_components_ui_container_container",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_components_ui_surface",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_hero",
-      "target": "src_components_ui_surface_surface",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L9",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -20683,7 +20749,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L10",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -20693,12 +20759,39 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L10",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_sections_hero",
-      "target": "src_sections_hero_broadcastpills",
+      "target": "src_sections_hero_hero_field",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_sections_hero_hero_elements",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_sections_hero_hero_players",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_sections_hero_hero_phone",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
@@ -20711,7 +20804,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L27",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -21079,6 +21172,170 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Tutoriales.tsx",
       "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_status_badge",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_status_badge_statusbadge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_lib_analytics_gtm",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_lib_analytics_gtm_trackctaclick",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_smartcopabar_copabarstate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_smartcopabar_copabarconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_smartcopabar_copa_bar_config",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_smartcopabar_statelabels",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_smartcopabar_smartcopabar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_sponsorssection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -24367,12 +24624,48 @@
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_current_milestone_306",
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_3a_home_architecture_asset_design_gate",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_3b_home_root_extraction_cinematic_3d_hero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m1_execution_loops",
+      "target": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L364",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_current_milestone_378",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -24381,61 +24674,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L310",
+      "source_location": "L382",
       "weight": 1.0
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_314",
+      "target": "project_roadmap_next_authorized_milestone_386",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L314",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_roadmap_rule",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L318",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_roadmap_rule",
-      "target": "project_roadmap_loop_2d_public_chrome_visual_foundation_322",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L322",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_roadmap_rule",
-      "target": "project_roadmap_loop_2e_design_system_integration_qa_336",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L336",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_350",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L350",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_roadmap_rule_354",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L354",
+      "source_location": "L386",
       "weight": 1.0
     },
     {
@@ -24827,20 +25075,29 @@
     },
     {
       "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
-      "target": "docs_graph_project_graph_overlay_8_current_route_contracts",
+      "target": "docs_graph_project_graph_overlay_8_hero_header_visual_lock",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L140",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
       "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
-      "target": "docs_graph_project_graph_overlay_9_closure_status",
+      "target": "docs_graph_project_graph_overlay_9_current_route_contracts",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L155",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_10_closure_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L177",
       "weight": 1.0
     },
     {
@@ -24985,6 +25242,15 @@
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_QA_MAP.md",
       "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_qa_map_copa_marathon_qa_map",
+      "target": "docs_graph_project_qa_map_m3_home_hero_visual_lock_evidence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_QA_MAP.md",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -25179,6 +25445,36 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_homepage",
+      "target": "src_sections_hero_hero",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_home_smartcopabar_smartcopabar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_homepage",
+      "target": "src_sections_home_sponsorssection_sponsorssection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/HomePage.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_inscripcionespage",
       "target": "src_components_registrations_registrationhero_registrationhero",
       "relation": "imports",
@@ -25236,16 +25532,6 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/admin/UsersPage.tsx",
       "source_location": "L55",
-      "weight": 1.0
-    },
-    {
-      "source": "users_pancho_desarrollo_intercolegial_marathon_src_sections_hero_handlectaclick",
-      "target": "src_lib_analytics_gtm_trackctaclick",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Hero.tsx",
-      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -28301,7 +28587,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L227",
+      "source_location": "L430",
       "weight": 1.0
     },
     {
@@ -28313,6 +28599,17 @@
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar_smartcopabar",
+      "target": "src_lib_analytics_gtm_trackctaclick",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L48",
       "weight": 1.0
     },
     {

@@ -136,7 +136,8 @@ Explicit human approval is required for:
 - LOOP 3A: DONE
 - LOOP 3B: DONE
 - LOOP 3B-CLOSE: DONE
-- Next loop: 3C — Smart Copa Bar + Sponsor Boundary
+- LOOP 3C: DONE
+- Next loop: 3D — Sobre la Copa
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -159,7 +160,27 @@ Protected future rule:
 
 Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop.
 
-## 9. Current route contracts
+## 9. Smart Copa Bar + Sponsor Boundary
+
+Status:
+
+- Smart Copa Bar: IMPLEMENTED
+- Smart Copa source: MANUAL_CONFIG
+- Current state: UPCOMING
+- Primary route: `/fan-app`
+- Secondary route: `/sedes`
+- Sponsors: BOUNDARY_READY
+- Visible sponsor data: DEFERRED_PENDING_VERIFIED_DATA
+
+Safety:
+
+- No fake live scores
+- No invented teams
+- No invented sponsor brands
+- No external data fetch
+- No network dependency
+
+## 10. Current route contracts
 
 - `/la-copa`
 - `/sedes`
@@ -174,7 +195,7 @@ Compatibility contract:
 
 `/preinscripciones` currently aliases the existing `InscripcionesPage`.
 
-## 10. Closure status
+## 11. Closure status
 
 - Token architecture: CSS semantic variables → Tailwind semantic aliases → React primitives
 - Token foundation: IMPLEMENTED
@@ -199,6 +220,11 @@ Compatibility contract:
 - Hero material: STADIUM
 - Hero primary conversion: FAN APP
 - Hero motion: HIGH / CINEMATIC / 3D FOUNDATION
+- Smart Copa Bar: IMPLEMENTED
+- Smart Copa source: MANUAL_CONFIG
+- Smart Copa current state: UPCOMING
+- Sponsors: BOUNDARY_READY / VISIBLE_DATA_DEFERRED
+- Next proposed loop: 3D — Sobre la Copa
 - Three.js: NOT_USED
 - WebGL: NOT_USED
 - Mobile motion: REDUCED

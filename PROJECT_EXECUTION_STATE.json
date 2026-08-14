@@ -5,7 +5,7 @@
     "redesign_branch": "feat/copa-2026-redesign"
   },
   "current_milestone": "M3",
-  "current_loop": "3B-CLOSE",
+  "current_loop": "3C",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -29,12 +29,13 @@
     "2E",
     "3A",
     "3B",
-    "3B-CLOSE"
+    "3B-CLOSE",
+    "3C"
   ],
   "m3_loops": {
     "3A": "DONE",
     "3B": "DONE",
-    "3C": "NOT_STARTED",
+    "3C": "DONE",
     "3D": "NOT_STARTED",
     "3E": "NOT_STARTED",
     "3F": "NOT_STARTED",
@@ -52,6 +53,13 @@
     "scroll": "MACRO_DEPTH",
     "mobile": "REDUCED_MOTION / CENTERED_CONTENT",
     "future_rule": "Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop."
+  },
+  "home_3c": {
+    "smart_copa_bar": "IMPLEMENTED",
+    "smart_copa_source": "MANUAL_CONFIG",
+    "current_state": "UPCOMING",
+    "sponsors": "BOUNDARY_READY",
+    "visible_sponsor_data": "DEFERRED_PENDING_VERIFIED_DATA"
   },
   "milestones": {
     "M0": "DONE",
@@ -89,8 +97,8 @@
   "network": {
     "default": "DENIED"
   },
-  "last_completed_loop": "3B",
-  "next_proposed_loop": "3C",
+  "last_completed_loop": "3C",
+  "next_proposed_loop": "3D",
   "notes": [
     "M1 technical QA and human visual acceptance passed.",
     "M2 token foundation implemented.",
@@ -100,6 +108,8 @@
     "M3 Home architecture mapped.",
     "M3 Home root extracted and cinematic Hero rebuilt.",
     "Hero/Header visual state human-approved and locked at LOOP 3B-CLOSE.",
-    "Next proposed loop: 3C — Smart Copa Bar + Sponsor Boundary."
+    "Next proposed loop: 3C — Smart Copa Bar + Sponsor Boundary.",
+    "M3 3C Smart Copa Bar implemented from MANUAL_CONFIG with sponsors deferred pending verified data.",
+    "Next proposed loop: 3D — Sobre la Copa."
   ]
 }

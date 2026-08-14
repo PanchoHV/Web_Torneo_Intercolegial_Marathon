@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786642628.71747,
-    "ast_hash": "a82ec6b7f749d51ae480e90ff572b1b9",
+    "mtime": 1786668741.1759489,
+    "ast_hash": "a3af3087e554c3a71fcd13744808562b",
     "semantic_hash": ""
   },
   "components.json": {
@@ -500,8 +500,8 @@
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
-    "mtime": 1786655556.0520384,
-    "ast_hash": "8e0b89cc6993b88e927615285bc1018f",
+    "mtime": 1786668378.8461676,
+    "ast_hash": "8cf6e3faf9c19192404a1d5e2f0be1c4",
     "semantic_hash": ""
   },
   "src/sections/Navigation.tsx": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786642670.4407399,
-    "ast_hash": "043daa0d3076d37530b614c9a2b607b2",
+    "mtime": 1786668721.9138541,
+    "ast_hash": "a0314eb43779475c435c4d2b394cdcdb",
     "semantic_hash": ""
   },
   "README.md": {
@@ -720,8 +720,8 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1780323436.1769469,
-    "ast_hash": "e9e1943ab6f3b34a450b774597c7db85",
+    "mtime": 1786668012.3386927,
+    "ast_hash": "a980fd6b975fb43e62d94c828792e7af",
     "semantic_hash": ""
   },
   "info.md": {
@@ -855,13 +855,13 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786642628.9882174,
-    "ast_hash": "5bd20c98d6ad3bb804f1cd9047b60cd6",
+    "mtime": 1786668759.9373064,
+    "ast_hash": "10e76a16ce8452a081ebd7f167d86004",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
-    "mtime": 1786642629.2558506,
-    "ast_hash": "b956b9697f8d2ce6f2f138c422936f99",
+    "mtime": 1786668769.2499237,
+    "ast_hash": "1723de0ad541a505dab94ce9e9210118",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_RUNTIME_MAP.md": {
@@ -920,8 +920,18 @@
     "semantic_hash": ""
   },
   "src/pages/HomePage.tsx": {
-    "mtime": 1786655402.009258,
-    "ast_hash": "2177d4e4576fe241d6f3ef815e7626b3",
+    "mtime": 1786669035.974166,
+    "ast_hash": "43e407747a7f95e01e4aa87d8a017b36",
+    "semantic_hash": ""
+  },
+  "src/sections/home/SmartCopaBar.tsx": {
+    "mtime": 1786669064.1453044,
+    "ast_hash": "fcee2f9b8fc0c6790b9eee92b103eb71",
+    "semantic_hash": ""
+  },
+  "src/sections/home/SponsorsSection.tsx": {
+    "mtime": 1786669035.8356557,
+    "ast_hash": "d4c86cd01e880a74d6ee0e807518d3a4",
     "semantic_hash": ""
   }
 }
