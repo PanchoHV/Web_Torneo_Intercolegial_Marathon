@@ -137,7 +137,8 @@ Explicit human approval is required for:
 - LOOP 3B: DONE
 - LOOP 3B-CLOSE: DONE
 - LOOP 3C: DONE
-- Next loop: 3D — Sobre la Copa
+- LOOP 3D: DONE
+- Next loop: 3E — Sedes / Region Status / Milestones
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
@@ -180,7 +181,32 @@ Safety:
 - No external data fetch
 - No network dependency
 
-## 10. Current route contracts
+## 10. About Copa / Paper Editorial
+
+Status:
+
+- About Copa section: PAPER_EDITORIAL_IMPLEMENTED
+- Material: PAPER
+- Verified historical facts: SOURCE_GROUNDED
+- CTA: NONE
+- Legacy SobreElTorneo component: PRESERVED_NOT_RENDERED
+
+Historical first-edition facts:
+
+- +600 COLEGIOS
+- +12.000 JUGADORES
+- +1.400 PARTIDOS
+- FIFA PLAY PRIMERA EDICIÓN TRANSMITIDA EN VIVO
+
+Safety:
+
+- Historical scale is not framed as a 2026 guarantee
+- No fake live scores
+- No invented sponsor brands
+- No external data fetch
+- Hero/Header lock preserved
+
+## 11. Current route contracts
 
 - `/la-copa`
 - `/sedes`
@@ -195,7 +221,7 @@ Compatibility contract:
 
 `/preinscripciones` currently aliases the existing `InscripcionesPage`.
 
-## 11. Closure status
+## 12. Closure status
 
 - Token architecture: CSS semantic variables → Tailwind semantic aliases → React primitives
 - Token foundation: IMPLEMENTED
@@ -218,6 +244,8 @@ Compatibility contract:
 - Hero artwork: REGISTERED_FULL_CANVAS_LAYERS
 - Hero motion: GSAP_3D_DEPTH_APPROVED
 - Hero material: STADIUM
+- About Copa material: PAPER
+- About Copa historical facts: SOURCE_GROUNDED
 - Hero primary conversion: FAN APP
 - Hero motion: HIGH / CINEMATIC / 3D FOUNDATION
 - Smart Copa Bar: IMPLEMENTED

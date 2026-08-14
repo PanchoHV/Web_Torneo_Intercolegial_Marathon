@@ -5532,6 +5532,30 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_home_aboutcopasection",
+      "label": "AboutCopaSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_aboutcopasection_historicalfacts",
+      "label": "historicalFacts",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_aboutcopasection_aboutcopasection",
+      "label": "AboutCopaSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_home_smartcopabar",
       "label": "SmartCopaBar.tsx",
       "file_type": "code",
@@ -7484,8 +7508,8 @@
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone",
-      "label": "Next authorized milestone",
+      "id": "project_roadmap_next_authorized_loop",
+      "label": "Next authorized loop",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L155",
@@ -7524,75 +7548,27 @@
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_loop_1d_foundation_integration_qa",
-      "label": "LOOP 1D — Foundation Integration QA",
+      "id": "project_roadmap_planned_m3_execution_loops",
+      "label": "Planned M3 execution loops",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L222",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_loop_2a_visual_system_audit",
-      "label": "LOOP 2A — Visual System Audit",
+      "id": "project_roadmap_loop_3a_home_architecture",
+      "label": "LOOP 3A — Home Architecture",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L236",
+      "source_location": "L224",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_loop_2b_design_token_foundation",
-      "label": "LOOP 2B — Design Token Foundation",
+      "id": "project_roadmap_loop_3b_hero_header",
+      "label": "LOOP 3B — Hero / Header",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L250",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_2c_core_ui_primitives",
-      "label": "LOOP 2C — Core UI Primitives",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L264",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_2d_public_chrome_visual_foundation",
-      "label": "LOOP 2D — Public Chrome Visual Foundation",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L278",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_2e_design_system_integration_qa",
-      "label": "LOOP 2E — Design System Integration QA",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L292",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_3a_home_architecture_asset_design_gate",
-      "label": "LOOP 3A — Home Architecture & Asset Design Gate",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L306",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_3b_home_root_extraction_cinematic_3d_hero",
-      "label": "LOOP 3B — Home Root Extraction + Cinematic 3D Hero",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L320",
-      "_origin": "ast"
-    },
-    {
-      "id": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
-      "label": "LOOP 3B-CLOSE — Hero Visual Lock + Checkpoint",
-      "file_type": "document",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L334",
+      "source_location": "L230",
       "_origin": "ast"
     },
     {
@@ -7600,15 +7576,119 @@
       "label": "LOOP 3C — Smart Copa Bar + Sponsor Boundary",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L241",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3d_sobre_la_copa_paper_editorial",
+      "label": "LOOP 3D — Sobre la Copa / Paper Editorial",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L247",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3e_sedes_region_status_milestones",
+      "label": "LOOP 3E — Sedes / Region Status / Milestones",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L260",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_1d_foundation_integration_qa",
+      "label": "LOOP 1D — Foundation Integration QA",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L266",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2a_visual_system_audit",
+      "label": "LOOP 2A — Visual System Audit",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L280",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2b_design_token_foundation",
+      "label": "LOOP 2B — Design Token Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L294",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2c_core_ui_primitives",
+      "label": "LOOP 2C — Core UI Primitives",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L308",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2d_public_chrome_visual_foundation",
+      "label": "LOOP 2D — Public Chrome Visual Foundation",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L322",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_2e_design_system_integration_qa",
+      "label": "LOOP 2E — Design System Integration QA",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L336",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3a_home_architecture_asset_design_gate",
+      "label": "LOOP 3A — Home Architecture & Asset Design Gate",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L350",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3b_home_root_extraction_cinematic_3d_hero",
+      "label": "LOOP 3B — Home Root Extraction + Cinematic 3D Hero",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L364",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_current_milestone_378",
-      "label": "Current milestone",
+      "id": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
+      "label": "LOOP 3B-CLOSE — Hero Visual Lock + Checkpoint",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L378",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary_408",
+      "label": "LOOP 3C — Smart Copa Bar + Sponsor Boundary",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L408",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_loop_3d_sobre_la_copa",
+      "label": "LOOP 3D — Sobre la Copa",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L428",
+      "_origin": "ast"
+    },
+    {
+      "id": "project_roadmap_current_milestone_442",
+      "label": "Current milestone",
+      "file_type": "document",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L442",
       "_origin": "ast"
     },
     {
@@ -7616,15 +7696,15 @@
       "label": "Next proposed milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L382",
+      "source_location": "L446",
       "_origin": "ast"
     },
     {
-      "id": "project_roadmap_next_authorized_milestone_386",
+      "id": "project_roadmap_next_authorized_milestone",
       "label": "Next authorized milestone",
       "file_type": "document",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L386",
+      "source_location": "L450",
       "_origin": "ast"
     },
     {
@@ -8008,23 +8088,39 @@
       "label": "8. Hero/Header visual lock",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L144",
+      "source_location": "L146",
       "_origin": "ast"
     },
     {
-      "id": "docs_graph_project_graph_overlay_9_current_route_contracts",
-      "label": "9. Current route contracts",
+      "id": "docs_graph_project_graph_overlay_9_smart_copa_bar_sponsor_boundary",
+      "label": "9. Smart Copa Bar + Sponsor Boundary",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L162",
+      "source_location": "L164",
       "_origin": "ast"
     },
     {
-      "id": "docs_graph_project_graph_overlay_10_closure_status",
-      "label": "10. Closure status",
+      "id": "docs_graph_project_graph_overlay_10_about_copa_paper_editorial",
+      "label": "10. About Copa / Paper Editorial",
       "file_type": "document",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L177",
+      "source_location": "L184",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_11_current_route_contracts",
+      "label": "11. Current route contracts",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L209",
+      "_origin": "ast"
+    },
+    {
+      "id": "docs_graph_project_graph_overlay_12_closure_status",
+      "label": "12. Closure status",
+      "file_type": "document",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L224",
       "_origin": "ast"
     },
     {
@@ -18502,7 +18598,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_home_smartcopabar",
+      "target": "src_sections_home_aboutcopasection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18512,7 +18608,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_smartcopabar",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18522,7 +18618,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_sedescalendario",
+      "target": "src_sections_home_sponsorssection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18532,7 +18628,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_sobreeltorneo",
+      "target": "src_sections_sedescalendario",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21172,6 +21268,84 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Tutoriales.tsx",
       "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_historicalfacts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_aboutcopasection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -24526,7 +24700,7 @@
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone",
+      "target": "project_roadmap_next_authorized_loop",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
@@ -24570,8 +24744,8 @@
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
-      "target": "project_roadmap_loop_1d_foundation_integration_qa",
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_planned_m3_execution_loops",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
@@ -24579,80 +24753,116 @@
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3a_home_architecture",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L224",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3b_hero_header",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L230",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L241",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3d_sobre_la_copa_paper_editorial",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L247",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3e_sedes_region_status_milestones",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L260",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_1d_foundation_integration_qa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_2a_visual_system_audit",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L236",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_2b_design_token_foundation",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L250",
+      "source_location": "L294",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_2c_core_ui_primitives",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L264",
+      "source_location": "L308",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_2d_public_chrome_visual_foundation",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L278",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_2e_design_system_integration_qa",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L292",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_3a_home_architecture_asset_design_gate",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L306",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_planned_m1_execution_loops",
+      "source": "project_roadmap_planned_m3_execution_loops",
       "target": "project_roadmap_loop_3b_home_root_extraction_cinematic_3d_hero",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L320",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_planned_m1_execution_loops",
-      "target": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L334",
-      "weight": 1.0
-    },
-    {
-      "source": "project_roadmap_planned_m1_execution_loops",
-      "target": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
@@ -24660,12 +24870,39 @@
       "weight": 1.0
     },
     {
-      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_current_milestone_378",
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3b_close_hero_visual_lock_checkpoint",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
       "source_location": "L378",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3c_smart_copa_bar_sponsor_boundary_408",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L408",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_planned_m3_execution_loops",
+      "target": "project_roadmap_loop_3d_sobre_la_copa",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "project_roadmap_copa_marathon_2026_project_roadmap",
+      "target": "project_roadmap_current_milestone_442",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PROJECT_ROADMAP.md",
+      "source_location": "L442",
       "weight": 1.0
     },
     {
@@ -24674,16 +24911,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L382",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
       "source": "project_roadmap_copa_marathon_2026_project_roadmap",
-      "target": "project_roadmap_next_authorized_milestone_386",
+      "target": "project_roadmap_next_authorized_milestone",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_ROADMAP.md",
-      "source_location": "L386",
+      "source_location": "L450",
       "weight": 1.0
     },
     {
@@ -25079,25 +25316,43 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L144",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
       "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
-      "target": "docs_graph_project_graph_overlay_9_current_route_contracts",
+      "target": "docs_graph_project_graph_overlay_9_smart_copa_bar_sponsor_boundary",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L162",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
       "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
-      "target": "docs_graph_project_graph_overlay_10_closure_status",
+      "target": "docs_graph_project_graph_overlay_10_about_copa_paper_editorial",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
-      "source_location": "L177",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_11_current_route_contracts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_graph_project_graph_overlay_copa_marathon_curated_graph_overlay",
+      "target": "docs_graph_project_graph_overlay_12_closure_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/graph/PROJECT_GRAPH_OVERLAY.md",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -25461,7 +25716,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -25471,7 +25726,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {

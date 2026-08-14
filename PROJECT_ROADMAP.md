@@ -150,11 +150,11 @@ Estado:
 
 ## Current milestone
 
-M2 — Design System
+M3 — Home
 
-## Next authorized milestone
+## Next authorized loop
 
-NONE
+LOOP 3E — Sedes / Region Status / Milestones
 
 ## Planned M1 execution loops
 
@@ -218,6 +218,50 @@ using the smallest viable file set approved by Graph impact analysis.
 Status:
 
 DONE
+
+## Planned M3 execution loops
+
+### LOOP 3A — Home Architecture
+
+Status:
+
+DONE
+
+### LOOP 3B — Hero / Header
+
+Status:
+
+DONE
+
+Notes:
+
+- Hero/Header: HUMAN_VISUAL_APPROVED
+- Hero/Header: LOCKED
+
+### LOOP 3C — Smart Copa Bar + Sponsor Boundary
+
+Status:
+
+DONE
+
+### LOOP 3D — Sobre la Copa / Paper Editorial
+
+Status:
+
+DONE
+
+Outcome:
+
+- About Copa section implemented as a PAPER editorial section.
+- Historical first-edition facts are source-grounded and not framed as 2026 guarantees.
+- No CTA added.
+- Hero/Header lock preserved.
+
+### LOOP 3E — Sedes / Region Status / Milestones
+
+Status:
+
+NOT_STARTED
 
 ### LOOP 1D — Foundation Integration QA
 

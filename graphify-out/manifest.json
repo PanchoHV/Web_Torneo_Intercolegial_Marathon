@@ -1,7 +1,7 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786668741.1759489,
-    "ast_hash": "a3af3087e554c3a71fcd13744808562b",
+    "mtime": 1786670042.6417024,
+    "ast_hash": "c9a088eefaef302fd6076d5a407859cb",
     "semantic_hash": ""
   },
   "components.json": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786668721.9138541,
-    "ast_hash": "a0314eb43779475c435c4d2b394cdcdb",
+    "mtime": 1786670028.7694864,
+    "ast_hash": "3c14ddd1fcc6e4e096b7d2fdba9b9f0d",
     "semantic_hash": ""
   },
   "README.md": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786668759.9373064,
-    "ast_hash": "10e76a16ce8452a081ebd7f167d86004",
+    "mtime": 1786670054.417896,
+    "ast_hash": "7781a2512456ccc2d5fb65282c772c8f",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
@@ -920,8 +920,8 @@
     "semantic_hash": ""
   },
   "src/pages/HomePage.tsx": {
-    "mtime": 1786669035.974166,
-    "ast_hash": "43e407747a7f95e01e4aa87d8a017b36",
+    "mtime": 1786669861.0879123,
+    "ast_hash": "c858f1ec075415b5cb01898cc22d75d1",
     "semantic_hash": ""
   },
   "src/sections/home/SmartCopaBar.tsx": {
@@ -932,6 +932,11 @@
   "src/sections/home/SponsorsSection.tsx": {
     "mtime": 1786669035.8356557,
     "ast_hash": "d4c86cd01e880a74d6ee0e807518d3a4",
+    "semantic_hash": ""
+  },
+  "src/sections/home/AboutCopaSection.tsx": {
+    "mtime": 1786670317.9258158,
+    "ast_hash": "0e4740f66f2fb8bc845af64e07d07855",
     "semantic_hash": ""
   }
 }
