@@ -5,7 +5,7 @@
     "redesign_branch": "feat/copa-2026-redesign"
   },
   "current_milestone": "M3",
-  "current_loop": "3B",
+  "current_loop": "3B-CLOSE",
   "status": "IN_PROGRESS",
   "gate": {
     "current": "GATE_0_BOOTSTRAP",
@@ -28,8 +28,31 @@
     "2D",
     "2E",
     "3A",
-    "3B"
+    "3B",
+    "3B-CLOSE"
   ],
+  "m3_loops": {
+    "3A": "DONE",
+    "3B": "DONE",
+    "3C": "NOT_STARTED",
+    "3D": "NOT_STARTED",
+    "3E": "NOT_STARTED",
+    "3F": "NOT_STARTED",
+    "3G": "NOT_STARTED",
+    "3H": "NOT_STARTED"
+  },
+  "hero_header_lock": {
+    "hero": "HUMAN_VISUAL_APPROVED",
+    "header": "HUMAN_VISUAL_APPROVED",
+    "hero_composition": "LOCKED",
+    "hero_typography": "LOCKED",
+    "hero_artwork": "REGISTERED_FULL_CANVAS_LAYERS",
+    "hero_motion": "GSAP_3D_DEPTH_APPROVED",
+    "pointer": "MICRO_DEPTH",
+    "scroll": "MACRO_DEPTH",
+    "mobile": "REDUCED_MOTION / CENTERED_CONTENT",
+    "future_rule": "Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop."
+  },
   "milestones": {
     "M0": "DONE",
     "M1": "DONE",
@@ -75,6 +98,8 @@
     "M2 public chrome visual foundation implemented.",
     "M2 design system integration QA completed.",
     "M3 Home architecture mapped.",
-    "M3 Home root extracted and cinematic Hero rebuilt."
+    "M3 Home root extracted and cinematic Hero rebuilt.",
+    "Hero/Header visual state human-approved and locked at LOOP 3B-CLOSE.",
+    "Next proposed loop: 3C — Smart Copa Bar + Sponsor Boundary."
   ]
 }

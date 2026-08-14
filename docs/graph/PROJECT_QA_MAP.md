@@ -103,3 +103,35 @@ Overall:
 
 M2 QA: PASS
 Milestone: CLOSED
+
+## M3 Home — Hero Visual Lock Evidence
+
+Technical:
+
+- Hero approved product files: PASS
+- lint: PASS
+- build: PASS
+- Graph: PASS
+- diff whitespace: PASS
+- deployment: NOT_AUTHORIZED
+- push: NOT_AUTHORIZED
+
+Human:
+
+- Hero: HUMAN_VISUAL_APPROVED
+- Header: HUMAN_VISUAL_APPROVED
+- Hero composition: LOCKED
+- Hero typography: LOCKED
+- Hero artwork: REGISTERED_FULL_CANVAS_LAYERS
+- Hero motion: GSAP_3D_DEPTH_APPROVED
+- Pointer: MICRO_DEPTH
+- Scroll: MACRO_DEPTH
+- Mobile: REDUCED_MOTION / CENTERED_CONTENT
+
+Protection:
+
+Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop.
+
+Next:
+
+3C — Smart Copa Bar + Sponsor Boundary

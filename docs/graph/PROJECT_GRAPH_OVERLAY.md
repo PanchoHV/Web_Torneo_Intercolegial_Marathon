@@ -135,12 +135,31 @@ Explicit human approval is required for:
 - LOOP 2E: DONE
 - LOOP 3A: DONE
 - LOOP 3B: DONE
+- LOOP 3B-CLOSE: DONE
 - Next loop: 3C — Smart Copa Bar + Sponsor Boundary
 - Gate 0: PASSED
 - Next milestone requires explicit human authorization
 - CONTROLLED_PROCESS_DEVIATION remains documented from LOOP 0D
 
-## 8. Current route contracts
+## 8. Hero/Header visual lock
+
+Status:
+
+- Hero: HUMAN_VISUAL_APPROVED
+- Header: HUMAN_VISUAL_APPROVED
+- Hero composition: LOCKED
+- Hero typography: LOCKED
+- Hero artwork: REGISTERED_FULL_CANVAS_LAYERS
+- Hero motion: GSAP_3D_DEPTH_APPROVED
+- Pointer: MICRO_DEPTH
+- Scroll: MACRO_DEPTH
+- Mobile: REDUCED_MOTION / CENTERED_CONTENT
+
+Protected future rule:
+
+Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop.
+
+## 9. Current route contracts
 
 - `/la-copa`
 - `/sedes`
@@ -155,7 +174,7 @@ Compatibility contract:
 
 `/preinscripciones` currently aliases the existing `InscripcionesPage`.
 
-## 9. Closure status
+## 10. Closure status
 
 - Token architecture: CSS semantic variables → Tailwind semantic aliases → React primitives
 - Token foundation: IMPLEMENTED
@@ -171,6 +190,12 @@ Compatibility contract:
 - M3 status: IN_PROGRESS
 - Home root: EXTRACTED TO HomePage
 - Hero: REBUILT
+- Hero visual lock: HUMAN_VISUAL_APPROVED
+- Header visual lock: HUMAN_VISUAL_APPROVED
+- Hero composition: LOCKED
+- Hero typography: LOCKED
+- Hero artwork: REGISTERED_FULL_CANVAS_LAYERS
+- Hero motion: GSAP_3D_DEPTH_APPROVED
 - Hero material: STADIUM
 - Hero primary conversion: FAN APP
 - Hero motion: HIGH / CINEMATIC / 3D FOUNDATION

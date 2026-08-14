@@ -2,37 +2,209 @@ import { useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Camera, Layers3, Radio, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Container } from '@/components/ui/container';
-import { Surface } from '@/components/ui/surface';
 import { trackCtaClick } from '@/lib/analytics/gtm';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HERO_BACKGROUND =
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Esquema%20Pichazos%20(1).webp';
+const HERO_FIELD = encodeURI(
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Fono de estadio.webp'
+);
+const HERO_ELEMENTS = encodeURI(
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-elementos 1.webp'
+);
+const HERO_PLAYERS = encodeURI(
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Jugadores Transparencia.webp'
+);
+const HERO_PHONE = encodeURI(
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Imagen Celular Mockup.webp'
+);
 
-const HERO_LOGO =
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Vigia-Logos-2.webp';
+const HERO_COPY_STYLES = `
+  .hero-copy-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+  }
 
-const broadcastPills = [
-  { label: 'Fan App', icon: Radio },
-  { label: 'Historias', icon: Sparkles },
-  { label: 'Fotos', icon: Camera },
-  { label: 'Highlights', icon: Layers3 },
-] as const;
+  .hero-copy {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 48%;
+    width: auto;
+    max-width: 430px;
+    margin-inline: auto;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(-54%);
+  }
+
+  .hero-title {
+    margin: 0;
+    font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+    font-size: clamp(42px, 11vw, 54px);
+    font-weight: 400;
+    line-height: 0.84;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+  }
+
+  .hero-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .hero-title-line--red {
+    color: var(--marathon-red, #e21b2d);
+  }
+
+  .hero-copy-text {
+    display: block;
+    width: 100%;
+    max-width: 410px;
+    margin: 20px auto 0;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .hero-copy-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .hero-copy-primary {
+    width: auto;
+    min-width: 220px;
+    max-width: 100%;
+  }
+
+  .hero-copy-secondary {
+    width: auto;
+    min-width: 250px;
+    max-width: 100%;
+  }
+
+  .hero-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-family: var(--font-montserrat), Montserrat, sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  .hero-readable-left {
+    position: absolute;
+    inset-block: 0;
+    left: 0;
+    width: 62%;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 8, 23, 0.98) 0%,
+      rgba(2, 8, 23, 0.94) 18%,
+      rgba(2, 8, 23, 0.78) 30%,
+      rgba(2, 8, 23, 0.50) 40%,
+      rgba(2, 8, 23, 0.20) 50%,
+      rgba(2, 8, 23, 0.00) 62%
+    );
+  }
+
+  .hero-readable-mobile {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(2, 8, 23, 0.97) 0%,
+      rgba(2, 8, 23, 0.91) 20%,
+      rgba(2, 8, 23, 0.72) 40%,
+      rgba(2, 8, 23, 0.40) 56%,
+      rgba(2, 8, 23, 0.10) 70%,
+      rgba(2, 8, 23, 0.00) 80%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .hero-copy {
+      left: 6.5vw;
+      right: auto;
+      top: 50%;
+      width: min(540px, 37vw);
+      max-width: 540px;
+      margin-inline: 0;
+      align-items: flex-start;
+      text-align: left;
+      transform: translateY(-48%);
+    }
+
+    .hero-title {
+      font-size: clamp(78px, 5.1vw, 102px);
+      line-height: 0.84;
+      letter-spacing: 0.005em;
+    }
+
+    .hero-copy-text {
+      max-width: 470px;
+      margin: 22px 0 0;
+      font-size: 18px;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .hero-copy-actions {
+      flex-direction: row;
+      align-items: center;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .hero-social {
+      margin-top: 18px;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+  }
+`;
 
 export default function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-  const graphicRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const deviceRef = useRef<HTMLDivElement>(null);
+  const fieldScrollRef = useRef<HTMLDivElement>(null);
+  const fieldPointerRef = useRef<HTMLDivElement>(null);
+  const fieldImageRef = useRef<HTMLImageElement>(null);
+  const elementsScrollRef = useRef<HTMLDivElement>(null);
+  const elementsPointerRef = useRef<HTMLDivElement>(null);
+  const elementsImageRef = useRef<HTMLImageElement>(null);
+  const playersScrollRef = useRef<HTMLDivElement>(null);
+  const playersPointerRef = useRef<HTMLDivElement>(null);
+  const playersImageRef = useRef<HTMLImageElement>(null);
+  const phoneScrollRef = useRef<HTMLDivElement>(null);
+  const phonePointerRef = useRef<HTMLDivElement>(null);
+  const phoneImageRef = useRef<HTMLImageElement>(null);
+  const contentBaseRef = useRef<HTMLDivElement>(null);
+  const contentHeadlineRef = useRef<HTMLHeadingElement>(null);
+  const contentCopyRef = useRef<HTMLParagraphElement>(null);
+  const contentCtaRef = useRef<HTMLDivElement>(null);
+  const contentSocialRef = useRef<HTMLDivElement>(null);
   const reducedMotionRef = useRef(false);
-  const pointerRafRef = useRef<number | null>(null);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -44,96 +216,54 @@ export default function Hero() {
         defaults: { ease: 'power3.out' },
       });
 
-      if (backgroundRef.current) {
-        gsap.set(backgroundRef.current, { scale: 1.08, y: 18 });
-        intro.to(
-          backgroundRef.current,
-          {
-            scale: 1,
-            y: 0,
-            opacity: 1,
-            duration: reducedMotion ? 0.01 : 1.8,
-          },
-          0
-        );
+      if (fieldImageRef.current) {
+        gsap.set(fieldImageRef.current, { opacity: 0 });
+        intro.to(fieldImageRef.current, { opacity: 1, duration: reducedMotion ? 0.01 : 1.1 }, 0);
       }
 
-      if (glowRef.current) {
-        gsap.set(glowRef.current, { opacity: 0, scale: 0.96 });
-        intro.to(
-          glowRef.current,
-          {
-            opacity: 1,
-            scale: 1,
-            duration: reducedMotion ? 0.01 : 1.4,
-          },
-          0.1
-        );
+      if (elementsImageRef.current) {
+        gsap.set(elementsImageRef.current, { opacity: 0 });
+        intro.to(elementsImageRef.current, { opacity: 1, duration: reducedMotion ? 0.01 : 1.05 }, 0.08);
       }
 
-      if (graphicRef.current) {
-        gsap.set(graphicRef.current, { opacity: 0, y: 30, rotateX: 14 });
+      if (playersImageRef.current) {
+        gsap.set(playersImageRef.current, { opacity: 0 });
+        intro.to(playersImageRef.current, { opacity: 1, duration: reducedMotion ? 0.01 : 1.1 }, 0.16);
+      }
+
+      if (phoneImageRef.current) {
+        gsap.set(phoneImageRef.current, { opacity: 0 });
+        intro.to(phoneImageRef.current, { opacity: 1, duration: reducedMotion ? 0.01 : 1.2 }, 0.24);
+      }
+
+      const contentNodes = [
+        contentHeadlineRef.current,
+        contentCopyRef.current,
+        contentCtaRef.current,
+        contentSocialRef.current,
+      ].filter(Boolean) as HTMLElement[];
+
+      if (contentNodes.length > 0) {
+        gsap.set(contentNodes, { opacity: 0, y: 18 });
         intro.to(
-          graphicRef.current,
+          contentNodes,
           {
             opacity: 1,
             y: 0,
-            rotateX: 0,
-            duration: reducedMotion ? 0.01 : 1.5,
+            duration: reducedMotion ? 0.01 : 0.85,
+            stagger: reducedMotion ? 0 : 0.08,
+            clearProps: 'transform,opacity',
           },
           0.18
-        );
-      }
-
-      if (deviceRef.current) {
-        gsap.set(deviceRef.current, { opacity: 0, y: 42, z: -120, rotateY: 18, scale: 0.94 });
-        intro.to(
-          deviceRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            z: 0,
-            rotateY: 0,
-            scale: 1,
-            duration: reducedMotion ? 0.01 : 1.65,
-          },
-          0.22
-        );
-      }
-
-      if (contentRef.current) {
-        const planes = contentRef.current.querySelectorAll('[data-hero-plane]');
-        gsap.set(planes, { opacity: 0, y: 26 });
-        intro.to(
-          planes,
-          {
-            opacity: 1,
-            y: 0,
-            duration: reducedMotion ? 0.01 : 0.9,
-            stagger: reducedMotion ? 0 : 0.1,
-          },
-          0.38
         );
       }
     }, heroRef);
 
     if (!reducedMotion) {
-      if (backgroundRef.current) {
-        gsap.to(backgroundRef.current, {
-          yPercent: 4,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.6,
-          },
-        });
-      }
-
-      if (graphicRef.current) {
-        gsap.to(graphicRef.current, {
-          yPercent: -6,
+      if (fieldScrollRef.current) {
+        gsap.to(fieldScrollRef.current, {
+          xPercent: 1,
+          yPercent: 2,
           ease: 'none',
           scrollTrigger: {
             trigger: heroRef.current,
@@ -144,81 +274,154 @@ export default function Hero() {
         });
       }
 
-      if (deviceRef.current) {
-        gsap.to(deviceRef.current, {
+      if (elementsScrollRef.current) {
+        gsap.to(elementsScrollRef.current, {
+          xPercent: 2,
           yPercent: -3,
           ease: 'none',
           scrollTrigger: {
             trigger: heroRef.current,
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.8,
+            scrub: 0.85,
           },
         });
       }
 
-      if (glowRef.current) {
-        gsap.to(glowRef.current, {
-          xPercent: 5,
+      if (playersScrollRef.current) {
+        gsap.to(playersScrollRef.current, {
+          xPercent: 2,
+          yPercent: -4,
+          rotateZ: 0.3,
           ease: 'none',
           scrollTrigger: {
             trigger: heroRef.current,
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.8,
+            scrub: 0.85,
+          },
+        });
+      }
+
+      if (phoneScrollRef.current) {
+        gsap.to(phoneScrollRef.current, {
+          xPercent: 1.5,
+          yPercent: -5,
+          rotateY: 1.2,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.9,
           },
         });
       }
     }
 
-    const handlePointerMove = (event: PointerEvent) => {
-      if (!finePointer || reducedMotionRef.current || !deviceRef.current) return;
-
-      if (pointerRafRef.current !== null) {
-        cancelAnimationFrame(pointerRafRef.current);
-      }
-
-      const rect = heroRef.current?.getBoundingClientRect();
-      if (!rect) return;
-
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const offsetX = (event.clientX - centerX) / (rect.width / 2);
-      const offsetY = (event.clientY - centerY) / (rect.height / 2);
-
-      const nextX = gsap.utils.clamp(-4, 4, -offsetY * 4);
-      const nextY = gsap.utils.clamp(-4, 4, offsetX * 4);
-
-      pointerRafRef.current = requestAnimationFrame(() => {
-        deviceRef.current?.style.setProperty('--hero-tilt-x', `${nextX}deg`);
-        deviceRef.current?.style.setProperty('--hero-tilt-y', `${nextY}deg`);
-      });
-    };
-
-    const resetTilt = () => {
-      if (!deviceRef.current) return;
-      if (pointerRafRef.current !== null) {
-        cancelAnimationFrame(pointerRafRef.current);
-        pointerRafRef.current = null;
-      }
-      deviceRef.current.style.setProperty('--hero-tilt-x', '0deg');
-      deviceRef.current.style.setProperty('--hero-tilt-y', '0deg');
-    };
-
     const heroEl = heroRef.current;
+    const fieldPointerEl = fieldPointerRef.current;
+    const elementsPointerEl = elementsPointerRef.current;
+    const playersPointerEl = playersPointerRef.current;
+    const phonePointerEl = phonePointerRef.current;
+
+    const quickSetters =
+      heroEl && fieldPointerEl && elementsPointerEl && playersPointerEl && phonePointerEl
+        ? {
+            fieldX: gsap.quickTo(fieldPointerEl, 'x', { duration: 0.65, ease: 'power3.out' }),
+            fieldY: gsap.quickTo(fieldPointerEl, 'y', { duration: 0.65, ease: 'power3.out' }),
+            elementsX: gsap.quickTo(elementsPointerEl, 'x', {
+              duration: 0.68,
+              ease: 'power3.out',
+            }),
+            elementsY: gsap.quickTo(elementsPointerEl, 'y', {
+              duration: 0.68,
+              ease: 'power3.out',
+            }),
+            elementsRotate: gsap.quickTo(elementsPointerEl, 'rotation', {
+              duration: 0.88,
+              ease: 'power3.out',
+            }),
+            playersX: gsap.quickTo(playersPointerEl, 'x', {
+              duration: 0.62,
+              ease: 'power3.out',
+            }),
+            playersY: gsap.quickTo(playersPointerEl, 'y', {
+              duration: 0.62,
+              ease: 'power3.out',
+            }),
+            playersRotate: gsap.quickTo(playersPointerEl, 'rotation', {
+              duration: 0.82,
+              ease: 'power3.out',
+            }),
+            phoneX: gsap.quickTo(phonePointerEl, 'x', { duration: 0.58, ease: 'power3.out' }),
+            phoneY: gsap.quickTo(phonePointerEl, 'y', { duration: 0.58, ease: 'power3.out' }),
+            phoneRotateX: gsap.quickTo(phonePointerEl, 'rotationX', {
+              duration: 0.9,
+              ease: 'power3.out',
+            }),
+            phoneRotateY: gsap.quickTo(phonePointerEl, 'rotationY', {
+              duration: 0.9,
+              ease: 'power3.out',
+            }),
+          }
+        : null;
+
+    const resetDepth = () => {
+      if (!quickSetters) return;
+
+      quickSetters.fieldX(0);
+      quickSetters.fieldY(0);
+      quickSetters.elementsX(0);
+      quickSetters.elementsY(0);
+      quickSetters.elementsRotate(0);
+      quickSetters.playersX(0);
+      quickSetters.playersY(0);
+      quickSetters.playersRotate(0);
+      quickSetters.phoneX(0);
+      quickSetters.phoneY(0);
+      quickSetters.phoneRotateX(0);
+      quickSetters.phoneRotateY(0);
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!heroEl || !quickSetters || !finePointer || reducedMotionRef.current) return;
+
+      const rect = heroEl.getBoundingClientRect();
+      const offsetX = (event.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+      const offsetY = (event.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+      const clampedX = gsap.utils.clamp(-1, 1, offsetX);
+      const clampedY = gsap.utils.clamp(-1, 1, offsetY);
+
+      quickSetters.fieldX(-clampedX * 2);
+      quickSetters.fieldY(-clampedY);
+      quickSetters.elementsX(-clampedX * 6);
+      quickSetters.elementsY(-clampedY * 4.5);
+      quickSetters.elementsRotate(-clampedX * 0.65);
+      quickSetters.playersX(clampedX * 7);
+      quickSetters.playersY(clampedY * 4);
+      quickSetters.playersRotate(clampedX * 0.25);
+      quickSetters.phoneX(clampedX * 12);
+      quickSetters.phoneY(clampedY * 7);
+      quickSetters.phoneRotateX(-clampedY);
+      quickSetters.phoneRotateY(clampedX * 1.5);
+    };
+
     if (heroEl && finePointer && !reducedMotion) {
       heroEl.addEventListener('pointermove', handlePointerMove);
-      heroEl.addEventListener('pointerleave', resetTilt);
+      heroEl.addEventListener('pointerleave', resetDepth);
     }
 
     return () => {
       ctx.revert();
+
       if (heroEl && finePointer && !reducedMotion) {
         heroEl.removeEventListener('pointermove', handlePointerMove);
-        heroEl.removeEventListener('pointerleave', resetTilt);
+        heroEl.removeEventListener('pointerleave', resetDepth);
       }
-      if (pointerRafRef.current !== null) {
-        cancelAnimationFrame(pointerRafRef.current);
+
+      if (fieldPointerEl && elementsPointerEl && playersPointerEl && phonePointerEl) {
+        gsap.killTweensOf([fieldPointerEl, elementsPointerEl, playersPointerEl, phonePointerEl]);
       }
     };
   }, []);
@@ -238,302 +441,159 @@ export default function Hero() {
       className="relative isolate min-h-screen overflow-hidden bg-marathon-surface-stadium text-white"
       style={{ perspective: '1700px' }}
     >
-      <div
-        ref={backgroundRef}
-        className="pointer-events-none absolute inset-0 scale-105 bg-cover bg-center opacity-85"
-        style={{ backgroundImage: `url("${HERO_BACKGROUND}")` }}
-        aria-hidden="true"
-      />
+      <style>{HERO_COPY_STYLES}</style>
 
-      <div
-        ref={glowRef}
-        className="pointer-events-none absolute inset-0"
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(0,80,164,0.34),transparent_28rem)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(226,27,45,0.26),transparent_24rem)]" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020817] via-[#020817]/70 to-transparent" />
-      </div>
-
-      <div
-        ref={graphicRef}
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,transparent_37%,rgba(255,255,255,0.08)_50%,transparent_63%,transparent_100%)] opacity-35" />
-        <div className="absolute left-[7%] top-[18%] h-40 w-40 rounded-full border border-white/10" />
-        <div className="absolute right-[12%] top-[12%] h-52 w-52 rounded-full border border-marathon-gold/15" />
-        <div className="absolute left-[14%] bottom-[18%] h-px w-[28rem] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        <div className="absolute right-[8%] bottom-[22%] h-px w-[18rem] bg-gradient-to-r from-transparent via-marathon-red/35 to-transparent" />
-      </div>
-
-      <Container className="relative z-10 flex min-h-screen items-center py-[calc(var(--header-height)+1.25rem)]">
-        <div className="grid w-full gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:items-center lg:gap-8">
-          <div ref={contentRef} className="order-2 lg:order-1">
-            <div
-              data-hero-plane
-              className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/8 px-4 py-2 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.22em] text-white/82"
-            >
-              <span className="h-2 w-2 rounded-full bg-marathon-gold" />
-              Copa Nacional Intercolegial Marathon Ecuador 2026
-            </div>
-
-            <h1
-              id="home-hero-title"
-              data-hero-plane
-              className="mt-5 max-w-3xl font-montserrat text-[clamp(2.55rem,7vw,5.8rem)] font-black uppercase leading-[0.92] tracking-[0.01em] text-white drop-shadow-[0_18px_40px_rgba(0,0,0,0.22)]"
-            >
-              <span className="block">Vive la Copa</span>
-              <span className="block text-white/96">como nunca</span>
-            </h1>
-
-            <p
-              data-hero-plane
-              className="mt-5 max-w-2xl text-[0.98rem] leading-relaxed text-white/80 sm:text-lg"
-            >
-              Seguí la Copa desde una experiencia editorial y cinematográfica: historias,
-              fotos, momentos clave y toda la energía del torneo en Fan App.
-            </p>
-
-            <div
-              data-hero-plane
-              className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4"
-            >
-              <Button
-                asChild
-                variant="action"
-                size="cta"
-                className="rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
-              >
-                <Link
-                  to="/fan-app"
-                  onClick={() => handleCtaClick('abrir_fan_app', '/fan-app')}
-                >
-                  Abrir Fan App
-                </Link>
-              </Button>
-
-              <Button
-                asChild
-                variant="actionOutline"
-                size="cta"
-                className="rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em]"
-              >
-                <Link to="/sedes" onClick={() => handleCtaClick('ver_sedes', '/sedes')}>
-                  Ver sedes
-                </Link>
-              </Button>
-            </div>
-
-            <div
-              data-hero-plane
-              className="mt-7 flex flex-wrap items-center gap-2"
-            >
-              {broadcastPills.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <Surface
-                    key={item.label}
-                    variant="transparent"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/7 px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/78"
-                  >
-                    <Icon size={13} className="text-marathon-gold" />
-                    {item.label}
-                  </Surface>
-                );
-              })}
-            </div>
-
-            <div
-              data-hero-plane
-              className="mt-8 max-w-2xl rounded-2xl border border-white/10 bg-white/7 p-4 backdrop-blur-sm sm:p-5"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/8">
-                  <img
-                    src={HERO_LOGO}
-                    alt="Copa Nacional Marathon Intercolegial Ecuador 2026"
-                    className="h-8 w-auto object-contain"
-                    loading="eager"
-                    fetchPriority="high"
-                    onError={(event) => {
-                      (event.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                </div>
-
-                <div className="min-w-0">
-                  <p className="font-montserrat text-[0.72rem] font-black uppercase tracking-[0.2em] text-white/62">
-                    Fan App / Web App / PWA
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-white/76">
-                    El lugar donde se vive la Copa con más intensidad, foco visual y seguimiento
-                    de los mejores momentos.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="order-1 lg:order-2">
-            <div
-              ref={deviceRef}
-              className="relative mx-auto max-w-[34rem] [transform-style:preserve-3d]"
-              style={{
-                transform:
-                  'perspective(1700px) rotateX(var(--hero-tilt-x, 0deg)) rotateY(var(--hero-tilt-y, 0deg)) translate3d(0,0,0)',
-                transition: 'transform 240ms cubic-bezier(0.2, 0, 0, 1)',
-                transformStyle: 'preserve-3d',
-              }}
-            >
-              <div className="pointer-events-none absolute inset-0 -z-10 translate-y-6 scale-[0.88] rounded-[2.5rem] bg-[#02111f]/80 blur-2xl" aria-hidden="true" />
-
-              <div className="relative rounded-[2rem] border border-white/10 bg-[#061225]/78 p-3 shadow-elevated">
-                <div className="rounded-[1.6rem] border border-white/10 bg-[#071427]/92 p-4 sm:p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="font-montserrat text-[0.68rem] font-black uppercase tracking-[0.24em] text-white/55">
-                        Broadcast view
-                      </p>
-                      <p className="mt-2 font-montserrat text-lg font-black uppercase tracking-[0.08em] text-white">
-                        Fan App
-                      </p>
-                    </div>
-
-                    <div className="inline-flex items-center gap-2 rounded-full border border-marathon-red/35 bg-marathon-red/12 px-3 py-1.5 text-xs font-black uppercase tracking-[0.16em] text-white">
-                      <span className="h-2 w-2 rounded-full bg-marathon-red" />
-                      Live feel
-                    </div>
-                  </div>
-
-                  <div className="mt-5 grid gap-3">
-                    <div className="grid grid-cols-[1.15fr_0.85fr] gap-3">
-                      <Surface
-                        variant="scoreboard"
-                        className="rounded-2xl border border-white/10 px-4 py-4 shadow-button"
-                      >
-                        <p className="font-montserrat text-[0.68rem] font-black uppercase tracking-[0.18em] text-white/72">
-                          Hoy en la Copa
-                        </p>
-                        <div className="mt-3 flex items-end justify-between gap-3">
-                          <div>
-                            <p className="text-sm font-semibold text-white/76">Historias</p>
-                            <p className="mt-1 text-[0.72rem] text-white/58">Fotos, momentos y cobertura editorial.</p>
-                          </div>
-                          <Sparkles size={18} className="shrink-0 text-marathon-gold" />
-                        </div>
-                      </Surface>
-
-                      <div className="grid gap-3">
-                        <Surface
-                          variant="paper"
-                          className="rounded-2xl border border-white/10 bg-white/7 px-4 py-4 text-white"
-                        >
-                          <p className="font-montserrat text-[0.66rem] font-black uppercase tracking-[0.18em] text-white/60">
-                            Actualizaciones
-                          </p>
-                          <p className="mt-2 text-sm font-semibold text-white">Fotos + momentos clave</p>
-                        </Surface>
-
-                        <Surface
-                          variant="paper"
-                          className="rounded-2xl border border-white/10 bg-white/7 px-4 py-4 text-white"
-                        >
-                          <p className="font-montserrat text-[0.66rem] font-black uppercase tracking-[0.18em] text-white/60">
-                            Estado
-                          </p>
-                          <p className="mt-2 text-sm font-semibold text-white">Seguir el torneo</p>
-                        </Surface>
-                      </div>
-                    </div>
-
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {broadcastPills.map((item, index) => {
-                        const Icon = item.icon;
-
-                        return (
-                          <div
-                            key={`${item.label}-${index}`}
-                            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/7 px-4 py-3 text-white"
-                          >
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-                              <Icon size={16} className="text-marathon-gold" />
-                            </div>
-                            <div>
-                              <p className="font-montserrat text-[0.66rem] font-black uppercase tracking-[0.18em] text-white/55">
-                                Fan App
-                              </p>
-                              <p className="mt-1 text-sm font-semibold">{item.label}</p>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="absolute -left-6 top-10 hidden w-36 -rotate-6 lg:block"
-                style={{ transform: 'translate3d(-12px, -8px, 48px) rotate(-7deg)' }}
-              >
-                <Surface
-                  variant="paper"
-                  className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3 shadow-elevated"
-                >
-                  <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-white/66">
-                    Highlights
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-white">Lo mejor del torneo</p>
-                </Surface>
-              </div>
-
-              <div
-                className="absolute -right-5 top-24 hidden w-40 rotate-6 lg:block"
-                style={{ transform: 'translate3d(10px, 0, 72px) rotate(6deg)' }}
-              >
-                <Surface
-                  variant="scoreboard"
-                  className="rounded-2xl border border-white/10 px-4 py-3 shadow-elevated"
-                >
-                  <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-white/66">
-                    Stories
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-white">Cobertura editorial</p>
-                </Surface>
-              </div>
-
-              <div
-                className="absolute -bottom-5 left-8 hidden w-44 lg:block"
-                style={{ transform: 'translate3d(0, 18px, 54px)' }}
-              >
-                <Surface
-                  variant="transparent"
-                  className="rounded-2xl border border-white/10 bg-white/8 px-4 py-3 shadow-elevated"
-                >
-                  <p className="text-[0.68rem] font-black uppercase tracking-[0.18em] text-marathon-gold">
-                    Abrir Fan App
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-white/88">
-                    El torneo vive aquí.
-                  </p>
-                </Surface>
-              </div>
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute inset-0">
+          <div ref={fieldScrollRef} className="absolute inset-0">
+            <div ref={fieldPointerRef} className="absolute inset-0">
+              <img
+                ref={fieldImageRef}
+                src={HERO_FIELD}
+                alt=""
+                className="absolute inset-0 h-full w-full select-none object-cover object-[48%_40%] sm:object-center"
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+              />
             </div>
           </div>
         </div>
 
-        <button
-          type="button"
-          className="pointer-events-none absolute bottom-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-white/7 px-4 py-2 text-[0.68rem] font-black uppercase tracking-[0.2em] text-white/72"
-          aria-hidden="true"
-          tabIndex={-1}
+        <div className="absolute inset-0">
+          <div ref={elementsScrollRef} className="absolute inset-0">
+            <div ref={elementsPointerRef} className="absolute inset-0">
+              <img
+                ref={elementsImageRef}
+                src={HERO_ELEMENTS}
+                alt=""
+                className="absolute inset-0 h-full w-full select-none object-cover object-[48%_40%] sm:object-center"
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute inset-0">
+          <div ref={playersScrollRef} className="absolute inset-0">
+            <div
+              ref={playersPointerRef}
+              className="absolute inset-0"
+              style={{ transformOrigin: '65% 50%' }}
+            >
+              <img
+                ref={playersImageRef}
+                src={HERO_PLAYERS}
+                alt=""
+                className="absolute inset-0 h-full w-full select-none object-cover object-[48%_40%] sm:object-center"
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute inset-0">
+          <div ref={phoneScrollRef} className="absolute inset-0">
+            <div
+              ref={phonePointerRef}
+              className="absolute inset-0"
+              style={{
+                transformOrigin: '80% 42%',
+                transformStyle: 'preserve-3d',
+              }}
+            >
+              <img
+                ref={phoneImageRef}
+                src={HERO_PHONE}
+                alt=""
+                className="absolute inset-0 h-full w-full select-none object-cover object-[50%_40%] sm:object-center"
+                loading="eager"
+                fetchPriority="high"
+                draggable={false}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 z-20 hidden md:block" aria-hidden="true">
+        <div className="hero-readable-left" />
+        <div className="absolute inset-x-0 top-0 h-[12%] bg-[linear-gradient(180deg,rgba(2,8,23,0.68)_0%,rgba(2,8,23,0.38)_10%,rgba(2,8,23,0.12)_22%,rgba(2,8,23,0)_34%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-[18%] bg-[linear-gradient(0deg,rgba(2,8,23,0.82)_0%,rgba(2,8,23,0.38)_12%,rgba(2,8,23,0.08)_24%,rgba(2,8,23,0)_34%)]" />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-0 z-20 md:hidden"
+        aria-hidden="true"
+      >
+        <div className="hero-readable-mobile" />
+      </div>
+
+      <div className="hero-copy-layer">
+        <div
+          ref={contentBaseRef}
+          className="hero-copy"
         >
-          <span className="h-2 w-2 rounded-full bg-marathon-red" />
-          VIVE LA COPA DESDE FAN APP
-        </button>
-      </Container>
+          <h1
+            id="home-hero-title"
+            ref={contentHeadlineRef}
+            className="hero-title"
+          >
+            <span className="hero-title-line">VIVE LA COPA</span>
+            <span className="hero-title-line hero-title-line--red">COMO NUNCA</span>
+          </h1>
+
+          <p
+            ref={contentCopyRef}
+            className="hero-copy-text"
+          >
+            Sigue el torneo, conoce historias, mira los highlights, revive las fotos y no te
+            pierdas ningún momento desde la Fan App oficial.
+          </p>
+
+          <div
+            ref={contentCtaRef}
+            className="hero-copy-actions"
+          >
+            <Button
+              asChild
+              variant="action"
+              size="cta"
+              className="hero-copy-primary rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
+            >
+              <Link to="/fan-app" onClick={() => handleCtaClick('abrir_fan_app', '/fan-app')}>
+                ABRIR FAN APP
+              </Link>
+            </Button>
+
+            <Button
+              asChild
+              variant="actionOutline"
+              size="cta"
+              className="hero-copy-secondary rounded-lg border border-white/35 bg-[#091f3d]/96 px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.42)] backdrop-blur-md hover:border-white/45 hover:bg-[#10305d]"
+            >
+              <Link
+                to="/preinscripciones"
+                onClick={() => handleCtaClick('ver_preinscripciones', '/preinscripciones')}
+              >
+                VER PREINSCRIPCIONES
+              </Link>
+            </Button>
+          </div>
+
+          <div
+            ref={contentSocialRef}
+            className="hero-social"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-marathon-red shadow-[0_0_14px_rgba(226,27,45,0.45)]" />
+            <span>#OrgulloIntercolegial</span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

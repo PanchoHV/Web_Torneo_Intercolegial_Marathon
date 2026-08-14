@@ -331,13 +331,57 @@ Status:
 
 DONE
 
+### LOOP 3B-CLOSE — Hero Visual Lock + Checkpoint
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Record the human-approved Hero/Header visual state as locked governance for future M3 loops.
+
+Status:
+
+DONE
+
+Lock:
+
+- Hero: HUMAN_VISUAL_APPROVED
+- Header: HUMAN_VISUAL_APPROVED
+- Hero composition: LOCKED
+- Hero typography: LOCKED
+- Hero artwork: REGISTERED_FULL_CANVAS_LAYERS
+- Hero motion: GSAP_3D_DEPTH_APPROVED
+- Pointer: MICRO_DEPTH
+- Scroll: MACRO_DEPTH
+- Mobile: REDUCED_MOTION / CENTERED_CONTENT
+
+Protected future rule:
+
+Hero/Header must not be modified by subsequent M3 loops without explicit human authorization or a dedicated corrective loop.
+
+### LOOP 3C — Smart Copa Bar + Sponsor Boundary
+
+Task size:
+
+SMALL
+
+Outcome:
+
+Implement the next Home section boundary only after Hero/Header lock, without modifying the locked Hero/Header.
+
+Status:
+
+NOT_STARTED
+
 ## Current milestone
 
 M3 — Home
 
 ## Next proposed milestone
 
-M3 — Home
+3C — Smart Copa Bar + Sponsor Boundary
 
 ## Next authorized milestone
 
