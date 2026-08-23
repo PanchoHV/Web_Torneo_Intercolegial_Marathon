@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { Surface } from '@/components/ui/surface';
 import { trackNavigationClick } from '@/lib/analytics/gtm';
+import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
 const navLinks = [
   { label: 'La Copa', href: '/la-copa' },
   { label: 'Sedes', href: '/sedes' },
-  { label: 'Preinscripciones', href: '/preinscripciones' },
-  { label: 'Fan App', href: '/fan-app' },
+  { label: 'Inscripciones', href: '/inscripciones' },
+  // La Fan App es un producto externo: se abre fuera del router.
+  { label: 'Fan App', href: FAN_APP_URL },
   { label: 'FAQ', href: '/faq' },
 ] as const;
 
@@ -59,6 +61,13 @@ export default function Navigation() {
         nav_location: navLocation,
       });
       setMobileOpen(false);
+
+      // Los destinos absolutos (Fan App) viven fuera del sitio.
+      if (/^https?:\/\//.test(href)) {
+        window.open(href, EXTERNAL_LINK_PROPS.target, 'noopener,noreferrer');
+        return;
+      }
+
       navigate(href);
     },
     [navigate]
@@ -129,7 +138,7 @@ export default function Navigation() {
                 type="button"
                 variant="action"
                 size="cta"
-                onClick={() => handleNavigate('/fan-app', 'desktop', 'Abrir Fan App')}
+                onClick={() => handleNavigate(FAN_APP_URL, 'desktop', 'Abrir Fan App')}
                 className="rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
               >
                 Abrir Fan App
@@ -204,7 +213,7 @@ export default function Navigation() {
                 type="button"
                 variant="action"
                 size="cta"
-                onClick={() => handleNavigate('/fan-app', 'mobile', 'Abrir Fan App')}
+                onClick={() => handleNavigate(FAN_APP_URL, 'mobile', 'Abrir Fan App')}
                 className="mt-3 w-full justify-center rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
               >
                 Abrir Fan App

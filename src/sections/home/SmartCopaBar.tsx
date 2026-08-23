@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/container';
 import { StatusBadge } from '@/components/ui/status-badge';
 import { Surface } from '@/components/ui/surface';
 import { trackCtaClick } from '@/lib/analytics/gtm';
+import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
 type CopaBarState = 'upcoming' | 'match-day' | 'live' | 'completed';
 
@@ -28,7 +29,7 @@ const COPA_BAR_CONFIG: CopaBarConfig = {
   primaryDate: '24 DE AGOSTO',
   secondary: 'Prepárate para seguir cada historia, jugada y momento del torneo.',
   ctaLabel: 'ABRIR FAN APP',
-  ctaRoute: '/fan-app',
+  ctaRoute: FAN_APP_URL,
   secondaryCue: 'Ver sedes',
   secondaryRoute: '/sedes',
   milestoneIsoDate: '2026-08-24',
@@ -122,9 +123,9 @@ export default function SmartCopaBar() {
                 size="cta"
                 className="min-w-[220px] rounded-none font-montserrat text-sm font-black uppercase tracking-[0.08em]"
               >
-                <Link to={config.ctaRoute} onClick={handleCtaClick}>
+                <a href={config.ctaRoute} {...EXTERNAL_LINK_PROPS} onClick={handleCtaClick}>
                   {config.ctaLabel}
-                </Link>
+                </a>
               </Button>
               <Link
                 to={config.secondaryRoute}

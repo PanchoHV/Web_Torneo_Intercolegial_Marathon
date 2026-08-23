@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { Button } from '@/components/ui/button';
 import { trackCtaClick } from '@/lib/analytics/gtm';
+import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ const HERO_PLAYERS = encodeURI(
   'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Jugadores Transparencia.webp'
 );
 const HERO_PHONE = encodeURI(
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Imagen Celular Mockup.webp'
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Imagen Celular Mock.webp'
 );
 
 const HERO_COPY_STYLES = `
@@ -565,9 +566,13 @@ export default function Hero() {
               size="cta"
               className="hero-copy-primary rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button"
             >
-              <Link to="/fan-app" onClick={() => handleCtaClick('abrir_fan_app', '/fan-app')}>
+              <a
+                href={FAN_APP_URL}
+                {...EXTERNAL_LINK_PROPS}
+                onClick={() => handleCtaClick('abrir_fan_app', FAN_APP_URL)}
+              >
                 ABRIR FAN APP
-              </Link>
+              </a>
             </Button>
 
             <Button
@@ -577,10 +582,10 @@ export default function Hero() {
               className="hero-copy-secondary rounded-lg border border-white/35 bg-[#091f3d]/96 px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] text-white shadow-[0_12px_30px_rgba(0,0,0,0.42)] backdrop-blur-md hover:border-white/45 hover:bg-[#10305d]"
             >
               <Link
-                to="/preinscripciones"
-                onClick={() => handleCtaClick('ver_preinscripciones', '/preinscripciones')}
+                to="/inscripciones"
+                onClick={() => handleCtaClick('ver_inscripciones', '/inscripciones')}
               >
-                VER PREINSCRIPCIONES
+                VER INSCRIPCIONES
               </Link>
             </Button>
           </div>

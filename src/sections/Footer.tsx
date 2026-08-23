@@ -1,346 +1,283 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
-import {
-  Calendar,
-  ExternalLink,
-  Instagram,
-  LayoutDashboard,
-  MessageCircle,
-  MapPin,
-  ShieldCheck,
-  Trophy,
-  Users,
-} from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
+import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
-import { Button } from '@/components/ui/button';
-import { Container } from '@/components/ui/container';
-import { Surface } from '@/components/ui/surface';
+const BEBAS = '"Bebas Neue", sans-serif';
 
-const tournamentLinks = [
-  { label: 'La Copa', href: '/la-copa' },
-  { label: 'Sedes', href: '/sedes' },
-  { label: 'Preinscripciones', href: '/preinscripciones' },
-  { label: 'Fan App', href: '/fan-app' },
-  { label: 'FAQ', href: '/faq' },
+/** Arte de cierre. El nombre original lleva espacio: hay que codificarlo. */
+const CTA_ART =
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-jugador%20de%20espaldas.webp';
+
+/** Contacto comercial del estudio que desarrolla el sitio. */
+const TREI_WHATSAPP =
+  'https://wa.me/593963576242?text=Hola%2C%20quisiera%20conocer%20los%20servicios%20de%20Trei%20Creatividad%20Digital.';
+
+/** Iconografía social oficial (R2). El icono de X espera a que se valide el perfil. */
+const SOCIAL_ICONS = {
+  facebook:
+    'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Icon%20Facebook.webp',
+  instagram:
+    'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Icon%20Instagram.webp',
+  tiktok: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Icon%20TikTok.webp',
+  youtube: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Icon%20Youtube.webp',
+  x: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Icon%20X.webp',
+} as const;
+
+/* -------------------------------------------------------------------------- */
+/* Datos                                                                       */
+/* -------------------------------------------------------------------------- */
+
+/** Rutas internas: todas existen en el router público. */
+const navigationLinks = [
+  { label: 'La Copa', to: '/la-copa' },
+  { label: 'Sedes', to: '/sedes' },
+  { label: 'Inscripciones', to: '/inscripciones' },
+  { label: 'Fan App', to: FAN_APP_URL, external: true },
+  { label: 'FAQ', to: '/faq' },
 ] as const;
 
-const participantHubs = [
-  { label: 'Costa', icon: MapPin },
-  { label: 'Sierra y Amazonía', icon: MapPin },
-  { label: 'Final Nacional', icon: Trophy },
-] as const;
-
-const officialLinks = [
+/**
+ * Solo recursos con destino real verificado.
+ * Reglamento, Calendario y Noticias no tienen destino todavía: no se listan.
+ */
+const resourceLinks = [
   {
-    label: 'WhatsApp',
-    href: 'https://wa.me/593989655352?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.',
-    icon: MessageCircle,
-    color: 'hover:bg-green-500/20 hover:text-green-300',
+    label: 'Galería',
+    href: 'https://www.flickr.com/photos/203541641@N03/albums/',
   },
+  {
+    label: 'Contacto',
+    href: 'https://wa.me/593989655352?text=Hola%2C%20quiero%20unirme%20al%20canal%20oficial%20del%20Torneo%20Intercolegial%20Marathon.',
+  },
+] as const;
+
+/**
+ * Solo redes con perfil real verificado. Los href no cambian: vienen del Footer anterior.
+ * WhatsApp y Flickr salen de esta fila — sus destinos ya viven en Recursos (Contacto y Galería).
+ */
+const socialLinks = [
   {
     label: 'Facebook',
     href: 'https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/',
-    icon: ExternalLink,
-    color: 'hover:bg-blue-500/20 hover:text-blue-300',
+    icon: SOCIAL_ICONS.facebook,
   },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/copamarathonec/',
-    icon: Instagram,
-    color: 'hover:bg-pink-500/20 hover:text-pink-300',
+    icon: SOCIAL_ICONS.instagram,
   },
   {
     label: 'TikTok',
     href: 'https://www.tiktok.com/@copamarathonec',
-    icon: ExternalLink,
-    color: 'hover:bg-purple-500/20 hover:text-purple-300',
+    icon: SOCIAL_ICONS.tiktok,
   },
   {
-    label: 'Flickr',
-    href: 'https://www.flickr.com/photos/203541641@N03/albums/',
-    iconUrl: '/images/mailing/flickr.png',
-    color: 'hover:bg-sky-500/20 hover:text-sky-300',
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@copamarathonec',
+    icon: SOCIAL_ICONS.youtube,
   },
 ] as const;
 
-const trustStats = [
-  { label: '600+ Equipos', icon: Trophy },
-  { label: '12.000+ Jugadores', icon: Users },
-  { label: '1.400+ Partidos', icon: Calendar },
-] as const;
+const columnTitleClass =
+  'text-[0.82rem] font-normal uppercase tracking-[0.18em] text-[#E21B2D]';
+
+const linkClass =
+  'inline-block text-[0.9rem] leading-none text-white/72 transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white';
+
+const shellClass = 'mx-auto w-full max-w-[1500px] px-[clamp(1.5rem,5vw,5rem)]';
 
 export default function Footer() {
-  const navigate = useNavigate();
-  const [isVisible, setIsVisible] = useState(false);
-  const footerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.08 }
-    );
-
-    if (footerRef.current) observer.observe(footerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const handleNavClick = (href: string) => {
-    navigate(href);
-  };
-
   return (
-    <footer
-      ref={footerRef}
-      className="relative overflow-hidden border-t border-white/10 bg-marathon-surface-stadium text-marathon-text-on-dark"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%)] opacity-60" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.04)_50%,rgba(255,255,255,0.04)_75%,transparent_75%,transparent)] bg-[length:52px_52px] opacity-10" />
-
-      <Container className="relative py-12 sm:py-16">
+    <footer className="relative text-white">
+      {/* ------------------------------------------------- NIVEL A · CTA */}
+      <section
+        aria-label="Vive la Copa"
+        className="relative isolate flex min-h-[clamp(170px,11.5vw,215px)] items-center overflow-hidden bg-[#062A4F]"
+      >
+        <img
+          src={CTA_ART}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-[22%_center] sm:object-[15%_center] lg:object-[left_center]"
+        />
+        {/* Gradiente navy suave: solo lo necesario para que el texto lea. */}
         <div
-          className={`grid gap-10 transition-all duration-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-          } lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]`}
-        >
-          <div className="grid gap-6">
-            <div className="grid gap-5 rounded-2xl border border-white/10 bg-marathon-surface-stadium-raised p-5 sm:p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2">
-                  <img
-                    src="/marathon-logo.webp"
-                    alt="Copa Nacional Marathon Intercolegial Ecuador 2026"
-                    className="h-full w-full object-contain"
-                    onError={(event) => {
-                      const target = event.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      target.parentElement!.innerHTML =
-                        '<span class="text-xl font-black text-white">M</span>';
-                    }}
-                  />
-                </div>
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(6,42,79,0.55)_0%,rgba(6,42,79,0.2)_22%,rgba(6,42,79,0.78)_52%,rgba(6,42,79,0.92)_100%)]"
+        />
 
-                <div className="min-w-0">
-                  <h3 className="font-montserrat text-base font-black uppercase leading-tight tracking-[0.08em] text-white sm:text-lg">
-                    Copa Nacional Marathon Intercolegial Ecuador 2026
-                  </h3>
-                  <p className="mt-2 max-w-xl font-inter text-sm leading-relaxed text-white/68">
-                    Competencia colegial de alcance nacional. Formando campeones dentro y fuera de
-                    la cancha.
-                  </p>
-                </div>
-              </div>
+        <div className={`${shellClass} py-[clamp(1.5rem,2.4vw,1.875rem)]`}>
+          <div className="grid items-center gap-[clamp(1.25rem,2.4vw,2.5rem)] lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.5fr)_auto]">
+            <span aria-hidden="true" className="hidden lg:block" />
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                {trustStats.map((stat) => {
-                  const Icon = stat.icon;
-
-                  return (
-                    <div
-                      key={stat.label}
-                      className="flex min-w-0 items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3"
-                    >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-marathon-action-primary text-white shadow-button">
-                        <Icon size={18} />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="font-montserrat text-sm font-black text-white">
-                          {stat.label.split(' ')[0]}
-                        </div>
-                        <div className="font-inter text-xs text-white/55">
-                          {stat.label.split(' ').slice(1).join(' ')}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+            <div className="lg:text-center">
+              <p
+                className="text-[clamp(2.75rem,4vw,4.5rem)] font-normal uppercase leading-[0.85] tracking-[0.01em] text-[#F4F8FC]"
+                style={{ fontFamily: BEBAS }}
+              >
+                Vive la Copa
+              </p>
+              <p className="mt-2 text-[clamp(0.7rem,1vw,0.86rem)] font-bold uppercase leading-snug tracking-[0.1em] text-white/80">
+                Desde sus reglas, sus categorías y su historia.
+              </p>
             </div>
 
-            <div className="grid gap-4 rounded-2xl border border-white/10 bg-marathon-surface-stadium-raised p-5 sm:p-6">
-              <div className="flex min-w-0 items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-marathon-action-primary text-white shadow-button">
-                  <ShieldCheck size={18} />
-                </span>
-                <div className="min-w-0">
-                  <p className="font-montserrat text-sm font-black uppercase tracking-[0.08em] text-white">
-                    Equipo interno
-                  </p>
-                  <p className="mt-1 text-sm leading-relaxed text-white/60">
-                    Acceso seguro al CRM de onboarding.
-                  </p>
-                </div>
-              </div>
-
-              <Button
-                type="button"
-                variant="ghost"
-                onClick={() => navigate('/admin/login')}
-                className="w-full justify-center rounded-lg border border-white/15 bg-white/5 px-5 py-3 font-montserrat text-sm font-black uppercase tracking-[0.08em] text-white hover:bg-white/10 hover:text-white"
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a
+                href={FAN_APP_URL}
+                {...EXTERNAL_LINK_PROPS}
+                className="inline-flex items-center justify-center gap-3 rounded-[7px] bg-[#E21B2D] px-7 py-3.5 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-white transition-[background-color,transform] duration-200 ease-out hover:-translate-y-[2px] hover:bg-[#c41626] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none"
               >
-                <LayoutDashboard size={17} />
-                Acceso CRM
-              </Button>
+                Abrir en Fan App
+                <span aria-hidden="true">→</span>
+              </a>
+              <Link
+                to="/inscripciones"
+                className="inline-flex items-center justify-center gap-3 rounded-[7px] border border-white/45 px-7 py-3.5 text-[0.8rem] font-bold uppercase tracking-[0.1em] text-white transition-[background-color,border-color,transform] duration-200 ease-out hover:-translate-y-[2px] hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none"
+              >
+                Ir a inscripciones
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid gap-8">
-            <nav aria-label="Navegación secundaria" className="grid gap-8 sm:grid-cols-3">
-              <FooterColumn title="El Torneo" delay={80}>
-                {tournamentLinks.map((link) => (
-                  <button
-                    key={link.label}
-                    type="button"
-                    onClick={() => handleNavClick(link.href)}
-                    className="group -mx-3 flex min-h-11 items-center rounded-lg px-3 text-left font-inter text-sm text-white/70 transition-colors hover:bg-white/6 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
-                  >
-                    <span className="relative">
-                      {link.label}
-                      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-marathon-gold transition-all duration-300 group-hover:w-full" />
-                    </span>
-                  </button>
-                ))}
-              </FooterColumn>
+      {/* --------------------------------------- NIVEL B · Institucional */}
+      <div className="border-t border-white/10 bg-[linear-gradient(180deg,#062A4F_0%,#041D36_100%)]">
+        <div className={`${shellClass} py-[clamp(1.625rem,2.4vw,2.25rem)]`}>
+          <div className="grid gap-[clamp(1.5rem,2.2vw,2rem)] md:grid-cols-2 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.7fr)_minmax(0,0.7fr)_minmax(0,1.1fr)]">
+            {/* Marca */}
+            <div>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/marathon-logo.webp"
+                  alt="Copa Nacional Intercolegial Marathon Ecuador"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-[clamp(66px,5.4vw,84px)] w-auto shrink-0 object-contain"
+                />
+                <p className="max-w-[30ch] text-[0.86rem] leading-[1.5] text-white/70">
+                  Competencia colegial de alcance nacional. Formando campeones dentro y fuera de la
+                  cancha.
+                </p>
+              </div>
 
-              <FooterColumn title="Sedes" delay={140}>
-                {participantHubs.map((item) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex min-h-11 items-center gap-2 font-inter text-sm text-white/70"
+              <ul className="mt-3 flex flex-wrap items-center gap-3">
+                {socialLinks.map(({ label, href, icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={label}
+                      className="flex h-11 w-11 items-center justify-center -ml-[9px] opacity-90 transition-[opacity,transform] duration-200 ease-out hover:-translate-y-[1px] hover:scale-[1.04] hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none"
                     >
-                      <Icon size={13} className="shrink-0 text-marathon-gold/80" />
-                      <span>{item.label}</span>
-                    </div>
-                  );
-                })}
-              </FooterColumn>
+                      <img
+                        src={icon}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        width={26}
+                        className="h-auto w-[26px] object-contain"
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <FooterColumn title="Canales Oficiales" delay={200}>
-                <div className="flex flex-col gap-2">
-                  {officialLinks.map((link) => {
-                    const Icon = 'icon' in link ? link.icon : null;
-
-                    return (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target={link.href.startsWith('http') ? '_blank' : undefined}
-                        rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                        className={`group -mx-2.5 inline-flex min-h-11 items-center gap-2.5 rounded-lg px-2.5 py-2 font-inter text-sm text-white/70 transition-colors ${link.color}`}
-                      >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 transition-colors duration-300 group-hover:bg-white/10">
-                          {'iconUrl' in link ? (
-                            <img src={link.iconUrl} alt="" className="h-5 w-5 object-contain" />
-                          ) : (
-                            Icon && <Icon size={15} />
-                          )}
-                        </span>
-                        <span className="relative">
-                          {link.label}
-                          <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-current transition-all duration-300 group-hover:w-full" />
-                        </span>
+            {/* Navegación */}
+            <nav aria-label="Navegación del sitio">
+              <p className={columnTitleClass} style={{ fontFamily: BEBAS }}>
+                Navegación
+              </p>
+              <ul className="mt-3.5 flex flex-col gap-3">
+                {navigationLinks.map((link) => (
+                  <li key={link.to}>
+                    {'external' in link && link.external ? (
+                      <a href={link.to} className={linkClass} {...EXTERNAL_LINK_PROPS}>
+                        {link.label}
                       </a>
-                    );
-                  })}
-                </div>
-              </FooterColumn>
+                    ) : (
+                      <Link to={link.to} className={linkClass}>
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </nav>
 
-            <Surface
-              variant="stadium"
-              className="border border-white/10 bg-marathon-surface-stadium-raised"
-            >
-              <div className="flex flex-col gap-4 p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
-                <div className="min-w-0">
-                  <p className="font-montserrat text-xs font-black uppercase tracking-[0.22em] text-marathon-gold">
-                    VIVE LA COPA EN TODO MOMENTO
-                  </p>
-                  <p className="mt-2 max-w-2xl font-inter text-sm leading-relaxed text-white/68">
-                    Sigue partidos, resultados y actualidad desde la Fan App con una experiencia
-                    móvil pensada para el torneo.
-                  </p>
-                </div>
+            {/* Recursos */}
+            <nav aria-label="Recursos oficiales">
+              <p className={columnTitleClass} style={{ fontFamily: BEBAS }}>
+                Recursos
+              </p>
+              <ul className="mt-3.5 flex flex-col gap-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className={linkClass}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-                <Button
-                  type="button"
-                  variant="action"
-                  size="cta"
-                  onClick={() => navigate('/fan-app')}
-                  className="w-full justify-center rounded-lg px-6 font-montserrat text-sm font-black uppercase tracking-[0.08em] shadow-button lg:w-auto"
-                >
-                  Abrir Fan App
-                </Button>
-              </div>
-            </Surface>
+            {/* Acceso interno: href heredado tal cual del Footer anterior. */}
+            <div className="border-t border-white/12 pt-5 lg:border-l lg:border-t-0 lg:pl-[clamp(1.25rem,2vw,2rem)] lg:pt-0">
+              <p
+                className="text-[0.8rem] font-normal uppercase tracking-[0.16em] text-white/55"
+                style={{ fontFamily: BEBAS }}
+              >
+                Acceso equipo interno
+              </p>
+              <p className="mt-2 max-w-[32ch] text-[0.82rem] leading-[1.5] text-white/55">
+                Acceso seguro a las herramientas de gestión y onboarding del torneo.
+              </p>
+              <Link
+                to="/admin/login"
+                className="mt-4 inline-flex min-h-[44px] items-center gap-2.5 rounded-[7px] border border-white/20 bg-white/[0.04] px-4 py-2.5 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white/80 transition-[background-color,border-color,color,transform] duration-200 ease-out hover:-translate-y-[1px] hover:border-white/35 hover:bg-white/[0.08] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none"
+              >
+                Acceder al CRM
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </div>
 
-        <div
-          className={`mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 transition-all duration-700 ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-          } lg:flex-row lg:items-center lg:justify-between`}
-        >
-          <span className="font-inter text-xs text-white/42">
-            © 2026 Copa Nacional Marathon Intercolegial Ecuador
-          </span>
-
-          <div className="flex flex-col items-start gap-1 text-left font-inter text-xs text-white/34 lg:flex-row lg:items-center lg:gap-6">
-            <span>Organizado con respaldo de Fundación Marathon Sports Ecuador</span>
-            <span className="hidden text-white/20 lg:inline">•</span>
-            <span>Diseñado por Trei Creatividad Digital</span>
+        {/* ------------------------------------------- NIVEL C · Legales */}
+        <div className="border-t border-white/10">
+          <div
+            className={`${shellClass} flex flex-col gap-2 py-4 text-[0.72rem] leading-relaxed text-white/45 lg:flex-row lg:items-center lg:justify-between lg:gap-6`}
+          >
+            <span>
+              © 2026 Copa Nacional Intercolegial Marathon Ecuador. Todos los derechos reservados.
+            </span>
+            <span className="lg:text-center">
+              Organizado con respaldo de Fundación Marathon Sports Ecuador
+            </span>
+            <span>
+              Desarrollado por{' '}
+              <a
+                href={TREI_WHATSAPP}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-white/60 underline decoration-white/25 underline-offset-[3px] transition-colors duration-200 hover:text-white hover:decoration-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Trei Creatividad Digital
+              </a>
+            </span>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
-  );
-}
-
-function FooterColumn({
-  title,
-  children,
-  delay = 0,
-}: {
-  title: string;
-  children: ReactNode;
-  delay?: number;
-}) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
-  return (
-    <div
-      ref={ref}
-      className={`min-w-0 transition-all duration-700 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-      }`}
-    >
-      <h4 className="mb-4 flex items-center gap-2 font-montserrat text-[0.75rem] font-black uppercase tracking-[0.2em] text-white/88">
-        <span className="h-1.5 w-1.5 rounded-full bg-marathon-gold" />
-        {title}
-      </h4>
-      <div className="flex flex-col gap-2.5">{children}</div>
-    </div>
   );
 }
