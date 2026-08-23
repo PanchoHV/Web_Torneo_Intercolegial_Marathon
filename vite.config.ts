@@ -9,6 +9,14 @@ export default defineConfig({
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,
+    // Permite servir el dev server a través de un túnel ngrok para revisión
+    // externa. Solo afecta a desarrollo; no cambia el build de producción.
+    allowedHosts: [
+      '.ngrok-free.dev',
+      '.ngrok-free.app',
+      '.ngrok.app',
+      '.ngrok.io',
+    ],
   },
   resolve: {
     alias: {

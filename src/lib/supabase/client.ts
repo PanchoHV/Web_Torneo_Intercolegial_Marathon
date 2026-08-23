@@ -6,9 +6,11 @@ const supabasePublishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 export const isSupabaseConfigured =
   Boolean(supabaseUrl) && Boolean(supabasePublishableKey);
 
-console.log("VITE_SUPABASE_URL:", supabaseUrl);
-console.log("VITE_SUPABASE_PUBLISHABLE_KEY:", supabasePublishableKey);
-console.log("isSupabaseConfigured:", isSupabaseConfigured);
+if (import.meta.env.DEV && !isSupabaseConfigured) {
+  console.warn(
+    "Supabase no configurado: faltan VITE_SUPABASE_URL o VITE_SUPABASE_PUBLISHABLE_KEY."
+  );
+}
 
 export const supabase = isSupabaseConfigured
   ? createClient(supabaseUrl, supabasePublishableKey)
