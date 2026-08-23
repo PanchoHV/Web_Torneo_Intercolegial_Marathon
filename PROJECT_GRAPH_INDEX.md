@@ -10,18 +10,19 @@ It is not business truth, not authorization to edit, and not a replacement for s
 
 - Repository: `PanchoHV/Web_Torneo_Intercolegial_Marathon`
 - Branch: `feat/copa-2026-redesign`
-- Source HEAD: `06342f8716dfd98849eb10d246cd2168566351e6`
+- Source HEAD: `10c73ad35829dd6dbff74af8e6d391f568977d61`
 - Graphify version: `0.9.11`
 - Extraction mode: `code-only`, `no-cluster`, local
 - M0 milestone refresh command: `graphify update . --no-cluster`
+- Last refresh: M3 loop `3D` (structural files added under `src/sections/copa/` and `src/sections/home/`)
 - Refresh status: `PASS`
 - Query logging: disabled
 - External semantic services: disabled
 
 ## 3. Graph statistics
 
-- Node count: `973`
-- Edge count: `2007`
+- Node count: `1092`
+- Edge count: `2265`
 - Critical entrypoints:
   - `src/main.tsx` - FOUND
   - `src/App.tsx` - FOUND

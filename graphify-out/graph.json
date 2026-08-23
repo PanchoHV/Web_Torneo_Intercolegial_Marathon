@@ -896,7 +896,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast"
     },
     {
@@ -913,6 +913,22 @@
       "file_type": "code",
       "source_file": "src/components/ScrollToTop.tsx",
       "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_scrolltotoponnavigate",
+      "label": "ScrollToTopOnNavigate.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ScrollToTopOnNavigate.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_scrolltotoponnavigate_scrolltotoponnavigate",
+      "label": "ScrollToTopOnNavigate()",
+      "file_type": "code",
+      "source_file": "src/components/ScrollToTopOnNavigate.tsx",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -4492,6 +4508,38 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_assets_textures",
+      "label": "textures.ts",
+      "file_type": "code",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_assets_textures_file",
+      "label": "file()",
+      "file_type": "code",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_assets_textures_textures",
+      "label": "textures",
+      "file_type": "code",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_assets_textures_texturename",
+      "label": "TextureName",
+      "file_type": "code",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_auth_adminauth",
       "label": "adminAuth.tsx",
       "file_type": "code",
@@ -4564,6 +4612,22 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_constants_links",
+      "label": "links.ts",
+      "file_type": "code",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_links_external_link_props",
+      "label": "EXTERNAL_LINK_PROPS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_constants_registrationoptions",
       "label": "registrationOptions.ts",
       "file_type": "code",
@@ -4617,6 +4681,78 @@
       "file_type": "code",
       "source_file": "src/lib/constants/registrationOptions.ts",
       "source_location": "L32",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage",
+      "label": "sedesPage.ts",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_featuredvenuecontent",
+      "label": "FeaturedVenueContent",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_featuredvenue",
+      "label": "FeaturedVenue",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_sedes_hero_assets",
+      "label": "SEDES_HERO_ASSETS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L48",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_sedes_brand_overlays",
+      "label": "SEDES_BRAND_OVERLAYS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L68",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_featured_venue_content",
+      "label": "FEATURED_VENUE_CONTENT",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L82",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_fallback_featured_content",
+      "label": "FALLBACK_FEATURED_CONTENT",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L103",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_venue_quick_access",
+      "label": "VENUE_QUICK_ACCESS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L121",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_sedespage_venue_faq_items",
+      "label": "VENUE_FAQ_ITEMS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L153",
       "_origin": "ast"
     },
     {
@@ -4920,7 +5056,7 @@
       "label": "HomePage()",
       "file_type": "code",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L14",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -4952,7 +5088,7 @@
       "label": "LaCopaPage()",
       "file_type": "code",
       "source_file": "src/pages/LaCopaPage.tsx",
-      "source_location": "L1",
+      "source_location": "L7",
       "_origin": "ast"
     },
     {
@@ -4968,7 +5104,7 @@
       "label": "SedesPage()",
       "file_type": "code",
       "source_file": "src/pages/SedesPage.tsx",
-      "source_location": "L1",
+      "source_location": "L31",
       "_origin": "ast"
     },
     {
@@ -5300,35 +5436,35 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_footer_tournamentlinks",
-      "label": "tournamentLinks",
+      "id": "src_sections_footer_social_icons",
+      "label": "SOCIAL_ICONS",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L19",
+      "source_location": "L15",
       "_origin": "ast"
     },
     {
-      "id": "src_sections_footer_participanthubs",
-      "label": "participantHubs",
+      "id": "src_sections_footer_navigationlinks",
+      "label": "navigationLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L27",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
-      "id": "src_sections_footer_officiallinks",
-      "label": "officialLinks",
+      "id": "src_sections_footer_resourcelinks",
+      "label": "resourceLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L33",
+      "source_location": "L42",
       "_origin": "ast"
     },
     {
-      "id": "src_sections_footer_truststats",
-      "label": "trustStats",
+      "id": "src_sections_footer_sociallinks",
+      "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L66",
+      "source_location": "L57",
       "_origin": "ast"
     },
     {
@@ -5336,15 +5472,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L72",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_footer_footercolumn",
-      "label": "FooterColumn()",
-      "file_type": "code",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L305",
+      "source_location": "L88",
       "_origin": "ast"
     },
     {
@@ -5360,7 +5488,7 @@
       "label": "HERO_FIELD",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -5368,7 +5496,7 @@
       "label": "HERO_ELEMENTS",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast"
     },
     {
@@ -5376,7 +5504,7 @@
       "label": "HERO_PLAYERS",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast"
     },
     {
@@ -5384,7 +5512,7 @@
       "label": "HERO_PHONE",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast"
     },
     {
@@ -5392,7 +5520,7 @@
       "label": "Hero()",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L188",
+      "source_location": "L189",
       "_origin": "ast"
     },
     {
@@ -5408,7 +5536,7 @@
       "label": "navLinks",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "_origin": "ast"
     },
     {
@@ -5416,7 +5544,7 @@
       "label": "Navigation()",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -5532,6 +5660,206 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_copa_copachapternav",
+      "label": "CopaChapterNav.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copachapternav_chapters",
+      "label": "chapters",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copachapternav_copachapternav",
+      "label": "CopaChapterNav()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaformatsection",
+      "label": "CopaFormatSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaformatsection_formatstep",
+      "label": "FormatStep",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaformatsection_steps",
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaformatsection_staraccent",
+      "label": "StarAccent()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L47",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaformatsection_copaformatsection",
+      "label": "CopaFormatSection()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaherosection",
+      "label": "CopaHeroSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copaherosection_copaherosection",
+      "label": "CopaHeroSection()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection",
+      "label": "CopaHistorySection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_file",
+      "label": "file()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_milestones",
+      "label": "milestones",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_scale_icons",
+      "label": "SCALE_ICONS",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_scalemetrics",
+      "label": "scaleMetrics",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L67",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_category_icons",
+      "label": "CATEGORY_ICONS",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L75",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_categories",
+      "label": "categories",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L83",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_rules_art",
+      "label": "RULES_ART",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L92",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_formatcount",
+      "label": "formatCount()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L100",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_paneltitle",
+      "label": "PanelTitle()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L108",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copahistorysection_copahistorysection",
+      "label": "CopaHistorySection()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L129",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copawhatissection",
+      "label": "CopaWhatIsSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copawhatissection_pillars",
+      "label": "pillars",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copawhatissection_staraccent",
+      "label": "StarAccent()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_copa_copawhatissection_copawhatissection",
+      "label": "CopaWhatIsSection()",
+      "file_type": "code",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_home_aboutcopasection",
       "label": "AboutCopaSection.tsx",
       "file_type": "code",
@@ -5540,11 +5868,43 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_home_aboutcopasection_about_copa_assets",
+      "label": "ABOUT_COPA_ASSETS",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_home_aboutcopasection_historicalfacts",
       "label": "historicalFacts",
       "file_type": "code",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
-      "source_location": "L10",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_aboutcopasection_tiltapi",
+      "label": "TiltApi",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L74",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_aboutcopasection_noop",
+      "label": "noop()",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L90",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_aboutcopasection_formatcount",
+      "label": "formatCount()",
+      "file_type": "code",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L92",
       "_origin": "ast"
     },
     {
@@ -5552,7 +5912,151 @@
       "label": "AboutCopaSection()",
       "file_type": "code",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_fanappsection",
+      "label": "FanAppSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_fanappsection_file",
+      "label": "file()",
+      "file_type": "code",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_fanappsection_fan_app_art",
+      "label": "FAN_APP_ART",
+      "file_type": "code",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_fanappsection_fanapprailitems",
+      "label": "fanAppRailItems",
+      "file_type": "code",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_fanappsection_fanappsection",
+      "label": "FanAppSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L36",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_faqsection",
+      "label": "FaqSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_faqsection_faqitem",
+      "label": "FaqItem",
+      "file_type": "code",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_faqsection_faqsectionprops",
+      "label": "FaqSectionProps",
+      "file_type": "code",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_faqsection_faq_items",
+      "label": "FAQ_ITEMS",
+      "file_type": "code",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_faqsection_faqsection",
+      "label": "FaqSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L67",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection",
+      "label": "RegionStatusSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_registrationstatus",
+      "label": "RegistrationStatus",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_regionregistration",
+      "label": "RegionRegistration",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_registration_status",
+      "label": "REGISTRATION_STATUS",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
       "source_location": "L37",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_statustheme",
+      "label": "StatusTheme",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L78",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_status_theme",
+      "label": "STATUS_THEME",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_visibleregions",
+      "label": "visibleRegions",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L143",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_regionstatussection_regionstatussection",
+      "label": "RegionStatusSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L145",
       "_origin": "ast"
     },
     {
@@ -5568,7 +6072,7 @@
       "label": "CopaBarState",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast"
     },
     {
@@ -5576,7 +6080,7 @@
       "label": "CopaBarConfig",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "_origin": "ast"
     },
     {
@@ -5584,7 +6088,7 @@
       "label": "COPA_BAR_CONFIG",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -5592,7 +6096,7 @@
       "label": "stateLabels",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast"
     },
     {
@@ -5600,7 +6104,7 @@
       "label": "SmartCopaBar()",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L44",
+      "source_location": "L45",
       "_origin": "ast"
     },
     {
@@ -5612,11 +6116,331 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_home_sponsorssection_sponsoritem",
+      "label": "SponsorItem",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_opticaltuning",
+      "label": "OpticalTuning",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L53",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_optical",
+      "label": "OPTICAL",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_rest_filter",
+      "label": "REST_FILTER",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L78",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_logofile",
+      "label": "logoFile()",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L83",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_sponsor_items",
+      "label": "SPONSOR_ITEMS",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L86",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_islive",
+      "label": "isLive()",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L111",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_visible",
+      "label": "visible",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L118",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_logos",
+      "label": "logos",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L119",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_banners",
+      "label": "banners",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L120",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_sponsorssection_sponsorlogo",
+      "label": "SponsorLogo()",
+      "file_type": "code",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L122",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_home_sponsorssection_sponsorssection",
       "label": "SponsorsSection()",
       "file_type": "code",
       "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L166",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection",
+      "label": "VenuesByRegionSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
       "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection_previewregion",
+      "label": "PreviewRegion",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection_preview_regions",
+      "label": "PREVIEW_REGIONS",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection_getregionvenues",
+      "label": "getRegionVenues()",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L39",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection_formatvenueline",
+      "label": "formatVenueLine()",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L43",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_home_venuesbyregionsection_venuesbyregionsection",
+      "label": "VenuesByRegionSection()",
+      "file_type": "code",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L50",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_featuredvenuesection",
+      "label": "FeaturedVenueSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_featuredvenuesection_featuredvenuesectionprops",
+      "label": "FeaturedVenueSectionProps",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_featuredvenuesection_handleinfoscroll",
+      "label": "handleInfoScroll()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L34",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_featuredvenuesection_featuredvenuesection",
+      "label": "FeaturedVenueSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection",
+      "label": "SedesExplorerSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_regionfilter",
+      "label": "RegionFilter",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_sedesexplorersectionprops",
+      "label": "SedesExplorerSectionProps",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L29",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_region_tint",
+      "label": "REGION_TINT",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_month_abbr",
+      "label": "MONTH_ABBR",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_tocompactdate",
+      "label": "toCompactDate()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L65",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_filtervenues",
+      "label": "filterVenues()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L75",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_sedesexplorersection",
+      "label": "SedesExplorerSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L91",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_venuecardprops",
+      "label": "VenueCardProps",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L472",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesexplorersection_venuecard",
+      "label": "VenueCard()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L479",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesherosection",
+      "label": "SedesHeroSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_sedesherosection_sedesherosection",
+      "label": "SedesHeroSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L31",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venuefaqsection",
+      "label": "VenueFaqSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venuefaqsection_venuefaqsection",
+      "label": "VenueFaqSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venueinfosection",
+      "label": "VenueInfoSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venueinfosection_venueinfosectionprops",
+      "label": "VenueInfoSectionProps",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venueinfosection_venueinfosection",
+      "label": "VenueInfoSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venuequickaccesssection",
+      "label": "VenueQuickAccessSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_sedes_venuequickaccesssection_venuequickaccesssection",
+      "label": "VenueQuickAccessSection()",
+      "file_type": "code",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L14",
       "_origin": "ast"
     },
     {
@@ -7328,7 +8152,7 @@
       "label": "3. Graph statistics",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast"
     },
     {
@@ -7336,7 +8160,7 @@
       "label": "4. Graph artifacts",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast"
     },
     {
@@ -7344,7 +8168,7 @@
       "label": "Shared / candidate for versioning",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast"
     },
     {
@@ -7352,7 +8176,7 @@
       "label": "Local / ignored",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast"
     },
     {
@@ -7360,7 +8184,7 @@
       "label": "5. Critical entrypoints",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L41",
+      "source_location": "L42",
       "_origin": "ast"
     },
     {
@@ -7368,7 +8192,7 @@
       "label": "6. Graph usage rule",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L48",
+      "source_location": "L49",
       "_origin": "ast"
     },
     {
@@ -7376,7 +8200,7 @@
       "label": "7. Approved query patterns",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L62",
+      "source_location": "L63",
       "_origin": "ast"
     },
     {
@@ -7384,7 +8208,7 @@
       "label": "8. Graph update policy",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L71",
+      "source_location": "L72",
       "_origin": "ast"
     },
     {
@@ -7392,7 +8216,7 @@
       "label": "9. Milestone refresh note",
       "file_type": "document",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L94",
+      "source_location": "L95",
       "_origin": "ast"
     },
     {
@@ -10132,7 +10956,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_analytics_routeanalytics",
+      "target": "src_components_scrolltotoponnavigate",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10142,7 +10966,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_layout_publiclayout",
+      "target": "src_components_analytics_routeanalytics",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10152,7 +10976,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_homepage",
+      "target": "src_components_layout_publiclayout",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10162,7 +10986,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage",
+      "target": "src_pages_homepage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10172,7 +10996,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_fanapppage",
+      "target": "src_pages_faqpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10182,7 +11006,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_lacopapage",
+      "target": "src_pages_fanapppage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10192,7 +11016,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_inscripcionespage",
+      "target": "src_pages_lacopapage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10202,7 +11026,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_login",
+      "target": "src_pages_inscripcionespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10212,7 +11036,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_auditpage",
+      "target": "src_pages_admin_login",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10222,7 +11046,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_myaccesspage",
+      "target": "src_pages_admin_auditpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10232,7 +11056,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdashboard",
+      "target": "src_pages_admin_myaccesspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10242,7 +11066,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdetail",
+      "target": "src_pages_admin_onboardingdashboard",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10252,7 +11076,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_userspage",
+      "target": "src_pages_admin_onboardingdetail",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10262,7 +11086,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_sedespage",
+      "target": "src_pages_admin_userspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -10272,11 +11096,21 @@
     },
     {
       "source": "src_app",
+      "target": "src_pages_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
       "target": "src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -10306,6 +11140,35 @@
       "confidence": "EXTRACTED",
       "source_file": "src/components/ScrollToTop.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_scrolltotoponnavigate",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ScrollToTopOnNavigate.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_scrolltotoponnavigate",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ScrollToTopOnNavigate.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_scrolltotoponnavigate",
+      "target": "src_components_scrolltotoponnavigate_scrolltotoponnavigate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ScrollToTopOnNavigate.tsx",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -17866,6 +18729,33 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_assets_textures",
+      "target": "src_lib_assets_textures_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_assets_textures",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_assets_textures",
+      "target": "src_lib_assets_textures_texturename",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/assets/textures.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_auth_adminauth",
       "target": "ref_supabase_supabase_js",
       "relation": "imports_from",
@@ -18039,6 +18929,15 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_constants_links",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_constants_registrationoptions",
       "target": "src_types_registration",
       "relation": "imports_from",
@@ -18140,6 +19039,138 @@
       "confidence": "EXTRACTED",
       "source_file": "src/lib/constants/registrationOptions.ts",
       "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_venues",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_venues_venue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_featuredvenuecontent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_featuredvenue",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_sedes_hero_assets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_sedes_brand_overlays",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_featured_venue_content",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_fallback_featured_content",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_venue_quick_access",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_sedespage",
+      "target": "src_lib_constants_sedespage_venue_faq_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/sedesPage.ts",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -18548,7 +19579,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_ctafinal",
+      "target": "src_sections_hero",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18558,7 +19589,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_comoinscribirse",
+      "target": "src_sections_home_aboutcopasection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18568,7 +19599,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_comunicacion",
+      "target": "src_sections_home_faqsection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18578,7 +19609,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_faq",
+      "target": "src_sections_home_fanappsection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18588,7 +19619,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_hero",
+      "target": "src_sections_home_regionstatussection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18598,7 +19629,7 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_venuesbyregionsection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -18628,31 +19659,11 @@
     },
     {
       "source": "src_pages_homepage",
-      "target": "src_sections_sedescalendario",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_homepage",
-      "target": "src_sections_tutoriales",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_homepage",
       "target": "src_pages_homepage_homepage",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -18726,11 +19737,231 @@
     },
     {
       "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copachapternav",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copaformatsection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copaherosection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copahistorysection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copawhatissection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
       "target": "src_pages_lacopapage_lacopapage",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_sedespage_default_featured_venue_id",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_sedespage_fallback_featured_content",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_sedespage_featured_venue_content",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_sedespage_venue_faq_description",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_sedespage_venue_faq_items",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_sedespage_featuredvenue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_venues",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_lib_constants_venues_venues",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_home_faqsection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_sedes_featuredvenuesection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_sedes_sedesexplorersection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_sedes_sedesherosection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_sedes_venueinfosection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -18739,7 +19970,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/SedesPage.tsx",
-      "source_location": "L1",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -20636,7 +21867,7 @@
     },
     {
       "source": "src_sections_footer",
-      "target": "ref_react",
+      "target": "ref_react_router",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -20646,7 +21877,7 @@
     },
     {
       "source": "src_sections_footer",
-      "target": "ref_lucide_react",
+      "target": "src_lib_constants_links",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -20656,19 +21887,28 @@
     },
     {
       "source": "src_sections_footer",
-      "target": "ref_react_router",
-      "relation": "imports_from",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L13",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
       "source": "src_sections_footer",
-      "target": "src_components_ui_button",
-      "relation": "imports_from",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
       "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
+      "target": "src_sections_footer_social_icons",
+      "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
       "source_location": "L15",
@@ -20676,88 +21916,29 @@
     },
     {
       "source": "src_sections_footer",
-      "target": "src_components_ui_button_button",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_components_ui_container",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_components_ui_container_container",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_components_ui_surface",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_components_ui_surface_surface",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_sections_footer_tournamentlinks",
+      "target": "src_sections_footer_navigationlinks",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L19",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
       "source": "src_sections_footer",
-      "target": "src_sections_footer_participanthubs",
+      "target": "src_sections_footer_resourcelinks",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L27",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
       "source": "src_sections_footer",
-      "target": "src_sections_footer_officiallinks",
+      "target": "src_sections_footer_sociallinks",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_sections_footer_truststats",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L66",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -20766,16 +21947,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_footer",
-      "target": "src_sections_footer_footercolumn",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L305",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -20860,11 +22032,41 @@
     },
     {
       "source": "src_sections_hero",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Hero.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_hero",
       "target": "src_sections_hero_hero_field",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -20873,7 +22075,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -20882,7 +22084,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -20891,7 +22093,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -20900,7 +22102,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L188",
+      "source_location": "L189",
       "weight": 1.0
     },
     {
@@ -21015,11 +22217,41 @@
     },
     {
       "source": "src_sections_navigation",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Navigation.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_navigation",
       "target": "src_sections_navigation_navlinks",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -21028,7 +22260,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -21271,6 +22503,406 @@
       "weight": 1.0
     },
     {
+      "source": "src_sections_copa_copachapternav",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copachapternav",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copachapternav",
+      "target": "src_sections_copa_copachapternav_chapters",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copachapternav",
+      "target": "src_sections_copa_copachapternav_copachapternav",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaChapterNav.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_sections_copa_copaformatsection_formatstep",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_sections_copa_copaformatsection_steps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_sections_copa_copaformatsection_staraccent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaformatsection",
+      "target": "src_sections_copa_copaformatsection_copaformatsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaFormatSection.tsx",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_sections_copa_copaherosection_copaherosection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_milestones",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_scale_icons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_scalemetrics",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_category_icons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_categories",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_rules_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_formatcount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_paneltitle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_copahistorysection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection_copahistorysection",
+      "target": "src_sections_copa_copahistorysection_formatcount",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_sections_copa_copawhatissection_pillars",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_sections_copa_copawhatissection_staraccent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copawhatissection",
+      "target": "src_sections_copa_copawhatissection_copawhatissection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
       "source": "src_sections_home_aboutcopasection",
       "target": "ref_react",
       "relation": "imports_from",
@@ -21282,7 +22914,7 @@
     },
     {
       "source": "src_sections_home_aboutcopasection",
-      "target": "ref_lucide_react",
+      "target": "ref_gsap",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21292,7 +22924,7 @@
     },
     {
       "source": "src_sections_home_aboutcopasection",
-      "target": "ref_gsap",
+      "target": "ref_gsap_scrolltrigger",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21302,22 +22934,12 @@
     },
     {
       "source": "src_sections_home_aboutcopasection",
-      "target": "ref_gsap_scrolltrigger",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/home/AboutCopaSection.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_home_aboutcopasection",
       "target": "src_components_ui_container",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -21327,7 +22949,16 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_about_copa_assets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -21336,7 +22967,34 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
-      "source_location": "L10",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_tiltapi",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_noop",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_formatcount",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -21345,7 +23003,452 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_aboutcopasection_aboutcopasection",
+      "target": "src_sections_home_aboutcopasection_formatcount",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/AboutCopaSection.tsx",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_status_badge",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_components_ui_status_badge_statusbadge",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_sections_home_fanappsection_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_sections_home_fanappsection_fan_app_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_sections_home_fanappsection_fanapprailitems",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_fanappsection",
+      "target": "src_sections_home_fanappsection_fanappsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FanAppSection.tsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_sections_home_faqsection_faqitem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_sections_home_faqsection_faqsectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_sections_home_faqsection_faq_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_faqsection",
+      "target": "src_sections_home_faqsection_faqsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/FaqSection.tsx",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_registrationstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_regionregistration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_registration_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
       "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_statustheme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_status_theme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_visibleregions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L143",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_regionstatussection",
+      "target": "src_sections_home_regionstatussection_regionstatussection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/RegionStatusSection.tsx",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -21460,11 +23563,41 @@
     },
     {
       "source": "src_sections_home_smartcopabar",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SmartCopaBar.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_smartcopabar",
       "target": "src_sections_home_smartcopabar_copabarstate",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -21473,7 +23606,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -21482,7 +23615,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -21491,7 +23624,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -21500,7 +23633,136 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L44",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_sponsoritem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_opticaltuning",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_optical",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_rest_filter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_logofile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_sponsor_items",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_islive",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_visible",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L118",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_logos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_banners",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_sponsorssection",
+      "target": "src_sections_home_sponsorssection_sponsorlogo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L122",
       "weight": 1.0
     },
     {
@@ -21509,7 +23771,1035 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SponsorsSection.tsx",
+      "source_location": "L166",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_lib_constants_venues",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_previewregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_preview_regions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_getregionvenues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_formatvenueline",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_venuesbyregionsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection_formatvenueline",
+      "target": "src_sections_home_venuesbyregionsection_getregionvenues",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection_venuesbyregionsection",
+      "target": "src_sections_home_venuesbyregionsection_formatvenueline",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_sedespage_featured_stats_disclaimer",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_lib_constants_sedespage_sedes_brand_overlays",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_lib_constants_sedespage_featuredvenue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_sections_sedes_featuredvenuesection_featuredvenuesectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_sections_sedes_featuredvenuesection_handleinfoscroll",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_featuredvenuesection",
+      "target": "src_sections_sedes_featuredvenuesection_featuredvenuesection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/FeaturedVenueSection.tsx",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_venues_ecuadorvenuemap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select_select",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select_selectcontent",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select_selectitem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select_selecttrigger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_select_selectvalue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_lib_constants_sedespage_sedes_brand_overlays",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_lib_constants_venues",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_lib_constants_venues_venue_region_options",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_lib_constants_venues_venue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_regionfilter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_sedesexplorersectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_region_tint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_month_abbr",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_tocompactdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_filtervenues",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_sedesexplorersection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L91",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_venuecardprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L472",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_venuecard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L479",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection_sedesexplorersection",
+      "target": "src_sections_sedes_sedesexplorersection_filtervenues",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L148",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesexplorersection_venuecard",
+      "target": "src_sections_sedes_sedesexplorersection_tocompactdate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesExplorerSection.tsx",
+      "source_location": "L480",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "ref_gsap",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "ref_gsap_scrolltrigger",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_lib_constants_sedespage_sedes_hero_assets",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_sections_sedes_sedesherosection_sedesherosection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_lib_constants_sedespage_venue_faq_items",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuefaqsection",
+      "target": "src_sections_sedes_venuefaqsection_venuefaqsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueFaqSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_lib_constants_sedespage_featuredvenue",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_sections_sedes_venueinfosection_venueinfosectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection",
+      "target": "src_sections_sedes_venueinfosection_venueinfosection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_surface",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_components_ui_surface_surface",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_lib_constants_sedespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_lib_constants_sedespage_venue_quick_access",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venuequickaccesssection",
+      "target": "src_sections_sedes_venuequickaccesssection_venuequickaccesssection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/VenueQuickAccessSection.tsx",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -24506,7 +27796,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -24515,7 +27805,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -24524,7 +27814,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -24533,7 +27823,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -24542,7 +27832,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -24551,7 +27841,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -24560,7 +27850,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -24569,7 +27859,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L71",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -24578,7 +27868,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "PROJECT_GRAPH_INDEX.md",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -25621,7 +28911,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_analytics_routeanalytics_routeanalytics",
+      "target": "src_components_scrolltotoponnavigate_scrolltotoponnavigate",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25631,7 +28921,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_layout_publiclayout_publiclayout",
+      "target": "src_components_analytics_routeanalytics_routeanalytics",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25641,7 +28931,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_homepage_homepage",
+      "target": "src_components_layout_publiclayout_publiclayout",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25651,7 +28941,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage_faqpage",
+      "target": "src_pages_homepage_homepage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25661,7 +28951,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_fanapppage_fanapppage",
+      "target": "src_pages_faqpage_faqpage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25671,7 +28961,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_lacopapage_lacopapage",
+      "target": "src_pages_fanapppage_fanapppage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -25681,22 +28971,12 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_sedespage_sedespage",
+      "target": "src_pages_lacopapage_lacopapage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_homepage",
-      "target": "src_sections_comunicacion_comunicacion",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L5",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -25706,7 +28986,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L7",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -25720,16 +29000,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_pages_homepage",
-      "target": "src_sections_home_sponsorssection_sponsorssection",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/HomePage.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
       "source": "src_pages_inscripcionespage",
       "target": "src_components_registrations_registrationhero_registrationhero",
       "relation": "imports",
@@ -25737,6 +29007,26 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/InscripcionesPage.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_lacopapage",
+      "target": "src_sections_copa_copachapternav_copachapternav",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/LaCopaPage.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage",
+      "target": "src_sections_sedes_venueinfosection_venueinfosection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -25767,6 +29057,16 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/SedesCalendario.tsx",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_home_venuesbyregionsection",
+      "target": "src_lib_constants_venues_venues",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/home/VenuesByRegionSection.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -28824,17 +32124,6 @@
       "weight": 1.0
     },
     {
-      "source": "users_pancho_desarrollo_intercolegial_marathon_src_sections_footer_tsx",
-      "target": "src_components_ui_calendar_calendar",
-      "relation": "indirect_call",
-      "context": "collection",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "src/sections/Footer.tsx",
-      "source_location": "L69",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_hero_hero",
       "target": "src_lib_analytics_gtm_trackctaclick",
       "relation": "calls",
@@ -28842,7 +32131,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L430",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -28853,7 +32142,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -28864,7 +32153,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_venueinfosection_venueinfosection",
+      "target": "src_sections_navigation_navigation",
+      "relation": "indirect_call",
+      "context": "collection",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/sections/sedes/VenueInfoSection.tsx",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -29118,6 +32418,17 @@
       "confidence_score": 1.0,
       "source_file": "src/hooks/use-mobile.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_sedespage_sedespage",
+      "target": "src_lib_constants_venues_venues",
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/pages/SedesPage.tsx",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
