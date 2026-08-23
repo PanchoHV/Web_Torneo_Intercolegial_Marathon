@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
 
-import CTAFinal from '@/sections/CTAFinal';
-import ComoInscribirse from '@/sections/ComoInscribirse';
-import Comunicacion from '@/sections/Comunicacion';
-import FAQ from '@/sections/FAQ';
 import Hero from '@/sections/Hero';
 import AboutCopaSection from '@/sections/home/AboutCopaSection';
+import FaqSection from '@/sections/home/FaqSection';
+import FanAppSection from '@/sections/home/FanAppSection';
+import RegionStatusSection from '@/sections/home/RegionStatusSection';
+import VenuesByRegionSection from '@/sections/home/VenuesByRegionSection';
 import SmartCopaBar from '@/sections/home/SmartCopaBar';
 import SponsorsSection from '@/sections/home/SponsorsSection';
-import SedesCalendario from '@/sections/SedesCalendario';
-import Tutoriales from '@/sections/Tutoriales';
 
 export default function HomePage() {
   useEffect(() => {
@@ -25,12 +23,10 @@ export default function HomePage() {
       <SmartCopaBar />
       <SponsorsSection />
       <AboutCopaSection />
-      <SedesCalendario />
-      <ComoInscribirse />
-      <Tutoriales />
-      <Comunicacion />
-      <FAQ />
-      <CTAFinal />
+      <RegionStatusSection />
+      <VenuesByRegionSection />
+      <FanAppSection />
+      <FaqSection />
     </>
   );
 }
