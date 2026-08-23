@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router';
 import AdminLayout from '@/components/admin/AdminLayout';
 import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
 import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTopOnNavigate from '@/components/ScrollToTopOnNavigate';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import PublicLayout from '@/components/layout/PublicLayout';
 import HomePage from '@/pages/HomePage';
@@ -26,7 +27,9 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="la-copa" element={<LaCopaPage />} />
           <Route path="sedes" element={<SedesPage />} />
-          <Route path="preinscripciones" element={<InscripcionesPage />} />
+          {/* Alias histórico: la ruta se renombró a /inscripciones, pero se conserva
+              para no romper enlaces ya compartidos. */}
+          <Route path="preinscripciones" element={<Navigate to="/inscripciones" replace />} />
           <Route path="fan-app" element={<FanAppPage />} />
           <Route path="faq" element={<FAQPage />} />
           <Route path="inscripciones" element={<InscripcionesPage />} />
@@ -63,6 +66,7 @@ function App() {
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <ScrollToTopOnNavigate />
       <ScrollToTop />
     </>
   );
