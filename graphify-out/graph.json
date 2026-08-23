@@ -5284,22 +5284,6 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_ctafinal",
-      "label": "CTAFinal.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_ctafinal_ctafinal",
-      "label": "CTAFinal()",
-      "file_type": "code",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L10",
-      "_origin": "ast"
-    },
-    {
       "id": "src_sections_calendario",
       "label": "Calendario.tsx",
       "file_type": "code",
@@ -5348,46 +5332,6 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_comoinscribirse",
-      "label": "ComoInscribirse.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_comoinscribirse_steps",
-      "label": "steps",
-      "file_type": "code",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L12",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_comoinscribirse_comoinscribirse",
-      "label": "ComoInscribirse()",
-      "file_type": "code",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L42",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_comunicacion",
-      "label": "Comunicacion.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/Comunicacion.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_comunicacion_comunicacion",
-      "label": "Comunicacion()",
-      "file_type": "code",
-      "source_file": "src/sections/Comunicacion.tsx",
-      "source_location": "L2",
-      "_origin": "ast"
-    },
-    {
       "id": "src_sections_deportes",
       "label": "Deportes.tsx",
       "file_type": "code",
@@ -5409,22 +5353,6 @@
       "file_type": "code",
       "source_file": "src/sections/Deportes.tsx",
       "source_location": "L96",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_faq",
-      "label": "FAQ.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/FAQ.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_faq_faq",
-      "label": "FAQ()",
-      "file_type": "code",
-      "source_file": "src/sections/FAQ.tsx",
-      "source_location": "L22",
       "_origin": "ast"
     },
     {
@@ -5548,22 +5476,6 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_sedescalendario",
-      "label": "SedesCalendario.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_sedescalendario_sedescalendario",
-      "label": "SedesCalendario()",
-      "file_type": "code",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L20",
-      "_origin": "ast"
-    },
-    {
       "id": "src_sections_sobreeltorneo",
       "label": "SobreElTorneo.tsx",
       "file_type": "code",
@@ -5625,38 +5537,6 @@
       "file_type": "code",
       "source_file": "src/sections/SobreElTorneo.tsx",
       "source_location": "L149",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_tutoriales",
-      "label": "Tutoriales.tsx",
-      "file_type": "code",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_tutoriales_primarytutorials",
-      "label": "primaryTutorials",
-      "file_type": "code",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L11",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_tutoriales_extratutorials",
-      "label": "extraTutorials",
-      "file_type": "code",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L46",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_tutoriales_tutoriales",
-      "label": "Tutoriales()",
-      "file_type": "code",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L65",
       "_origin": "ast"
     },
     {
@@ -21548,95 +21428,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_sections_ctafinal",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "ref_gsap",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "ref_gsap_scrolltrigger",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "ref_react_router",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "src_lib_analytics_gtm",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "src_lib_analytics_gtm_trackctaclick",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal",
-      "target": "src_sections_ctafinal_ctafinal",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_calendario",
       "target": "ref_react",
       "relation": "imports_from",
@@ -21722,83 +21513,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_sections_comoinscribirse",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "ref_react_router",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "ref_gsap",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "ref_gsap_scrolltrigger",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "src_sections_comoinscribirse_steps",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comoinscribirse",
-      "target": "src_sections_comoinscribirse_comoinscribirse",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/ComoInscribirse.tsx",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_comunicacion",
-      "target": "src_sections_comunicacion_comunicacion",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Comunicacion.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_deportes",
       "target": "ref_react",
       "relation": "imports_from",
@@ -21854,15 +21568,6 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Deportes.tsx",
       "source_location": "L96",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_faq",
-      "target": "src_sections_faq_faq",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/FAQ.tsx",
-      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -22264,85 +21969,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_sections_sedescalendario",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "ref_react_router",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "src_components_venues_ecuadorvenuemap",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "src_lib_constants_venues",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "src_lib_constants_venues_venue_region_options",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "src_lib_constants_venues_tournament_categories",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario",
-      "target": "src_sections_sedescalendario_sedescalendario",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_sobreeltorneo",
       "target": "ref_react",
       "relation": "imports_from",
@@ -22433,73 +22059,6 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/SobreElTorneo.tsx",
       "source_location": "L149",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "ref_gsap",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "ref_gsap_scrolltrigger",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "ref_lucide_react",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "src_sections_tutoriales_primarytutorials",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "src_sections_tutoriales_extratutorials",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_tutoriales",
-      "target": "src_sections_tutoriales_tutoriales",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/Tutoriales.tsx",
-      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -29050,16 +28609,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_sections_sedescalendario",
-      "target": "src_lib_constants_venues_venues",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_home_venuesbyregionsection",
       "target": "src_lib_constants_venues_venues",
       "relation": "imports",
@@ -32102,28 +31651,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_sections_ctafinal_ctafinal",
-      "target": "src_lib_analytics_gtm_trackpreinscriptionstart",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_ctafinal_ctafinal",
-      "target": "src_lib_analytics_gtm_trackctaclick",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/CTAFinal.tsx",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
       "source": "src_sections_hero_hero",
       "target": "src_lib_analytics_gtm_trackctaclick",
       "relation": "calls",
@@ -32429,17 +31956,6 @@
       "confidence_score": 1.0,
       "source_file": "src/pages/SedesPage.tsx",
       "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_sedescalendario_sedescalendario",
-      "target": "src_lib_constants_venues_venues",
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/sections/SedesCalendario.tsx",
-      "source_location": "L38",
       "weight": 1.0
     }
   ]

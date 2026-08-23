@@ -464,35 +464,15 @@
     "ast_hash": "f435628a81ea23e873960caa05a967fb",
     "semantic_hash": "f435628a81ea23e873960caa05a967fb"
   },
-  "src/sections/CTAFinal.tsx": {
-    "mtime": 1787462066.8848588,
-    "ast_hash": "59ce2f8b0f5d2512ebdab555105dc6f0",
-    "semantic_hash": ""
-  },
   "src/sections/Calendario.tsx": {
     "mtime": 1787462066.8859043,
     "ast_hash": "db1227f7eb3dfb5519403b62744b9ab6",
     "semantic_hash": ""
   },
-  "src/sections/ComoInscribirse.tsx": {
-    "mtime": 1787462066.88691,
-    "ast_hash": "9981feb1ac182796c5047dc06adc8875",
-    "semantic_hash": ""
-  },
-  "src/sections/Comunicacion.tsx": {
-    "mtime": 1777397847.1233163,
-    "ast_hash": "7c5d965ed82760ad23fb18b0000273cb",
-    "semantic_hash": "7c5d965ed82760ad23fb18b0000273cb"
-  },
   "src/sections/Deportes.tsx": {
     "mtime": 1776805045.5797055,
     "ast_hash": "6ecf7342b3d822866793d0fdbd3fff41",
     "semantic_hash": "6ecf7342b3d822866793d0fdbd3fff41"
-  },
-  "src/sections/FAQ.tsx": {
-    "mtime": 1787462066.888399,
-    "ast_hash": "479962e7e03c612629eb11e6ac0381f4",
-    "semantic_hash": ""
   },
   "src/sections/Footer.tsx": {
     "mtime": 1787468604.0391433,
@@ -509,20 +489,10 @@
     "ast_hash": "f9d2bbe4e35c6e4e0ed7751351fdb17d",
     "semantic_hash": ""
   },
-  "src/sections/SedesCalendario.tsx": {
-    "mtime": 1787462066.8926296,
-    "ast_hash": "ae90a88c8085af44468cf44e14321d6b",
-    "semantic_hash": ""
-  },
   "src/sections/SobreElTorneo.tsx": {
     "mtime": 1780534767.5185935,
     "ast_hash": "8d01bd6738b385d4a7da84bdef00e611",
     "semantic_hash": "8d01bd6738b385d4a7da84bdef00e611"
-  },
-  "src/sections/Tutoriales.tsx": {
-    "mtime": 1787462066.8941348,
-    "ast_hash": "b6d35087283b29e8b7edbad82f4c1e1f",
-    "semantic_hash": ""
   },
   "src/services/admin/audit.ts": {
     "mtime": 1776963300.269468,
