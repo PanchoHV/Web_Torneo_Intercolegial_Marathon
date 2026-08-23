@@ -90,7 +90,7 @@ export default function Footer() {
     <footer className="relative text-white">
       {/* ------------------------------------------------- NIVEL A · CTA */}
       <section
-        aria-label="Vive la Copa"
+        aria-label="Vive la Copa Intercolegial"
         className="relative isolate flex min-h-[clamp(170px,11.5vw,215px)] items-center overflow-hidden bg-[#062A4F]"
       >
         <img
@@ -116,7 +116,7 @@ export default function Footer() {
                 className="text-[clamp(2.75rem,4vw,4.5rem)] font-normal uppercase leading-[0.85] tracking-[0.01em] text-[#F4F8FC]"
                 style={{ fontFamily: BEBAS }}
               >
-                Vive la Copa
+                Vive la Copa Intercolegial
               </p>
               <p className="mt-2 text-[clamp(0.7rem,1vw,0.86rem)] font-bold uppercase leading-snug tracking-[0.1em] text-white/80">
                 Desde sus reglas, sus categorías y su historia.
