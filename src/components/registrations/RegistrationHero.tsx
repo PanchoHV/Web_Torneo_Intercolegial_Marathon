@@ -37,7 +37,7 @@ export default function RegistrationHero() {
             <Trophy size={14} /> CONVOCATORIA OFICIAL 2026
           </span>
           <h1 className="max-w-3xl break-words text-[clamp(1.35rem,5.8vw,3.2rem)] font-black uppercase leading-[1] tracking-[0.01em] sm:tracking-[0.02em]">
-            Preinscripción de colegios
+            Inscripción de colegios
           </h1>
           <p className="mt-2 max-w-2xl text-xs leading-relaxed text-white/90 sm:mt-3 sm:text-lg">
             Completa el registro oficial de la Copa Nacional Intercolegial Marathon 2026.

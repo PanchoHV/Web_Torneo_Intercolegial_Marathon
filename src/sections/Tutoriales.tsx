@@ -14,11 +14,11 @@ const primaryTutorials = [
     subtitle: 'Cómo funciona',
     duration: '03:40',
     description:
-      'Conoce el flujo general del torneo, el proceso de acompañamiento y qué recibirás después de la preinscripción.',
+      'Conoce el flujo general del torneo, el proceso de acompañamiento y qué recibirás después de la inscripción.',
     badge: 'Inicio',
   },
   {
-    title: 'Tutorial para Llenar formulario de preinscripción',
+    title: 'Tutorial para Llenar formulario de inscripción',
     subtitle: 'Registro institucional',
     duration: '05:15',
     description:

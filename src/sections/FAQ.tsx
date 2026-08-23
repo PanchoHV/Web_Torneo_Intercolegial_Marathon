@@ -80,17 +80,17 @@ export default function FAQ() {
               <div className="absolute left-0 top-4 h-10 w-1 rounded-full bg-gradient-to-b from-marathon-red to-[#0d4fa3]" />
               <summary className={summaryClass}>
                 <span className={numberClass}>2</span>
-                <span className={questionClass}>¿Cuál es el costo de preinscripción por colegio?</span>
+                <span className={questionClass}>¿Cuál es el costo de inscripción por colegio?</span>
                 <span className={chevronClass}>
                   <span className="text-lg leading-none">⌄</span>
                 </span>
               </summary>
               <div className={answerClass}>
                 <p>
-                  Para los colegios privados, la preinscripción tiene un costo de USD 170 por cada categoría inscrita, más IVA.
+                  Para los colegios privados, la inscripción tiene un costo de USD 170 por cada categoría inscrita, más IVA.
                 </p>
                 <p>
-                  Los colegios fiscales y fiscomisionales no pagan costo de preinscripción, como parte del enfoque inclusivo de la Copa Nacional Intercolegial Marathon.
+                  Los colegios fiscales y fiscomisionales no pagan costo de inscripción, como parte del enfoque inclusivo de la Copa Nacional Intercolegial Marathon.
                 </p>
                 <p>
                   Este modelo permite facilitar la participación de instituciones con distintas realidades, manteniendo al mismo tiempo una organización responsable, ordenada y sostenible para el desarrollo del torneo.
@@ -220,7 +220,7 @@ export default function FAQ() {
                 <div className="overflow-hidden rounded-2xl border border-marathon-blue/10 bg-white shadow-[0_10px_24px_rgba(6,42,79,0.05)]">
                   <div className="grid grid-cols-3 bg-[linear-gradient(135deg,rgba(6,42,79,0.96),rgba(0,80,164,0.92))] px-4 py-3 text-xs font-bold uppercase tracking-[0.08em] text-white">
                     <div>Región</div>
-                    <div>Inicio de preinscripciones</div>
+                    <div>Inicio de inscripciones</div>
                     <div>Inicio estimado de partidos</div>
                   </div>
                   <div className="grid grid-cols-3 border-t border-marathon-blue/10 px-4 py-3 text-sm">

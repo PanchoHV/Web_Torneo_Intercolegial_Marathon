@@ -243,7 +243,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
           <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-marathon-red" />
           <div className="relative">
             <h2 className="max-w-full break-words text-[1.18rem] font-black uppercase leading-tight tracking-[0.01em] sm:text-[clamp(1.35rem,3vw,2.35rem)] sm:tracking-[0.02em]">
-              Preinscribe a tu colegio
+              Inscribe a tu colegio
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-white/82 sm:mt-3 sm:text-base">
               Déjanos tus datos y los de tu colegio para contactarte y asesorarte en el proceso de inscripción.
@@ -468,7 +468,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 {...register('termsAccepted')}
               />
               <span className="min-w-0 flex-1 break-words text-sm leading-relaxed text-marathon-gray">
-                Acepto que la Copa Intercolegial organizada por la fundación Marathon utilice estos datos para gestionar la preinscripción y el contrato oficial del torneo.
+                Acepto que la Copa Intercolegial organizada por la fundación Marathon utilice estos datos para gestionar la inscripción y el contrato oficial del torneo.
               </span>
             </label>
             {errors.termsAccepted?.message && (
@@ -537,8 +537,8 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                       {turnstileState === 'verified'
                         ? 'La validación pasó correctamente y el envío puede continuar.'
                         : turnstileState === 'error'
-                        ? 'Interactúa con el módulo de seguridad de Cloudflare y luego envía la preinscripción.'
-                        : 'Utilizamos tecnología anti-spam para asegurarnos de que las preinscripciones sean legítimas y evitar registros automáticos.'}
+                        ? 'Interactúa con el módulo de seguridad de Cloudflare y luego envía la inscripción.'
+                        : 'Utilizamos tecnología anti-spam para asegurarnos de que las inscripciones sean legítimas y evitar registros automáticos.'}
                     </p>
                     {turnstileErrorCode && (
                       <p className="mt-2 text-xs font-semibold text-red-600">
@@ -579,7 +579,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
               disabled={isSubmitting || isQuotaFull}
             >
               {isSubmitting ? <Loader2 className="animate-spin" size={18} /> : <Send size={18} />}
-              {isSubmitting ? 'Enviando...' : 'Enviar preinscripción'}
+              {isSubmitting ? 'Enviando...' : 'Enviar inscripción'}
             </Button>
           </div>
 

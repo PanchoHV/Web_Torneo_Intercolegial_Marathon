@@ -76,12 +76,12 @@ export default function SedesCalendario() {
           </h2>
             <p className="relative z-10 mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/85">
             La Copa Nacional Intercolegial Marathon se activa progresivamente por provincia y sede. Revisa las
-            fechas clave de preinscripción, entrega de documentación e inicio estimado de partidos.
+            fechas clave de inscripción, entrega de documentación e inicio estimado de partidos.
           </p>
 
             <div className="relative z-10 mt-5 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2.5 backdrop-blur-md">
             <CalendarDays size={16} />
-              <span className="text-xs font-semibold sm:text-sm">Preinscripción nacional abierta desde el 4 de mayo de 2026.</span>
+              <span className="text-xs font-semibold sm:text-sm">Inscripción nacional abierta desde el 4 de mayo de 2026.</span>
           </div>
             <p className="relative z-10 mt-3 text-xs text-white/65">
             Cada provincia tiene fechas específicas según su calendario regional y planificación deportiva.
@@ -190,11 +190,11 @@ export default function SedesCalendario() {
 
                 <div className="mt-6 grid gap-3 text-sm sm:grid-cols-2">
                   <div className="min-w-0 rounded-[18px] border border-[#e2e8f0] bg-[#fafbfc] p-4">
-                    <p className="flex min-w-0 items-start gap-2 text-xs font-bold leading-snug text-[#334155]"><CalendarDays size={14} className="mt-0.5 shrink-0 text-[#1f6feb]" /> <span className="min-w-0 break-words">Inicio preinscripción</span></p>
+                    <p className="flex min-w-0 items-start gap-2 text-xs font-bold leading-snug text-[#334155]"><CalendarDays size={14} className="mt-0.5 shrink-0 text-[#1f6feb]" /> <span className="min-w-0 break-words">Inicio inscripción</span></p>
                     <p className="mt-1 font-bold">{selectedVenue.preRegistrationStart}</p>
                   </div>
                   <div className="min-w-0 rounded-[18px] border border-[#e2e8f0] bg-[#fafbfc] p-4">
-                    <p className="flex min-w-0 items-start gap-2 text-xs font-bold leading-snug text-[#334155]"><Clock3 size={14} className="mt-0.5 shrink-0 text-[#ed1c24]" /> <span className="min-w-0 break-words">Límite preinscripción</span></p>
+                    <p className="flex min-w-0 items-start gap-2 text-xs font-bold leading-snug text-[#334155]"><Clock3 size={14} className="mt-0.5 shrink-0 text-[#ed1c24]" /> <span className="min-w-0 break-words">Límite inscripción</span></p>
                     <p className="mt-1 font-bold">{selectedVenue.preRegistrationDeadline}</p>
                   </div>
                   <div className="min-w-0 rounded-[18px] border border-[#e2e8f0] bg-[#fafbfc] p-4">
@@ -250,7 +250,7 @@ export default function SedesCalendario() {
                   onClick={() => navigate('/inscripciones')}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-marathon-red px-5 py-3 text-sm font-bold text-white shadow-[0_12px_26px_rgba(226,27,45,0.26)] transition-all hover:scale-[1.02] hover:shadow-[0_16px_32px_rgba(226,27,45,0.32)]"
                 >
-                  Preinscribir colegio <ArrowRight size={16} />
+                  Inscribir colegio <ArrowRight size={16} />
                 </button>
               </>
             ) : (
@@ -261,7 +261,7 @@ export default function SedesCalendario() {
 
         {/* Legal Note */}
         <div className="relative z-10 mx-auto mt-10 max-w-5xl text-center text-xs leading-relaxed text-white/60">
-          Las fechas publicadas corresponden a la planificación inicial del torneo y pueden estar sujetas a ajustes por calendario escolar, disponibilidad de escenarios, logística deportiva, condiciones climáticas, seguridad, fuerza mayor o disposiciones de la organización. La preinscripción no representa todavía la confirmación definitiva de participación. La aceptación final dependerá de validación institucional, cupos disponibles, categorías habilitadas y cumplimiento de requisitos.
+          Las fechas publicadas corresponden a la planificación inicial del torneo y pueden estar sujetas a ajustes por calendario escolar, disponibilidad de escenarios, logística deportiva, condiciones climáticas, seguridad, fuerza mayor o disposiciones de la organización. La inscripción no representa todavía la confirmación definitiva de participación. La aceptación final dependerá de validación institucional, cupos disponibles, categorías habilitadas y cumplimiento de requisitos.
         </div>
       </div>
     </section>

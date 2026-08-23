@@ -45,7 +45,7 @@ export default function CTAFinal() {
           ¿LISTO PARA COMPETIR?
         </h2>
         <p className="font-inter text-marathon-blue/85 text-base sm:text-xl leading-relaxed mb-8 sm:mb-10">
-          Preinscribe a tu colegio hoy y asegura tu lugar en la Copa Nacional Marathon Intercolegial 2026. Los cupos son limitados.
+          Inscribe a tu colegio hoy y asegura tu lugar en la Copa Nacional Marathon Intercolegial 2026. Los cupos son limitados.
         </p>
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 sm:gap-4">
@@ -59,7 +59,7 @@ export default function CTAFinal() {
             }}
             className="w-full sm:w-auto justify-center bg-marathon-red text-white font-montserrat font-bold rounded-full px-7 sm:px-10 py-3.5 sm:py-4 shadow-button hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 text-base sm:text-lg"
           >
-            Preinscribir mi Colegio Ahora <ArrowRight size={20} />
+            Inscribir mi Colegio Ahora <ArrowRight size={20} />
           </button>
           <button
             onClick={() => {

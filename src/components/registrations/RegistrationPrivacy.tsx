@@ -8,7 +8,7 @@ export default function RegistrationPrivacy() {
           <LockKeyhole size={20} />
         </div>
         <p className="text-sm leading-relaxed text-marathon-gray">
-          La información enviada será utilizada exclusivamente para fines de preinscripción y contacto oficial del Torneo Intercolegial Marathon Ecuador 2026.
+          La información enviada será utilizada exclusivamente para fines de inscripción y contacto oficial del Torneo Intercolegial Marathon Ecuador 2026.
         </p>
       </div>
     </section>

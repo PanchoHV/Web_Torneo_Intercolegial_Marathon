@@ -14,8 +14,8 @@ const steps = [
     number: '01',
     title: 'Registra tu Colegio',
     description:
-      'Completa el formulario de preinscripción institucional con los datos de tu colegio y del delegado deportivo.',
-    cta: 'Formulario de Preinscripción',
+      'Completa el formulario de inscripción institucional con los datos de tu colegio y del delegado deportivo.',
+    cta: 'Formulario de Inscripción',
     href: '/inscripciones',
     icon: FileCheck2,
   },
@@ -101,10 +101,10 @@ export default function ComoInscribirse() {
             PROCESO DE INSCRIPCIÓN
           </span>
           <h2 className="mt-5 font-montserrat text-[clamp(1.9rem,4vw,3.15rem)] font-extrabold uppercase leading-[1.05] tracking-[0.02em] text-marathon-blue">
-            Preinscribe a tu colegio en 3 pasos
+            Inscribe a tu colegio en 3 pasos
           </h2>
           <p className="mt-5 text-base leading-relaxed text-marathon-gray sm:text-lg">
-            El proceso de preinscripción es completamente digital. Sigue estos pasos y asegura la
+            El proceso de inscripción es completamente digital. Sigue estos pasos y asegura la
             participación de tu colegio en la Copa Nacional Marathon Intercolegial 2026.
           </p>
         </div>
@@ -179,7 +179,7 @@ export default function ComoInscribirse() {
                 Cupos limitados
               </p>
               <p className="mt-2 text-sm font-medium leading-relaxed text-marathon-blue sm:text-base">
-                Las preinscripciones se revisarán por orden de llegada, de acuerdo con la ciudad, región y calendario correspondiente. Las fechas de cierre serán comunicadas oficialmente por la organización para cada bloque regional.
+                Las inscripciones se revisarán por orden de llegada, de acuerdo con la ciudad, región y calendario correspondiente. Las fechas de cierre serán comunicadas oficialmente por la organización para cada bloque regional.
                 La confirmación final dependerá de cupos disponibles, categorías habilitadas y cumplimiento de requisitos.
               </p>
             </div>

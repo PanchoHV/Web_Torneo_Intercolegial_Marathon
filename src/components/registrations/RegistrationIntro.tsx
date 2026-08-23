@@ -9,7 +9,7 @@ export default function RegistrationIntro() {
           Bienvenida oficial a colegios participantes
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-marathon-gray">
-          Marathon invita a colegios de Ecuador a formar parte del Torneo Intercolegial Ecuador 2026. Completa este formulario oficial de preinscripción y un ejecutivo del torneo se pondrá en contacto contigo.
+          Marathon invita a colegios de Ecuador a formar parte del Torneo Intercolegial Ecuador 2026. Completa este formulario oficial de inscripción y un ejecutivo del torneo se pondrá en contacto contigo.
         </p>
       </div>
       <div className="relative overflow-hidden rounded-2xl border border-marathon-blue/10 bg-marathon-ice p-5">

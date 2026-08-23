@@ -19,7 +19,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Acompañamiento organizador',
-    description: 'El equipo del torneo contacta a la persona encargada para continuar el proceso de preinscripción.',
+    description: 'El equipo del torneo contacta a la persona encargada para continuar el proceso de inscripción.',
   },
 ];
 

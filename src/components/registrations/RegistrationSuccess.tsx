@@ -18,11 +18,11 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
         <CheckCircle2 size={28} />
       </div>
       <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-black uppercase tracking-[0.02em] text-marathon-blue">
-        ¡Preinscripción recibida con éxito!
+        ¡Inscripción recibida con éxito!
       </h2>
       <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-marathon-gray">
         Gracias por registrar a tu institución. Tu colegio ya quedó dentro del proceso de
-        preinscripción. Nuestro equipo revisará la información y notificará los siguientes pasos de
+        inscripción. Nuestro equipo revisará la información y notificará los siguientes pasos de
         acuerdo con la ciudad, región y categorías seleccionadas.
       </p>
       <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-marathon-gray">
@@ -31,7 +31,7 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
         organización.
       </p>
       <p className="mt-4 text-sm font-semibold text-marathon-blue">
-        Hemos recibido tu preinscripción correctamente.
+        Hemos recibido tu inscripción correctamente.
       </p>
       {hasReceipt && (
         <div className="mt-3 space-y-1 text-sm text-marathon-gray">
