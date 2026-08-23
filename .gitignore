@@ -41,3 +41,6 @@ graphify-out/reflections/
 # Local export assets
 sitio-*.png
 sitio-*.pdf
+
+# Configuración local del asistente (Claude Code)
+.claude/
