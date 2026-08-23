@@ -430,9 +430,9 @@
     "semantic_hash": "e415e608e98bb87d7642ec6655c9a62f"
   },
   "src/pages/InscripcionesPage.tsx": {
-    "mtime": 1777305981.643454,
-    "ast_hash": "3bd19ea7c1e79d546b13a560b479ee51",
-    "semantic_hash": "3bd19ea7c1e79d546b13a560b479ee51"
+    "mtime": 1787472213.6193268,
+    "ast_hash": "1874999d1ad846464b9d7819a644b6b8",
+    "semantic_hash": ""
   },
   "src/pages/admin/AuditPage.tsx": {
     "mtime": 1777305107.5556595,
@@ -475,8 +475,8 @@
     "semantic_hash": "6ecf7342b3d822866793d0fdbd3fff41"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1787468604.0391433,
-    "ast_hash": "9f2042a3e72131e6c3161b92032ca445",
+    "mtime": 1787471846.7931263,
+    "ast_hash": "9f32fbe828364b9feb3ca0ee4206784e",
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
@@ -1087,6 +1087,36 @@
   "src/lib/constants/links.ts": {
     "mtime": 1787468570.2892416,
     "ast_hash": "dd335216c8541e59f0b2a972b3fb2947",
+    "semantic_hash": ""
+  },
+  "src/lib/constants/inscripcionesPage.ts": {
+    "mtime": 1787472948.136196,
+    "ast_hash": "18e52b262dd34acd8781a9a1eb1547ad",
+    "semantic_hash": ""
+  },
+  "src/lib/scrollToAnchor.ts": {
+    "mtime": 1787472246.9202878,
+    "ast_hash": "d20069e3d82a28cfdd16b002c78ed66c",
+    "semantic_hash": ""
+  },
+  "src/sections/inscripciones/RegistrationFormSection.tsx": {
+    "mtime": 1787472184.508746,
+    "ast_hash": "0c0ff554fc8a043f4a28a167f3d906f0",
+    "semantic_hash": ""
+  },
+  "src/sections/inscripciones/RegistrationGuideSection.tsx": {
+    "mtime": 1787472246.9590304,
+    "ast_hash": "2ed647646b71df4aec9e9b34028a50f4",
+    "semantic_hash": ""
+  },
+  "src/sections/inscripciones/RegistrationHeroSection.tsx": {
+    "mtime": 1787473225.7367046,
+    "ast_hash": "e856c5eb356809dcb07ede74ae44b8be",
+    "semantic_hash": ""
+  },
+  "src/sections/inscripciones/RegistrationKeyDatesSection.tsx": {
+    "mtime": 1787472184.5117216,
+    "ast_hash": "b8ba22c95bf72ad694b7a21d024769af",
     "semantic_hash": ""
   }
 }
