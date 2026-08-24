@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationForm.tsx": {
-    "mtime": 1787462066.8785207,
-    "ast_hash": "3f003dd73f36e41a9c551bafca682a4a",
+    "mtime": 1787505238.2590036,
+    "ast_hash": "6c89283fc797318be9234c5a42090cea",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationHero.tsx": {
@@ -385,9 +385,9 @@
     "semantic_hash": "da8ae91bc123d3393695c41e5aa91210"
   },
   "src/lib/constants/registrationOptions.ts": {
-    "mtime": 1783094473.3196418,
-    "ast_hash": "91b66bb709c9639ef090e3c3a7b6bd1a",
-    "semantic_hash": "91b66bb709c9639ef090e3c3a7b6bd1a"
+    "mtime": 1787505202.3308995,
+    "ast_hash": "3b45620afbfa71ab2104bcdcfa33828c",
+    "semantic_hash": ""
   },
   "src/lib/constants/venues.ts": {
     "mtime": 1787462066.8836994,
@@ -395,9 +395,9 @@
     "semantic_hash": ""
   },
   "src/lib/registrations/regionalSchedule.ts": {
-    "mtime": 1783095825.2401264,
-    "ast_hash": "fadb5535f6deaa7f0afee97fce3b0f54",
-    "semantic_hash": "fadb5535f6deaa7f0afee97fce3b0f54"
+    "mtime": 1787505336.0702817,
+    "ast_hash": "72faf0d8eac55e61ae780df4c06e3cca",
+    "semantic_hash": ""
   },
   "src/lib/supabase/client.ts": {
     "mtime": 1787233586.5234437,
@@ -430,8 +430,8 @@
     "semantic_hash": "e415e608e98bb87d7642ec6655c9a62f"
   },
   "src/pages/InscripcionesPage.tsx": {
-    "mtime": 1787472213.6193268,
-    "ast_hash": "1874999d1ad846464b9d7819a644b6b8",
+    "mtime": 1787497523.8310494,
+    "ast_hash": "498737ec839ae6d4c9d2521c3e672122",
     "semantic_hash": ""
   },
   "src/pages/admin/AuditPage.tsx": {
@@ -475,13 +475,13 @@
     "semantic_hash": "6ecf7342b3d822866793d0fdbd3fff41"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1787471846.7931263,
-    "ast_hash": "9f32fbe828364b9feb3ca0ee4206784e",
+    "mtime": 1787508281.3670402,
+    "ast_hash": "8d6374d4759532cfad662f4b32450c55",
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
-    "mtime": 1787468604.0395799,
-    "ast_hash": "caff6e8efe9205d055d082306a4a3295",
+    "mtime": 1787508056.3827617,
+    "ast_hash": "d3526b352c51ae047b320dd0ca672092",
     "semantic_hash": ""
   },
   "src/sections/Navigation.tsx": {
@@ -895,8 +895,8 @@
     "semantic_hash": ""
   },
   "src/sections/home/SmartCopaBar.tsx": {
-    "mtime": 1787468604.040269,
-    "ast_hash": "486f99b5464b2a9924223365bdc4e542",
+    "mtime": 1787535479.3590317,
+    "ast_hash": "9a767720354890dc6beb63ce7d2aea5f",
     "semantic_hash": ""
   },
   "src/sections/home/SponsorsSection.tsx": {
@@ -910,8 +910,8 @@
     "semantic_hash": ""
   },
   "src/sections/home/RegionStatusSection.tsx": {
-    "mtime": 1787462066.8955498,
-    "ast_hash": "949a5885dc816a246ac861476b668b58",
+    "mtime": 1787497455.7533422,
+    "ast_hash": "ee208c3623128eeb00e68b384d40da0b",
     "semantic_hash": ""
   },
   "src/sections/home/VenuesByRegionSection.tsx": {
@@ -960,13 +960,13 @@
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHeroSection.tsx": {
-    "mtime": 1787469087.9244761,
-    "ast_hash": "d70378d8a3996bf6c539bdc6f5a45196",
+    "mtime": 1787508238.462227,
+    "ast_hash": "b2e4aae5acd67d2b13e2ab6e4c280554",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHistorySection.tsx": {
-    "mtime": 1787453743.957494,
-    "ast_hash": "2e153c200fa22778c0f53448fde645bd",
+    "mtime": 1787508238.4637609,
+    "ast_hash": "6531545139d669ccf39df25a28cb068c",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaWhatIsSection.tsx": {
@@ -990,8 +990,8 @@
     "semantic_hash": ""
   },
   "src/lib/constants/sedesPage.ts": {
-    "mtime": 1787468696.0547245,
-    "ast_hash": "122a30c6de0189c566f4b271af38d8fc",
+    "mtime": 1787499253.7493086,
+    "ast_hash": "f134429ee4e11bf158e63e197f7c2ea2",
     "semantic_hash": ""
   },
   "src/sections/sedes/FeaturedVenueSection.tsx": {
@@ -1005,8 +1005,8 @@
     "semantic_hash": ""
   },
   "src/sections/sedes/SedesHeroSection.tsx": {
-    "mtime": 1787469087.9233203,
-    "ast_hash": "5b8d0311dfede7c1cf169c4458ac97ef",
+    "mtime": 1787503525.9109554,
+    "ast_hash": "7d8619e85cfffe183aa7382c0d0db2ea",
     "semantic_hash": ""
   },
   "src/sections/sedes/VenueFaqSection.tsx": {
@@ -1085,13 +1085,13 @@
     "semantic_hash": ""
   },
   "src/lib/constants/links.ts": {
-    "mtime": 1787468570.2892416,
-    "ast_hash": "dd335216c8541e59f0b2a972b3fb2947",
+    "mtime": 1787508238.4612508,
+    "ast_hash": "3a521db734e3cc2db2fa68765b8f4df0",
     "semantic_hash": ""
   },
   "src/lib/constants/inscripcionesPage.ts": {
-    "mtime": 1787472948.136196,
-    "ast_hash": "18e52b262dd34acd8781a9a1eb1547ad",
+    "mtime": 1787504715.4212337,
+    "ast_hash": "7c441fb37560c1d7930ee308aa9aced7",
     "semantic_hash": ""
   },
   "src/lib/scrollToAnchor.ts": {
@@ -1100,23 +1100,38 @@
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationFormSection.tsx": {
-    "mtime": 1787472184.508746,
-    "ast_hash": "0c0ff554fc8a043f4a28a167f3d906f0",
+    "mtime": 1787505459.7955275,
+    "ast_hash": "3a25dc8939af4cfd8b9a6a51c79c2533",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationGuideSection.tsx": {
-    "mtime": 1787472246.9590304,
-    "ast_hash": "2ed647646b71df4aec9e9b34028a50f4",
+    "mtime": 1787505459.7951972,
+    "ast_hash": "5356413c9ce6dbf622ba2bc9c0814bf3",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationHeroSection.tsx": {
-    "mtime": 1787473225.7367046,
-    "ast_hash": "e856c5eb356809dcb07ede74ae44b8be",
+    "mtime": 1787503525.9116964,
+    "ast_hash": "dd183815a3330d999d4248330df5b259",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationKeyDatesSection.tsx": {
-    "mtime": 1787472184.5117216,
-    "ast_hash": "b8ba22c95bf72ad694b7a21d024769af",
+    "mtime": 1787505459.7957797,
+    "ast_hash": "3e76cc116177936149546afab4902eb0",
+    "semantic_hash": ""
+  },
+  "src/lib/constants/regionStatus.ts": {
+    "mtime": 1787505621.2625425,
+    "ast_hash": "ddffb416e9dfd9272f709f8236d423db",
+    "semantic_hash": ""
+  },
+  "src/sections/inscripciones/RegistrationRegionStatusSection.tsx": {
+    "mtime": 1787505711.8323123,
+    "ast_hash": "3a545104e71f1396f7cff2cc720c09d5",
+    "semantic_hash": ""
+  },
+  "public/documentos/reglamento-copa-marathon-2026.pdf": {
+    "mtime": 1787508184.27506,
+    "ast_hash": "6afee4458eaeae02052b3e91da0c9696",
     "semantic_hash": ""
   }
 }

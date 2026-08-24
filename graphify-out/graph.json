@@ -1080,7 +1080,7 @@
       "label": "RegistrationFormProps",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "_origin": "ast"
     },
     {
@@ -1088,7 +1088,7 @@
       "label": "RegistrationForm()",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "_origin": "ast"
     },
     {
@@ -1096,7 +1096,7 @@
       "label": "FieldProps",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L596",
+      "source_location": "L605",
       "_origin": "ast"
     },
     {
@@ -1104,7 +1104,7 @@
       "label": "Field()",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L604",
+      "source_location": "L613",
       "_origin": "ast"
     },
     {
@@ -1112,7 +1112,7 @@
       "label": "SelectField()",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L617",
+      "source_location": "L626",
       "_origin": "ast"
     },
     {
@@ -1120,7 +1120,7 @@
       "label": "CategoryMultiSelect()",
       "file_type": "code",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L678",
+      "source_location": "L687",
       "_origin": "ast"
     },
     {
@@ -4628,11 +4628,19 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_constants_inscripcionespage_guide_icon",
+      "label": "GUIDE_ICON()",
+      "file_type": "code",
+      "source_file": "src/lib/constants/inscripcionesPage.ts",
+      "source_location": "L41",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_constants_inscripcionespage_registration_guide_steps",
       "label": "REGISTRATION_GUIDE_STEPS",
       "file_type": "code",
       "source_file": "src/lib/constants/inscripcionesPage.ts",
-      "source_location": "L46",
+      "source_location": "L50",
       "_origin": "ast"
     },
     {
@@ -4640,7 +4648,7 @@
       "label": "REGISTRATION_FAQ_ITEMS",
       "file_type": "code",
       "source_file": "src/lib/constants/inscripcionesPage.ts",
-      "source_location": "L84",
+      "source_location": "L92",
       "_origin": "ast"
     },
     {
@@ -4652,11 +4660,59 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_constants_links_reglamento_pdf",
+      "label": "REGLAMENTO_PDF",
+      "file_type": "code",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_links_reglamento_link_props",
+      "label": "REGLAMENTO_LINK_PROPS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L27",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_constants_links_external_link_props",
       "label": "EXTERNAL_LINK_PROPS",
       "file_type": "code",
       "source_file": "src/lib/constants/links.ts",
-      "source_location": "L15",
+      "source_location": "L35",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_regionstatus",
+      "label": "regionStatus.ts",
+      "file_type": "code",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_regionstatus_registrationstatus",
+      "label": "RegistrationStatus",
+      "file_type": "code",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_regionstatus_regionregistration",
+      "label": "RegionRegistration",
+      "file_type": "code",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_regionstatus_registration_status",
+      "label": "REGISTRATION_STATUS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L35",
       "_origin": "ast"
     },
     {
@@ -4708,11 +4764,27 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_constants_registrationoptions_closed_registration_regions",
+      "label": "CLOSED_REGISTRATION_REGIONS",
+      "file_type": "code",
+      "source_file": "src/lib/constants/registrationOptions.ts",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_constants_registrationoptions_cities_with_full_quota",
       "label": "CITIES_WITH_FULL_QUOTA",
       "file_type": "code",
       "source_file": "src/lib/constants/registrationOptions.ts",
-      "source_location": "L32",
+      "source_location": "L44",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_registrationoptions_iscityregistrationclosed",
+      "label": "isCityRegistrationClosed()",
+      "file_type": "code",
+      "source_file": "src/lib/constants/registrationOptions.ts",
+      "source_location": "L52",
       "_origin": "ast"
     },
     {
@@ -5440,7 +5512,7 @@
       "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L57",
+      "source_location": "L62",
       "_origin": "ast"
     },
     {
@@ -5448,7 +5520,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L88",
+      "source_location": "L93",
       "_origin": "ast"
     },
     {
@@ -5496,7 +5568,7 @@
       "label": "Hero()",
       "file_type": "code",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L189",
+      "source_location": "L171",
       "_origin": "ast"
     },
     {
@@ -5664,7 +5736,7 @@
       "label": "CopaHeroSection()",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHeroSection.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast"
     },
     {
@@ -5680,7 +5752,7 @@
       "label": "file()",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast"
     },
     {
@@ -5688,7 +5760,7 @@
       "label": "milestones",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -5696,7 +5768,7 @@
       "label": "SCALE_ICONS",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "_origin": "ast"
     },
     {
@@ -5704,7 +5776,7 @@
       "label": "scaleMetrics",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "_origin": "ast"
     },
     {
@@ -5712,7 +5784,7 @@
       "label": "CATEGORY_ICONS",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L75",
+      "source_location": "L76",
       "_origin": "ast"
     },
     {
@@ -5720,7 +5792,7 @@
       "label": "categories",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L83",
+      "source_location": "L84",
       "_origin": "ast"
     },
     {
@@ -5728,7 +5800,7 @@
       "label": "RULES_ART",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L92",
+      "source_location": "L93",
       "_origin": "ast"
     },
     {
@@ -5932,35 +6004,11 @@
       "_origin": "ast"
     },
     {
-      "id": "src_sections_home_regionstatussection_registrationstatus",
-      "label": "RegistrationStatus",
-      "file_type": "code",
-      "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L12",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_home_regionstatussection_regionregistration",
-      "label": "RegionRegistration",
-      "file_type": "code",
-      "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L19",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_sections_home_regionstatussection_registration_status",
-      "label": "REGISTRATION_STATUS",
-      "file_type": "code",
-      "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L37",
-      "_origin": "ast"
-    },
-    {
       "id": "src_sections_home_regionstatussection_statustheme",
       "label": "StatusTheme",
       "file_type": "code",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L78",
+      "source_location": "L27",
       "_origin": "ast"
     },
     {
@@ -5968,7 +6016,7 @@
       "label": "STATUS_THEME",
       "file_type": "code",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L94",
+      "source_location": "L43",
       "_origin": "ast"
     },
     {
@@ -5976,7 +6024,7 @@
       "label": "visibleRegions",
       "file_type": "code",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L143",
+      "source_location": "L92",
       "_origin": "ast"
     },
     {
@@ -5984,7 +6032,7 @@
       "label": "RegionStatusSection()",
       "file_type": "code",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L145",
+      "source_location": "L94",
       "_origin": "ast"
     },
     {
@@ -6016,7 +6064,7 @@
       "label": "COPA_BAR_CONFIG",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "_origin": "ast"
     },
     {
@@ -6024,7 +6072,7 @@
       "label": "stateLabels",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "_origin": "ast"
     },
     {
@@ -6032,7 +6080,7 @@
       "label": "SmartCopaBar()",
       "file_type": "code",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "_origin": "ast"
     },
     {
@@ -6200,7 +6248,7 @@
       "label": "RegistrationFormSectionProps",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast"
     },
     {
@@ -6208,7 +6256,7 @@
       "label": "RegistrationFormSection()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -6224,7 +6272,7 @@
       "label": "RegistrationGuideSection()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationGuideSection.tsx",
-      "source_location": "L15",
+      "source_location": "L19",
       "_origin": "ast"
     },
     {
@@ -6236,11 +6284,19 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_inscripciones_registrationherosection_pointer_depth",
+      "label": "POINTER_DEPTH",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_inscripciones_registrationherosection_registrationherosection",
       "label": "RegistrationHeroSection()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L35",
+      "source_location": "L57",
       "_origin": "ast"
     },
     {
@@ -6256,7 +6312,7 @@
       "label": "MONTHS",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast"
     },
     {
@@ -6264,7 +6320,7 @@
       "label": "parseVenueDate()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
@@ -6272,7 +6328,7 @@
       "label": "Milestone",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast"
     },
     {
@@ -6280,7 +6336,79 @@
       "label": "RegistrationKeyDatesSection()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
+      "source_location": "L46",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection",
+      "label": "RegistrationRegionStatusSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_registrationregionstatussectionprops",
+      "label": "RegistrationRegionStatusSectionProps",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_statustheme",
+      "label": "StatusTheme",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_status_theme",
+      "label": "STATUS_THEME",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
       "source_location": "L45",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_registrationregionstatussection",
+      "label": "RegistrationRegionStatusSection()",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L94",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_regioncardprops",
+      "label": "RegionCardProps",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L173",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_regioncard",
+      "label": "RegionCard()",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L181",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_notifyactionprops",
+      "label": "NotifyActionProps",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L337",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_inscripciones_registrationregionstatussection_notifyaction",
+      "label": "NotifyAction()",
+      "file_type": "code",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L351",
       "_origin": "ast"
     },
     {
@@ -11736,7 +11864,17 @@
     },
     {
       "source": "src_components_registrations_registrationform",
-      "target": "src_lib_constants_registrationoptions_cities_with_full_quota",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_registrationoptions_closed_city_message",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/registrations/RegistrationForm.tsx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_registrations_registrationform",
+      "target": "src_lib_constants_registrationoptions_iscityregistrationclosed",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11781,7 +11919,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -11791,7 +11929,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -11801,7 +11939,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -11811,7 +11949,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -11821,7 +11959,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -11831,7 +11969,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -11841,7 +11979,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -11851,7 +11989,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -11861,7 +11999,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -11871,7 +12009,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11881,7 +12019,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11891,7 +12029,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11901,7 +12039,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -11911,7 +12049,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -11921,7 +12059,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -11931,7 +12069,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -11941,7 +12079,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -11950,7 +12088,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -11959,7 +12097,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -11968,7 +12106,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L596",
+      "source_location": "L605",
       "weight": 1.0
     },
     {
@@ -11977,7 +12115,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L604",
+      "source_location": "L613",
       "weight": 1.0
     },
     {
@@ -11986,7 +12124,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L617",
+      "source_location": "L626",
       "weight": 1.0
     },
     {
@@ -11995,7 +12133,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L678",
+      "source_location": "L687",
       "weight": 1.0
     },
     {
@@ -18963,11 +19101,20 @@
     },
     {
       "source": "src_lib_constants_inscripcionespage",
+      "target": "src_lib_constants_inscripcionespage_guide_icon",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/inscripcionesPage.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_inscripcionespage",
       "target": "src_lib_constants_inscripcionespage_registration_guide_steps",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/constants/inscripcionesPage.ts",
-      "source_location": "L46",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -18976,7 +19123,25 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/constants/inscripcionesPage.ts",
-      "source_location": "L84",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_links",
+      "target": "src_lib_constants_links_reglamento_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_links",
+      "target": "src_lib_constants_links_reglamento_link_props",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/links.ts",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -18985,7 +19150,34 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/constants/links.ts",
-      "source_location": "L15",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_regionstatus",
+      "target": "src_lib_constants_regionstatus_registrationstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_regionstatus",
+      "target": "src_lib_constants_regionstatus_regionregistration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_regionstatus",
+      "target": "src_lib_constants_regionstatus_registration_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/regionStatus.ts",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -19085,11 +19277,29 @@
     },
     {
       "source": "src_lib_constants_registrationoptions",
+      "target": "src_lib_constants_registrationoptions_closed_registration_regions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/registrationOptions.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_registrationoptions",
       "target": "src_lib_constants_registrationoptions_cities_with_full_quota",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/lib/constants/registrationOptions.ts",
-      "source_location": "L32",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_registrationoptions",
+      "target": "src_lib_constants_registrationoptions_iscityregistrationclosed",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/registrationOptions.ts",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -19828,7 +20038,7 @@
     },
     {
       "source": "src_pages_inscripcionespage",
-      "target": "src_sections_home_regionstatussection",
+      "target": "src_sections_inscripciones_registrationformsection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -19838,7 +20048,7 @@
     },
     {
       "source": "src_pages_inscripcionespage",
-      "target": "src_sections_inscripciones_registrationformsection",
+      "target": "src_sections_inscripciones_registrationregionstatussection",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -21902,6 +22112,16 @@
     },
     {
       "source": "src_sections_footer",
+      "target": "src_lib_constants_links_reglamento_pdf",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/Footer.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_footer",
       "target": "src_sections_footer_social_icons",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -21933,7 +22153,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L57",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -21942,7 +22162,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L88",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -22097,7 +22317,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L189",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -22507,11 +22727,31 @@
     },
     {
       "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_links_reglamento_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
       "target": "src_sections_copa_copaherosection_copaherosection",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHeroSection.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -22576,11 +22816,31 @@
     },
     {
       "source": "src_sections_copa_copahistorysection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
+      "target": "src_lib_constants_links_reglamento_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHistorySection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copahistorysection",
       "target": "src_sections_copa_copahistorysection_file",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -22589,7 +22849,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -22598,7 +22858,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -22607,7 +22867,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -22616,7 +22876,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L75",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -22625,7 +22885,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -22634,7 +22894,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHistorySection.tsx",
-      "source_location": "L92",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -23239,29 +23499,32 @@
     },
     {
       "source": "src_sections_home_regionstatussection",
-      "target": "src_sections_home_regionstatussection_registrationstatus",
-      "relation": "contains",
+      "target": "src_lib_constants_regionstatus",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L12",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
       "source": "src_sections_home_regionstatussection",
-      "target": "src_sections_home_regionstatussection_regionregistration",
-      "relation": "contains",
+      "target": "src_lib_constants_regionstatus_registration_status",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L19",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
       "source": "src_sections_home_regionstatussection",
-      "target": "src_sections_home_regionstatussection_registration_status",
-      "relation": "contains",
+      "target": "src_lib_constants_regionstatus_registrationstatus",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L37",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -23270,7 +23533,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L78",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -23279,7 +23542,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L94",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -23288,7 +23551,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L143",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -23297,7 +23560,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/RegionStatusSection.tsx",
-      "source_location": "L145",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -23464,7 +23727,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -23473,7 +23736,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -23482,7 +23745,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -23770,7 +24033,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationformsection",
-      "target": "src_components_ui_section_label",
+      "target": "src_lib_assets_textures",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23780,7 +24043,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationformsection",
-      "target": "src_components_ui_section_label_sectionlabel",
+      "target": "src_lib_assets_textures_textures",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23790,11 +24053,31 @@
     },
     {
       "source": "src_sections_inscripciones_registrationformsection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationformsection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationformsection",
       "target": "src_sections_inscripciones_registrationformsection_registrationformsectionprops",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -23803,7 +24086,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationFormSection.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -23838,7 +24121,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationguidesection",
-      "target": "src_components_ui_section_label",
+      "target": "src_lib_assets_textures",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23848,7 +24131,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationguidesection",
-      "target": "src_components_ui_section_label_sectionlabel",
+      "target": "src_lib_assets_textures_textures",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23858,7 +24141,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationguidesection",
-      "target": "src_components_ui_surface",
+      "target": "src_components_ui_section_label",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23868,7 +24151,7 @@
     },
     {
       "source": "src_sections_inscripciones_registrationguidesection",
-      "target": "src_components_ui_surface_surface",
+      "target": "src_components_ui_section_label_sectionlabel",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -23922,7 +24205,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationGuideSection.tsx",
-      "source_location": "L15",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -24037,11 +24320,20 @@
     },
     {
       "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_sections_inscripciones_registrationherosection_pointer_depth",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
       "target": "src_sections_inscripciones_registrationherosection_registrationherosection",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L35",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -24076,12 +24368,32 @@
     },
     {
       "source": "src_sections_inscripciones_registrationkeydatessection",
-      "target": "src_components_ui_section_label",
+      "target": "src_lib_assets_textures",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationkeydatessection",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationkeydatessection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -24091,7 +24403,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -24101,7 +24413,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -24111,7 +24423,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -24121,7 +24433,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24131,7 +24443,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24140,7 +24452,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -24149,7 +24461,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -24158,7 +24470,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -24167,7 +24479,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -24177,7 +24489,219 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationKeyDatesSection.tsx",
-      "source_location": "L51",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_scrolltoanchor",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_scrolltoanchor_scrolltoanchor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_assets_textures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_assets_textures_textures",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_components_ui_section_label",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_components_ui_section_label_sectionlabel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_constants_regionstatus",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_constants_regionstatus_registration_status",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_constants_regionstatus_regionregistration",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_lib_constants_regionstatus_registrationstatus",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_registrationregionstatussectionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_statustheme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_status_theme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_registrationregionstatussection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_regioncardprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_regioncard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_notifyactionprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L337",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection",
+      "target": "src_sections_inscripciones_registrationregionstatussection_notifyaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L351",
       "weight": 1.0
     },
     {
@@ -29291,6 +29815,16 @@
       "weight": 1.0
     },
     {
+      "source": "src_pages_inscripcionespage",
+      "target": "src_sections_inscripciones_registrationkeydatessection_registrationkeydatessection",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InscripcionesPage.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "src_pages_lacopapage",
       "target": "src_sections_copa_copachapternav_copachapternav",
       "relation": "imports",
@@ -29432,7 +29966,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L127",
+      "source_location": "L128",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_registrations_registrationform_registrationform",
+      "target": "src_lib_constants_registrationoptions_iscityregistrationclosed",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/registrations/RegistrationForm.tsx",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -29443,7 +29988,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L150",
+      "source_location": "L159",
       "weight": 1.0
     },
     {
@@ -29454,45 +29999,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L156",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
       "source": "src_components_registrations_registrationform_registrationform",
       "target": "src_lib_utils_formformatters_normalizetext",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L158",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_registrations_registrationform_registrationform",
-      "target": "src_lib_utils_formformatters_normalizedigits",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L161",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_registrations_registrationform_registrationform",
-      "target": "src_lib_utils_formformatters_normalizephone",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L162",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_registrations_registrationform_registrationform",
-      "target": "src_lib_analytics_gtm_trackgeneratelead",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -29503,13 +30015,46 @@
     },
     {
       "source": "src_components_registrations_registrationform_registrationform",
+      "target": "src_lib_utils_formformatters_normalizedigits",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/registrations/RegistrationForm.tsx",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_registrations_registrationform_registrationform",
+      "target": "src_lib_utils_formformatters_normalizephone",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/registrations/RegistrationForm.tsx",
+      "source_location": "L171",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_registrations_registrationform_registrationform",
+      "target": "src_lib_analytics_gtm_trackgeneratelead",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/registrations/RegistrationForm.tsx",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_registrations_registrationform_registrationform",
       "target": "src_lib_analytics_gtm_trackregistrationerror",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L184",
+      "source_location": "L193",
       "weight": 1.0
     },
     {
@@ -29520,7 +30065,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L295",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
@@ -29531,7 +30076,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L404",
+      "source_location": "L413",
       "weight": 1.0
     },
     {
@@ -29542,7 +30087,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L422",
+      "source_location": "L431",
       "weight": 1.0
     },
     {
@@ -32380,7 +32925,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Hero.tsx",
-      "source_location": "L431",
+      "source_location": "L411",
       "weight": 1.0
     },
     {
@@ -32402,7 +32947,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/home/SmartCopaBar.tsx",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -32413,7 +32958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/inscripciones/RegistrationGuideSection.tsx",
-      "source_location": "L76",
+      "source_location": "L134",
       "weight": 1.0
     },
     {
@@ -32424,7 +32969,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L198",
+      "source_location": "L356",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationregionstatussection_regioncard",
+      "target": "src_lib_scrolltoanchor_scrolltoanchor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/sections/inscripciones/RegistrationRegionStatusSection.tsx",
+      "source_location": "L289",
       "weight": 1.0
     },
     {
@@ -32502,17 +33058,6 @@
       "confidence_score": 1.0,
       "source_file": "src/services/admin/users.ts",
       "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_registrations_registrationform_registrationform",
-      "target": "src_lib_constants_registrationoptions_cities_with_full_quota",
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/registrations/RegistrationForm.tsx",
-      "source_location": "L128",
       "weight": 1.0
     },
     {
