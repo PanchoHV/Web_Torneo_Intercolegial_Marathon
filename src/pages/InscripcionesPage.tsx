@@ -8,8 +8,8 @@ import {
   REGISTRATION_FAQ_ITEMS,
 } from '@/lib/constants/inscripcionesPage';
 import FaqSection from '@/sections/home/FaqSection';
-import RegionStatusSection from '@/sections/home/RegionStatusSection';
 import RegistrationFormSection from '@/sections/inscripciones/RegistrationFormSection';
+import RegistrationRegionStatusSection from '@/sections/inscripciones/RegistrationRegionStatusSection';
 import RegistrationGuideSection from '@/sections/inscripciones/RegistrationGuideSection';
 import RegistrationHeroSection from '@/sections/inscripciones/RegistrationHeroSection';
 import RegistrationKeyDatesSection from '@/sections/inscripciones/RegistrationKeyDatesSection';
@@ -47,8 +47,8 @@ export default function InscripcionesPage() {
       <div className="relative">
         <RegistrationHeroSection />
 
-        {/* Presentación y data del Home: un solo sistema de estado regional. */}
-        <RegionStatusSection />
+        {/* Misma data y contrato de estado que el Home, presentación compacta. */}
+        <RegistrationRegionStatusSection />
 
         <RegistrationGuideSection />
 

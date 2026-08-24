@@ -6,63 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, BadgeCheck, CalendarDays, Lock } from 'lucide-react';
 
 import { Container } from '@/components/ui/container';
+import {
+  REGISTRATION_STATUS,
+  type RegistrationStatus,
+} from '@/lib/constants/regionStatus';
 
 gsap.registerPlugin(ScrollTrigger);
-
-type RegistrationStatus = 'closed' | 'upcoming' | 'open';
-
-/**
- * Contenido por región. Es el shape que entregará el mini CMS: solo identidad,
- * copy y estado. Ni un token visual vive aquí — la apariencia se deriva del
- * `status`, así que si mañana Sierra pasa a `open` la tarjeta cambia sola.
- */
-type RegionRegistration = {
-  id: string;
-  region: string;
-  label: string;
-  status: RegistrationStatus;
-  headline: string;
-  description: string;
-  mapSrc: string;
-  /** Fecha confirmada de apertura. Solo se renderiza si el CMS la entrega. */
-  openingDate?: string;
-  /** Sobrescribe el texto del badge si una región necesita un matiz propio. */
-  availabilityLabel?: string;
-  ctaLabel?: string;
-  ctaHref?: string;
-  active?: boolean;
-};
-
-/** TODO(cms): reemplazar por la colección `registration_status` del mini CMS. */
-const REGISTRATION_STATUS: RegionRegistration[] = [
-  {
-    id: 'costa',
-    region: 'Costa',
-    label: 'REGIÓN COSTA',
-    status: 'closed',
-    headline: 'INSCRIPCIONES CERRADAS',
-    description: 'El periodo de inscripción de esta región finalizó.',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Costa.webp',
-  },
-  {
-    id: 'sierra',
-    region: 'Sierra',
-    label: 'REGIÓN SIERRA',
-    status: 'upcoming',
-    headline: 'APERTURA PRÓXIMAMENTE',
-    description: 'Mantente atento a la apertura de inscripciones.',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Sierra.webp',
-  },
-  {
-    id: 'oriente',
-    region: 'Oriente',
-    label: 'REGIÓN ORIENTE',
-    status: 'upcoming',
-    headline: 'APERTURA PRÓXIMAMENTE',
-    description: 'Mantente atento a la apertura de inscripciones.',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_oriente.webp',
-  },
-];
 
 /**
  * Gramática visual compartida por las tres tarjetas.
