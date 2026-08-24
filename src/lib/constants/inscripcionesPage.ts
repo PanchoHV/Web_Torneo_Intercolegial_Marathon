@@ -37,6 +37,10 @@ export const REGISTRATION_HERO_LAYERS = {
   ),
 } as const;
 
+/** Iconografía oficial de la guía. Cada asset YA incluye su círculo navy. */
+const GUIDE_ICON = (name: string) =>
+  encodeURI(`https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/${name}`);
+
 /**
  * Pasos de la guía.
  *
@@ -46,6 +50,7 @@ export const REGISTRATION_HERO_LAYERS = {
 export const REGISTRATION_GUIDE_STEPS = [
   {
     id: 'institucion',
+    icon: GUIDE_ICON('optimized-User Icon.webp'),
     number: '01',
     title: 'Datos de tu institución',
     description:
@@ -53,6 +58,7 @@ export const REGISTRATION_GUIDE_STEPS = [
   },
   {
     id: 'responsable',
+    icon: GUIDE_ICON('optimized-Geo Icon.webp'),
     number: '02',
     title: 'Datos del responsable',
     description:
@@ -60,6 +66,7 @@ export const REGISTRATION_GUIDE_STEPS = [
   },
   {
     id: 'ciudad-categorias',
+    icon: GUIDE_ICON('optimized-Docs icon.webp'),
     number: '03',
     title: 'Ciudad y categorías',
     description:
@@ -67,6 +74,7 @@ export const REGISTRATION_GUIDE_STEPS = [
   },
   {
     id: 'enviar',
+    icon: GUIDE_ICON('optimized-Check Icon.webp'),
     number: '04',
     title: 'Revisa y envía',
     description:

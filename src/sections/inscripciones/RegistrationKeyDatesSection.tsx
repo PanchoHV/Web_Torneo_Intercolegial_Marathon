@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { Container } from '@/components/ui/container';
+import { textures } from '@/lib/assets/textures';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Surface } from '@/components/ui/surface';
 import { VENUES } from '@/lib/constants/venues';
@@ -113,8 +114,26 @@ export default function RegistrationKeyDatesSection() {
     <section
       id="registration-key-dates"
       aria-labelledby="registration-key-dates-title"
-      className="relative py-[clamp(2.5rem,4.5vw,4rem)] text-marathon-navy"
+      className="relative overflow-hidden py-[clamp(2.5rem,4.5vw,4rem)] text-marathon-navy"
     >
+      {/* Refuerzo de timeline. Fuera de la fila de tarjetas: nunca cruza
+          fechas, labels ni iconos. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 select-none">
+        <img
+          src={textures.copaStamp}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute -left-16 -top-8 w-[clamp(120px,16vw,250px)] rotate-[12deg] opacity-[0.05] md:-left-14 md:-top-10 md:opacity-[0.06]"
+        />
+        <img
+          src={textures.brushPlus}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute -right-6 bottom-3 hidden w-[clamp(90px,9vw,150px)] opacity-[0.1] lg:block"
+        />
+      </div>
       <Container className="relative w-full" style={{ maxWidth: '88rem' }}>
         <SectionLabel tone="blue">Fechas clave</SectionLabel>
         <h2

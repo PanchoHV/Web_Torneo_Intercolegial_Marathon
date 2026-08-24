@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { Container } from '@/components/ui/container';
+import { textures } from '@/lib/assets/textures';
 import { SectionLabel } from '@/components/ui/section-label';
 
 type RegistrationFormSectionProps = {
@@ -24,8 +25,19 @@ export default function RegistrationFormSection({
     <section
       id="registration-form"
       aria-labelledby="registration-form-title"
-      className="relative scroll-mt-[calc(var(--header-height)+1.5rem)] py-[clamp(2.5rem,4.5vw,4rem)] text-marathon-navy"
+      className="relative overflow-hidden scroll-mt-[calc(var(--header-height)+1.5rem)] py-[clamp(2.5rem,4.5vw,4rem)] text-marathon-navy"
     >
+      {/* El formulario es zona funcional: una sola marca, al margen derecho y
+          por detrás del contenido, para no bajar contraste en ningún campo. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 select-none">
+        <img
+          src={textures.copaStamp}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="absolute -right-20 top-8 w-[clamp(130px,16vw,260px)] rotate-[-14deg] opacity-[0.04] lg:-right-16 lg:top-16 lg:opacity-[0.05]"
+        />
+      </div>
       <Container className="relative w-full" style={{ maxWidth: '88rem' }}>
         <div className={isSubmitted ? 'sr-only' : undefined}>
           <SectionLabel tone="red">Inscripción oficial</SectionLabel>
