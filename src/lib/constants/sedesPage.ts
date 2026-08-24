@@ -89,7 +89,7 @@ export const FEATURED_VENUE_CONTENT: Record<string, FeaturedVenueContent> = {
       { label: 'Escenarios', value: '4' },
       { label: 'Colegios', value: '12+' },
       { label: 'Atletas', value: '1.400+' },
-      { label: 'Pruebas', value: '15+' },
+      { label: 'Partidos', value: '—' },
     ],
     mainLocations: [
       'Complejo deportivo principal',
@@ -108,7 +108,7 @@ export const FALLBACK_FEATURED_CONTENT: FeaturedVenueContent = {
     { label: 'Escenarios', value: '—' },
     { label: 'Colegios', value: '—' },
     { label: 'Atletas', value: '—' },
-    { label: 'Pruebas', value: '—' },
+    { label: 'Partidos', value: '—' },
   ],
   mainLocations: [],
 };
