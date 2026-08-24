@@ -100,18 +100,6 @@ const HERO_COPY_STYLES = `
     max-width: 100%;
   }
 
-  .hero-social {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 18px;
-    font-family: var(--font-montserrat), Montserrat, sans-serif;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-align: center;
-  }
 
   .hero-readable-left {
     position: absolute;
@@ -177,12 +165,6 @@ const HERO_COPY_STYLES = `
       margin-top: 26px;
     }
 
-    .hero-social {
-      margin-top: 18px;
-      font-size: 14px;
-      letter-spacing: 0.06em;
-      text-align: left;
-    }
   }
 `;
 
@@ -204,7 +186,6 @@ export default function Hero() {
   const contentHeadlineRef = useRef<HTMLHeadingElement>(null);
   const contentCopyRef = useRef<HTMLParagraphElement>(null);
   const contentCtaRef = useRef<HTMLDivElement>(null);
-  const contentSocialRef = useRef<HTMLDivElement>(null);
   const reducedMotionRef = useRef(false);
 
   useEffect(() => {
@@ -241,7 +222,6 @@ export default function Hero() {
         contentHeadlineRef.current,
         contentCopyRef.current,
         contentCtaRef.current,
-        contentSocialRef.current,
       ].filter(Boolean) as HTMLElement[];
 
       if (contentNodes.length > 0) {
@@ -588,14 +568,6 @@ export default function Hero() {
                 VER INSCRIPCIONES
               </Link>
             </Button>
-          </div>
-
-          <div
-            ref={contentSocialRef}
-            className="hero-social"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-marathon-red shadow-[0_0_14px_rgba(226,27,45,0.45)]" />
-            <span>#OrgulloIntercolegial</span>
           </div>
         </div>
       </div>

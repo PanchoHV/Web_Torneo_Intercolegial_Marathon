@@ -7,13 +7,14 @@ import { Surface } from '@/components/ui/surface';
 import { trackCtaClick } from '@/lib/analytics/gtm';
 import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
-type CopaBarState = 'upcoming' | 'match-day' | 'live' | 'completed';
+type CopaBarState = 'upcoming' | 'in-progress' | 'match-day' | 'live' | 'completed';
 
 type CopaBarConfig = {
   state: CopaBarState;
   eyebrow: string;
   primaryLead: string;
-  primaryDate: string;
+  /** Cola destacada del titular. Ya no es una fecha: el arranque es hoy. */
+  primaryHighlight: string;
   secondary: string;
   ctaLabel: string;
   ctaRoute: string;
@@ -23,11 +24,11 @@ type CopaBarConfig = {
 };
 
 const COPA_BAR_CONFIG: CopaBarConfig = {
-  state: 'upcoming',
-  eyebrow: 'PRÓXIMA ETAPA',
-  primaryLead: 'LA COPA ARRANCA EL',
-  primaryDate: '24 DE AGOSTO',
-  secondary: 'Prepárate para seguir cada historia, jugada y momento del torneo.',
+  state: 'in-progress',
+  eyebrow: 'HOY EMPIEZA',
+  primaryLead: 'HOY ARRANCA',
+  primaryHighlight: 'LA COPA',
+  secondary: 'Vive desde hoy cada partido, resultado e historia del torneo.',
   ctaLabel: 'ABRIR FAN APP',
   ctaRoute: FAN_APP_URL,
   secondaryCue: 'Ver sedes',
@@ -37,6 +38,7 @@ const COPA_BAR_CONFIG: CopaBarConfig = {
 
 const stateLabels: Record<CopaBarState, string> = {
   upcoming: 'Próxima etapa',
+  'in-progress': 'Copa en curso',
   'match-day': 'Hoy juega la Copa',
   live: 'En vivo',
   completed: 'Jornada finalizada',
@@ -103,13 +105,10 @@ export default function SmartCopaBar() {
                 id="smart-copa-bar-title"
                 className="font-montserrat text-[clamp(1.55rem,7vw,2.25rem)] font-black uppercase leading-[0.98] tracking-[-0.035em] text-white md:text-[clamp(1.75rem,2.65vw,2.75rem)]"
               >
-                {config.primaryLead}{' '}
-                <time
-                  dateTime={config.milestoneIsoDate}
-                  className="text-marathon-action-primary"
-                >
-                  {config.primaryDate}
-                </time>
+                <time dateTime={config.milestoneIsoDate}>{config.primaryLead}</time>{' '}
+                <span className="text-marathon-action-primary">
+                  {config.primaryHighlight}
+                </span>
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/74 md:text-base">
                 {config.secondary}
