@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { REGLAMENTO_LINK_PROPS } from '@/lib/constants/links';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -90,25 +91,25 @@ export default function CopaHeroSection() {
     <section
       ref={sectionRef}
       id="hero-la-copa"
-      className="relative isolate w-full overflow-hidden bg-[#E8D9C5] pt-[var(--header-height)] xl:bg-[#031528] xl:pt-0"
+      className="relative isolate w-full overflow-hidden bg-[#031528]"
     >
       {/* El lienzo conserva el aspecto nativo del artwork (1920/900). Si se
           recorta, el papel rasgado se desplaza y el copy deja de caer dentro. */}
       <div
         ref={stageRef}
-        className="relative w-full overflow-hidden xl:aspect-[1920/900] xl:bg-[#031528]"
+        className="relative min-h-[570px] w-full overflow-hidden sm:min-h-[560px] lg:aspect-[1920/900] lg:max-h-[640px] lg:min-h-[600px] lg:bg-[#031528]"
         style={{ perspective: '1200px' }}
       >
         {/* Art stage. Mobile: banda superior con el trofeo a la vista.
             Desktop: lienzo completo con el papel a la izquierda. */}
-        <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] xl:absolute xl:inset-0 xl:aspect-auto xl:h-full">
+        <div className="absolute inset-0 h-full w-full">
           <img
             src={HERO_BACKGROUND}
             alt=""
             aria-hidden="true"
             loading="eager"
             decoding="async"
-            className="absolute inset-0 z-0 h-full w-full object-cover object-right xl:object-center"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-[66%_center] lg:object-center"
           />
 
           <div
@@ -117,7 +118,7 @@ export default function CopaHeroSection() {
           >
             <div
               ref={cupPointerRef}
-              className="h-full w-full will-change-transform [transform-style:preserve-3d]"
+              className="h-full w-full origin-top scale-[0.82] will-change-transform [transform-style:preserve-3d] lg:origin-bottom lg:scale-[0.87]"
             >
               <img
                 src={HERO_CUP}
@@ -125,30 +126,40 @@ export default function CopaHeroSection() {
                 aria-hidden="true"
                 loading="eager"
                 decoding="async"
-                className="h-full w-full object-cover object-right xl:object-center"
+                className="h-full w-full object-cover object-[74%_top] lg:object-center"
               />
             </div>
           </div>
         </div>
 
-        {/* Copy editorial: en flujo sobre papel en mobile, superpuesto en desktop. */}
-        <div className="relative z-20 xl:absolute xl:inset-0">
-          <div className="flex h-full w-full items-start xl:items-center">
+        {/*
+          Capa de contraste. Solo por debajo de lg: en desktop el copy vive
+          sobre el papel y no la necesita. Deja respirar la fotografía arriba
+          y concentra la densidad donde cae el texto.
+        */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(3,21,40,0.24)_0%,rgba(3,21,40,0.68)_46%,rgba(3,21,40,0.92)_100%)] lg:hidden"
+        />
+
+        {/* Copy editorial: superpuesto a la escena en todas las escalas. */}
+        <div className="absolute inset-0 z-20">
+          <div className="flex h-full w-full items-end pt-[var(--header-height)] lg:items-center lg:pt-[var(--header-height)]">
             {/* El ancho útil del papel es proporcional al viewport: el rasgado
                 cae en ~39% del lienzo, menos el margen izquierdo. */}
-            <div className="w-full max-w-[560px] px-6 pb-10 pt-8 sm:px-8 xl:w-[calc(34vw+clamp(64px,7.5vw,145px))] xl:max-w-[700px] xl:px-0 xl:py-0 xl:pl-[clamp(64px,7.5vw,145px)]">
+            <div className="w-full max-w-[560px] px-6 pb-9 pt-4 sm:px-8 sm:pb-10 lg:w-[calc(34vw+clamp(48px,5vw,145px))] lg:max-w-[700px] xl:w-[calc(34vw+clamp(64px,7.5vw,145px))] lg:px-0 lg:py-0 lg:pl-[clamp(64px,7.5vw,145px)]">
               <h1
-                className="m-0 font-normal uppercase leading-[0.84] text-[#062A4F]"
+                className="m-0 font-normal uppercase leading-[0.84] text-marathon-cream lg:text-[#062A4F]"
                 style={{
                   fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-                  fontSize: 'clamp(3.6rem, 12vw, 7rem)',
+                  fontSize: 'clamp(3.1rem, 10.5vw, 7rem)',
                 }}
               >
                 La Copa
               </h1>
 
               <h2
-                className="mt-3 font-normal uppercase leading-[0.94] text-[#E21B2D] xl:mt-4 xl:max-w-[30vw]"
+                className="mt-3 font-normal uppercase leading-[0.94] text-[#E21B2D] lg:mt-4 lg:max-w-[33vw] xl:max-w-[30vw]"
                 style={{
                   fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
                   fontSize: 'clamp(1.5rem, 5.4vw, 2.3rem)',
@@ -158,7 +169,7 @@ export default function CopaHeroSection() {
                 <span className="block">que se vuelven leyenda</span>
               </h2>
 
-              <p className="mt-5 max-w-[440px] font-inter text-[15px] leading-[1.6] text-[#062A4F]/85 sm:text-[16px] xl:max-w-[27vw]">
+              <p className="mt-5 max-w-[440px] font-inter text-[15px] leading-[1.6] text-white sm:text-[16px] lg:text-[#062A4F]/85 lg:max-w-[30vw] xl:max-w-[27vw]">
                 La Copa Nacional Intercolegial Marathon Ecuador 2026 es el
                 torneo escolar de fútbol más grande del país. Conectamos
                 colegios, jugadores y comunidades a través de la pasión, el
@@ -167,7 +178,7 @@ export default function CopaHeroSection() {
 
               <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
                 <a
-                  href="#reglamento"
+                  {...REGLAMENTO_LINK_PROPS}
                   className="group inline-flex h-12 items-center justify-center gap-3 rounded-[4px] bg-[#E21B2D] px-6 font-montserrat text-[12px] font-black uppercase tracking-[0.08em] text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E21B2D]"
                 >
                   Ver reglamento
@@ -181,7 +192,7 @@ export default function CopaHeroSection() {
 
                 <a
                   href="#categorias"
-                  className="group inline-flex h-12 items-center gap-2 border-b-2 border-[#062A4F]/20 px-1 font-montserrat text-[12px] font-black uppercase tracking-[0.08em] text-[#062A4F] transition-colors duration-200 hover:border-[#062A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062A4F]"
+                  className="group inline-flex h-12 items-center gap-2 border-b-2 border-white/30 px-1 font-montserrat text-[12px] font-black uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-white lg:border-[#062A4F]/20 lg:text-[#062A4F] lg:hover:border-[#062A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062A4F]"
                 >
                   Conocer categorías
                   <span

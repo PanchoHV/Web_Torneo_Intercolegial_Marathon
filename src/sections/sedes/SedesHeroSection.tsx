@@ -89,12 +89,12 @@ export default function SedesHeroSection() {
     <section
       ref={heroRef}
       aria-labelledby="sedes-hero-title"
-      className="relative isolate flex w-full flex-col overflow-hidden lg:flex-row lg:items-center lg:pt-[var(--header-height)] lg:min-h-[calc(var(--header-height)+clamp(400px,32vw,540px))]"
+      className="relative isolate flex min-h-[540px] w-full items-center overflow-hidden pt-[var(--header-height)] lg:min-h-[calc(var(--header-height)+clamp(455px,34vw,520px))] lg:flex-row lg:pt-[var(--header-height)]"
     >
       {/* ── LAYER 1+2: fotografía (papel, rasgado y acentos ya vienen en el asset) ── */}
       <div
         aria-hidden="true"
-        className="relative order-2 h-[52vw] max-h-[300px] w-full overflow-hidden lg:absolute lg:inset-x-0 lg:bottom-0 lg:top-[var(--header-height)] lg:order-none lg:h-auto lg:max-h-none"
+        className="absolute inset-0 overflow-hidden lg:inset-x-0 lg:bottom-0 lg:top-[var(--header-height)]"
       >
         {/* Wrapper de MOTION: separado del wrapper de layout para que el
             encuadre sea idéntico con o sin animación. */}
@@ -105,11 +105,20 @@ export default function SedesHeroSection() {
             fetchPriority="high"
             decoding="async"
             draggable={false}
-            className="h-full w-full object-cover object-[82%_center] lg:object-center"
+            className="h-full w-full object-cover object-[76%_center] lg:object-center"
           />
         </div>
 
       </div>
+
+      {/*
+        Capa de contraste: solo por debajo de lg. En desktop el copy vive sobre
+        el papel del propio asset y no la necesita.
+      */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[2] bg-[linear-gradient(180deg,rgba(6,42,79,0.18)_0%,rgba(6,42,79,0.62)_44%,rgba(6,42,79,0.94)_100%)] lg:hidden"
+      />
 
       {/* ── LAYER 4: brochazo rojo, esquina inferior izquierda ── */}
       <div
@@ -135,7 +144,7 @@ export default function SedesHeroSection() {
       >
         <div className="max-w-[34rem] pb-[clamp(1.75rem,3vw,2.5rem)] pt-[calc(var(--header-height)+clamp(1.25rem,3vw,2.75rem))] lg:max-w-[min(38vw,34rem)] lg:py-[clamp(1.5rem,2.5vw,2.5rem)]">
           <nav aria-label="Ruta de navegación">
-            <ol className="flex items-center gap-2 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.18em] text-marathon-gray">
+            <ol className="flex items-center gap-2 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.18em] text-white/70 lg:text-marathon-gray">
               <li>
                 <Link
                   to="/"
@@ -144,10 +153,10 @@ export default function SedesHeroSection() {
                   Inicio
                 </Link>
               </li>
-              <li aria-hidden="true" className="text-marathon-gray/50">
+              <li aria-hidden="true" className="text-white/45 lg:text-marathon-gray/50">
                 <ChevronRight size={13} strokeWidth={3} />
               </li>
-              <li aria-current="page" className="text-marathon-navy">
+              <li aria-current="page" className="text-marathon-cream lg:text-marathon-navy">
                 Sedes
               </li>
             </ol>
@@ -155,7 +164,7 @@ export default function SedesHeroSection() {
 
           <h1
             id="sedes-hero-title"
-            className="mt-4 font-normal uppercase leading-[0.84] text-marathon-navy"
+            className="mt-4 font-normal uppercase leading-[0.84] text-marathon-cream lg:text-marathon-navy"
             style={{
               fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
               fontSize: 'clamp(3rem, 5.6vw, 5.4rem)',
@@ -174,7 +183,7 @@ export default function SedesHeroSection() {
             Encuentra tu sede
           </p>
 
-          <p className="mt-4 max-w-[34rem] text-[0.92rem] leading-6 text-marathon-gray lg:text-[0.95rem] lg:leading-7">
+          <p className="mt-4 max-w-[34rem] text-[0.92rem] leading-6 text-white lg:text-[0.95rem] lg:leading-7 lg:text-marathon-gray">
             Explora las ciudades anfitrionas, conoce los escenarios y toda la
             información útil para tu participación.
           </p>
