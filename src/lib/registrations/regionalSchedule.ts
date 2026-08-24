@@ -15,7 +15,7 @@ export const REGIONAL_SCHEDULE_BY_CITY: Record<RegistrationCity, RegionalSchedul
     city: 'Guayaquil (Guayas)',
     region: 'Costa',
     inscriptionStart: '4 de mayo de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '24 de agosto de 2026',
     calendarMessage:
       'Tu sede forma parte del primer bloque de activación de la Región Costa.',
   },
@@ -39,7 +39,7 @@ export const REGIONAL_SCHEDULE_BY_CITY: Record<RegistrationCity, RegionalSchedul
     city: 'Esmeraldas',
     region: 'Costa',
     inscriptionStart: '4 de mayo de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '24 de agosto de 2026',
     calendarMessage:
       'Tu sede forma parte del primer bloque de activación de la Región Costa.',
   },
@@ -47,7 +47,7 @@ export const REGIONAL_SCHEDULE_BY_CITY: Record<RegistrationCity, RegionalSchedul
     city: 'Machala',
     region: 'Costa',
     inscriptionStart: '4 de mayo de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '24 de agosto de 2026',
     calendarMessage:
       'Tu sede forma parte del primer bloque de activación de la Región Costa.',
   },
