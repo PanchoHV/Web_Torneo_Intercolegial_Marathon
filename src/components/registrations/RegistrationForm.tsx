@@ -28,7 +28,8 @@ import {
 } from '@/components/ui/select';
 import {
   CITY_OPTIONS,
-  CITIES_WITH_FULL_QUOTA,
+  CLOSED_CITY_MESSAGE,
+  isCityRegistrationClosed,
   DELEGATE_ROLE_OPTIONS,
   SCHOOL_TYPE_OPTIONS,
   TOURNAMENT_CATEGORY_OPTIONS,
@@ -125,10 +126,18 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
   const selectedCity = useWatch({ control, name: 'city' });
   const selectedSchedule = selectedCity ? getRegionalSchedule(selectedCity) : null;
-  const isQuotaFull = selectedCity ? CITIES_WITH_FULL_QUOTA.includes(selectedCity) : false;
+  const isQuotaFull = isCityRegistrationClosed(selectedCity);
 
   const onSubmit = handleSubmit(async (values) => {
     setSubmitError(null);
+
+    // El `disabled` de los campos es solo visual: no frena un envío forzado
+    // desde devtools ni una selección que quedó stale. La región cerrada se
+    // vuelve a comprobar aquí, contra el valor que realmente se va a enviar.
+    if (isCityRegistrationClosed(values.city)) {
+      setSubmitError(CLOSED_CITY_MESSAGE);
+      return;
+    }
 
     if (hasTurnstile) {
       if (!turnstileReady) {
@@ -325,7 +334,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
                 <svg className="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
-                Lo sentimos, los cupos para esta ciudad están llenos.
+                {CLOSED_CITY_MESSAGE}
               </div>
             )}
 
