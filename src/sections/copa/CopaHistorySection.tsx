@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { textures } from '@/lib/assets/textures';
+import { REGLAMENTO_LINK_PROPS } from '@/lib/constants/links';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,8 +92,7 @@ const categories = [
 /** Ilustración del panel de reglamento: tablilla táctica y silbato en una sola pieza. */
 const RULES_ART = file('optimized-silbato y tabla.webp');
 
-/** TODO(contenido): destino oficial del reglamento pendiente de validación. Placeholder consciente. */
-const RULES_HREF = '#reglamento';
+/** Destino oficial del reglamento: el PDF publicado en `public/documentos`. */
 
 /* -------------------------------------------------------------------------- */
 
@@ -460,7 +460,7 @@ export default function CopaHistorySection() {
                 </p>
 
                 <a
-                  href={RULES_HREF}
+                  {...REGLAMENTO_LINK_PROPS}
                   className="mt-[clamp(1.5rem,2.6vw,2.25rem)] inline-flex items-center gap-3 rounded-[7px] bg-[#E21B2D] px-6 py-3.5 text-[0.82rem] font-bold uppercase tracking-[0.09em] text-white transition-[background-color,transform,box-shadow] duration-200 ease-out hover:-translate-y-[2px] hover:bg-[#c41626] hover:shadow-[0_10px_22px_rgba(226,27,45,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   Consultar reglamento

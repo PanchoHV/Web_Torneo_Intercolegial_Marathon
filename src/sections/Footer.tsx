@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
+import { EXTERNAL_LINK_PROPS, FAN_APP_URL, REGLAMENTO_PDF } from '@/lib/constants/links';
 
 const BEBAS = '"Bebas Neue", sans-serif';
 
@@ -37,9 +37,14 @@ const navigationLinks = [
 
 /**
  * Solo recursos con destino real verificado.
- * Reglamento, Calendario y Noticias no tienen destino todavía: no se listan.
+ * Calendario y Noticias no tienen destino todavía: no se listan.
  */
 const resourceLinks = [
+  {
+    label: 'Reglamento',
+    href: REGLAMENTO_PDF.href,
+    download: REGLAMENTO_PDF.filename,
+  },
   {
     label: 'Galería',
     href: 'https://www.flickr.com/photos/203541641@N03/albums/',
@@ -220,6 +225,8 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
+                      // El reglamento se descarga; el resto son destinos externos.
+                      download={'download' in link ? link.download : undefined}
                       target="_blank"
                       rel="noreferrer noopener"
                       className={linkClass}
