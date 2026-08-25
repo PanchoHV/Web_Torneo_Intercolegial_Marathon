@@ -126,13 +126,6 @@ export default function RegistrationKeyDatesSection() {
           decoding="async"
           className="absolute -left-16 -top-8 w-[clamp(120px,16vw,250px)] rotate-[12deg] opacity-[0.05] md:-left-14 md:-top-10 md:opacity-[0.06]"
         />
-        <img
-          src={textures.brushPlus}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="absolute -right-6 bottom-3 hidden w-[clamp(90px,9vw,150px)] opacity-[0.1] lg:block"
-        />
       </div>
       <Container className="relative w-full" style={{ maxWidth: '88rem' }}>
         <SectionLabel tone="blue">Fechas clave</SectionLabel>

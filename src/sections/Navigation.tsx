@@ -12,9 +12,8 @@ const navLinks = [
   { label: 'La Copa', href: '/la-copa' },
   { label: 'Sedes', href: '/sedes' },
   { label: 'Inscripciones', href: '/inscripciones' },
-  // La Fan App es un producto externo: se abre fuera del router.
-  { label: 'Fan App', href: FAN_APP_URL },
-  { label: 'FAQ', href: '/faq' },
+  // El ítem de navegación presenta la landing; sus CTAs abren la PWA externa.
+  { label: 'Fan App', href: '/fan-app' },
 ] as const;
 
 export default function Navigation() {

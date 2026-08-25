@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router';
 
 import { Container } from '@/components/ui/container';
 import { SectionLabel } from '@/components/ui/section-label';
@@ -19,6 +18,11 @@ type FaqSectionProps = {
   items?: FaqItem[];
   /** Párrafo introductorio del panel izquierdo. */
   description?: string;
+  /**
+   * Omite el fondo propio de la sección. Se usa cuando la página ya pinta ese
+   * mismo papel en un wrapper superior y repintarlo generaría un escalón.
+   */
+  inheritBackground?: boolean;
 };
 
 const DEFAULT_DESCRIPTION =
@@ -68,6 +72,7 @@ export default function FaqSection({
   id = 'faq-home',
   items = FAQ_ITEMS,
   description = DEFAULT_DESCRIPTION,
+  inheritBackground = false,
 }: FaqSectionProps = {}) {
   const titleId = `${id}-title`;
 
@@ -87,19 +92,25 @@ export default function FaqSection({
       id={id}
       aria-labelledby={titleId}
       className="relative overflow-hidden py-[clamp(2.75rem,4.6vw,4.25rem)] text-marathon-navy"
-      style={{
-        backgroundColor: '#F4F8FC',
-        backgroundImage:
-          "linear-gradient(180deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0) 24%), url('https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-paper-background.webp')",
-        backgroundRepeat: 'repeat, repeat',
-        backgroundPosition: 'center top, center top',
-        backgroundSize: 'auto, 700px auto',
-      }}
+      style={
+        inheritBackground
+          ? undefined
+          : {
+              backgroundColor: '#F4F8FC',
+              backgroundImage:
+                "linear-gradient(180deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0) 24%), url('https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-paper-background.webp')",
+              backgroundRepeat: 'repeat, repeat',
+              backgroundPosition: 'center top, center top',
+              backgroundSize: 'auto, 700px auto',
+            }
+      }
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(226,27,45,0.07),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,80,164,0.05),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0)_22%)]"
-      />
+      {inheritBackground ? null : (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(226,27,45,0.07),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,80,164,0.05),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0)_22%)]"
+        />
+      )}
 
       <Container className="relative w-full" style={{ maxWidth: '88rem' }}>
         <Surface
@@ -131,21 +142,6 @@ export default function FaqSection({
                 <p className="mt-5 max-w-[27rem] text-[0.96rem] leading-7 text-marathon-gray sm:text-[1rem]">
                   {description}
                 </p>
-
-                <div className="mt-5 flex flex-wrap items-center gap-5">
-                  <Link
-                    to="/faq"
-                    className="group inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.12em] text-marathon-navy transition-colors duration-200 hover:text-marathon-action-primary"
-                  >
-                    <span className="relative pb-1">
-                      Ver todas las preguntas
-                      <span className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-marathon-action-primary transition-transform duration-200 group-hover:scale-x-100" />
-                    </span>
-                    <span className="text-marathon-action-primary transition-transform duration-200 group-hover:translate-x-[2px]">
-                      →
-                    </span>
-                  </Link>
-                </div>
 
                 <div className="mt-6 lg:mt-8">
                   <div className="relative inline-flex">

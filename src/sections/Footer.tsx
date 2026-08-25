@@ -31,8 +31,7 @@ const navigationLinks = [
   { label: 'La Copa', to: '/la-copa' },
   { label: 'Sedes', to: '/sedes' },
   { label: 'Inscripciones', to: '/inscripciones' },
-  { label: 'Fan App', to: FAN_APP_URL, external: true },
-  { label: 'FAQ', to: '/faq' },
+  { label: 'Fan App', to: '/fan-app' },
 ] as const;
 
 /**

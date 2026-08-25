@@ -6,7 +6,6 @@ import ScrollToTopOnNavigate from '@/components/ScrollToTopOnNavigate';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import PublicLayout from '@/components/layout/PublicLayout';
 import HomePage from '@/pages/HomePage';
-import FAQPage from '@/pages/FAQPage';
 import FanAppPage from '@/pages/FanAppPage';
 import LaCopaPage from '@/pages/LaCopaPage';
 import InscripcionesPage from '@/pages/InscripcionesPage';
@@ -31,7 +30,6 @@ function App() {
               para no romper enlaces ya compartidos. */}
           <Route path="preinscripciones" element={<Navigate to="/inscripciones" replace />} />
           <Route path="fan-app" element={<FanAppPage />} />
-          <Route path="faq" element={<FAQPage />} />
           <Route path="inscripciones" element={<InscripcionesPage />} />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />

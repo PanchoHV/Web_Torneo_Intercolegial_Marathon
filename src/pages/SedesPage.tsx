@@ -75,6 +75,7 @@ export default function SedesPage() {
         {/* Presentación del Home, contenido propio de Sedes. */}
         <FaqSection
           id="faq-sedes"
+          inheritBackground
           items={[...VENUE_FAQ_ITEMS]}
           description={VENUE_FAQ_DESCRIPTION}
         />

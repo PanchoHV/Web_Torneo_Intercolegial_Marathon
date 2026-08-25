@@ -68,6 +68,7 @@ export default function InscripcionesPage() {
         {/* Presentación del Home, contenido propio de inscripciones. */}
         <FaqSection
           id="faq-inscripciones"
+          inheritBackground
           items={[...REGISTRATION_FAQ_ITEMS]}
           description={REGISTRATION_FAQ_DESCRIPTION}
         />
