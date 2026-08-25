@@ -59,7 +59,7 @@ export const VENUES: Venue[] = [
     preRegistrationStart: '4 de mayo de 2026',
     preRegistrationDeadline: '31 de julio de 2026',
     documentationDeadline: '5 de agosto de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '24 de agosto de 2026',
     categories: [...TOURNAMENT_CATEGORIES],
     stages: [
       { label: 'Cierre inscripciones', dateLabel: '31 jul 2026', status: 'active' },
@@ -84,7 +84,7 @@ export const VENUES: Venue[] = [
     preRegistrationStart: '4 de mayo de 2026',
     preRegistrationDeadline: '31 de julio de 2026',
     documentationDeadline: '5 de agosto de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '25 de agosto de 2026',
     categories: [...TOURNAMENT_CATEGORIES],
     stages: [
       { label: 'Cierre inscripciones', dateLabel: '31 jul 2026', status: 'active' },
@@ -109,7 +109,7 @@ export const VENUES: Venue[] = [
     preRegistrationStart: '4 de mayo de 2026',
     preRegistrationDeadline: '31 de julio de 2026',
     documentationDeadline: '5 de agosto de 2026',
-    matchStart: '17 de agosto de 2026',
+    matchStart: '25 de agosto de 2026',
     categories: [...TOURNAMENT_CATEGORIES],
     stages: [
       { label: 'Cierre inscripciones', dateLabel: '31 jul 2026', status: 'active' },

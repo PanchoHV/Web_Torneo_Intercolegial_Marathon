@@ -45,6 +45,8 @@ export type FeaturedVenue = Venue & FeaturedVenueContent;
  * `tactical` y `redBrush` son PNG/WebP con alpha: son la única fuente de
  * esos dos gestos, no se reconstruyen en CSS.
  */
+const R2_BASE = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/';
+
 export const SEDES_HERO_ASSETS = {
   background: encodeURI(
     'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Fondo sedes 2.webp'
@@ -80,22 +82,153 @@ export const DEFAULT_FEATURED_VENUE_ID = 'pichincha-quito';
  * ficha redactada; el resto cae al fallback para no inventar información.
  */
 export const FEATURED_VENUE_CONTENT: Record<string, FeaturedVenueContent> = {
-  'pichincha-quito': {
+  'guayas-guayaquil': {
     eyebrow: 'Sede principal',
     description:
-      'Quito concentra el mayor bloque de colegios de la Sierra y funciona como centro operativo de la Copa. Escenarios, logística y cobertura se articulan desde aquí.',
+      'Guayaquil es la sede de mayor volumen de la Región Costa y abre el calendario nacional de la Copa.',
+    isMainVenue: true,
+    venueImage: `${R2_BASE}optimized-Guayas.webp`,
+    stats: [
+      { label: 'Escenarios', value: '2' },
+      { label: 'Colegios', value: '150' },
+      { label: 'Atletas', value: '3.300' },
+      { label: 'Partidos', value: '350' },
+    ],
+    mainLocations: ['Samanes'],
+    address: 'Av. Francisco de Orellana y la Av. Paseo del Parque',
+  },
+
+  'eloro-machala': {
+    eyebrow: 'Sede principal',
+    description:
+      'Machala concentra la actividad de El Oro dentro del primer bloque competitivo de la Costa.',
     isMainVenue: true,
     stats: [
-      { label: 'Escenarios', value: '4' },
-      { label: 'Colegios', value: '12+' },
-      { label: 'Atletas', value: '1.400+' },
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '35' },
+      { label: 'Atletas', value: '750' },
+      { label: 'Partidos', value: '150' },
+    ],
+    mainLocations: ['Adeproro'],
+    address: 'Kilómetro 15 de la vía a Balosa, en la ciudad de Machala',
+  },
+
+  esmeraldas: {
+    eyebrow: 'Sede principal',
+    description:
+      'Esmeraldas suma uno de los bloques más amplios de colegios de la Región Costa.',
+    isMainVenue: true,
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '65' },
+      { label: 'Atletas', value: '1.400' },
+      { label: 'Partidos', value: '250' },
+    ],
+    mainLocations: ['Parque La Forestal'],
+    address:
+      'Sector de La Propicia 1, cerca del río Teaone y de la zona sur de la ciudad de Esmeraldas',
+  },
+
+  'manabi-manta': {
+    eyebrow: 'Sede principal',
+    description:
+      'Manta abre el segundo bloque de la Costa junto a Portoviejo dentro del calendario de Manabí.',
+    isMainVenue: true,
+    venueImage: `${R2_BASE}optimized-Manta.webp`,
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '35' },
+      { label: 'Atletas', value: '750' },
+      { label: 'Partidos', value: '150' },
+    ],
+    mainLocations: ['Construcsport'],
+    address:
+      'Av. María Auxiliadora (frente a Tramaco y diagonal a la Clínica San Gregorio), en la ciudad de Manta',
+  },
+
+  'manabi-portoviejo': {
+    eyebrow: 'Sede principal',
+    description:
+      'Portoviejo completa el bloque de Manabí con el mayor número de colegios de la provincia.',
+    isMainVenue: true,
+    venueImage: `${R2_BASE}optimized-Portoviejo.webp`,
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '45' },
+      { label: 'Atletas', value: '950' },
+      { label: 'Partidos', value: '180' },
+    ],
+    mainLocations: ['Skatepark «La Rotonda»'],
+    address: 'Parque la Rotonda, Portoviejo',
+  },
+
+  'pichincha-quito': {
+    eyebrow: 'Sede regional',
+    description:
+      'Quito articula el bloque de la Sierra. La ficha operativa de la sede sigue en actualización.',
+    venueImage: `${R2_BASE}optimized-La%20floresta.webp`,
+    stats: [
+      { label: 'Escenarios', value: '3' },
+      { label: 'Colegios', value: '—' },
+      { label: 'Atletas', value: '—' },
       { label: 'Partidos', value: '—' },
     ],
-    mainLocations: [
-      'Complejo deportivo principal',
-      'Cancha alterna norte',
-      'Cancha alterna valle',
+    // El registro informa 3 escenarios pero solo entrega 2 nombres.
+    mainLocations: ['La Vicentina', 'La Floresta'],
+  },
+
+  'azuay-cuenca': {
+    eyebrow: 'Sede regional',
+    description:
+      'Cuenca forma parte del bloque de la Sierra. La ficha operativa de la sede sigue en actualización.',
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '—' },
+      { label: 'Atletas', value: '—' },
+      { label: 'Partidos', value: '—' },
     ],
+    mainLocations: [],
+  },
+
+  'tungurahua-ambato': {
+    eyebrow: 'Sede regional',
+    description:
+      'Ambato forma parte del bloque de la Sierra. La ficha operativa de la sede sigue en actualización.',
+    venueImage: `${R2_BASE}optimized-Tungurahua.webp`,
+    // El registro informa 1 escenario pero entrega 2 nombres.
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '—' },
+      { label: 'Atletas', value: '—' },
+      { label: 'Partidos', value: '—' },
+    ],
+    mainLocations: ['Estadio de Césped Sintético MAO', 'Federación Deportiva de Tungurahua'],
+  },
+
+  'imbabura-ibarra': {
+    eyebrow: 'Sede regional',
+    description:
+      'Ibarra forma parte del bloque de la Sierra. La ficha operativa de la sede sigue en actualización.',
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '—' },
+      { label: 'Atletas', value: '—' },
+      { label: 'Partidos', value: '—' },
+    ],
+    mainLocations: [],
+  },
+
+  'napo-tena': {
+    eyebrow: 'Sede regional',
+    description:
+      'Tena representa a la Amazonía en la Copa. La ficha operativa de la sede sigue en actualización.',
+    stats: [
+      { label: 'Escenarios', value: '1' },
+      { label: 'Colegios', value: '—' },
+      { label: 'Atletas', value: '—' },
+      { label: 'Partidos', value: '—' },
+    ],
+    mainLocations: [],
   },
 };
 
