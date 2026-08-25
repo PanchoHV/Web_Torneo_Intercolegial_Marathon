@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ChevronRight } from 'lucide-react';
-import { Link } from 'react-router';
 
+import { HERO_ACCENT_STYLE, HERO_TITLE_STYLE, HERO_TYPE } from '@/lib/constants/hero-typography';
 import { Container } from '@/components/ui/container';
+import { HeroBreadcrumb } from '@/components/ui/hero-breadcrumb';
 import { SEDES_HERO_ASSETS } from '@/lib/constants/sedesPage';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -143,47 +143,24 @@ export default function SedesHeroSection() {
         style={{ maxWidth: '88rem' }}
       >
         <div className="max-w-[34rem] pb-[clamp(1.75rem,3vw,2.5rem)] pt-[calc(var(--header-height)+clamp(1.25rem,3vw,2.75rem))] lg:max-w-[min(38vw,34rem)] lg:py-[clamp(1.5rem,2.5vw,2.5rem)]">
-          <nav aria-label="Ruta de navegación">
-            <ol className="flex items-center gap-2 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.18em] text-white/70 lg:text-marathon-gray">
-              <li>
-                <Link
-                  to="/"
-                  className="transition-colors duration-200 hover:text-marathon-red focus-visible:text-marathon-red"
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-white/45 lg:text-marathon-gray/50">
-                <ChevronRight size={13} strokeWidth={3} />
-              </li>
-              <li aria-current="page" className="text-marathon-cream lg:text-marathon-navy">
-                Sedes
-              </li>
-            </ol>
-          </nav>
+          <HeroBreadcrumb page="Sedes" tone="lg" />
 
           <h1
             id="sedes-hero-title"
-            className="mt-4 font-normal uppercase leading-[0.84] text-marathon-cream lg:text-marathon-navy"
-            style={{
-              fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-              fontSize: 'clamp(3rem, 5.6vw, 5.4rem)',
-            }}
+            className={`${HERO_TYPE.titleGap} ${HERO_TYPE.title} text-marathon-cream lg:text-marathon-navy`}
+            style={HERO_TITLE_STYLE}
           >
             Sedes de la Copa
           </h1>
 
           <p
-            className="mt-2 font-normal uppercase leading-[0.9] text-marathon-red"
-            style={{
-              fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-              fontSize: 'clamp(2rem, 3.5vw, 3.4rem)',
-            }}
+            className={`${HERO_TYPE.accentGap} ${HERO_TYPE.accent} text-marathon-red`}
+            style={HERO_ACCENT_STYLE}
           >
             Encuentra tu sede
           </p>
 
-          <p className="mt-4 max-w-[34rem] text-[0.92rem] leading-6 text-white lg:text-[0.95rem] lg:leading-7 lg:text-marathon-gray">
+          <p className={`${HERO_TYPE.bodyGap} max-w-[34rem] ${HERO_TYPE.body} text-white lg:text-marathon-gray`}>
             Explora las ciudades anfitrionas, conoce los escenarios y toda la
             información útil para tu participación.
           </p>

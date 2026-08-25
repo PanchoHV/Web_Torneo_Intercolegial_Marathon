@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HERO_ACCENT_STYLE, HERO_TITLE_STYLE, HERO_TYPE } from '@/lib/constants/hero-typography';
+import { HeroBreadcrumb } from '@/components/ui/hero-breadcrumb';
 import { REGLAMENTO_LINK_PROPS } from '@/lib/constants/links';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -148,38 +150,34 @@ export default function CopaHeroSection() {
             {/* El ancho útil del papel es proporcional al viewport: el rasgado
                 cae en ~39% del lienzo, menos el margen izquierdo. */}
             <div className="w-full max-w-[560px] px-6 pb-9 pt-4 sm:px-8 sm:pb-10 lg:w-[calc(34vw+clamp(48px,5vw,145px))] lg:max-w-[700px] xl:w-[calc(34vw+clamp(64px,7.5vw,145px))] lg:px-0 lg:py-0 lg:pl-[clamp(64px,7.5vw,145px)]">
+              <HeroBreadcrumb page="La Copa" tone="lg" />
+
               <h1
-                className="m-0 font-normal uppercase leading-[0.84] text-marathon-cream lg:text-[#062A4F]"
-                style={{
-                  fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-                  fontSize: 'clamp(3.1rem, 10.5vw, 7rem)',
-                }}
+                className={`${HERO_TYPE.titleGap} ${HERO_TYPE.title} text-marathon-cream lg:text-[#062A4F]`}
+                style={HERO_TITLE_STYLE}
               >
                 La Copa
               </h1>
 
               <h2
-                className="mt-3 font-normal uppercase leading-[0.94] text-[#E21B2D] lg:mt-4 lg:max-w-[33vw] xl:max-w-[30vw]"
-                style={{
-                  fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-                  fontSize: 'clamp(1.5rem, 5.4vw, 2.3rem)',
-                }}
+                className={`${HERO_TYPE.accentGap} ${HERO_TYPE.accent} text-[#E21B2D] lg:max-w-[33vw] xl:max-w-[30vw]`}
+                style={HERO_ACCENT_STYLE}
               >
                 <span className="block">Donde nacen las historias</span>
                 <span className="block">que se vuelven leyenda</span>
               </h2>
 
-              <p className="mt-5 max-w-[440px] font-inter text-[15px] leading-[1.6] text-white sm:text-[16px] lg:text-[#062A4F]/85 lg:max-w-[30vw] xl:max-w-[27vw]">
+              <p className={`${HERO_TYPE.bodyGap} max-w-[440px] ${HERO_TYPE.body} text-white lg:text-[#062A4F]/85 lg:max-w-[30vw] xl:max-w-[27vw]`}>
                 La Copa Nacional Intercolegial Marathon Ecuador 2026 es el
                 torneo escolar de fútbol más grande del país. Conectamos
                 colegios, jugadores y comunidades a través de la pasión, el
                 respeto y el orgullo de representar sus colores en la cancha.
               </p>
 
-              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-3">
+              <div className={`${HERO_TYPE.ctaGap} flex flex-wrap items-center gap-x-4 gap-y-3`}>
                 <a
                   {...REGLAMENTO_LINK_PROPS}
-                  className="group inline-flex h-12 items-center justify-center gap-3 rounded-[4px] bg-[#E21B2D] px-6 font-montserrat text-[12px] font-black uppercase tracking-[0.08em] text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E21B2D]"
+                  className={`group inline-flex h-12 items-center justify-center gap-3 rounded-[4px] bg-[#E21B2D] px-6 ${HERO_TYPE.cta} text-white shadow-button transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E21B2D]`}
                 >
                   Ver reglamento
                   <span
@@ -192,7 +190,7 @@ export default function CopaHeroSection() {
 
                 <a
                   href="#categorias"
-                  className="group inline-flex h-12 items-center gap-2 border-b-2 border-white/30 px-1 font-montserrat text-[12px] font-black uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:border-white lg:border-[#062A4F]/20 lg:text-[#062A4F] lg:hover:border-[#062A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062A4F]"
+                  className={`group inline-flex h-12 items-center gap-2 border-b-2 border-white/30 px-1 ${HERO_TYPE.cta} text-white transition-colors duration-200 hover:border-white lg:border-[#062A4F]/20 lg:text-[#062A4F] lg:hover:border-[#062A4F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#062A4F]`}
                 >
                   Conocer categorías
                   <span

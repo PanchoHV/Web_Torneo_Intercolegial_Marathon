@@ -2,10 +2,11 @@ import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowDown, ChevronRight } from "lucide-react";
-import { Link } from "react-router";
+import { ArrowDown } from "lucide-react";
 
+import { HERO_ACCENT_STYLE, HERO_TITLE_STYLE, HERO_TYPE } from '@/lib/constants/hero-typography';
 import { Container } from "@/components/ui/container";
+import { HeroBreadcrumb } from "@/components/ui/hero-breadcrumb";
 import { REGISTRATION_HERO_LAYERS } from "@/lib/constants/inscripcionesPage";
 import { scrollToAnchor } from "@/lib/scrollToAnchor";
 
@@ -299,42 +300,19 @@ export default function RegistrationHeroSection() {
       {/* ── 5 · Contenido: sobre el papel en desktop, sobre la escena en mobile ── */}
       <Container className="relative z-10 w-full" style={{ maxWidth: "88rem" }}>
         <div className="max-w-[34rem] lg:max-w-[min(44vw,40rem)]">
-          <nav aria-label="Ruta de navegación">
-            <ol className="flex items-center gap-2 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.18em] text-white/70 md:text-marathon-gray">
-              <li>
-                <Link
-                  to="/"
-                  className="transition-colors duration-200 hover:text-marathon-red focus-visible:text-marathon-red"
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li aria-hidden="true" className="text-white/45 md:text-marathon-gray/50">
-                <ChevronRight size={13} strokeWidth={3} />
-              </li>
-              <li aria-current="page" className="text-marathon-cream md:text-marathon-navy">
-                Inscripciones
-              </li>
-            </ol>
-          </nav>
+          <HeroBreadcrumb page="Inscripciones" tone="md" />
 
           <h1
             id="inscripciones-hero-title"
-            className="mt-4 font-normal uppercase leading-[0.84] text-marathon-cream md:text-marathon-navy"
-            style={{
-              fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-              fontSize: "clamp(3rem, 6vw, 6rem)",
-            }}
+            className={`${HERO_TYPE.titleGap} ${HERO_TYPE.title} text-marathon-cream md:text-marathon-navy`}
+            style={HERO_TITLE_STYLE}
           >
             Inscripciones
           </h1>
 
           <p
-            className="mt-2 font-normal uppercase leading-[0.94] text-marathon-red"
-            style={{
-              fontFamily: '"Bebas Neue", "Arial Narrow", sans-serif',
-              fontSize: "clamp(1.5rem, 3vw, 2.6rem)",
-            }}
+            className={`${HERO_TYPE.accentGap} ${HERO_TYPE.accent} text-marathon-red`}
+            style={HERO_ACCENT_STYLE}
           >
             Copa Nacional Intercolegial Marathon 2026
           </p>
@@ -344,17 +322,17 @@ export default function RegistrationHeroSection() {
             className="mt-5 h-[3px] w-24 rounded-full bg-marathon-red/70"
           />
 
-          <p className="mt-5 max-w-[34rem] text-[0.98rem] leading-7 text-white sm:text-[1.05rem] md:text-marathon-gray">
+          <p className={`${HERO_TYPE.bodyGap} max-w-[34rem] ${HERO_TYPE.body} text-white md:text-marathon-gray`}>
             Prepara a tu institución y participa en la competencia más grande
             del país. Consulta el estado por región y sigue la guía para
             completar tu inscripción.
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <div className={`${HERO_TYPE.ctaGap} flex flex-wrap items-center gap-x-6 gap-y-3`}>
             <a
               href="#registration-form"
               onClick={(event) => scrollToAnchor(event, "registration-form")}
-              className="group inline-flex items-center gap-2 rounded-lg bg-marathon-red px-6 py-3.5 font-montserrat text-[0.72rem] font-black uppercase tracking-[0.1em] text-white transition-colors duration-200 hover:bg-[#c41626] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-navy"
+              className={`group inline-flex h-12 items-center gap-2 rounded-lg bg-marathon-red px-6 ${HERO_TYPE.cta} text-white transition-colors duration-200 hover:bg-[#c41626] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-navy`}
             >
               Inscribir mi institución
               <ArrowDown
@@ -368,7 +346,7 @@ export default function RegistrationHeroSection() {
             <a
               href="#registration-guide"
               onClick={(event) => scrollToAnchor(event, "registration-guide")}
-              className="group inline-flex items-center gap-2 border-b-2 border-white/30 pb-1 font-montserrat text-[0.72rem] font-black uppercase tracking-[0.1em] text-white transition-colors duration-200 hover:border-white md:border-marathon-navy/20 md:text-marathon-navy md:hover:border-marathon-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-marathon-navy"
+              className={`group inline-flex h-12 items-center gap-2 border-b-2 border-white/30 pb-1 ${HERO_TYPE.cta} text-white transition-colors duration-200 hover:border-white md:border-marathon-navy/20 md:text-marathon-navy md:hover:border-marathon-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-marathon-navy`}
             >
               Ver cómo funciona
               <ArrowDown
