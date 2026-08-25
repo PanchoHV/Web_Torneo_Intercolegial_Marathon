@@ -13,7 +13,7 @@ type CopaBarConfig = {
   state: CopaBarState;
   eyebrow: string;
   primaryLead: string;
-  /** Cola destacada del titular. Ya no es una fecha: el arranque es hoy. */
+  /** Cola destacada del titular: el acento rojo de la noticia. */
   primaryHighlight: string;
   secondary: string;
   ctaLabel: string;
@@ -25,10 +25,10 @@ type CopaBarConfig = {
 
 const COPA_BAR_CONFIG: CopaBarConfig = {
   state: 'in-progress',
-  eyebrow: 'HOY EMPIEZA',
-  primaryLead: 'HOY ARRANCA',
-  primaryHighlight: 'LA COPA',
-  secondary: 'Vive desde hoy cada partido, resultado e historia del torneo.',
+  eyebrow: 'COPA EN CURSO',
+  primaryLead: 'LA COPA EN LA COSTA',
+  primaryHighlight: 'YA ARRANCÓ',
+  secondary: 'Vive minuto a minuto cada emocionante partido.',
   ctaLabel: 'ABRIR FAN APP',
   ctaRoute: FAN_APP_URL,
   secondaryCue: 'Ver sedes',
@@ -105,7 +105,7 @@ export default function SmartCopaBar() {
                 id="smart-copa-bar-title"
                 className="font-montserrat text-[clamp(1.55rem,7vw,2.25rem)] font-black uppercase leading-[0.98] tracking-[-0.035em] text-white md:text-[clamp(1.75rem,2.65vw,2.75rem)]"
               >
-                <time dateTime={config.milestoneIsoDate}>{config.primaryLead}</time>{' '}
+                {config.primaryLead}{' '}
                 <span className="text-marathon-action-primary">
                   {config.primaryHighlight}
                 </span>
