@@ -896,7 +896,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "_origin": "ast"
     },
     {
@@ -2737,6 +2737,38 @@
       "file_type": "code",
       "source_file": "src/components/ui/form.tsx",
       "source_location": "L139",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_hero_breadcrumb",
+      "label": "hero-breadcrumb.tsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_hero_breadcrumb_herobreadcrumbtone",
+      "label": "HeroBreadcrumbTone",
+      "file_type": "code",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_hero_breadcrumb_tones",
+      "label": "TONES",
+      "file_type": "code",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_ui_hero_breadcrumb_herobreadcrumb",
+      "label": "HeroBreadcrumb()",
+      "file_type": "code",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L33",
       "_origin": "ast"
     },
     {
@@ -4612,6 +4644,38 @@
       "_origin": "ast"
     },
     {
+      "id": "src_lib_constants_hero_typography",
+      "label": "hero-typography.ts",
+      "file_type": "code",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_hero_typography_hero_type",
+      "label": "HERO_TYPE",
+      "file_type": "code",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_hero_typography_hero_title_style",
+      "label": "HERO_TITLE_STYLE",
+      "file_type": "code",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_lib_constants_hero_typography_hero_accent_style",
+      "label": "HERO_ACCENT_STYLE",
+      "file_type": "code",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
       "id": "src_lib_constants_inscripcionespage",
       "label": "inscripcionesPage.ts",
       "file_type": "code",
@@ -5116,22 +5180,6 @@
       "_origin": "ast"
     },
     {
-      "id": "src_pages_faqpage",
-      "label": "FAQPage.tsx",
-      "file_type": "code",
-      "source_file": "src/pages/FAQPage.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "src_pages_faqpage_faqpage",
-      "label": "FAQPage()",
-      "file_type": "code",
-      "source_file": "src/pages/FAQPage.tsx",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
       "id": "src_pages_fanapppage",
       "label": "FanAppPage.tsx",
       "file_type": "code",
@@ -5144,7 +5192,7 @@
       "label": "FanAppPage()",
       "file_type": "code",
       "source_file": "src/pages/FanAppPage.tsx",
-      "source_location": "L1",
+      "source_location": "L7",
       "_origin": "ast"
     },
     {
@@ -5504,7 +5552,7 @@
       "label": "resourceLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L42",
+      "source_location": "L41",
       "_origin": "ast"
     },
     {
@@ -5512,7 +5560,7 @@
       "label": "socialLinks",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L62",
+      "source_location": "L61",
       "_origin": "ast"
     },
     {
@@ -5520,7 +5568,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L93",
+      "source_location": "L92",
       "_origin": "ast"
     },
     {
@@ -5592,7 +5640,7 @@
       "label": "Navigation()",
       "file_type": "code",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "_origin": "ast"
     },
     {
@@ -5736,7 +5784,7 @@
       "label": "CopaHeroSection()",
       "file_type": "code",
       "source_file": "src/sections/copa/CopaHeroSection.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "_origin": "ast"
     },
     {
@@ -5860,6 +5908,206 @@
       "_origin": "ast"
     },
     {
+      "id": "src_sections_fan_app_fanappfaqsection",
+      "label": "FanAppFaqSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfaqsection_fanappfaqitems",
+      "label": "fanAppFaqItems",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfaqsection_fanappfaqsection",
+      "label": "FanAppFaqSection()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L52",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfeaturessection",
+      "label": "FanAppFeaturesSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfeaturessection_watermarks",
+      "label": "WATERMARKS",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfeaturessection_features",
+      "label": "features",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappfeaturessection_fanappfeaturessection",
+      "label": "FanAppFeaturesSection()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection",
+      "label": "FanAppHeroSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_hero_art",
+      "label": "HERO_ART",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_hideartlayer",
+      "label": "hideArtLayer()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_artcard",
+      "label": "ArtCard()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L33",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_phoneframe",
+      "label": "PhoneFrame()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L58",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_tiltstyle",
+      "label": "tiltStyle()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L72",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappherosection_fanappherosection",
+      "label": "FanAppHeroSection()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L79",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection",
+      "label": "FanAppInstallSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection_watermarks",
+      "label": "WATERMARKS",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection_deviceid",
+      "label": "DeviceId",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection_guides",
+      "label": "guides",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection_deviceids",
+      "label": "deviceIds",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L49",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappinstallsection_fanappinstallsection",
+      "label": "FanAppInstallSection()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L51",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappscreenssection",
+      "label": "FanAppScreensSection.tsx",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappscreenssection_art",
+      "label": "ART",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappscreenssection_icons",
+      "label": "ICONS",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappscreenssection_slides",
+      "label": "slides",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_sections_fan_app_fanappscreenssection_fanappscreenssection",
+      "label": "FanAppScreensSection()",
+      "file_type": "code",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L66",
+      "_origin": "ast"
+    },
+    {
       "id": "src_sections_home_aboutcopasection",
       "label": "AboutCopaSection.tsx",
       "file_type": "code",
@@ -5968,7 +6216,7 @@
       "label": "FaqItem",
       "file_type": "code",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "_origin": "ast"
     },
     {
@@ -5976,7 +6224,7 @@
       "label": "FaqSectionProps",
       "file_type": "code",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "_origin": "ast"
     },
     {
@@ -5984,7 +6232,7 @@
       "label": "FAQ_ITEMS",
       "file_type": "code",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L27",
+      "source_location": "L31",
       "_origin": "ast"
     },
     {
@@ -5992,7 +6240,7 @@
       "label": "FaqSection()",
       "file_type": "code",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L67",
+      "source_location": "L71",
       "_origin": "ast"
     },
     {
@@ -6288,7 +6536,7 @@
       "label": "POINTER_DEPTH",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast"
     },
     {
@@ -6296,7 +6544,7 @@
       "label": "RegistrationHeroSection()",
       "file_type": "code",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "_origin": "ast"
     },
     {
@@ -11148,7 +11396,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage",
+      "target": "src_pages_fanapppage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11158,7 +11406,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_fanapppage",
+      "target": "src_pages_lacopapage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11168,7 +11416,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_lacopapage",
+      "target": "src_pages_inscripcionespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11178,7 +11426,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_inscripcionespage",
+      "target": "src_pages_admin_login",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11188,7 +11436,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_login",
+      "target": "src_pages_admin_auditpage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11198,7 +11446,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_auditpage",
+      "target": "src_pages_admin_myaccesspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11208,7 +11456,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_myaccesspage",
+      "target": "src_pages_admin_onboardingdashboard",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11218,7 +11466,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdashboard",
+      "target": "src_pages_admin_onboardingdetail",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11228,7 +11476,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_onboardingdetail",
+      "target": "src_pages_admin_userspage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11238,7 +11486,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_admin_userspage",
+      "target": "src_pages_sedespage",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11248,21 +11496,11 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_sedespage",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L19",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
       "target": "src_app_app",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -15184,6 +15422,73 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "ref_react_router",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "src_lib_constants_hero_typography",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumbtone",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "src_components_ui_hero_breadcrumb_tones",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_ui_hero_breadcrumb",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/hero-breadcrumb.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_ui_hover_card",
       "target": "ref_react",
       "relation": "imports_from",
@@ -19091,6 +19396,33 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_constants_hero_typography",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_hero_typography",
+      "target": "src_lib_constants_hero_typography_hero_title_style",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_constants_hero_typography",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/constants/hero-typography.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_constants_inscripcionespage",
       "target": "src_lib_constants_inscripcionespage_registration_hero_layers",
       "relation": "contains",
@@ -19801,12 +20133,53 @@
       "weight": 1.0
     },
     {
-      "source": "src_pages_faqpage",
-      "target": "src_pages_faqpage_faqpage",
-      "relation": "contains",
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappfaqsection",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/pages/FAQPage.tsx",
+      "source_file": "src/pages/FanAppPage.tsx",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappfeaturessection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappherosection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappinstallsection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappscreenssection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -19815,7 +20188,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/FanAppPage.tsx",
-      "source_location": "L1",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -22144,7 +22517,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -22153,7 +22526,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L62",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -22162,7 +22535,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Footer.tsx",
-      "source_location": "L93",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -22475,7 +22848,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -22727,7 +23100,7 @@
     },
     {
       "source": "src_sections_copa_copaherosection",
-      "target": "src_lib_constants_links",
+      "target": "src_lib_constants_hero_typography",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -22737,7 +23110,7 @@
     },
     {
       "source": "src_sections_copa_copaherosection",
-      "target": "src_lib_constants_links_reglamento_link_props",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -22747,11 +23120,71 @@
     },
     {
       "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_hero_typography_hero_title_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_components_ui_hero_breadcrumb",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumb",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
+      "target": "src_lib_constants_links_reglamento_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/copa/CopaHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_copa_copaherosection",
       "target": "src_sections_copa_copaherosection_copaherosection",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaHeroSection.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -23009,6 +23442,546 @@
       "confidence": "EXTRACTED",
       "source_file": "src/sections/copa/CopaWhatIsSection.tsx",
       "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfaqsection",
+      "target": "src_sections_home_faqsection",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfaqsection",
+      "target": "src_sections_home_faqsection_faqitem",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfaqsection",
+      "target": "src_sections_fan_app_fanappfaqsection_fanappfaqitems",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfaqsection",
+      "target": "src_sections_fan_app_fanappfaqsection_fanappfaqsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFaqSection.tsx",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfeaturessection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfeaturessection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfeaturessection",
+      "target": "src_sections_fan_app_fanappfeaturessection_watermarks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfeaturessection",
+      "target": "src_sections_fan_app_fanappfeaturessection_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappfeaturessection",
+      "target": "src_sections_fan_app_fanappfeaturessection_fanappfeaturessection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppFeaturesSection.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_hero_typography",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_hero_typography_hero_title_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_hero_breadcrumb",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumb",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_hero_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_hideartlayer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_artcard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_phoneframe",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_tiltstyle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_fanappherosection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappherosection_fanappherosection",
+      "target": "src_sections_fan_app_fanappherosection_tiltstyle",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppHeroSection.tsx",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_components_ui_button",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_components_ui_button_button",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_lib_constants_links",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_lib_constants_links_external_link_props",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "users_pancho_desarrollo_intercolegial_marathon_src_lib_constants_links_fan_app_url",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_sections_fan_app_fanappinstallsection_watermarks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_sections_fan_app_fanappinstallsection_deviceid",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_sections_fan_app_fanappinstallsection_guides",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_sections_fan_app_fanappinstallsection_deviceids",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappinstallsection",
+      "target": "src_sections_fan_app_fanappinstallsection_fanappinstallsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppInstallSection.tsx",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_components_ui_container",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_lib_constants_hero_typography",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_sections_fan_app_fanappscreenssection_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_sections_fan_app_fanappscreenssection_icons",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_sections_fan_app_fanappscreenssection_slides",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_fan_app_fanappscreenssection",
+      "target": "src_sections_fan_app_fanappscreenssection_fanappscreenssection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/fan-app/FanAppScreensSection.tsx",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -23323,22 +24296,12 @@
     },
     {
       "source": "src_sections_home_faqsection",
-      "target": "ref_react_router",
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_sections_home_faqsection",
       "target": "src_components_ui_container",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -23348,7 +24311,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -23358,7 +24321,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -23368,7 +24331,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -23378,7 +24341,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -23388,7 +24351,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -23397,7 +24360,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -23406,7 +24369,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -23415,7 +24378,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -23424,7 +24387,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/home/FaqSection.tsx",
-      "source_location": "L67",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -24250,12 +25213,42 @@
     },
     {
       "source": "src_sections_inscripciones_registrationherosection",
-      "target": "ref_react_router",
+      "target": "src_lib_constants_hero_typography",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_lib_constants_hero_typography_hero_title_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -24280,12 +25273,32 @@
     },
     {
       "source": "src_sections_inscripciones_registrationherosection",
-      "target": "src_lib_constants_inscripcionespage",
+      "target": "src_components_ui_hero_breadcrumb",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumb",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_inscripciones_registrationherosection",
+      "target": "src_lib_constants_inscripcionespage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -24295,7 +25308,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -24305,7 +25318,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -24315,7 +25328,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -24324,7 +25337,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -24333,7 +25346,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -25224,18 +26237,38 @@
     },
     {
       "source": "src_sections_sedes_sedesherosection",
-      "target": "ref_lucide_react",
+      "target": "src_lib_constants_hero_typography",
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/sedes/SedesHeroSection.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
       "source": "src_sections_sedes_sedesherosection",
-      "target": "ref_react_router",
-      "relation": "imports_from",
+      "target": "src_lib_constants_hero_typography_hero_accent_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_lib_constants_hero_typography_hero_title_style",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_lib_constants_hero_typography_hero_type",
+      "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/sedes/SedesHeroSection.tsx",
@@ -25249,12 +26282,32 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/sections/sedes/SedesHeroSection.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
       "source": "src_sections_sedes_sedesherosection",
       "target": "src_components_ui_container_container",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_components_ui_hero_breadcrumb",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/sections/sedes/SedesHeroSection.tsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_sections_sedes_sedesherosection",
+      "target": "src_components_ui_hero_breadcrumb_herobreadcrumb",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -29766,17 +30819,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_pages_faqpage_faqpage",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_pages_fanapppage_fanapppage",
+      "target": "src_pages_lacopapage_lacopapage",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -29785,13 +30828,13 @@
       "weight": 1.0
     },
     {
-      "source": "src_app",
-      "target": "src_pages_lacopapage_lacopapage",
+      "source": "src_pages_fanapppage",
+      "target": "src_sections_fan_app_fanappfaqsection_fanappfaqsection",
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/App.tsx",
-      "source_location": "L11",
+      "source_file": "src/pages/FanAppPage.tsx",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -29812,16 +30855,6 @@
       "confidence": "EXTRACTED",
       "source_file": "src/pages/HomePage.tsx",
       "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_inscripcionespage",
-      "target": "src_sections_inscripciones_registrationkeydatessection_registrationkeydatessection",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/InscripcionesPage.tsx",
-      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -32936,7 +33969,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/Navigation.tsx",
-      "source_location": "L58",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -32969,7 +34002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/sections/inscripciones/RegistrationHeroSection.tsx",
-      "source_location": "L356",
+      "source_location": "L334",
       "weight": 1.0
     },
     {

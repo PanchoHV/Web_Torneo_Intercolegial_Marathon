@@ -25,8 +25,8 @@
     "semantic_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0"
   },
   "src/App.tsx": {
-    "mtime": 1787462587.0131574,
-    "ast_hash": "6a748277c7b099e3a3bebd5fb598bd45",
+    "mtime": 1787687863.164938,
+    "ast_hash": "e9e455565d63fcbe42009b2d80906c5a",
     "semantic_hash": ""
   },
   "src/components/ScrollToTop.tsx": {
@@ -430,8 +430,8 @@
     "semantic_hash": "e415e608e98bb87d7642ec6655c9a62f"
   },
   "src/pages/InscripcionesPage.tsx": {
-    "mtime": 1787497523.8310494,
-    "ast_hash": "498737ec839ae6d4c9d2521c3e672122",
+    "mtime": 1787686710.0265772,
+    "ast_hash": "643fec3401704abe0f22987d34766fe9",
     "semantic_hash": ""
   },
   "src/pages/admin/AuditPage.tsx": {
@@ -475,8 +475,8 @@
     "semantic_hash": "6ecf7342b3d822866793d0fdbd3fff41"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1787508281.3670402,
-    "ast_hash": "8d6374d4759532cfad662f4b32450c55",
+    "mtime": 1787687863.1667948,
+    "ast_hash": "c92681206822550501b987d223dd9ca8",
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
@@ -485,8 +485,8 @@
     "semantic_hash": ""
   },
   "src/sections/Navigation.tsx": {
-    "mtime": 1787468570.322757,
-    "ast_hash": "f9d2bbe4e35c6e4e0ed7751351fdb17d",
+    "mtime": 1787687863.1660967,
+    "ast_hash": "8e204e392411ffd435317c7d2370fa5a",
     "semantic_hash": ""
   },
   "src/sections/SobreElTorneo.tsx": {
@@ -839,14 +839,9 @@
     "ast_hash": "9aa295df8118feb3b9eebcd5b3035a04",
     "semantic_hash": ""
   },
-  "src/pages/FAQPage.tsx": {
-    "mtime": 1786631324.88779,
-    "ast_hash": "c94a4dbf1ff8f046c314c936314c6eb7",
-    "semantic_hash": ""
-  },
   "src/pages/FanAppPage.tsx": {
-    "mtime": 1786631324.5537488,
-    "ast_hash": "752fc17cb302000a724269543e82f14e",
+    "mtime": 1787684143.6125154,
+    "ast_hash": "9223762ff126820966c68aaf5a54bdeb",
     "semantic_hash": ""
   },
   "src/pages/LaCopaPage.tsx": {
@@ -855,8 +850,8 @@
     "semantic_hash": ""
   },
   "src/pages/SedesPage.tsx": {
-    "mtime": 1787468128.7275157,
-    "ast_hash": "ac789f8296322c1de12f6c4db4f0f465",
+    "mtime": 1787686710.0246809,
+    "ast_hash": "a5c5c09a9a69d132db1956cca14a6fe2",
     "semantic_hash": ""
   },
   "src/components/layout/PublicLayout.tsx": {
@@ -945,8 +940,8 @@
     "semantic_hash": ""
   },
   "src/sections/home/FaqSection.tsx": {
-    "mtime": 1787468094.4347503,
-    "ast_hash": "8e085065b761f3283c8058ee78ab65d2",
+    "mtime": 1787687872.103983,
+    "ast_hash": "e95783cc42c599180fd5553bb15d883e",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaChapterNav.tsx": {
@@ -960,8 +955,8 @@
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHeroSection.tsx": {
-    "mtime": 1787508238.462227,
-    "ast_hash": "b2e4aae5acd67d2b13e2ab6e4c280554",
+    "mtime": 1787685616.2904825,
+    "ast_hash": "83a8e79fc7e7d1cba4a819228630718c",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHistorySection.tsx": {
@@ -1005,8 +1000,8 @@
     "semantic_hash": ""
   },
   "src/sections/sedes/SedesHeroSection.tsx": {
-    "mtime": 1787503525.9109554,
-    "ast_hash": "7d8619e85cfffe183aa7382c0d0db2ea",
+    "mtime": 1787685589.8282301,
+    "ast_hash": "2cd828a667906c8fdfa4e199e28581e3",
     "semantic_hash": ""
   },
   "src/sections/sedes/VenueFaqSection.tsx": {
@@ -1110,13 +1105,13 @@
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationHeroSection.tsx": {
-    "mtime": 1787503525.9116964,
-    "ast_hash": "dd183815a3330d999d4248330df5b259",
+    "mtime": 1787685616.289866,
+    "ast_hash": "00d497eee6dcb98532edc0ec20afd98d",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationKeyDatesSection.tsx": {
-    "mtime": 1787505459.7957797,
-    "ast_hash": "3e76cc116177936149546afab4902eb0",
+    "mtime": 1787686710.0271308,
+    "ast_hash": "348df6fd7fe9da5e4848cab08a961bc5",
     "semantic_hash": ""
   },
   "src/lib/constants/regionStatus.ts": {
@@ -1132,6 +1127,41 @@
   "public/documentos/reglamento-copa-marathon-2026.pdf": {
     "mtime": 1787508184.27506,
     "ast_hash": "6afee4458eaeae02052b3e91da0c9696",
+    "semantic_hash": ""
+  },
+  "src/sections/fan-app/FanAppFaqSection.tsx": {
+    "mtime": 1787684269.471734,
+    "ast_hash": "53e922175d8deb616d923ceb27072e25",
+    "semantic_hash": ""
+  },
+  "src/sections/fan-app/FanAppHeroSection.tsx": {
+    "mtime": 1787685616.291022,
+    "ast_hash": "6245ee66565e9c3dc818c7a266604091",
+    "semantic_hash": ""
+  },
+  "src/sections/fan-app/FanAppInstallSection.tsx": {
+    "mtime": 1787684166.7330353,
+    "ast_hash": "c5217280610f7635dda3bc3586d4cd73",
+    "semantic_hash": ""
+  },
+  "src/sections/fan-app/FanAppScreensSection.tsx": {
+    "mtime": 1787685616.2924182,
+    "ast_hash": "2485478c53e7f4216bf5d7d99d3798ff",
+    "semantic_hash": ""
+  },
+  "src/sections/fan-app/FanAppFeaturesSection.tsx": {
+    "mtime": 1787682218.9084778,
+    "ast_hash": "d6c80c1b4584ab3fb410b9025817e290",
+    "semantic_hash": ""
+  },
+  "src/lib/constants/hero-typography.ts": {
+    "mtime": 1787683191.8026989,
+    "ast_hash": "58823f598e9e420356c4a0633f04979c",
+    "semantic_hash": ""
+  },
+  "src/components/ui/hero-breadcrumb.tsx": {
+    "mtime": 1787685589.7692604,
+    "ast_hash": "a940b2ae6ef800ac04d238407dfeffed",
     "semantic_hash": ""
   }
 }
