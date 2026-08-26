@@ -168,6 +168,7 @@ export default function Navigation() {
       <div
         id="mobile-navigation-panel"
         aria-hidden={!mobileOpen}
+        inert={!mobileOpen}
         onClick={(event) => {
           if (event.target === event.currentTarget) {
             setMobileOpen(false);
