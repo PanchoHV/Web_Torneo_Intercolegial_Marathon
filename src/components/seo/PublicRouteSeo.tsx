@@ -3,8 +3,9 @@ import { useEffect } from 'react';
 const SITE_URL = 'https://www.copamarathon.com';
 const SITE_NAME = 'Copa Marathon';
 
-// Add the confirmed absolute 1200x630 asset URL here when it is available.
-const OG_IMAGE_URL: string | null = null;
+const OG_IMAGE_URL =
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp';
+const OG_IMAGE_ALT = 'Copa Marathon 2026 — Torneo Intercolegial de Fútbol Ecuador';
 
 const SEO_BY_PATH = {
   '/': {
@@ -104,10 +105,12 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
     upsertMeta('name', 'twitter:title', seo.title);
     upsertMeta('name', 'twitter:description', seo.description);
 
-    if (OG_IMAGE_URL) {
-      upsertMeta('property', 'og:image', OG_IMAGE_URL);
-      upsertMeta('name', 'twitter:image', OG_IMAGE_URL);
-    }
+    upsertMeta('property', 'og:image', OG_IMAGE_URL);
+    upsertMeta('property', 'og:image:width', '1200');
+    upsertMeta('property', 'og:image:height', '630');
+    upsertMeta('property', 'og:image:alt', OG_IMAGE_ALT);
+    upsertMeta('name', 'twitter:image', OG_IMAGE_URL);
+    upsertMeta('name', 'twitter:image:alt', OG_IMAGE_ALT);
 
     upsertJsonLd('seo-website', {
       '@context': 'https://schema.org',
