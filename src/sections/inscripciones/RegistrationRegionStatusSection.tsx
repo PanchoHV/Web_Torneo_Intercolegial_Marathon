@@ -377,14 +377,6 @@ function NotifyAction({
         />
         {label}
       </button>
-      {disabled && (
-        // "Próximamente" se confundiría con el estado de la región: sobre una
-        // card abierta parecería que la sede abre pronto. El helper nombra la
-        // función, no la región.
-        <span className="font-montserrat text-[0.55rem] font-black uppercase tracking-[0.14em] text-white/40">
-          Avisos en preparación
-        </span>
-      )}
     </div>
   );
 }

@@ -398,11 +398,6 @@ export default function CopaHistorySection() {
                 );
               })}
             </dl>
-
-            {/* TODO(contenido): nota al pie provisional, sujeta a validación de las cifras. */}
-            <p className="mt-4 text-right text-[0.68rem] leading-tight text-[#062A4F]/55">
-              Cifras en proceso de validación.
-            </p>
           </div>
         </div>
 
@@ -441,7 +436,6 @@ export default function CopaHistorySection() {
               ))}
             </ul>
 
-            {/* TODO(contenido): copy provisional — pendiente de validación contra el reglamento oficial. */}
             <p className="mt-[clamp(1.25rem,2vw,1.75rem)] flex items-start gap-2 text-[0.8rem] leading-[1.45] text-white/60">
               <Info size={15} aria-hidden="true" className="mt-[2px] shrink-0" />
               Cada colegio puede inscribir equipos en las categorías disponibles según la rama.
