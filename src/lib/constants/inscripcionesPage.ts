@@ -91,35 +91,44 @@ export const REGISTRATION_GUIDE_STEPS = [
  */
 export const REGISTRATION_FAQ_ITEMS = [
   {
-    question: '¿Cuándo abren las inscripciones por región?',
+    question: '¿Cuándo están abiertas las inscripciones Copa Marathon por región?',
     answer:
-      'Cada región tiene su propio calendario. Consulta el bloque de estado por región en esta misma página para ver cuál está abierta, cuál cerró y cuál abre próximamente.',
+      'Las inscripciones de la Copa Marathon 2026 se gestionan según el calendario de cada región. Consulta el estado publicado en esta página para saber cuáles están abiertas, cerradas o próximas a habilitarse.',
   },
   {
-    question: '¿Qué información necesito para inscribir a mi institución?',
+    question: '¿Qué necesito para inscribir a mi colegio?',
     answer:
-      'Nombre y dirección del colegio, tipo de institución, y los datos de la persona responsable: nombre, cargo, cédula de 10 dígitos, correo y celular de 10 dígitos. También debes elegir la ciudad sede y al menos una categoría.',
+      'Para inscribir a tu colegio en la Copa Marathon necesitas completar el formulario con los datos de la institución, la persona responsable, la ciudad sede y al menos una categoría disponible.',
   },
   {
-    question: '¿Puedo guardar el formulario y continuar después?',
+    question: '¿Puedo enviar la inscripción si mi ciudad está cerrada?',
     answer:
-      'No. El formulario se completa y se envía en una sola sesión; no guarda avances parciales. Ten los datos a mano antes de empezar.',
+      'No. Cuando una ciudad tiene cerradas las inscripciones de la Copa Marathon, el formulario informa ese estado y no permite completar el envío para esa sede.',
   },
   {
     question: '¿Cómo sé si mi inscripción fue recibida?',
     answer:
-      'Al enviarla correctamente verás en pantalla una confirmación con el número de registro y la fecha. Si algo falla, el formulario muestra el error sin perder lo que ya escribiste.',
+      'Cuando el formulario de inscripción de la Copa Marathon se envía correctamente, verás una confirmación en pantalla con el número de registro y la fecha de envío.',
   },
   {
-    // PENDIENTE de política oficial: no se afirma ningún procedimiento.
-    question: '¿Puedo corregir información después de enviarla?',
+    question: '¿Qué ocurre si el formulario muestra un error?',
     answer:
-      'El procedimiento de corrección será informado por la organización. Si detectas un error en los datos enviados, contacta al equipo de la Copa por los canales oficiales.',
+      'Si el formulario de inscripción muestra un error, revisa los campos indicados y completa la información requerida antes de volver a enviarlo. Los datos ingresados permanecen disponibles mientras corriges el formulario.',
   },
   {
-    question: '¿Qué sucede después de completar la inscripción?',
+    question: '¿Qué sucede después de enviar la inscripción?',
     answer:
-      'El equipo del torneo revisa la información y contacta a la persona responsable para continuar con la documentación y el contrato oficial del torneo.',
+      'Después de completar correctamente la inscripción a la Copa Marathon verás la confirmación de tu registro. Conserva esa información y revisa los canales oficiales del torneo para conocer los siguientes pasos.',
+  },
+  {
+    question: '¿Qué hago si las inscripciones de mi región todavía no están abiertas?',
+    answer:
+      'Consulta el estado de inscripciones de la Copa Marathon para tu región en esta misma página. Allí podrás verificar si el proceso está abierto, cerrado o próximo a habilitarse.',
+  },
+  {
+    question: '¿Puedo registrar otro colegio después de completar una inscripción?',
+    answer:
+      'Sí. Después de completar correctamente una inscripción de la Copa Marathon puedes volver al formulario mediante la opción “Registrar otro colegio” e iniciar un nuevo registro.',
   },
 ] as const;
 

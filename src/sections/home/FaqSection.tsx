@@ -5,6 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Surface } from '@/components/ui/surface';
+import { trackFaqOpen } from '@/lib/analytics/gtm';
 
 export type FaqItem = {
   question: string;
@@ -30,34 +31,44 @@ const DEFAULT_DESCRIPTION =
 
 const FAQ_ITEMS: FaqItem[] = [
   {
-    question: '¿Qué es la Copa Nacional Intercolegial Marathon?',
+    question: '¿Qué es la Copa Marathon 2026?',
     answer:
-      'Es un torneo de fútbol escolar que reúne a colegios de distintas regiones del país en una experiencia deportiva, formativa y competitiva.',
+      'La Copa Nacional Intercolegial Marathon 2026 es un torneo de fútbol escolar que reúne a colegios de distintas regiones del Ecuador en una experiencia deportiva, formativa y competitiva.',
   },
   {
-    question: '¿Cuál es el costo de inscripción por colegio?',
+    question: '¿Quiénes pueden participar en la Copa Marathon 2026?',
     answer:
-      'Para colegios privados, la inscripción tiene un costo de USD 170 por cada categoría inscrita, más IVA. Los colegios fiscales y fiscomisionales no pagan costo de inscripción.',
+      'La Copa Marathon está dirigida a colegios que participen en las categorías y sedes habilitadas del torneo intercolegial. La disponibilidad puede variar según la ciudad y la etapa de competencia.',
   },
   {
-    question: '¿Cuántos jugadores puedo inscribir por equipo?',
+    question: '¿Dónde se juega la Copa Marathon?',
     answer:
-      'La nómina se define según la modalidad de competencia: Fútbol 9 admite hasta 20 jugadores por equipo y Fútbol 11 hasta 25 jugadores por equipo.',
+      'La Copa Marathon 2026 se desarrolla en distintas ciudades sede del Ecuador. Desde la sección Sedes puedes consultar el mapa oficial, filtrar por región y revisar la información publicada de cada ciudad.',
   },
   {
-    question: '¿Qué documentación necesito para inscribir la nómina de jugadores?',
+    question: '¿Cómo inscribo a mi colegio en la Copa Marathon?',
     answer:
-      'Debes presentar el listado oficial de estudiantes, la carta de participación firmada por la autoridad correspondiente y la copia de cédula de cada estudiante jugador.',
+      'Para inscribir a tu colegio en la Copa Marathon 2026 debes ingresar a la página de Inscripciones y completar el formulario con los datos de la institución, la persona responsable, la ciudad sede y las categorías disponibles.',
   },
   {
-    question: '¿Qué categorías podrán participar?',
+    question: '¿Qué categorías de fútbol escolar contempla la Copa?',
     answer:
-      'La planificación contempla categorías masculinas y femeninas según la sede y la modalidad habilitada: masculina Sub 13, Sub 15 y Sub 17; femenina Sub 15 y Sub 17.',
+      'La Copa Marathon contempla categorías masculinas Sub 13, Sub 15 y Sub 17, y femeninas Sub 15 y Sub 17, según la sede y la modalidad habilitada del torneo.',
   },
   {
-    question: '¿Cuándo inicia la Copa Nacional Intercolegial Marathon?',
+    question: '¿Dónde puedo seguir partidos, equipos y estadísticas de la Copa?',
     answer:
-      'La planificación general inicia el 17 de agosto de 2026 y se extiende hasta el 12 de diciembre de 2026, con ajustes posibles según región y sede.',
+      'Puedes seguir los partidos, equipos, sedes y estadísticas de la Copa Marathon desde la Fan App oficial, donde se concentra la información disponible del torneo.',
+  },
+  {
+    question: '¿Cómo puedo seguir la Copa Marathon durante el torneo?',
+    answer:
+      'Puedes seguir la Copa Marathon 2026 desde el sitio oficial y acceder a la Fan App para consultar partidos, equipos, sedes, estadísticas y la información publicada durante el torneo.',
+  },
+  {
+    question: '¿Dónde encuentro información sobre sedes e inscripciones?',
+    answer:
+      'El sitio oficial de la Copa Marathon cuenta con secciones específicas de Sedes e Inscripciones, donde puedes consultar ciudades, regiones, estados de inscripción y la información disponible para participar.',
   },
 ];
 
@@ -183,7 +194,19 @@ export default function FaqSection({
                         open={index === 0}
                         className="faq-row group border-b border-white/10 transition-colors duration-200 last:border-b-0 open:bg-white/[0.05]"
                       >
-                        <summary className="relative flex cursor-pointer list-none items-center gap-4 px-5 py-[1.15rem] outline-none transition-colors duration-200 hover:bg-white/[0.045] focus-visible:bg-white/[0.06] [&::-webkit-details-marker]:hidden sm:px-7">
+                        <summary
+                          onClick={(event) => {
+                            const details = event.currentTarget.closest<HTMLDetailsElement>('details');
+                            if (!details?.open) {
+                              trackFaqOpen({
+                                faq_id: id,
+                                faq_index: index + 1,
+                                faq_question: item.question,
+                              });
+                            }
+                          }}
+                          className="relative flex cursor-pointer list-none items-center gap-4 px-5 py-[1.15rem] outline-none transition-colors duration-200 hover:bg-white/[0.045] focus-visible:bg-white/[0.06] [&::-webkit-details-marker]:hidden sm:px-7"
+                        >
                           {/* Acento dorado a la izquierda: marca la fila abierta. */}
                           <span
                             aria-hidden="true"

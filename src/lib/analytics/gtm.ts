@@ -1,112 +1,169 @@
-type DataLayerValue = string | number | boolean | null | undefined | string[];
+const ANALYTICS_CONTEXT = {
+  tournament_year: '2026',
+  site_name: 'copa_marathon',
+} as const;
 
-type GtmEventPayload = {
-  event: string;
-  [key: string]: DataLayerValue;
+type AnalyticsEventMap = {
+  spa_page_view: { page_path: string; page_title: string };
+  cta_click: {
+    cta_name: string;
+    cta_location: string;
+    destination?: string;
+    source_page?: string;
+    section?: string;
+  };
+  fan_app_open: { cta_location: string; destination: string };
+  start_preinscription: { form_location: string };
+  preinscription_submit_attempt: {
+    city?: string;
+    school_type?: string;
+    categories?: string[];
+  };
+  generate_lead: {
+    city?: string;
+    school_type?: string;
+    categories?: string[];
+    lead_source: 'landing_inscripciones';
+  };
+  preinscription_error: { error_type: string; city?: string };
+  preinscription_validation_error: {
+    source_page: '/inscripciones';
+    section: 'registration_form';
+    error_type: 'validation_error';
+  };
+  navigation_click: {
+    nav_label: string;
+    nav_target: string;
+    nav_location: 'desktop' | 'mobile' | 'logo';
+  };
+  faq_open: { faq_id: string; faq_index: number; faq_question: string };
+  venue_filter: { filter_type: 'region' | 'city'; filter_value: string };
+  venue_select: {
+    venue_id: string;
+    venue_city: string;
+    venue_region: string;
+    selection_source: 'map' | 'list';
+  };
+  venue_detail_open: {
+    source_page: '/sedes';
+    section: 'featured_venue';
+    region: string;
+    city: string;
+    venue_name: string;
+  };
+  fan_app_install_guide_view: {
+    source_page: '/fan-app';
+    section: 'install_guide';
+    platform: 'ios' | 'android';
+  };
+  fan_app_gallery_view: {
+    screen_id: string;
+    screen_name: string;
+    interaction: 'arrow' | 'dot' | 'swipe' | 'wheel';
+  };
+  outbound_click: { link_domain: string; link_location: string };
+  file_download: { file_name: string; file_extension: string; link_location: string };
 };
+
+export type AnalyticsEventName = keyof AnalyticsEventMap;
+
+export type AnalyticsEvent = {
+  [EventName in AnalyticsEventName]: {
+    event: EventName;
+  } & AnalyticsEventMap[EventName] &
+    typeof ANALYTICS_CONTEXT;
+}[AnalyticsEventName];
 
 declare global {
   interface Window {
-    dataLayer?: GtmEventPayload[];
+    dataLayer?: Array<Record<string, unknown>>;
   }
 }
 
 const isBrowser = typeof window !== 'undefined';
 
-export function pushToDataLayer(payload: GtmEventPayload) {
+export function pushToDataLayer<EventName extends AnalyticsEventName>(
+  event: EventName,
+  params: AnalyticsEventMap[EventName]
+) {
   if (!isBrowser) return;
 
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    ...payload,
-    tournament_year: '2026',
-    site_name: 'copa_marathon',
-  });
+  window.dataLayer.push({ event, ...params, ...ANALYTICS_CONTEXT });
 }
 
-export function trackPageView(path: string, title?: string) {
-  pushToDataLayer({
-    event: 'spa_page_view',
-    page_path: path,
-    page_title: title || document.title,
-  });
+export function trackPageView(path: string, title: string) {
+  pushToDataLayer('spa_page_view', { page_path: path, page_title: title });
 }
 
-export function trackCtaClick(params: {
-  cta_name: string;
-  cta_location: string;
-  destination?: string;
-}) {
-  pushToDataLayer({
-    event: 'cta_click',
-    cta_name: params.cta_name,
-    cta_location: params.cta_location,
-    destination: params.destination,
-  });
+export function trackCtaClick(params: AnalyticsEventMap['cta_click']) {
+  pushToDataLayer('cta_click', params);
 }
 
-export function trackPreinscriptionStart(params: {
-  cta_location: string;
-  destination?: string;
-}) {
-  pushToDataLayer({
-    event: 'start_preinscription',
-    cta_location: params.cta_location,
-    destination: params.destination,
-  });
+export function trackFanAppOpen(params: AnalyticsEventMap['fan_app_open']) {
+  pushToDataLayer('fan_app_open', params);
 }
 
-export function trackRegistrationSubmitAttempt(params: {
-  city?: string;
-  school_type?: string;
-  categories?: string[];
-}) {
-  pushToDataLayer({
-    event: 'preinscription_submit_attempt',
-    city: params.city,
-    school_type: params.school_type,
-    categories: params.categories,
-  });
+export function trackPreinscriptionStart(params: AnalyticsEventMap['start_preinscription']) {
+  pushToDataLayer('start_preinscription', params);
 }
 
-export function trackGenerateLead(params: {
-  lead_id?: string | null;
-  city?: string;
-  school_type?: string;
-  categories?: string[];
-}) {
-  pushToDataLayer({
-    event: 'generate_lead',
-    lead_id: params.lead_id || undefined,
-    city: params.city,
-    school_type: params.school_type,
-    categories: params.categories,
-    lead_source: 'landing_inscripciones',
-  });
+export function trackRegistrationSubmitAttempt(
+  params: AnalyticsEventMap['preinscription_submit_attempt']
+) {
+  pushToDataLayer('preinscription_submit_attempt', params);
 }
 
-export function trackRegistrationError(params: {
-  error_type: string;
-  city?: string;
-}) {
-  pushToDataLayer({
-    event: 'preinscription_error',
-    error_type: params.error_type,
-    city: params.city,
-  });
+export function trackGenerateLead(params: Omit<AnalyticsEventMap['generate_lead'], 'lead_source'>) {
+  pushToDataLayer('generate_lead', { ...params, lead_source: 'landing_inscripciones' });
 }
 
-export function trackNavigationClick(params: {
-  nav_label: string;
-  nav_target: string;
-  nav_location: 'desktop' | 'mobile' | 'logo';
-}) {
-  pushToDataLayer({
-    event: 'navigation_click',
-    nav_label: params.nav_label,
-    nav_target: params.nav_target,
-    nav_location: params.nav_location,
-  });
+export function trackRegistrationError(params: AnalyticsEventMap['preinscription_error']) {
+  pushToDataLayer('preinscription_error', params);
+}
+
+export function trackPreinscriptionValidationError(
+  params: AnalyticsEventMap['preinscription_validation_error']
+) {
+  pushToDataLayer('preinscription_validation_error', params);
+}
+
+export function trackNavigationClick(params: AnalyticsEventMap['navigation_click']) {
+  pushToDataLayer('navigation_click', params);
+}
+
+export function trackFaqOpen(params: AnalyticsEventMap['faq_open']) {
+  pushToDataLayer('faq_open', params);
+}
+
+export function trackVenueFilter(params: AnalyticsEventMap['venue_filter']) {
+  pushToDataLayer('venue_filter', params);
+}
+
+export function trackVenueSelect(params: AnalyticsEventMap['venue_select']) {
+  pushToDataLayer('venue_select', params);
+}
+
+export function trackVenueDetailOpen(params: AnalyticsEventMap['venue_detail_open']) {
+  pushToDataLayer('venue_detail_open', params);
+}
+
+export function trackFanAppInstallGuideView(
+  params: AnalyticsEventMap['fan_app_install_guide_view']
+) {
+  pushToDataLayer('fan_app_install_guide_view', params);
+}
+
+export function trackFanAppGalleryView(params: AnalyticsEventMap['fan_app_gallery_view']) {
+  pushToDataLayer('fan_app_gallery_view', params);
+}
+
+export function trackOutboundClick(params: AnalyticsEventMap['outbound_click']) {
+  pushToDataLayer('outbound_click', params);
+}
+
+export function trackFileDownload(params: AnalyticsEventMap['file_download']) {
+  pushToDataLayer('file_download', params);
 }
 
 export {};

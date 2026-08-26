@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import { Container } from '@/components/ui/container';
 import { HERO_ACCENT_STYLE, HERO_TYPE } from '@/lib/constants/hero-typography';
+import { trackFanAppGalleryView } from '@/lib/analytics/gtm';
 
 const R2_BASE = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/';
 
@@ -72,8 +73,24 @@ export default function FanAppScreensSection() {
 
   const current = slides[active];
 
-  function go(direction: number) {
-    setActive((index) => Math.min(Math.max(index + direction, 0), total - 1));
+  function showSlide(
+    nextIndex: number,
+    interaction: 'arrow' | 'dot' | 'swipe' | 'wheel'
+  ) {
+    const boundedIndex = Math.min(Math.max(nextIndex, 0), total - 1);
+    if (boundedIndex === active) return;
+
+    const nextSlide = slides[boundedIndex];
+    trackFanAppGalleryView({
+      screen_id: nextSlide.id,
+      screen_name: nextSlide.title,
+      interaction,
+    });
+    setActive(boundedIndex);
+  }
+
+  function go(direction: number, interaction: 'arrow' | 'swipe' | 'wheel') {
+    showSlide(active + direction, interaction);
   }
 
   // Pointer events cubren mouse y touch con un solo camino.
@@ -95,7 +112,7 @@ export default function FanAppScreensSection() {
     dragStart.current = null;
     setIsDragging(false);
     setDragX(0);
-    if (Math.abs(delta) > DRAG_THRESHOLD) go(delta < 0 ? 1 : -1);
+    if (Math.abs(delta) > DRAG_THRESHOLD) go(delta < 0 ? 1 : -1, 'swipe');
   }
 
   function handlePointerCancel() {
@@ -110,7 +127,7 @@ export default function FanAppScreensSection() {
     const now = Date.now();
     if (now - wheelLock.current < WHEEL_COOLDOWN) return;
     wheelLock.current = now;
-    go(event.deltaX > 0 ? 1 : -1);
+    go(event.deltaX > 0 ? 1 : -1, 'wheel');
   }
 
   return (
@@ -229,7 +246,7 @@ export default function FanAppScreensSection() {
 
           <button
             type="button"
-            onClick={() => go(-1)}
+            onClick={() => go(-1, 'arrow')}
             disabled={active === 0}
             aria-label="Ver la captura anterior"
             className="absolute left-0 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#062A4F] text-white shadow-[0_8px_16px_rgba(6,42,79,0.18)] transition hover:bg-[#0B4EA0] disabled:pointer-events-none disabled:opacity-30 sm:h-13 sm:w-13"
@@ -239,7 +256,7 @@ export default function FanAppScreensSection() {
 
           <button
             type="button"
-            onClick={() => go(1)}
+            onClick={() => go(1, 'arrow')}
             disabled={active === total - 1}
             aria-label="Ver la siguiente captura"
             className="absolute right-0 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#062A4F] text-white shadow-[0_8px_16px_rgba(6,42,79,0.18)] transition hover:bg-[#0B4EA0] disabled:pointer-events-none disabled:opacity-30 sm:h-13 sm:w-13"
@@ -259,7 +276,7 @@ export default function FanAppScreensSection() {
               <button
                 key={slide.id}
                 type="button"
-                onClick={() => setActive(index)}
+                onClick={() => showSlide(index, 'dot')}
                 aria-label={`Ver ${slide.title}`}
                 aria-current={index === active}
                 className={`h-2.5 rounded-full transition-all duration-300 motion-reduce:transition-none ${

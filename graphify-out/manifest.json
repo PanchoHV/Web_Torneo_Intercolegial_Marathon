@@ -1,6 +1,6 @@
 {
   "PROJECT_EXECUTION_STATE.json": {
-    "mtime": 1786670042.6417024,
+    "mtime": 1787692459.8833401,
     "ast_hash": "c9a088eefaef302fd6076d5a407859cb",
     "semantic_hash": ""
   },
@@ -25,8 +25,8 @@
     "semantic_hash": "ef3ba2a81ba19f8ea5ddf625521e96f0"
   },
   "src/App.tsx": {
-    "mtime": 1787687863.164938,
-    "ast_hash": "e9e455565d63fcbe42009b2d80906c5a",
+    "mtime": 1787713684.676844,
+    "ast_hash": "a7bd6a6c315271a74c4b2169cc408905",
     "semantic_hash": ""
   },
   "src/components/ScrollToTop.tsx": {
@@ -50,37 +50,37 @@
     "semantic_hash": "b3ff610d35acde5e754103e1783109d6"
   },
   "src/components/analytics/RouteAnalytics.tsx": {
-    "mtime": 1780323721.5360432,
-    "ast_hash": "a77b4321e13ffc95fcc612f05dfe1d9b",
-    "semantic_hash": "a77b4321e13ffc95fcc612f05dfe1d9b"
+    "mtime": 1787716444.4024396,
+    "ast_hash": "52d6f5145689c15bb60c120233e3c656",
+    "semantic_hash": ""
   },
   "src/components/registrations/RegistrationBenefits.tsx": {
-    "mtime": 1787462066.876839,
+    "mtime": 1787692459.9004626,
     "ast_hash": "23f3bcdca767e0abd5663330f7d2a5d4",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationForm.tsx": {
-    "mtime": 1787505238.2590036,
-    "ast_hash": "6c89283fc797318be9234c5a42090cea",
+    "mtime": 1787716511.5054626,
+    "ast_hash": "2b50d9304e1ff7d9f782652c41f4341b",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationHero.tsx": {
-    "mtime": 1787462066.879783,
+    "mtime": 1787692459.9013789,
     "ast_hash": "aa484d7b5132498c504839a2b476a4d8",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationIntro.tsx": {
-    "mtime": 1787462066.8802397,
+    "mtime": 1787692459.9017622,
     "ast_hash": "e002ea3122522d7631ffa33f1e0e4a9d",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationPrivacy.tsx": {
-    "mtime": 1787462066.8810058,
+    "mtime": 1787692459.9020984,
     "ast_hash": "23c72a3010f87281000030a30852cbce",
     "semantic_hash": ""
   },
   "src/components/registrations/RegistrationSuccess.tsx": {
-    "mtime": 1787462066.882256,
+    "mtime": 1787692459.9024894,
     "ast_hash": "e3e31498cc77d317b713b2b72ef31bda",
     "semantic_hash": ""
   },
@@ -130,7 +130,7 @@
     "semantic_hash": "06ae5fab0a97d2e01b9906eaeb4887e8"
   },
   "src/components/ui/button.tsx": {
-    "mtime": 1786639367.8438847,
+    "mtime": 1787692459.903034,
     "ast_hash": "70554d633781cf223d75b3054a4a64c2",
     "semantic_hash": ""
   },
@@ -370,9 +370,9 @@
     "semantic_hash": "c33316e46a2a9c5469575e9916b97a16"
   },
   "src/lib/analytics/gtm.ts": {
-    "mtime": 1780323544.8235345,
-    "ast_hash": "3ff2b51ec9131f5a8d6767f0334066c7",
-    "semantic_hash": "3ff2b51ec9131f5a8d6767f0334066c7"
+    "mtime": 1787716444.1516924,
+    "ast_hash": "fa6229fca56eda75aec0afa477907421",
+    "semantic_hash": ""
   },
   "src/lib/auth/adminAuth.tsx": {
     "mtime": 1780324995.940216,
@@ -385,22 +385,22 @@
     "semantic_hash": "da8ae91bc123d3393695c41e5aa91210"
   },
   "src/lib/constants/registrationOptions.ts": {
-    "mtime": 1787505202.3308995,
+    "mtime": 1787692459.908093,
     "ast_hash": "3b45620afbfa71ab2104bcdcfa33828c",
     "semantic_hash": ""
   },
   "src/lib/constants/venues.ts": {
-    "mtime": 1787462066.8836994,
-    "ast_hash": "dde747487edeefbdb7374e60e82b26ea",
+    "mtime": 1787692459.9090648,
+    "ast_hash": "2ae2e4f2d0d90540471f1dadad17b691",
     "semantic_hash": ""
   },
   "src/lib/registrations/regionalSchedule.ts": {
-    "mtime": 1787505336.0702817,
+    "mtime": 1787692459.9094698,
     "ast_hash": "72faf0d8eac55e61ae780df4c06e3cca",
     "semantic_hash": ""
   },
   "src/lib/supabase/client.ts": {
-    "mtime": 1787233586.5234437,
+    "mtime": 1787692459.910036,
     "ast_hash": "12b949d93f4bdb92300656d85522bf9b",
     "semantic_hash": ""
   },
@@ -430,7 +430,7 @@
     "semantic_hash": "e415e608e98bb87d7642ec6655c9a62f"
   },
   "src/pages/InscripcionesPage.tsx": {
-    "mtime": 1787686710.0265772,
+    "mtime": 1787692459.9108353,
     "ast_hash": "643fec3401704abe0f22987d34766fe9",
     "semantic_hash": ""
   },
@@ -465,7 +465,7 @@
     "semantic_hash": "f435628a81ea23e873960caa05a967fb"
   },
   "src/sections/Calendario.tsx": {
-    "mtime": 1787462066.8859043,
+    "mtime": 1787692459.9118032,
     "ast_hash": "db1227f7eb3dfb5519403b62744b9ab6",
     "semantic_hash": ""
   },
@@ -475,18 +475,18 @@
     "semantic_hash": "6ecf7342b3d822866793d0fdbd3fff41"
   },
   "src/sections/Footer.tsx": {
-    "mtime": 1787687863.1667948,
+    "mtime": 1787692459.9122453,
     "ast_hash": "c92681206822550501b987d223dd9ca8",
     "semantic_hash": ""
   },
   "src/sections/Hero.tsx": {
-    "mtime": 1787508056.3827617,
+    "mtime": 1787692459.9127078,
     "ast_hash": "d3526b352c51ae047b320dd0ca672092",
     "semantic_hash": ""
   },
   "src/sections/Navigation.tsx": {
-    "mtime": 1787687863.1660967,
-    "ast_hash": "8e204e392411ffd435317c7d2370fa5a",
+    "mtime": 1787716511.3477252,
+    "ast_hash": "273b11d77c065cb1d8a10f78668b5b14",
     "semantic_hash": ""
   },
   "src/sections/SobreElTorneo.tsx": {
@@ -630,7 +630,7 @@
     "semantic_hash": "bdd072b0a5d747e093fde4faa01a442e"
   },
   "tailwind.config.js": {
-    "mtime": 1786638420.1924994,
+    "mtime": 1787692459.924989,
     "ast_hash": "d262436e78d49434e71ebf674b7f1cc1",
     "semantic_hash": ""
   },
@@ -655,22 +655,22 @@
     "semantic_hash": "cf6fad1ce721da13630f9f3e7b81fd0c"
   },
   "vite.config.ts": {
-    "mtime": 1787248271.5600283,
+    "mtime": 1787692459.9254029,
     "ast_hash": "4f1f8b6c434126dec20cd25c83d5bfda",
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1786626686.0297961,
+    "mtime": 1787692459.8828595,
     "ast_hash": "71e8d2f5ea7e6e3edaf833d1fc71b3e8",
     "semantic_hash": ""
   },
   "CODEX_TOKEN_ECONOMY.md": {
-    "mtime": 1786626686.1661162,
+    "mtime": 1787692459.8831036,
     "ast_hash": "3b579afc67207b20fa0aa35e6388ec76",
     "semantic_hash": ""
   },
   "PROJECT_ROADMAP.md": {
-    "mtime": 1786670028.7694864,
+    "mtime": 1787692459.8839185,
     "ast_hash": "3c14ddd1fcc6e4e096b7d2fdba9b9f0d",
     "semantic_hash": ""
   },
@@ -680,18 +680,18 @@
     "semantic_hash": ""
   },
   "docs/architecture/PROJECT_ARCHITECTURE_BASELINE.md": {
-    "mtime": 1786626937.18301,
+    "mtime": 1787692459.8844004,
     "ast_hash": "94162ca7f1beab4d8eb1c8e741937403",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_INVARIANTS.md": {
-    "mtime": 1786626937.405793,
+    "mtime": 1787692459.885488,
     "ast_hash": "0bf2384b90beb151f8b529509df89544",
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1786668012.3386927,
-    "ast_hash": "a980fd6b975fb43e62d94c828792e7af",
+    "mtime": 1787713506.2685485,
+    "ast_hash": "7105d47a3a30e4f985f2c994d2321f01",
     "semantic_hash": ""
   },
   "info.md": {
@@ -810,162 +810,162 @@
     "semantic_hash": ""
   },
   "scripts/graph/validate-graph.ts": {
-    "mtime": 1786627699.413398,
+    "mtime": 1787692459.8988342,
     "ast_hash": "43a25e10c5abc0d580f9653c762ea72f",
     "semantic_hash": ""
   },
   "PROJECT_GRAPH_INDEX.md": {
-    "mtime": 1787233212.0261106,
+    "mtime": 1787692459.8835618,
     "ast_hash": "a3bffbf3fe8ac660a5f7ea146ef4fd56",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_DEPLOYMENTS.md": {
-    "mtime": 1786628139.4106903,
+    "mtime": 1787692459.8847497,
     "ast_hash": "7d43af90f16bb0c613b9f1e08d13f565",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_GRAPH_OVERLAY.md": {
-    "mtime": 1786670054.417896,
+    "mtime": 1787692459.8850865,
     "ast_hash": "7781a2512456ccc2d5fb65282c772c8f",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_QA_MAP.md": {
-    "mtime": 1786668769.2499237,
+    "mtime": 1787692459.8857372,
     "ast_hash": "1723de0ad541a505dab94ce9e9210118",
     "semantic_hash": ""
   },
   "docs/graph/PROJECT_RUNTIME_MAP.md": {
-    "mtime": 1786642629.1198068,
+    "mtime": 1787692459.8859835,
     "ast_hash": "9aa295df8118feb3b9eebcd5b3035a04",
     "semantic_hash": ""
   },
   "src/pages/FanAppPage.tsx": {
-    "mtime": 1787684143.6125154,
+    "mtime": 1787692459.9103174,
     "ast_hash": "9223762ff126820966c68aaf5a54bdeb",
     "semantic_hash": ""
   },
   "src/pages/LaCopaPage.tsx": {
-    "mtime": 1787453940.8111045,
+    "mtime": 1787692459.9111066,
     "ast_hash": "f8eb43b81c7539cd13b724e6e5773adb",
     "semantic_hash": ""
   },
   "src/pages/SedesPage.tsx": {
-    "mtime": 1787686710.0246809,
+    "mtime": 1787692459.9113402,
     "ast_hash": "a5c5c09a9a69d132db1956cca14a6fe2",
     "semantic_hash": ""
   },
   "src/components/layout/PublicLayout.tsx": {
-    "mtime": 1786641477.6223295,
-    "ast_hash": "11955971b5fb3648e9a6e9dee30253fc",
+    "mtime": 1787716444.8380554,
+    "ast_hash": "020b5f211236bc8ed476467e275fc4c2",
     "semantic_hash": ""
   },
   "src/components/ui/container.tsx": {
-    "mtime": 1786639368.026741,
+    "mtime": 1787692459.9032679,
     "ast_hash": "d0fe1870757ade7d2f004f1b57068cda",
     "semantic_hash": ""
   },
   "src/components/ui/section-label.tsx": {
-    "mtime": 1786639516.9597929,
+    "mtime": 1787692459.9037523,
     "ast_hash": "c06e951f84ba947bdafb6577e0e8c3f4",
     "semantic_hash": ""
   },
   "src/components/ui/section.tsx": {
-    "mtime": 1786639516.6554444,
+    "mtime": 1787692459.9039729,
     "ast_hash": "17d1412bea5477c8bc95de5aa95bbafd",
     "semantic_hash": ""
   },
   "src/components/ui/status-badge.tsx": {
-    "mtime": 1786639517.1314385,
+    "mtime": 1787692459.9041855,
     "ast_hash": "b02afa04a08b41289814099a9eb2b991",
     "semantic_hash": ""
   },
   "src/components/ui/surface.tsx": {
-    "mtime": 1786639516.8002717,
+    "mtime": 1787692459.9043887,
     "ast_hash": "70fdbe9eb63d0eb667fb46f01b9177d3",
     "semantic_hash": ""
   },
   "src/pages/HomePage.tsx": {
-    "mtime": 1787168462.116308,
+    "mtime": 1787692459.9105196,
     "ast_hash": "c5a364c14182e0515ce9a855d7929b56",
     "semantic_hash": ""
   },
   "src/sections/home/SmartCopaBar.tsx": {
-    "mtime": 1787535479.3590317,
+    "mtime": 1787713340.5956748,
     "ast_hash": "9a767720354890dc6beb63ce7d2aea5f",
     "semantic_hash": ""
   },
   "src/sections/home/SponsorsSection.tsx": {
-    "mtime": 1787458839.2882547,
+    "mtime": 1787692459.9200437,
     "ast_hash": "e65b5cf56d40d401cf225a2df7eea4df",
     "semantic_hash": ""
   },
   "src/sections/home/AboutCopaSection.tsx": {
-    "mtime": 1787463156.964293,
+    "mtime": 1787692459.9175587,
     "ast_hash": "e8ab37206321212535b435987c2e382c",
     "semantic_hash": ""
   },
   "src/sections/home/RegionStatusSection.tsx": {
-    "mtime": 1787497455.7533422,
+    "mtime": 1787692459.9189537,
     "ast_hash": "ee208c3623128eeb00e68b384d40da0b",
     "semantic_hash": ""
   },
   "src/sections/home/VenuesByRegionSection.tsx": {
-    "mtime": 1787459964.5245872,
+    "mtime": 1787692459.9204679,
     "ast_hash": "7278c29191fa4a98142a8adf61d4c326",
     "semantic_hash": ""
   },
   "public/images/about-copa/fact-broadcast.svg": {
-    "mtime": 1786675002.181878,
+    "mtime": 1787692459.8926792,
     "ast_hash": "d6b67ea3425df4d89154fb4d9af4ba28",
     "semantic_hash": ""
   },
   "public/images/about-copa/fact-matches.svg": {
-    "mtime": 1786675002.0662923,
+    "mtime": 1787692459.8928976,
     "ast_hash": "d8aba1ed0b4234bf6fa03b6fa0ea7f4a",
     "semantic_hash": ""
   },
   "public/images/about-copa/fact-players.svg": {
-    "mtime": 1786675002.061778,
+    "mtime": 1787692459.8931627,
     "ast_hash": "5b39694bf53c52cff1d5e6825d4d4216",
     "semantic_hash": ""
   },
   "public/images/about-copa/fact-schools.svg": {
-    "mtime": 1786675002.037306,
+    "mtime": 1787692459.893451,
     "ast_hash": "d5b16edfd69e2a9855ad909a1829c044",
     "semantic_hash": ""
   },
   "src/sections/home/FanAppSection.tsx": {
-    "mtime": 1787468633.3178606,
+    "mtime": 1787692459.9178562,
     "ast_hash": "4dfa693890a46c73a9d55b2dd8140581",
     "semantic_hash": ""
   },
   "src/sections/home/FaqSection.tsx": {
-    "mtime": 1787687872.103983,
-    "ast_hash": "e95783cc42c599180fd5553bb15d883e",
+    "mtime": 1787716606.9162328,
+    "ast_hash": "98a4ae2875d97148d7e1729b0e74e932",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaChapterNav.tsx": {
-    "mtime": 1787462789.78203,
+    "mtime": 1787692459.913491,
     "ast_hash": "42bde149444c12af96d2326c3db4b2da",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaFormatSection.tsx": {
-    "mtime": 1787245760.280936,
+    "mtime": 1787692459.9137197,
     "ast_hash": "a2a2f920618cbaa77720fa9b29915fcf",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHeroSection.tsx": {
-    "mtime": 1787685616.2904825,
+    "mtime": 1787692459.9143355,
     "ast_hash": "83a8e79fc7e7d1cba4a819228630718c",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaHistorySection.tsx": {
-    "mtime": 1787508238.4637609,
+    "mtime": 1787713340.5951324,
     "ast_hash": "6531545139d669ccf39df25a28cb068c",
     "semantic_hash": ""
   },
   "src/sections/copa/CopaWhatIsSection.tsx": {
-    "mtime": 1787244920.8241677,
+    "mtime": 1787692459.9150004,
     "ast_hash": "5bb467f806adc488ce57aace453d81b8",
     "semantic_hash": ""
   },
@@ -975,193 +975,208 @@
     "semantic_hash": ""
   },
   "src/lib/assets/textures.ts": {
-    "mtime": 1787244052.6988184,
+    "mtime": 1787692459.9051516,
     "ast_hash": "2096eafcc18e7c4c150e95b6efc3e024",
     "semantic_hash": ""
   },
   "src/components/ScrollToTopOnNavigate.tsx": {
-    "mtime": 1787462586.992862,
+    "mtime": 1787692459.8998058,
     "ast_hash": "0b8404d6e7a2a8f44144dd1c2960390d",
     "semantic_hash": ""
   },
   "src/lib/constants/sedesPage.ts": {
-    "mtime": 1787499253.7493086,
-    "ast_hash": "f134429ee4e11bf158e63e197f7c2ea2",
+    "mtime": 1787713340.5946376,
+    "ast_hash": "57c031284270709f3110f4368fb82e13",
     "semantic_hash": ""
   },
   "src/sections/sedes/FeaturedVenueSection.tsx": {
-    "mtime": 1787468769.983015,
+    "mtime": 1787713340.5973268,
     "ast_hash": "737a35cc118a67ac15cf05e7f71a28d6",
     "semantic_hash": ""
   },
   "src/sections/sedes/SedesExplorerSection.tsx": {
-    "mtime": 1787468729.5299582,
-    "ast_hash": "15b73f6064db71660544b8c8e06cb336",
+    "mtime": 1787716511.881694,
+    "ast_hash": "bc74f8dc3fb3ec5d1c5d2ddd74dce54e",
     "semantic_hash": ""
   },
   "src/sections/sedes/SedesHeroSection.tsx": {
-    "mtime": 1787685589.8282301,
+    "mtime": 1787692459.923843,
     "ast_hash": "2cd828a667906c8fdfa4e199e28581e3",
     "semantic_hash": ""
   },
   "src/sections/sedes/VenueFaqSection.tsx": {
-    "mtime": 1787463583.62862,
+    "mtime": 1787692459.9242027,
     "ast_hash": "f09720548e4c1e69d37a5d64daf25e3e",
     "semantic_hash": ""
   },
   "src/sections/sedes/VenueInfoSection.tsx": {
-    "mtime": 1787467289.7812886,
+    "mtime": 1787692459.9244375,
     "ast_hash": "9d8d98ec22ee942bca06f1f1db9d61de",
     "semantic_hash": ""
   },
   "src/sections/sedes/VenueQuickAccessSection.tsx": {
-    "mtime": 1787463568.2705913,
+    "mtime": 1787692459.924656,
     "ast_hash": "dacc1004e3836ac1c0f8721847e2749d",
     "semantic_hash": ""
   },
   "public/images/sponsors/agua-cielo.svg": {
-    "mtime": 1787458439.1394553,
+    "mtime": 1787692459.8937402,
     "ast_hash": "f9b91a84835a2f02f4b0cb8e34cd01c3",
     "semantic_hash": ""
   },
   "public/images/sponsors/banco-pichincha.svg": {
-    "mtime": 1787458439.1427205,
+    "mtime": 1787692459.8940234,
     "ast_hash": "c4c22a00615be02d55dff3866afb8881",
     "semantic_hash": ""
   },
   "public/images/sponsors/de-una.svg": {
-    "mtime": 1787458439.1457946,
+    "mtime": 1787692459.894376,
     "ast_hash": "45f1a37ab9f53c5418c74e0edc891af2",
     "semantic_hash": ""
   },
   "public/images/sponsors/fef.svg": {
-    "mtime": 1787458439.1488574,
+    "mtime": 1787692459.8947442,
     "ast_hash": "c60e0fe10b6ca2a4c07f620b6db98ddb",
     "semantic_hash": ""
   },
   "public/images/sponsors/fundacion-marathon.svg": {
-    "mtime": 1787458439.1516607,
+    "mtime": 1787692459.894976,
     "ast_hash": "b3337541c9f5bc38c5287c0e10f9e127",
     "semantic_hash": ""
   },
   "public/images/sponsors/hispana-seguros.svg": {
-    "mtime": 1787458439.1548233,
+    "mtime": 1787692459.8954782,
     "ast_hash": "96d2937a58f1b9ad9ffe56bf02e8bb4b",
     "semantic_hash": ""
   },
   "public/images/sponsors/junta-de-beneficencia.svg": {
-    "mtime": 1787458439.158231,
+    "mtime": 1787692459.8962052,
     "ast_hash": "bcdfc3d586c6e47a80800d0192718060",
     "semantic_hash": ""
   },
   "public/images/sponsors/pony-malta.svg": {
-    "mtime": 1787458439.16099,
+    "mtime": 1787692459.8967242,
     "ast_hash": "e9234e54ae9159f8d47499800e9c1586",
     "semantic_hash": ""
   },
   "public/images/sponsors/pronaca.svg": {
-    "mtime": 1787458439.1636705,
+    "mtime": 1787692459.8970172,
     "ast_hash": "e1394efd3ba078ba4077980f7a434b38",
     "semantic_hash": ""
   },
   "public/images/sponsors/publiarte.svg": {
-    "mtime": 1787458439.16691,
+    "mtime": 1787692459.8973746,
     "ast_hash": "0a7f6a4cb748536c7e8e334abb18690b",
     "semantic_hash": ""
   },
   "public/images/sponsors/sporade.svg": {
-    "mtime": 1787458439.1698585,
+    "mtime": 1787692459.8978686,
     "ast_hash": "52a1b72518bfc8bf2717492f1a924ca4",
     "semantic_hash": ""
   },
   "public/images/sponsors/udla.svg": {
-    "mtime": 1787458439.1726635,
+    "mtime": 1787692459.898208,
     "ast_hash": "1cd9cf62a85b7a635152b27b2d6a2b4d",
     "semantic_hash": ""
   },
   "src/lib/constants/links.ts": {
-    "mtime": 1787508238.4612508,
+    "mtime": 1787692459.9067917,
     "ast_hash": "3a521db734e3cc2db2fa68765b8f4df0",
     "semantic_hash": ""
   },
   "src/lib/constants/inscripcionesPage.ts": {
-    "mtime": 1787504715.4212337,
+    "mtime": 1787692459.9057503,
     "ast_hash": "7c441fb37560c1d7930ee308aa9aced7",
     "semantic_hash": ""
   },
   "src/lib/scrollToAnchor.ts": {
-    "mtime": 1787472246.9202878,
+    "mtime": 1787692459.9096994,
     "ast_hash": "d20069e3d82a28cfdd16b002c78ed66c",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationFormSection.tsx": {
-    "mtime": 1787505459.7955275,
+    "mtime": 1787692459.920889,
     "ast_hash": "3a25dc8939af4cfd8b9a6a51c79c2533",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationGuideSection.tsx": {
-    "mtime": 1787505459.7951972,
-    "ast_hash": "5356413c9ce6dbf622ba2bc9c0814bf3",
+    "mtime": 1787716558.7499223,
+    "ast_hash": "737b2b617dd587ddae88a5bc8d56bcc7",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationHeroSection.tsx": {
-    "mtime": 1787685616.289866,
-    "ast_hash": "00d497eee6dcb98532edc0ec20afd98d",
+    "mtime": 1787716558.567609,
+    "ast_hash": "3a5b0f4a99627dbbeadec5ef807fa67e",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationKeyDatesSection.tsx": {
-    "mtime": 1787686710.0271308,
+    "mtime": 1787692459.9222803,
     "ast_hash": "348df6fd7fe9da5e4848cab08a961bc5",
     "semantic_hash": ""
   },
   "src/lib/constants/regionStatus.ts": {
-    "mtime": 1787505621.2625425,
+    "mtime": 1787692459.9077675,
     "ast_hash": "ddffb416e9dfd9272f709f8236d423db",
     "semantic_hash": ""
   },
   "src/sections/inscripciones/RegistrationRegionStatusSection.tsx": {
-    "mtime": 1787505711.8323123,
-    "ast_hash": "3a545104e71f1396f7cff2cc720c09d5",
+    "mtime": 1787716558.9472487,
+    "ast_hash": "515b2541ae7cafee241a960a2dae3d51",
     "semantic_hash": ""
   },
   "public/documentos/reglamento-copa-marathon-2026.pdf": {
-    "mtime": 1787508184.27506,
+    "mtime": 1787692459.8922713,
     "ast_hash": "6afee4458eaeae02052b3e91da0c9696",
     "semantic_hash": ""
   },
   "src/sections/fan-app/FanAppFaqSection.tsx": {
-    "mtime": 1787684269.471734,
+    "mtime": 1787692459.9156604,
     "ast_hash": "53e922175d8deb616d923ceb27072e25",
     "semantic_hash": ""
   },
   "src/sections/fan-app/FanAppHeroSection.tsx": {
-    "mtime": 1787685616.291022,
+    "mtime": 1787692459.9163756,
     "ast_hash": "6245ee66565e9c3dc818c7a266604091",
     "semantic_hash": ""
   },
   "src/sections/fan-app/FanAppInstallSection.tsx": {
-    "mtime": 1787684166.7330353,
-    "ast_hash": "c5217280610f7635dda3bc3586d4cd73",
+    "mtime": 1787716512.0743525,
+    "ast_hash": "76fb0bdc6bbf4045ed294fd92a4bc939",
     "semantic_hash": ""
   },
   "src/sections/fan-app/FanAppScreensSection.tsx": {
-    "mtime": 1787685616.2924182,
-    "ast_hash": "2485478c53e7f4216bf5d7d99d3798ff",
+    "mtime": 1787716512.2544208,
+    "ast_hash": "5d9e6558e68a8e7327c0307944363ef8",
     "semantic_hash": ""
   },
   "src/sections/fan-app/FanAppFeaturesSection.tsx": {
-    "mtime": 1787682218.9084778,
+    "mtime": 1787692459.916015,
     "ast_hash": "d6c80c1b4584ab3fb410b9025817e290",
     "semantic_hash": ""
   },
   "src/lib/constants/hero-typography.ts": {
-    "mtime": 1787683191.8026989,
+    "mtime": 1787692459.905458,
     "ast_hash": "58823f598e9e420356c4a0633f04979c",
     "semantic_hash": ""
   },
   "src/components/ui/hero-breadcrumb.tsx": {
-    "mtime": 1787685589.7692604,
+    "mtime": 1787692459.9034936,
     "ast_hash": "a940b2ae6ef800ac04d238407dfeffed",
+    "semantic_hash": ""
+  },
+  "src/components/seo/PublicRouteSeo.tsx": {
+    "mtime": 1787713505.8463387,
+    "ast_hash": "25a28db32b2d9428d5caf952fae4cc17",
+    "semantic_hash": ""
+  },
+  "public/robots.txt": {
+    "mtime": 1787713506.4484532,
+    "ast_hash": "999f43b943a82eef7981eabbd6829046",
+    "semantic_hash": ""
+  },
+  "src/components/analytics/PublicInteractionAnalytics.tsx": {
+    "mtime": 1787716444.6348076,
+    "ast_hash": "adcebfcc9154f791bd53a0bda27dcdbe",
     "semantic_hash": ""
   }
 }

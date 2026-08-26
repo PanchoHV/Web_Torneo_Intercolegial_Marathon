@@ -8,6 +8,7 @@ import { ArrowDown, Check, ImageIcon } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Surface } from '@/components/ui/surface';
+import { trackVenueDetailOpen } from '@/lib/analytics/gtm';
 import {
   SEDES_BRAND_OVERLAYS,
   type FeaturedVenue,
@@ -52,6 +53,17 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
   const sectionRef = useRef<HTMLElement>(null);
   const tacticalRef = useRef<HTMLDivElement>(null);
   const chevronsRef = useRef<HTMLDivElement>(null);
+
+  const handleVenueDetailOpen = (event: MouseEvent<HTMLAnchorElement>) => {
+    trackVenueDetailOpen({
+      source_page: '/sedes',
+      section: 'featured_venue',
+      region: venue.region,
+      city: venue.city,
+      venue_name: venue.displayName,
+    });
+    handleInfoScroll(event);
+  };
 
   /** Marcas de agua con profundidad. Featured es más sobrio que el Explorer. */
   useEffect(() => {
@@ -239,7 +251,7 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
                   */}
                   <a
                     href={`#${VENUE_INFO_ANCHOR}`}
-                    onClick={handleInfoScroll}
+                    onClick={handleVenueDetailOpen}
                     className="group mt-5 inline-flex items-center gap-2 border-b border-marathon-red/60 pb-1 font-montserrat text-[0.7rem] font-black uppercase tracking-[0.14em] text-marathon-cream transition-colors duration-200 hover:border-marathon-red hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-red"
                   >
                     Ver información de la sede

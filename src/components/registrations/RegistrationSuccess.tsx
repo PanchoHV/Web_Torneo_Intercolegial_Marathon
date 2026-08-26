@@ -1,6 +1,7 @@
 import { CheckCircle2, RotateCcw } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { trackCtaClick } from '@/lib/analytics/gtm';
 import type { RegistrationResult } from '@/types/registration';
 
 type RegistrationSuccessProps = {
@@ -49,7 +50,15 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
 
       <div className="mt-6">
         <Button
-          onClick={onReset}
+          onClick={() => {
+            trackCtaClick({
+              cta_name: 'registrar_otro_colegio',
+              cta_location: 'registration_success',
+              source_page: '/inscripciones',
+              section: 'registration_success',
+            });
+            onReset();
+          }}
           className="w-full sm:w-auto rounded-full bg-marathon-blue px-6 py-2 text-white hover:bg-marathon-blue/90"
         >
           <RotateCcw size={16} /> Registrar otro colegio

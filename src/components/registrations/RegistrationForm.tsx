@@ -40,6 +40,8 @@ import {
 } from '@/lib/validations/registrationSchema';
 import {
   trackGenerateLead,
+  trackPreinscriptionStart,
+  trackPreinscriptionValidationError,
   trackRegistrationError,
   trackRegistrationSubmitAttempt,
 } from '@/lib/analytics/gtm';
@@ -61,6 +63,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     'loading'
   );
   const turnstileRef = useRef<TurnstileChallengeHandle | null>(null);
+  const hasTrackedStartRef = useRef(false);
   const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
   const hasTurnstile = Boolean(turnstileSiteKey);
 
@@ -135,12 +138,14 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
     // desde devtools ni una selección que quedó stale. La región cerrada se
     // vuelve a comprobar aquí, contra el valor que realmente se va a enviar.
     if (isCityRegistrationClosed(values.city)) {
+      trackRegistrationError({ error_type: 'registration_closed', city: values.city });
       setSubmitError(CLOSED_CITY_MESSAGE);
       return;
     }
 
     if (hasTurnstile) {
       if (!turnstileReady) {
+        trackRegistrationError({ error_type: 'turnstile_not_ready', city: values.city });
         setTurnstileState('loading');
         setSubmitError(
           'La verificación de seguridad aún se está cargando. Intenta nuevamente en un momento.'
@@ -149,6 +154,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       }
 
       if (!turnstileToken) {
+        trackRegistrationError({ error_type: 'turnstile_required', city: values.city });
         setTurnstileState('error');
         setSubmitError('Completa la verificación de seguridad antes de enviar.');
         return;
@@ -174,7 +180,6 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       });
 
       trackGenerateLead({
-        lead_id: result.id,
         city: values.city,
         school_type: values.schoolType,
         categories: values.categories,
@@ -191,7 +196,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
       onSubmitSuccess(result);
     } catch (error) {
       trackRegistrationError({
-        error_type: error instanceof Error ? error.message.slice(0, 80) : 'unknown_error',
+        error_type: error instanceof Error ? 'submission_error' : 'unknown_error',
         city: selectedCity,
       });
       setSubmitError(error instanceof Error ? error.message : 'No se pudo enviar el formulario.');
@@ -203,7 +208,20 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         setTurnstileState('error');
       }
     }
+  }, () => {
+    trackPreinscriptionValidationError({
+      source_page: '/inscripciones',
+      section: 'registration_form',
+      error_type: 'validation_error',
+    });
   });
+
+  const handleFormStart = () => {
+    if (hasTrackedStartRef.current) return;
+
+    hasTrackedStartRef.current = true;
+    trackPreinscriptionStart({ form_location: 'registration_form' });
+  };
 
   const handleTurnstileReady = useCallback(() => {
     setTurnstileReady(true);
@@ -224,22 +242,24 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
   const handleTurnstileError = useCallback(
     (errorCode?: string) => {
+      trackRegistrationError({ error_type: 'turnstile_error', city: selectedCity });
       setTurnstileToken('');
       setTurnstileErrorCode(errorCode ?? null);
       setValue('turnstileToken', '');
       setTurnstileState('error');
       setSubmitError(getTurnstileMessage(errorCode));
     },
-    [getTurnstileMessage, setValue]
+    [getTurnstileMessage, selectedCity, setValue]
   );
 
   const handleTurnstileExpire = useCallback(() => {
+    trackRegistrationError({ error_type: 'turnstile_expired', city: selectedCity });
     setTurnstileToken('');
     setTurnstileErrorCode(null);
     setValue('turnstileToken', '');
     setTurnstileState('ready');
     setSubmitError('La verificación de seguridad expiró. Complétala nuevamente antes de enviar.');
-  }, [setValue]);
+  }, [selectedCity, setValue]);
 
   return (
     <section
@@ -279,6 +299,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
         <form
           className="grid min-w-0 gap-4 bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FBFE_100%)] p-2 sm:gap-6 sm:p-7 lg:p-8"
           onSubmit={onSubmit}
+          onFocusCapture={handleFormStart}
           noValidate
         >
           <input

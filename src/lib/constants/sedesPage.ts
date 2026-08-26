@@ -277,40 +277,44 @@ export const VENUE_QUICK_ACCESS = [
  */
 export const VENUE_FAQ_ITEMS = [
   {
-    // PENDIENTE de política oficial.
-    question: '¿Puedo competir en más de una sede?',
+    question: '¿Dónde se juega la Copa Marathon?',
     answer:
-      'La organización publicará el detalle oficial de participación por sede antes del cierre de inscripciones. Cualquier caso particular debe consultarse directamente con el equipo de la Copa.',
+      'La Copa Marathon 2026 se juega en distintas ciudades sede del Ecuador. En esta página puedes consultar el mapa oficial, el listado de sedes y la información disponible de cada ciudad del torneo intercolegial.',
   },
   {
-    // PENDIENTE de política oficial.
-    question: '¿Cómo se asignan las sedes a los colegios?',
+    question: '¿Qué ciudades participan como sedes de la Copa?',
     answer:
-      'El criterio oficial de asignación será comunicado por la organización. Mientras tanto, en el mapa de esta página puedes ver todas las ciudades anfitrionas confirmadas y sus fechas.',
+      'Las ciudades sede de la Copa Marathon son las que aparecen publicadas en el mapa y listado oficial de esta página, entre ellas Guayaquil, Quito y Cuenca. La información se actualiza según las sedes habilitadas para el torneo.',
   },
   {
-    // PENDIENTE de política oficial.
-    question: '¿Cómo se define la sede principal?',
+    question: '¿Cómo consulto la información de una sede?',
     answer:
-      'La designación de sede principal corresponde a la organización de la Copa y se anunciará junto con la información oficial de cada ciudad.',
+      'Selecciona una sede de la Copa Marathon desde el mapa o el listado de ciudades. La página actualizará la información disponible de esa sede para ayudarte a conocer los datos del torneo en esa ciudad.',
   },
   {
-    // PENDIENTE de política oficial.
-    question: '¿Habrá transporte entre sedes?',
+    question: '¿Qué información puedo ver de cada sede?',
     answer:
-      'Los servicios logísticos de cada sede todavía no están confirmados. Cuando se definan, se publicarán en esta página y en la Fan App oficial.',
+      'En cada sede de la Copa Marathon puedes consultar la ciudad, fechas de inscripción, inicio de partidos y categorías disponibles según la información publicada para ese escenario o localidad.',
   },
   {
-    // PENDIENTE de política oficial.
-    question: '¿Puedo solicitar un cambio de sede?',
+    question: '¿Puedo filtrar las sedes por región o ciudad?',
     answer:
-      'El procedimiento para solicitudes de este tipo será informado por la organización. Cualquier gestión debe canalizarse por los canales oficiales de la Copa.',
+      'Sí. El explorador de Sedes de la Copa Marathon permite filtrar las ciudades por región y localizar con mayor rapidez la información disponible de cada sede del torneo.',
   },
   {
-    // Respuesta factual: describe lo que esta misma página ya hace.
-    question: '¿Dónde consulto las fechas y escenarios de mi sede?',
+    question: '¿Dónde consulto las fechas y categorías de mi sede?',
     answer:
-      'Selecciona tu sede en el mapa o en el listado de esta página: el bloque de información útil muestra la ciudad, las fechas de inscripción, el inicio de partidos y las categorías de esa sede.',
+      'Selecciona tu ciudad en el mapa o listado de Sedes. El bloque de información útil muestra las fechas de inscripción, el inicio de partidos y las categorías disponibles para esa sede de la Copa Marathon.',
+  },
+  {
+    question: '¿Dónde consulto los escenarios de cada ciudad sede?',
+    answer:
+      'Selecciona una ciudad en el mapa o en el listado de Sedes de la Copa Marathon para revisar los escenarios y la información publicada para esa localidad del torneo.',
+  },
+  {
+    question: '¿Cómo identifico las sedes por región?',
+    answer:
+      'Puedes usar los filtros del explorador de Sedes para consultar las ciudades disponibles por Costa, Sierra o Amazonía y encontrar las sedes de la Copa Marathon correspondientes a cada región.',
   },
 ] as const;
 
