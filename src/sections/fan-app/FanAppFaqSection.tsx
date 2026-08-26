@@ -8,44 +8,44 @@ import FaqSection, { type FaqItem } from '@/sections/home/FaqSection';
  */
 const fanAppFaqItems: FaqItem[] = [
   {
-    question: '¿Necesito descargar la Fan App?',
+    question: '¿Tengo que descargar la Fan App Copa Marathon?',
     answer:
-      'No. Puedes abrir la Fan App directamente desde el navegador de tu celular. Si quieres tenerla siempre a mano, puedes agregarla a tu pantalla de inicio en pocos pasos.',
+      'No. Puedes abrir la Fan App Copa Marathon directamente desde el navegador de tu celular. Si quieres tenerla siempre disponible, también puedes agregarla a la pantalla de inicio.',
   },
   {
-    question: '¿La Fan App es gratuita?',
+    question: '¿La Fan App de Copa Marathon es gratuita?',
     answer:
-      'Sí. Puedes acceder a la Fan App de la Copa y consultar la información disponible del torneo sin costo y sin crear una cuenta.',
+      'Sí. Puedes acceder gratuitamente a la Fan App Copa Marathon y consultar la información disponible del torneo sin necesidad de crear una cuenta.',
   },
   {
-    question: '¿Cómo la agrego a la pantalla de inicio?',
+    question: '¿Cómo agrego la Fan App a la pantalla de inicio?',
     answer:
-      'En iPhone, abre la Fan App en Safari, toca Compartir y selecciona «Agregar a pantalla de inicio». En Android, ábrela en Chrome, entra al menú del navegador y elige «Instalar» o «Agregar a pantalla principal». La Fan App quedará disponible junto a tus otras aplicaciones.',
+      'En iPhone, abre la Fan App Copa Marathon en Safari y selecciona «Agregar a pantalla de inicio». En Android, ábrela en Chrome y elige «Instalar» o «Agregar a pantalla principal».',
   },
   {
-    question: '¿Qué puedo consultar en la Fan App?',
+    question: '¿Qué puedo consultar en la Fan App Copa Marathon?',
     answer:
-      'Desde la Fan App puedes acceder a las principales secciones del torneo: Partidos, Sedes, Estadísticas y Equipos, además de la información destacada disponible desde Inicio.',
+      'Desde la Fan App Copa Marathon puedes consultar Partidos, Sedes, Estadísticas y Equipos, además de la información destacada disponible desde el inicio de la aplicación.',
   },
   {
-    question: '¿Dónde puedo ver los próximos partidos?',
+    question: '¿Dónde veo los partidos de la Copa Marathon?',
     answer:
-      'Entra a la sección Partidos. Allí puedes filtrar por fecha y por sede, y consultar los encuentros disponibles con su horario y la cancha asignada para cada jornada.',
+      'Abre la sección Partidos de la Fan App Copa Marathon para consultar los encuentros disponibles, filtrar por fecha y sede y revisar la información publicada de cada jornada.',
   },
   {
-    question: '¿Cómo encuentro a mi colegio o equipo?',
+    question: '¿Cómo encuentro a mi colegio o equipo en la Fan App?',
     answer:
-      'Entra a Equipos y usa el buscador para localizar a tu institución dentro de la información disponible del torneo. Los equipos aparecen identificados por categoría.',
+      'Entra a la sección Equipos de la Fan App Copa Marathon y usa el buscador para localizar tu institución dentro de la información disponible del torneo. Los equipos se identifican por categoría.',
   },
   {
-    question: '¿Dónde encuentro las sedes de los partidos?',
+    question: '¿Dónde consulto las sedes de la Copa Marathon?',
     answer:
-      'Desde la sección Sedes puedes buscar por nombre y consultar los escenarios disponibles con la información publicada para cada ciudad del torneo.',
+      'Desde la sección Sedes de la Fan App Copa Marathon puedes buscar escenarios por nombre y consultar la información disponible de las ciudades donde se desarrolla el torneo.',
   },
   {
-    question: '¿Qué información aparece en Estadísticas?',
+    question: '¿Dónde veo estadísticas de la Copa Marathon?',
     answer:
-      'En Estadísticas puedes revisar la tabla general por sede y categoría, junto al listado de goleadores, con los datos que se van publicando durante el torneo.',
+      'En la sección Estadísticas de la Fan App Copa Marathon puedes consultar la tabla general por sede y categoría, además del listado de goleadores con los datos publicados durante el torneo.',
   },
 ];
 

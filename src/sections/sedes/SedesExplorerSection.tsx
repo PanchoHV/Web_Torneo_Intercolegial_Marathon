@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Surface } from '@/components/ui/surface';
+import { trackVenueFilter, trackVenueSelect } from '@/lib/analytics/gtm';
 import { SEDES_BRAND_OVERLAYS } from '@/lib/constants/sedesPage';
 import { VENUE_REGION_OPTIONS, type Venue } from '@/lib/constants/venues';
 
@@ -168,6 +169,9 @@ export default function SedesExplorerSection({
   }
 
   function handleRegionChange(nextRegion: RegionFilter) {
+    if (nextRegion === region) return;
+
+    trackVenueFilter({ filter_type: 'region', filter_value: nextRegion });
     setRegion(nextRegion);
     // Al cambiar de región la ciudad elegida puede dejar de existir en el set.
     setCity(ALL_CITIES);
@@ -175,8 +179,24 @@ export default function SedesExplorerSection({
   }
 
   function handleCityChange(nextCity: string) {
+    if (nextCity === city) return;
+
+    trackVenueFilter({ filter_type: 'city', filter_value: nextCity });
     setCity(nextCity);
     reconcileSelection(filterVenues(venues, region, nextCity));
+  }
+
+  function handleVenueSelect(venueId: string, selectionSource: 'map' | 'list') {
+    const venue = venues.find((item) => item.id === venueId);
+    if (!venue) return;
+
+    trackVenueSelect({
+      venue_id: venue.id,
+      venue_city: venue.city,
+      venue_region: venue.region,
+      selection_source: selectionSource,
+    });
+    onSelectVenue(venueId);
   }
 
   const activeRegions = useMemo(
@@ -266,7 +286,7 @@ export default function SedesExplorerSection({
             <EcuadorVenueMap
               venues={filteredVenues}
               selectedVenueId={selectedVenueId}
-              onSelectVenue={onSelectVenue}
+              onSelectVenue={(venueId) => handleVenueSelect(venueId, 'map')}
             />
           </div>
 
@@ -394,7 +414,7 @@ export default function SedesExplorerSection({
                       <VenueCard
                         venue={venue}
                         isSelected={venue.id === selectedVenueId}
-                        onSelect={onSelectVenue}
+                        onSelect={(venueId) => handleVenueSelect(venueId, 'list')}
                       />
                     </li>
                   ))}

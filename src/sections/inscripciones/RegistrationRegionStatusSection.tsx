@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowRight, BadgeCheck, Bell, ChevronDown, Lock } from "lucide-react";
 
 import { scrollToAnchor } from "@/lib/scrollToAnchor";
+import { trackCtaClick } from '@/lib/analytics/gtm';
 
 import { Container } from "@/components/ui/container";
 import { textures } from "@/lib/assets/textures";
@@ -286,7 +287,14 @@ function RegionCard({
           {region.status === "open" && (
             <a
               href="#registration-form"
-              onClick={(event) => scrollToAnchor(event, "registration-form")}
+              onClick={(event) => {
+                trackCtaClick({
+                  cta_name: 'inscribir_institucion',
+                  cta_location: `registration_region_${region.id}`,
+                  destination: '#registration-form',
+                });
+                scrollToAnchor(event, "registration-form");
+              }}
               className="group inline-flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-marathon-red font-montserrat text-[0.64rem] font-black uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-[#c41626] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Inscribir mi institución

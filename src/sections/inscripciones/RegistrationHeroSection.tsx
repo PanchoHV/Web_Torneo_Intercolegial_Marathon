@@ -8,6 +8,7 @@ import { HERO_ACCENT_STYLE, HERO_TITLE_STYLE, HERO_TYPE } from '@/lib/constants/
 import { Container } from "@/components/ui/container";
 import { HeroBreadcrumb } from "@/components/ui/hero-breadcrumb";
 import { REGISTRATION_HERO_LAYERS } from "@/lib/constants/inscripcionesPage";
+import { trackCtaClick } from '@/lib/analytics/gtm';
 import { scrollToAnchor } from "@/lib/scrollToAnchor";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -331,7 +332,14 @@ export default function RegistrationHeroSection() {
           <div className={`${HERO_TYPE.ctaGap} flex flex-wrap items-center gap-x-6 gap-y-3`}>
             <a
               href="#registration-form"
-              onClick={(event) => scrollToAnchor(event, "registration-form")}
+              onClick={(event) => {
+                trackCtaClick({
+                  cta_name: 'inscribir_institucion',
+                  cta_location: 'registration_hero',
+                  destination: '#registration-form',
+                });
+                scrollToAnchor(event, "registration-form");
+              }}
               className={`group inline-flex h-12 items-center gap-2 rounded-lg bg-marathon-red px-6 ${HERO_TYPE.cta} text-white transition-colors duration-200 hover:bg-[#c41626] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-navy`}
             >
               Inscribir mi institución
@@ -345,7 +353,14 @@ export default function RegistrationHeroSection() {
 
             <a
               href="#registration-guide"
-              onClick={(event) => scrollToAnchor(event, "registration-guide")}
+              onClick={(event) => {
+                trackCtaClick({
+                  cta_name: 'ver_guia_inscripcion',
+                  cta_location: 'registration_hero',
+                  destination: '#registration-guide',
+                });
+                scrollToAnchor(event, "registration-guide");
+              }}
               className={`group inline-flex h-12 items-center gap-2 border-b-2 border-white/30 pb-1 ${HERO_TYPE.cta} text-white transition-colors duration-200 hover:border-white md:border-marathon-navy/20 md:text-marathon-navy md:hover:border-marathon-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-marathon-navy`}
             >
               Ver cómo funciona

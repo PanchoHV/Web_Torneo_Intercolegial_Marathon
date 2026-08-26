@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { Surface } from '@/components/ui/surface';
-import { trackNavigationClick } from '@/lib/analytics/gtm';
+import { trackFanAppOpen, trackNavigationClick } from '@/lib/analytics/gtm';
 import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
 const navLinks = [
@@ -54,11 +54,18 @@ export default function Navigation() {
 
   const handleNavigate = useCallback(
     (href: string, navLocation: 'desktop' | 'mobile' | 'logo', navLabel: string) => {
-      trackNavigationClick({
-        nav_label: navLabel,
-        nav_target: href,
-        nav_location: navLocation,
-      });
+      if (href === FAN_APP_URL) {
+        trackFanAppOpen({
+          cta_location: `navigation_${navLocation}`,
+          destination: FAN_APP_URL,
+        });
+      } else {
+        trackNavigationClick({
+          nav_label: navLabel,
+          nav_target: href,
+          nav_location: navLocation,
+        });
+      }
       setMobileOpen(false);
 
       // Los destinos absolutos (Fan App) viven fuera del sitio.

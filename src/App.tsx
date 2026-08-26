@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import AdminLayout from '@/components/admin/AdminLayout';
 import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
@@ -5,6 +6,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import ScrollToTopOnNavigate from '@/components/ScrollToTopOnNavigate';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import PublicLayout from '@/components/layout/PublicLayout';
+import PublicRouteSeo, { type PublicSeoPath } from '@/components/seo/PublicRouteSeo';
 import HomePage from '@/pages/HomePage';
 import FanAppPage from '@/pages/FanAppPage';
 import LaCopaPage from '@/pages/LaCopaPage';
@@ -17,20 +19,64 @@ import OnboardingDetail from '@/pages/admin/OnboardingDetail';
 import UsersPage from '@/pages/admin/UsersPage';
 import SedesPage from '@/pages/SedesPage';
 
+function PublicPage({ path, children }: { path: PublicSeoPath; children: ReactNode }) {
+  return (
+    <>
+      <PublicRouteSeo path={path} />
+      {children}
+    </>
+  );
+}
+
 function App() {
   return (
     <>
       <RouteAnalytics />
       <Routes>
         <Route element={<PublicLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="la-copa" element={<LaCopaPage />} />
-          <Route path="sedes" element={<SedesPage />} />
+          <Route
+            index
+            element={
+              <PublicPage path="/">
+                <HomePage />
+              </PublicPage>
+            }
+          />
+          <Route
+            path="la-copa"
+            element={
+              <PublicPage path="/la-copa">
+                <LaCopaPage />
+              </PublicPage>
+            }
+          />
+          <Route
+            path="sedes"
+            element={
+              <PublicPage path="/sedes">
+                <SedesPage />
+              </PublicPage>
+            }
+          />
           {/* Alias histórico: la ruta se renombró a /inscripciones, pero se conserva
               para no romper enlaces ya compartidos. */}
           <Route path="preinscripciones" element={<Navigate to="/inscripciones" replace />} />
-          <Route path="fan-app" element={<FanAppPage />} />
-          <Route path="inscripciones" element={<InscripcionesPage />} />
+          <Route
+            path="fan-app"
+            element={
+              <PublicPage path="/fan-app">
+                <FanAppPage />
+              </PublicPage>
+            }
+          />
+          <Route
+            path="inscripciones"
+            element={
+              <PublicPage path="/inscripciones">
+                <InscripcionesPage />
+              </PublicPage>
+            }
+          />
         </Route>
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route

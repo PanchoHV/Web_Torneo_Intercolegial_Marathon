@@ -4,6 +4,7 @@ import { Container } from '@/components/ui/container';
 import { textures } from '@/lib/assets/textures';
 import { SectionLabel } from '@/components/ui/section-label';
 import { REGISTRATION_GUIDE_STEPS } from '@/lib/constants/inscripcionesPage';
+import { trackCtaClick } from '@/lib/analytics/gtm';
 import { scrollToAnchor } from '@/lib/scrollToAnchor';
 
 /**
@@ -131,7 +132,14 @@ export default function RegistrationGuideSection() {
 
         <a
           href="#registration-form"
-          onClick={(event) => scrollToAnchor(event, 'registration-form')}
+          onClick={(event) => {
+            trackCtaClick({
+              cta_name: 'inscribir_institucion',
+              cta_location: 'registration_guide',
+              destination: '#registration-form',
+            });
+            scrollToAnchor(event, 'registration-form');
+          }}
           className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-marathon-navy px-6 py-3.5 font-montserrat text-[0.72rem] font-black uppercase tracking-[0.1em] text-white transition-colors duration-200 hover:bg-marathon-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-red sm:w-auto"
         >
           Inscribir mi institución

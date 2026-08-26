@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
+import { trackFanAppInstallGuideView } from '@/lib/analytics/gtm';
 import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 
 const R2_BASE = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/';
@@ -51,6 +52,17 @@ const deviceIds: DeviceId[] = ['iphone', 'android'];
 export default function FanAppInstallSection() {
   const [device, setDevice] = useState<DeviceId>('iphone');
   const guide = guides[device];
+
+  const handleDeviceChange = (nextDevice: DeviceId) => {
+    if (nextDevice === device) return;
+
+    setDevice(nextDevice);
+    trackFanAppInstallGuideView({
+      source_page: '/fan-app',
+      section: 'install_guide',
+      platform: nextDevice === 'iphone' ? 'ios' : 'android',
+    });
+  };
 
   return (
     <section
@@ -110,7 +122,7 @@ export default function FanAppInstallSection() {
                 id={`fan-app-install-tab-${id}`}
                 aria-selected={isActive}
                 aria-controls="fan-app-install-panel"
-                onClick={() => setDevice(id)}
+                onClick={() => handleDeviceChange(id)}
                 className={`flex-1 rounded-full px-5 py-2.5 font-montserrat text-[0.72rem] font-black uppercase tracking-[0.12em] transition duration-200 sm:flex-none sm:px-8 sm:text-[0.78rem] ${
                   isActive
                     ? 'bg-[#062A4F] text-white shadow-[0_8px_18px_rgba(6,42,79,0.22)]'
