@@ -182,10 +182,6 @@ export default function Hero() {
   const phoneScrollRef = useRef<HTMLDivElement>(null);
   const phonePointerRef = useRef<HTMLDivElement>(null);
   const phoneImageRef = useRef<HTMLImageElement>(null);
-  const contentBaseRef = useRef<HTMLDivElement>(null);
-  const contentHeadlineRef = useRef<HTMLHeadingElement>(null);
-  const contentCopyRef = useRef<HTMLParagraphElement>(null);
-  const contentCtaRef = useRef<HTMLDivElement>(null);
   const reducedMotionRef = useRef(false);
 
   useEffect(() => {
@@ -218,26 +214,6 @@ export default function Hero() {
         intro.to(phoneImageRef.current, { opacity: 1, duration: reducedMotion ? 0.01 : 1.2 }, 0.24);
       }
 
-      const contentNodes = [
-        contentHeadlineRef.current,
-        contentCopyRef.current,
-        contentCtaRef.current,
-      ].filter(Boolean) as HTMLElement[];
-
-      if (contentNodes.length > 0) {
-        gsap.set(contentNodes, { opacity: 0, y: 18 });
-        intro.to(
-          contentNodes,
-          {
-            opacity: 1,
-            y: 0,
-            duration: reducedMotion ? 0.01 : 0.85,
-            stagger: reducedMotion ? 0 : 0.08,
-            clearProps: 'transform,opacity',
-          },
-          0.18
-        );
-      }
     }, heroRef);
 
     if (!reducedMotion) {
@@ -434,7 +410,7 @@ export default function Hero() {
                 alt=""
                 className="absolute inset-0 h-full w-full select-none object-cover object-[48%_40%] sm:object-center"
                 loading="eager"
-                fetchPriority="high"
+                fetchPriority="low"
                 draggable={false}
               />
             </div>
@@ -450,7 +426,7 @@ export default function Hero() {
                 alt=""
                 className="absolute inset-0 h-full w-full select-none object-cover object-[48%_40%] sm:object-center"
                 loading="eager"
-                fetchPriority="high"
+                fetchPriority="low"
                 draggable={false}
               />
             </div>
@@ -493,7 +469,7 @@ export default function Hero() {
                 alt=""
                 className="absolute inset-0 h-full w-full select-none object-cover object-[50%_40%] sm:object-center"
                 loading="eager"
-                fetchPriority="high"
+                fetchPriority="low"
                 draggable={false}
               />
             </div>
@@ -515,31 +491,18 @@ export default function Hero() {
       </div>
 
       <div className="hero-copy-layer">
-        <div
-          ref={contentBaseRef}
-          className="hero-copy"
-        >
-          <h1
-            id="home-hero-title"
-            ref={contentHeadlineRef}
-            className="hero-title"
-          >
+        <div className="hero-copy">
+          <h1 id="home-hero-title" className="hero-title">
             <span className="hero-title-line">VIVE LA COPA</span>
             <span className="hero-title-line hero-title-line--red">COMO NUNCA</span>
           </h1>
 
-          <p
-            ref={contentCopyRef}
-            className="hero-copy-text"
-          >
+          <p className="hero-copy-text">
             Sigue el torneo, conoce historias, mira los highlights, revive las fotos y no te
             pierdas ningún momento desde la Fan App oficial.
           </p>
 
-          <div
-            ref={contentCtaRef}
-            className="hero-copy-actions"
-          >
+          <div className="hero-copy-actions">
             <Button
               asChild
               variant="action"

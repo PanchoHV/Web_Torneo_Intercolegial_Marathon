@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
 import AdminLayout from '@/components/admin/AdminLayout';
 import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
@@ -8,22 +8,22 @@ import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import PublicLayout from '@/components/layout/PublicLayout';
 import PublicRouteSeo, { type PublicSeoPath } from '@/components/seo/PublicRouteSeo';
 import HomePage from '@/pages/HomePage';
-import FanAppPage from '@/pages/FanAppPage';
-import LaCopaPage from '@/pages/LaCopaPage';
-import InscripcionesPage from '@/pages/InscripcionesPage';
 import AdminLogin from '@/pages/admin/Login';
 import AuditPage from '@/pages/admin/AuditPage';
 import MyAccessPage from '@/pages/admin/MyAccessPage';
 import OnboardingDashboard from '@/pages/admin/OnboardingDashboard';
 import OnboardingDetail from '@/pages/admin/OnboardingDetail';
 import UsersPage from '@/pages/admin/UsersPage';
-import SedesPage from '@/pages/SedesPage';
+const FanAppPage = lazy(() => import('@/pages/FanAppPage'));
+const LaCopaPage = lazy(() => import('@/pages/LaCopaPage'));
+const InscripcionesPage = lazy(() => import('@/pages/InscripcionesPage'));
+const SedesPage = lazy(() => import('@/pages/SedesPage'));
 
 function PublicPage({ path, children }: { path: PublicSeoPath; children: ReactNode }) {
   return (
     <>
       <PublicRouteSeo path={path} />
-      {children}
+      <Suspense fallback={null}>{children}</Suspense>
     </>
   );
 }
