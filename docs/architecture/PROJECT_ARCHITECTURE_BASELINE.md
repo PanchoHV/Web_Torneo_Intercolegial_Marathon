@@ -313,18 +313,25 @@ No afirmar que existen.
 No crear tablas.
 No modificar Supabase.
 
-## 15. SEO direction - planned
+## 15. SEO direction - closed
 
-Objetivos:
+Technical SEO on-site está cerrado para las cinco rutas públicas canónicas:
 
-- URLs indexables
-- metadata por página
-- canonical
-- Open Graph
-- breadcrumbs
-- structured data
-- `sitemap.xml`
-- `robots.txt`
+- URLs indexables y metadata única por ruta
+- canonical URLs
+- Open Graph / Twitter y OG image
+- WebSite, Organization y BreadcrumbList schema
+- `sitemap.xml` y `robots.txt`
+- FAQs contextuales sin FAQPage schema
 
-`prerender` / `SSR` / `SSG` deberá evaluarse técnicamente antes de implementación.
-No tomar todavía decisión irreversible de framework.
+El modelo de entidad actual es:
+
+`Marathon → Copa Marathon → torneo intercolegial de fútbol → Ecuador`
+
+`lastmod` solo se actualiza cuando hay un cambio visible, de metadata SEO significativo o
+estructural a nivel de ruta. No se actualiza por analytics, tooling interno, R2 cache/metadata
+ni despliegues sin cambios.
+
+No se añade SportsEvent schema hasta contar con una arquitectura de eventos precisa. El
+crecimiento futuro prioriza Search Console, indexación, autoridad, Digital PR, backlinks y
+contenido útil; no más schema ni keywords on-site sin un requisito SEO justificado.
