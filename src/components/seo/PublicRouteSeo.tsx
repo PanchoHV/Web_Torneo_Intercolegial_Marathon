@@ -106,6 +106,8 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
     upsertMeta('name', 'twitter:description', seo.description);
 
     upsertMeta('property', 'og:image', OG_IMAGE_URL);
+    upsertMeta('property', 'og:image:secure_url', OG_IMAGE_URL);
+    upsertMeta('property', 'og:image:type', 'image/webp');
     upsertMeta('property', 'og:image:width', '1200');
     upsertMeta('property', 'og:image:height', '630');
     upsertMeta('property', 'og:image:alt', OG_IMAGE_ALT);
@@ -117,6 +119,7 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
       '@type': 'WebSite',
       name: SITE_NAME,
       url: `${SITE_URL}/`,
+      image: OG_IMAGE_URL,
       inLanguage: 'es-EC',
     });
 
@@ -126,6 +129,7 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
       name: SITE_NAME,
       url: `${SITE_URL}/`,
       logo: `${SITE_URL}/marathon-logo.webp`,
+      image: OG_IMAGE_URL,
     });
 
     if (seo.breadcrumb) {
