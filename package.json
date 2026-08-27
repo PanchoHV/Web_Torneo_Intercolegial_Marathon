@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "r2:upload": "node scripts/r2/upload-asset.mjs",
+    "r2:verify": "node scripts/r2/verify-asset.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
