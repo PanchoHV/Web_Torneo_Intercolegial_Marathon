@@ -324,9 +324,9 @@ export default function RegistrationHeroSection() {
           />
 
           <p className={`${HERO_TYPE.bodyGap} max-w-[34rem] ${HERO_TYPE.body} text-white md:text-marathon-gray`}>
-            Prepara a tu institución y participa en la competencia más grande
-            del país. Consulta el estado por región y sigue la guía para
-            completar tu inscripción.
+            Prepara a tu institución para el torneo intercolegial de fútbol
+            más grande del país. Consulta el estado por región y sigue la guía
+            para completar tu inscripción.
           </p>
 
           <div className={`${HERO_TYPE.ctaGap} flex flex-wrap items-center gap-x-6 gap-y-3`}>
