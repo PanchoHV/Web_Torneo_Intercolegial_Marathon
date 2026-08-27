@@ -161,8 +161,8 @@ export default function SedesHeroSection() {
           </p>
 
           <p className={`${HERO_TYPE.bodyGap} max-w-[34rem] ${HERO_TYPE.body} text-white lg:text-marathon-gray`}>
-            Explora las ciudades anfitrionas, conoce los escenarios y toda la
-            información útil para tu participación.
+            Explora las ciudades anfitrionas y los escenarios del torneo
+            intercolegial de fútbol, con información útil para tu participación.
           </p>
         </div>
       </Container>

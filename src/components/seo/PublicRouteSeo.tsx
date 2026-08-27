@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 const SITE_URL = 'https://www.copamarathon.com';
 const SITE_NAME = 'Copa Marathon';
+const ENTITY_NAME = 'Copa Marathon 2026';
+const ENTITY_ALTERNATE_NAMES = ['Copa Marathon', 'Copa Nacional Intercolegial Marathon'];
 
 const OG_IMAGE_URL =
   'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp';
@@ -11,25 +13,25 @@ const SEO_BY_PATH = {
   '/': {
     title: 'Copa Marathon 2026 | Torneo Intercolegial de Fútbol Ecuador',
     description:
-      'Vive la Copa Marathon 2026, el torneo intercolegial de fútbol que reúne colegios de Ecuador. Conoce la Copa, sus sedes, inscripciones y Fan App.',
+      'Vive la Copa Marathon 2026, el torneo intercolegial de fútbol que reúne colegios y estudiantes de Ecuador. Conoce la Copa, sus sedes, inscripciones y Fan App.',
     breadcrumb: null,
   },
   '/la-copa': {
     title: 'Copa Nacional Intercolegial Marathon | Fútbol Escolar Ecuador',
     description:
-      'Conoce la Copa Nacional Intercolegial Marathon 2026, el torneo de fútbol escolar que conecta colegios, talento y pasión por el deporte en Ecuador.',
+      'Conoce la Copa Nacional Intercolegial Marathon 2026, el torneo intercolegial de fútbol que conecta colegios, talento y pasión por el deporte en Ecuador.',
     breadcrumb: 'La Copa',
   },
   '/sedes': {
     title: 'Sedes Copa Marathon 2026 | Torneo Intercolegial Ecuador',
     description:
-      'Consulta las sedes de la Copa Marathon 2026 en Ecuador. Encuentra ciudades, escenarios e información útil del torneo intercolegial de fútbol.',
+      'Consulta las sedes de Copa Marathon 2026, el torneo intercolegial de fútbol de Ecuador. Encuentra ciudades, escenarios e información útil para seguir la Copa.',
     breadcrumb: 'Sedes',
   },
   '/inscripciones': {
     title: 'Inscripciones Copa Marathon 2026 | Registra tu Colegio',
     description:
-      'Conoce cómo participar en la Copa Marathon 2026. Revisa requisitos, fechas y el proceso de inscripción para colegios participantes en Ecuador.',
+      'Conoce cómo participa tu colegio en Copa Marathon 2026, el torneo intercolegial de fútbol de Ecuador. Revisa requisitos, fechas y proceso de inscripción.',
     breadcrumb: 'Inscripciones',
   },
   '/fan-app': {
@@ -117,7 +119,8 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
     upsertJsonLd('seo-website', {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: SITE_NAME,
+      name: ENTITY_NAME,
+      alternateName: ENTITY_ALTERNATE_NAMES,
       url: `${SITE_URL}/`,
       image: OG_IMAGE_URL,
       inLanguage: 'es-EC',
@@ -126,7 +129,8 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
     upsertJsonLd('seo-organization', {
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      name: SITE_NAME,
+      name: ENTITY_NAME,
+      alternateName: ENTITY_ALTERNATE_NAMES,
       url: `${SITE_URL}/`,
       logo: `${SITE_URL}/marathon-logo.webp`,
       image: OG_IMAGE_URL,
