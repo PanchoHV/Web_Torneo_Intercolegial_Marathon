@@ -99,3 +99,10 @@ The Graph is code-oriented.
 Governance-only documentation changes do not automatically mean the product source Graph is stale.
 
 Graph must still be updated at milestone closure and after structural code changes according to policy.
+
+## 10. Technical SEO closeout context
+
+Technical SEO on-site is closed for the five canonical public routes. `public/sitemap.xml`
+uses truthful `lastmod` values only for meaningful visible, SEO metadata, or route-level
+structural changes. This closeout changes no imports, runtime contracts, or dependencies, so a
+Graphify update is not required; graph validation remains the required check.
