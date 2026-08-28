@@ -103,7 +103,7 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
       id="sede-destacada"
       aria-labelledby="sede-destacada-title"
       ref={sectionRef}
-      className="relative overflow-hidden bg-marathon-navy pb-[clamp(3.5rem,5vw,5rem)] pt-[clamp(1rem,2vw,2rem)] text-white"
+      className="relative scroll-mt-[calc(var(--header-height)+1.5rem)] overflow-hidden bg-marathon-navy pb-[clamp(3.5rem,5vw,5rem)] pt-[clamp(1rem,2vw,2rem)] text-white"
     >
       {/* ── Capa de marcas de agua: por debajo del contenido ── */}
       <div
@@ -129,8 +129,9 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
         <SectionLabel tone="gold">Sede destacada</SectionLabel>
 
         <Surface
+          key={venue.id}
           variant="stadium"
-          className="mt-4 overflow-hidden rounded-[26px] border-white/10 bg-white/[0.045]"
+          className="mt-4 animate-[featured-venue-in_380ms_ease-out_both] overflow-hidden rounded-[26px] border-white/10 bg-white/[0.045] motion-reduce:animate-none"
         >
           <div className="grid gap-0 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
             {/*
@@ -268,6 +269,19 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
           </div>
         </Surface>
       </Container>
+
+      <style>{`
+        @keyframes featured-venue-in {
+          from {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          to {
+            opacity: 1;
+            transform: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }

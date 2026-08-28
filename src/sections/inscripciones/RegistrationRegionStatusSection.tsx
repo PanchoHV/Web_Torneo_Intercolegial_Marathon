@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ArrowRight, BadgeCheck, Bell, ChevronDown, Lock } from "lucide-react";
+import { ArrowRight, BadgeCheck, Bell, CalendarDays, ChevronDown, Lock } from "lucide-react";
 
 import { scrollToAnchor } from "@/lib/scrollToAnchor";
 import { trackCtaClick } from '@/lib/analytics/gtm';
@@ -10,17 +10,10 @@ import { textures } from "@/lib/assets/textures";
 import { SectionLabel } from "@/components/ui/section-label";
 import {
   REGISTRATION_STATUS,
+  resolveRegion,
   type RegionRegistration,
   type RegistrationStatus,
 } from "@/lib/constants/regionStatus";
-
-type RegistrationRegionStatusSectionProps = {
-  /**
-   * Contrato preparado para el subloop de notificaciones. Mientras no exista
-   * backend el CTA queda deshabilitado y este handler no se invoca.
-   */
-  onNotify?: (regionId: string) => void;
-};
 
 /** Copy seguro para el detalle de una región cerrada: no afirma fechas. */
 const CLOSED_DETAILS =
@@ -92,9 +85,7 @@ const STATUS_THEME: Record<RegistrationStatus, StatusTheme> = {
  * data y contrato de estado con el Home a través de `regionStatus`, pero su
  * composición es propia — tres tarjetas densas de una sola altura.
  */
-export default function RegistrationRegionStatusSection({
-  onNotify,
-}: RegistrationRegionStatusSectionProps) {
+export default function RegistrationRegionStatusSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
@@ -152,7 +143,7 @@ export default function RegistrationRegionStatusSection({
         </h2>
 
         <div className="mt-6 grid gap-[18px] md:grid-cols-2 lg:grid-cols-3">
-          {REGISTRATION_STATUS.map((region) => (
+          {REGISTRATION_STATUS.map(resolveRegion).map((region) => (
             <RegionCard
               key={region.id}
               region={region}
@@ -162,7 +153,6 @@ export default function RegistrationRegionStatusSection({
                   current === region.id ? null : region.id,
                 )
               }
-              onNotify={onNotify}
             />
           ))}
         </div>
@@ -175,16 +165,10 @@ type RegionCardProps = {
   region: RegionRegistration;
   isExpanded: boolean;
   onToggleDetails: () => void;
-  onNotify?: (regionId: string) => void;
 };
 
 /** Una sola tarjeta para los tres estados: lo único que cambia es el tema. */
-function RegionCard({
-  region,
-  isExpanded,
-  onToggleDetails,
-  onNotify,
-}: RegionCardProps) {
+function RegionCard({ region, isExpanded, onToggleDetails }: RegionCardProps) {
   const theme = STATUS_THEME[region.status];
   const Icon = theme.icon;
   const badgeLabel = region.availabilityLabel ?? theme.badge;
@@ -276,14 +260,6 @@ function RegionCard({
             </button>
           )}
 
-          {region.status === "upcoming" && (
-            <NotifyAction
-              label="Notificarme"
-              regionId={region.id}
-              onNotify={onNotify}
-            />
-          )}
-
           {region.status === "open" && (
             <a
               href="#registration-form"
@@ -306,21 +282,6 @@ function RegionCard({
               />
             </a>
           )}
-
-          {/* Acción secundaria de captura de interés. Mismo mecanismo para
-              todas las regiones: solo cambia la etiqueta según el estado. */}
-          {region.status !== "upcoming" && (
-            <NotifyAction
-              label={
-                region.status === "closed"
-                  ? "Avísame de la próxima convocatoria"
-                  : "Recibir novedades"
-              }
-              regionId={region.id}
-              onNotify={onNotify}
-              variant="ghost"
-            />
-          )}
         </div>
       </div>
 
@@ -332,59 +293,15 @@ function RegionCard({
 
       {/* La línea de fecha solo aparece si la data la trae: nunca un placeholder. */}
       {(region.closingDate || region.openingDate) && (
-        <p className="relative mt-3 border-t border-white/10 pt-3 text-left font-montserrat text-[0.58rem] font-black uppercase tracking-[0.12em] text-white/45">
-          {region.closingDate
-            ? `Cierre: ${region.closingDate}`
-            : `Apertura: ${region.openingDate}`}
+        <p className="relative mt-3 flex items-center gap-1.5 border-t border-white/10 pt-3 text-left font-montserrat text-[0.58rem] font-black uppercase tracking-[0.12em] text-white/45">
+          <CalendarDays size={12} strokeWidth={2.6} aria-hidden="true" className="shrink-0" />
+          <span className="min-w-0">
+            {region.closingDate
+              ? `Cierre de inscripciones · ${region.closingDate}`
+              : `Apertura · ${region.openingDate}`}
+          </span>
         </p>
       )}
     </article>
-  );
-}
-
-type NotifyActionProps = {
-  label: string;
-  regionId: string;
-  onNotify?: (regionId: string) => void;
-  variant?: "solid" | "ghost";
-};
-
-/**
- * Acción de captura de interés, una sola para todas las regiones.
- *
- * Todavía no existe backend de notificaciones: sin `onNotify` el botón queda
- * deshabilitado con su helper, en vez de abrir un flujo que fallaría o —peor—
- * fingir un éxito que no ocurrió.
- */
-function NotifyAction({
-  label,
-  regionId,
-  onNotify,
-  variant = "solid",
-}: NotifyActionProps) {
-  const disabled = !onNotify;
-
-  return (
-    <div className="flex flex-col items-center gap-1">
-      <button
-        type="button"
-        disabled={disabled}
-        aria-disabled={disabled}
-        onClick={onNotify ? () => onNotify(regionId) : undefined}
-        className={`inline-flex h-9 w-full items-center justify-center gap-2 rounded-lg font-montserrat text-[0.6rem] font-black uppercase leading-tight tracking-[0.1em] transition-[background-color,border-color,opacity] duration-200 ease-out disabled:cursor-not-allowed disabled:opacity-55 disabled:hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-marathon-gold motion-reduce:transition-none [&:hover_svg]:translate-x-[1px] ${
-          variant === "solid"
-            ? "border border-marathon-gold/45 bg-marathon-gold/10 text-marathon-gold enabled:hover:border-marathon-gold/70 enabled:hover:bg-marathon-gold/20"
-            : "border border-white/15 bg-transparent text-white/70 enabled:hover:border-white/35 enabled:hover:text-white"
-        }`}
-      >
-        <Bell
-          size={12}
-          strokeWidth={2.6}
-          aria-hidden="true"
-          className="shrink-0 transition-transform duration-200 ease-out motion-reduce:transition-none"
-        />
-        {label}
-      </button>
-    </div>
   );
 }

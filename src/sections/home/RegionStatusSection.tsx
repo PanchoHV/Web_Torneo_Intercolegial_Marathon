@@ -8,6 +8,7 @@ import { ArrowRight, BadgeCheck, CalendarDays, Lock } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import {
   REGISTRATION_STATUS,
+  resolveRegion,
   type RegistrationStatus,
 } from '@/lib/constants/regionStatus';
 
@@ -245,8 +246,8 @@ export default function RegionStatusSection() {
                 DE TU COLEGIO
               </h2>
               <p className="mt-4 max-w-[42rem] text-sm leading-relaxed text-white/74 sm:text-[0.98rem]">
-                Cada región avanza en un momento distinto. Consulta el estado y participa cuando las
-                inscripciones estén disponibles.
+                Consulta el estado de cada región y registra a tu institución mientras las
+                inscripciones estén abiertas.
               </p>
             </div>
 
@@ -261,7 +262,7 @@ export default function RegionStatusSection() {
           </div>
 
           <div className="registration-cards mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {visibleRegions.map((region) => {
+            {visibleRegions.map(resolveRegion).map((region) => {
               const theme = STATUS_THEME[region.status];
               const Icon = theme.icon;
               const badgeLabel = region.availabilityLabel ?? theme.badgeLabel;
