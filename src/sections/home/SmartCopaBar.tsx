@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { trackCtaClick } from '@/lib/analytics/gtm';
+import { REGISTRATION_CLOSE_AT } from '@/lib/constants/regionStatus';
 
 const R2 = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev';
 
@@ -16,18 +17,6 @@ const ASSETS = {
   /** Playbook táctico: detalle recortado al borde izquierdo. */
   tactical: `${R2}/optimized-elemento%20t%C3%A1ctico.webp`,
 } as const;
-
-/**
- * Cierre oficial de inscripciones para Sierra y Oriente.
- *
- * Instante absoluto con offset explícito (America/Guayaquil, UTC-5): el
- * countdown es correcto sea cual sea la zona horaria del visitante. Para mover
- * el cierre basta con editar esta constante — todo el módulo deriva de aquí,
- * incluido el salto automático al estado cerrado.
- *
- * TODO(cms): leer esta fecha de la colección `registration_status`.
- */
-const REGISTRATION_CLOSE_AT = '2026-10-05T23:59:59-05:00';
 
 /** Apertura del periodo. Solo alimenta el rango visible y el `<time>`. */
 const REGISTRATION_OPEN_AT = '2026-08-28T00:00:00-05:00';

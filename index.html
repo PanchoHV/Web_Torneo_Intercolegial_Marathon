@@ -38,6 +38,21 @@
     <meta name="twitter:description" content="Vive la Copa Marathon 2026, el torneo intercolegial de fútbol que reúne colegios y estudiantes de Ecuador. Conoce la Copa, sus sedes, inscripciones y Fan App." />
     <meta name="twitter:image" content="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp" />
     <meta name="twitter:image:alt" content="Copa Marathon 2026 — Torneo Intercolegial de Fútbol Ecuador" />
+
+    <!--
+      Structured data servida en el HTML estático.
+
+      `PublicRouteSeo` reescribe estos mismos bloques por id al montar, así que
+      no se duplican: esto solo adelanta la señal para los crawlers que leen el
+      HTML antes de ejecutar JS. `image` es la propiedad que Google usa para
+      elegir la miniatura de resultados, y aquí apunta al banner de marca.
+    -->
+    <script type="application/ld+json" id="seo-website">
+      {"@context":"https://schema.org","@type":"WebSite","name":"Copa Marathon 2026","alternateName":["Copa Marathon","Copa Nacional Intercolegial Marathon"],"url":"https://www.copamarathon.com/","image":"https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp","inLanguage":"es-EC"}
+    </script>
+    <script type="application/ld+json" id="seo-organization">
+      {"@context":"https://schema.org","@type":"Organization","name":"Copa Marathon 2026","alternateName":["Copa Marathon","Copa Nacional Intercolegial Marathon"],"url":"https://www.copamarathon.com/","logo":"https://www.copamarathon.com/marathon-logo.webp","image":"https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp"}
+    </script>
     <link rel="icon" type="image/webp" href="/marathon-logo.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
