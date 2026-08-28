@@ -202,7 +202,7 @@ export default function FanAppSection() {
               </Button>
             </div>
 
-            <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-white/45">
+            <p className="mt-4 text-xs font-medium uppercase tracking-[0.14em] text-white/55">
               Disponible en la web y lista para usarse como PWA.
             </p>
           </div>
