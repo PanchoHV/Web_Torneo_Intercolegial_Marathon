@@ -63,6 +63,22 @@ type AnalyticsEventMap = {
   };
   outbound_click: { link_domain: string; link_location: string };
   file_download: { file_name: string; file_extension: string; link_location: string };
+  /**
+   * Core Web Vitals medidos en usuarios reales.
+   *
+   * CrUX tarda 28 días en reflejar un cambio; esto lo deja ver en días y con
+   * el tráfico propio, que es lo que hace falta para saber si una optimización
+   * de INP funcionó o no.
+   */
+  web_vital: {
+    metric_name: 'CLS' | 'FCP' | 'INP' | 'LCP' | 'TTFB';
+    /** Milisegundos, salvo CLS, que va sin unidad ×1000 para no perder decimales. */
+    metric_value: number;
+    metric_rating: 'good' | 'needs-improvement' | 'poor';
+    /** Identificador de la medición: permite deduplicar en GA4. */
+    metric_id: string;
+    metric_navigation_type: string;
+  };
 };
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;
@@ -167,3 +183,7 @@ export function trackFileDownload(params: AnalyticsEventMap['file_download']) {
 }
 
 export {};
+
+export function trackWebVital(params: AnalyticsEventMap['web_vital']) {
+  pushToDataLayer('web_vital', params);
+}
