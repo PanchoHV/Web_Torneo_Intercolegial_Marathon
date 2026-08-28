@@ -10,7 +10,6 @@ import { SectionLabel } from '@/components/ui/section-label';
 import { Surface } from '@/components/ui/surface';
 import { trackVenueDetailOpen } from '@/lib/analytics/gtm';
 import {
-  FEATURED_STATS_DISCLAIMER,
   SEDES_BRAND_OVERLAYS,
   type FeaturedVenue,
 } from '@/lib/constants/sedesPage';
@@ -189,9 +188,11 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
                 Provincia de {venue.province} · {venue.region}
               </p>
 
-              <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-7 text-white/78">
-                {venue.description}
-              </p>
+              {venue.description ? (
+                <p className="mt-4 max-w-[46ch] text-[0.95rem] leading-7 text-white/78">
+                  {venue.description}
+                </p>
+              ) : null}
 
               <div className="mt-6 grid gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
                 <div>
@@ -214,10 +215,6 @@ export default function FeaturedVenueSection({ venue }: FeaturedVenueSectionProp
                       </div>
                     ))}
                   </dl>
-
-                  <p className="mt-4 text-[0.72rem] leading-5 text-white/45">
-                    {FEATURED_STATS_DISCLAIMER}
-                  </p>
                 </div>
 
                 <div className="border-t border-white/12 pt-4 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
