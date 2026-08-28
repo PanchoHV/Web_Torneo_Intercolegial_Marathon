@@ -1,0 +1,20 @@
+# Copa Nacional Intercolegial Marathon Ecuador 2026
+
+> Torneo de fútbol escolar que reúne colegios de las regiones Costa, Sierra y
+> Oriente de Ecuador. Sitio oficial: información del torneo, sedes de
+> competencia, estado de inscripciones por región y acceso a la Fan App.
+
+Las inscripciones de Sierra y Oriente cierran el 5 de octubre de 2026
+(hora de Ecuador, UTC-5). La región Costa ya cerró su periodo.
+
+## Páginas
+
+- [Inicio](https://www.copamarathon.com/): resumen del torneo, estado de inscripciones y cuenta regresiva al cierre.
+- [La Copa](https://www.copamarathon.com/la-copa): qué es la Copa Marathon, su historia y formato de competencia.
+- [Sedes](https://www.copamarathon.com/sedes): ciudades sede, escenarios y fechas de cada región.
+- [Inscripciones](https://www.copamarathon.com/inscripciones): estado por región, requisitos y formulario de registro de instituciones.
+- [Fan App](https://www.copamarathon.com/fan-app): aplicación oficial para seguir partidos, resultados y noticias.
+
+## Documentos
+
+- [Reglamento General de Competencias 2026](https://www.copamarathon.com/documentos/reglamento-copa-marathon-2026.pdf): normativa oficial del torneo.
