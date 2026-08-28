@@ -197,6 +197,7 @@ export default function SedesExplorerSection({
       selection_source: selectionSource,
     });
     onSelectVenue(venueId);
+    scrollToFeaturedVenue();
   }
 
   const activeRegions = useMemo(
@@ -494,6 +495,27 @@ type VenueCardProps = {
   isSelected: boolean;
   onSelect: (venueId: string) => void;
 };
+
+/** Ancla del detalle: la declara `FeaturedVenueSection`. */
+const FEATURED_VENUE_ANCHOR = 'sede-destacada';
+
+/**
+ * Lleva al usuario al detalle después de elegir una sede.
+ *
+ * El salto se difiere un frame para que React haya pintado ya la sede nueva:
+ * si se hiciera en el mismo tick, el usuario aterrizaría sobre el contenido
+ * anterior. Solo se dispara en selecciones explícitas (lista o mapa), nunca en
+ * la reconciliación automática que corre al cambiar los filtros.
+ */
+function scrollToFeaturedVenue() {
+  requestAnimationFrame(() => {
+    const target = document.getElementById(FEATURED_VENUE_ANCHOR);
+    if (!target) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+  });
+}
 
 /** Card horizontal del listado. Un solo markup para todas las sedes. */
 function VenueCard({ venue, isSelected, onSelect }: VenueCardProps) {
