@@ -1,6 +1,5 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
-import AdminLayout from '@/components/admin/AdminLayout';
 import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
 import ScrollToTop from '@/components/ScrollToTop';
 import ScrollToTopOnNavigate from '@/components/ScrollToTopOnNavigate';
@@ -8,16 +7,22 @@ import RouteAnalytics from '@/components/analytics/RouteAnalytics';
 import PublicLayout from '@/components/layout/PublicLayout';
 import PublicRouteSeo, { type PublicSeoPath } from '@/components/seo/PublicRouteSeo';
 import HomePage from '@/pages/HomePage';
-import AdminLogin from '@/pages/admin/Login';
-import AuditPage from '@/pages/admin/AuditPage';
-import MyAccessPage from '@/pages/admin/MyAccessPage';
-import OnboardingDashboard from '@/pages/admin/OnboardingDashboard';
-import OnboardingDetail from '@/pages/admin/OnboardingDetail';
-import UsersPage from '@/pages/admin/UsersPage';
 const FanAppPage = lazy(() => import('@/pages/FanAppPage'));
+const AdminLayout = lazy(() => import('@/components/admin/AdminLayout'));
+const AdminLogin = lazy(() => import('@/pages/admin/Login'));
+const AuditPage = lazy(() => import('@/pages/admin/AuditPage'));
+const MyAccessPage = lazy(() => import('@/pages/admin/MyAccessPage'));
+const OnboardingDashboard = lazy(() => import('@/pages/admin/OnboardingDashboard'));
+const OnboardingDetail = lazy(() => import('@/pages/admin/OnboardingDetail'));
+const UsersPage = lazy(() => import('@/pages/admin/UsersPage'));
 const LaCopaPage = lazy(() => import('@/pages/LaCopaPage'));
 const InscripcionesPage = lazy(() => import('@/pages/InscripcionesPage'));
 const SedesPage = lazy(() => import('@/pages/SedesPage'));
+
+/** Frontera de carga del panel: sin ella un chunk perezoso rompe la ruta. */
+function AdminPage({ children }: { children: ReactNode }) {
+  return <Suspense fallback={null}>{children}</Suspense>;
+}
 
 function PublicPage({ path, children }: { path: PublicSeoPath; children: ReactNode }) {
   return (
@@ -78,24 +83,28 @@ function App() {
             }
           />
         </Route>
-        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/login" element={<AdminPage><AdminLogin /></AdminPage>} />
         <Route
           path="/admin"
           element={
             <ProtectedAdminRoute>
-              <AdminLayout />
+              <AdminPage>
+                <AdminLayout />
+              </AdminPage>
             </ProtectedAdminRoute>
           }
         >
           <Route index element={<Navigate to="/admin/onboarding" replace />} />
-          <Route path="/admin/onboarding" element={<OnboardingDashboard />} />
-          <Route path="/admin/onboarding/:id" element={<OnboardingDetail />} />
-          <Route path="/admin/mi-acceso" element={<MyAccessPage />} />
+          <Route path="/admin/onboarding" element={<AdminPage><OnboardingDashboard /></AdminPage>} />
+          <Route path="/admin/onboarding/:id" element={<AdminPage><OnboardingDetail /></AdminPage>} />
+          <Route path="/admin/mi-acceso" element={<AdminPage><MyAccessPage /></AdminPage>} />
           <Route
             path="/admin/usuarios"
             element={
               <ProtectedAdminRoute allowedRoles={['admin']}>
-                <UsersPage />
+                <AdminPage>
+                  <UsersPage />
+                </AdminPage>
               </ProtectedAdminRoute>
             }
           />
@@ -103,7 +112,9 @@ function App() {
             path="/admin/auditoria"
             element={
               <ProtectedAdminRoute allowedRoles={['admin']}>
-                <AuditPage />
+                <AdminPage>
+                  <AuditPage />
+                </AdminPage>
               </ProtectedAdminRoute>
             }
           />
