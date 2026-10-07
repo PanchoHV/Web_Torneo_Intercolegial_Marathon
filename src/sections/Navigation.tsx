@@ -7,6 +7,13 @@ import { Container } from '@/components/ui/container';
 import { Surface } from '@/components/ui/surface';
 import { trackFanAppOpen, trackNavigationClick } from '@/lib/analytics/gtm';
 import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
+import { SEGURO_PATH } from '@/lib/constants/seguroPage';
+
+/**
+ * Ícono del acceso al seguro estudiantil: isotipo de Hispana de Seguros.
+ * El candado ocupa menos de la mitad del lienzo del asset, por eso se escala al montarlo.
+ */
+const SEGURO_ICON_SRC = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-hispana.webp';
 
 const navLinks = [
   { label: 'La Copa', href: '/la-copa' },
@@ -140,6 +147,28 @@ export default function Navigation() {
             </div>
 
             <div className="ml-auto hidden items-center gap-3 lg:flex">
+              {/* Contorno a propósito: el único botón relleno del header es la Fan App. */}
+              <button
+                type="button"
+                onClick={() => handleNavigate(SEGURO_PATH, 'desktop', 'Seguro estudiantil')}
+                aria-current={location.pathname === SEGURO_PATH ? 'page' : undefined}
+                title="Seguro estudiantil"
+                className={`inline-flex h-11 items-center gap-2 rounded-lg border px-3 font-montserrat xl:px-4 text-[0.78rem] font-black uppercase tracking-[0.08em] text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 ${
+                  location.pathname === SEGURO_PATH
+                    ? 'border-marathon-gold bg-marathon-gold/15'
+                    : 'border-marathon-gold/55 hover:border-marathon-gold hover:bg-marathon-gold/10'
+                }`}
+              >
+                <img
+                  src={SEGURO_ICON_SRC}
+                  alt=""
+                  aria-hidden="true"
+                  decoding="async"
+                  className="h-5 w-5 shrink-0 scale-[2.1] object-contain"
+                />
+                {/* Entre lg y xl no cabe el rótulo sin partir el nombre de la Copa. */}
+                <span className="sr-only xl:not-sr-only">Seguro estudiantil</span>
+              </button>
               <Button
                 type="button"
                 variant="action"
@@ -215,6 +244,26 @@ export default function Navigation() {
                   </button>
                 );
               })}
+
+              <button
+                type="button"
+                onClick={() => handleNavigate(SEGURO_PATH, 'mobile', 'Seguro estudiantil')}
+                aria-current={location.pathname === SEGURO_PATH ? 'page' : undefined}
+                className="flex min-h-touch-target items-center justify-between rounded-lg border border-marathon-gold/55 bg-marathon-gold/10 px-5 py-4 text-left font-montserrat text-lg font-black tracking-[0.02em] text-white transition-colors hover:border-marathon-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+              >
+                <span className="flex items-center gap-2.5">
+                  <img
+                    src={SEGURO_ICON_SRC}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-6 w-6 shrink-0 scale-[2.1] object-contain"
+                  />
+                  Seguro estudiantil
+                </span>
+                <span className="text-marathon-gold/70">→</span>
+              </button>
 
               <Button
                 type="button"

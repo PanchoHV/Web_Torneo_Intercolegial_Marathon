@@ -4,6 +4,7 @@ import Hero from '@/sections/Hero';
 import AboutCopaSection from '@/sections/home/AboutCopaSection';
 import FaqSection from '@/sections/home/FaqSection';
 import FanAppSection from '@/sections/home/FanAppSection';
+import InsuranceBannerSection from '@/sections/home/InsuranceBannerSection';
 import RegionStatusSection from '@/sections/home/RegionStatusSection';
 import VenuesByRegionSection from '@/sections/home/VenuesByRegionSection';
 import SmartCopaBar from '@/sections/home/SmartCopaBar';
@@ -24,6 +25,7 @@ export default function HomePage() {
       <SponsorsSection />
       <AboutCopaSection />
       <RegionStatusSection />
+      <InsuranceBannerSection />
       <VenuesByRegionSection />
       <FanAppSection />
       <FaqSection />

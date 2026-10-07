@@ -40,6 +40,12 @@ const SEO_BY_PATH = {
       'Sigue la Copa Marathon desde tu celular. Consulta partidos, sedes, estadísticas y equipos desde la Fan App oficial del torneo.',
     breadcrumb: 'Fan App',
   },
+  '/seguro-estudiantil': {
+    title: 'Seguro Estudiantil Copa Marathon 2026 | Clínicas y Documentos',
+    description:
+      'Seguro de accidentes para los jugadores de Copa Marathon 2026. Consulta qué hacer ante un accidente, las clínicas en convenio, las coberturas y los documentos.',
+    breadcrumb: 'Seguro estudiantil',
+  },
 } as const;
 
 export type PublicSeoPath = keyof typeof SEO_BY_PATH;
