@@ -1,10 +1,10 @@
 # Copa Nacional Intercolegial Marathon Ecuador 2026
 
-> Torneo de fútbol escolar que reúne colegios de las regiones Costa, Sierra y
-> Oriente de Ecuador. Sitio oficial: información del torneo, sedes de
+> Torneo de fútbol escolar que reúne colegios de las regiones Costa y Sierra
+> de Ecuador. Sitio oficial: información del torneo, sedes de
 > competencia, estado de inscripciones por región y acceso a la Fan App.
 
-Las inscripciones de Sierra y Oriente cierran el 5 de octubre de 2026
+Las inscripciones de Sierra cierran el 9 de octubre de 2026
 (hora de Ecuador, UTC-5). La región Costa ya cerró su periodo.
 
 ## Páginas

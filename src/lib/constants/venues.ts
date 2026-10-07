@@ -1,4 +1,4 @@
-export type VenueRegion = 'Costa' | 'Sierra' | 'Amazonía';
+export type VenueRegion = 'Costa' | 'Sierra';
 
 export type VenueSide = 'Lado A' | 'Lado B';
 
@@ -43,7 +43,7 @@ export const TOURNAMENT_CATEGORIES = [
   'Sub 17 Femenino',
 ] as const;
 
-export const VENUE_REGION_OPTIONS = ['Todas', 'Costa', 'Sierra', 'Amazonía'] as const;
+export const VENUE_REGION_OPTIONS = ['Todas', 'Costa', 'Sierra'] as const;
 
 export const VENUES: Venue[] = [
   {
@@ -252,31 +252,6 @@ export const VENUES: Venue[] = [
     status: 'coming_soon',
     statusLabel: 'Inscripción próxima',
     statusDescription: 'Bloque Sierra.',
-    preRegistrationStart: '4 de mayo de 2026',
-    preRegistrationDeadline: '16 de octubre de 2026',
-    documentationDeadline: '20 de octubre de 2026',
-    matchStart: '19 de octubre de 2026',
-    categories: [...TOURNAMENT_CATEGORIES],
-    stages: [
-      { label: 'Inscripción', dateLabel: 'Hasta 16 oct 2026', status: 'upcoming' },
-      { label: 'Documentación', dateLabel: '20 oct 2026', status: 'upcoming' },
-      { label: 'Inicio de partidos', dateLabel: '19 oct 2026', status: 'scheduled' },
-      { label: 'Camino a la final', dateLabel: 'Según fixture oficial', status: 'scheduled' },
-    ],
-    note:
-      'Fechas sujetas a ajuste por calendario operativo de sede. Las fechas corresponden a la planificación inicial.',
-  },
-
-  {
-    id: 'napo-tena',
-    province: 'Napo',
-    city: 'Tena',
-    displayName: 'Napo / Tena',
-    region: 'Amazonía',
-    side: 'Lado B',
-    status: 'coming_soon',
-    statusLabel: 'Inscripción próxima',
-    statusDescription: 'Bloque Amazonía.',
     preRegistrationStart: '4 de mayo de 2026',
     preRegistrationDeadline: '16 de octubre de 2026',
     documentationDeadline: '20 de octubre de 2026',

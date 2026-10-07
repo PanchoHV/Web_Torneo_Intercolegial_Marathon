@@ -79,12 +79,6 @@ const VENUE_POINTS: Record<string, VenuePoint> = {
     top: '67.5%',
     placement: 'right',
   },
-
-  'napo-tena': {
-    left: '52.2%',
-    top: '34.8%',
-    placement: 'left',
-  },
 };
 
 function normalizeVenueKey(value: string) {
@@ -135,8 +129,7 @@ function getRegionColor(region: Venue['region']) {
 
 function getRegionDot(region: Venue['region']) {
   if (region === 'Costa') return 'bg-[#19bfff]';
-  if (region === 'Sierra') return 'bg-[#ff4d4f]';
-  return 'bg-[#4ade80]';
+  return 'bg-[#ff4d4f]';
 }
 
 function getLabelPlacementClasses(placement: LabelPlacement) {
@@ -175,7 +168,7 @@ export default function EcuadorVenueMap({
 
       <div className="relative z-10">
         <div className="absolute left-1 top-1 z-20 flex flex-wrap gap-2 sm:left-0 sm:top-0">
-          {(['Costa', 'Sierra', 'Amazonía'] as const).map((region) => (
+          {(['Costa', 'Sierra'] as const).map((region) => (
             <span
               key={region}
               className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-[#062a4f]/75 px-2.5 py-1 text-[0.68rem] font-bold text-white shadow-[0_10px_22px_rgba(0,0,0,0.18)] backdrop-blur-sm"

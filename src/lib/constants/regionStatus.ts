@@ -5,9 +5,6 @@
  * ni derivar estados en otro sitio — si mañana Sierra pasa a `open`, las dos
  * páginas cambian solas.
  *
- * Nomenclatura acordada: el id interno sigue a `venues.ts` (`amazonia`),
- * mientras que el label visible del sitio es `ORIENTE`.
- *
  * TODO(cms): reemplazar por la colección `registration_status` del mini CMS.
  */
 
@@ -38,12 +35,12 @@ export type RegionRegistration = {
 };
 
 /**
- * Cierre operacional de Sierra y Oriente (America/Guayaquil, UTC-5).
+ * Cierre operacional de Sierra (America/Guayaquil, UTC-5).
  *
  * El offset va explícito para que el corte sea el mismo instante en cualquier
  * zona horaria del visitante.
  */
-export const REGISTRATION_CLOSE_AT = '2026-10-05T23:59:59-05:00';
+export const REGISTRATION_CLOSE_AT = '2026-10-09T23:59:59-05:00';
 
 /** Copy oficial de una región sin inscripciones activas. */
 const CLOSED_COPY = {
@@ -68,22 +65,10 @@ export const REGISTRATION_STATUS: RegionRegistration[] = [
     status: 'open',
     headline: 'INSCRIPCIONES ABIERTAS',
     description:
-      'Registra a tu institución y asegura su participación hasta el 05 de octubre.',
-    closingDate: '05 OCT 2026',
+      'Registra a tu institución y asegura su participación hasta el 09 de octubre.',
+    closingDate: '09 OCT 2026',
     closesAt: REGISTRATION_CLOSE_AT,
     mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Sierra.webp',
-  },
-  {
-    id: 'amazonia',
-    region: 'Oriente',
-    label: 'REGIÓN ORIENTE',
-    status: 'open',
-    headline: 'INSCRIPCIONES ABIERTAS',
-    description:
-      'Registra a tu institución y asegura su participación hasta el 05 de octubre.',
-    closingDate: '05 OCT 2026',
-    closesAt: REGISTRATION_CLOSE_AT,
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_oriente.webp',
   },
 ];
 

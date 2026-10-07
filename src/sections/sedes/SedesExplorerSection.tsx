@@ -39,7 +39,6 @@ const ALL_CITIES = 'todas';
 const REGION_TINT: Record<Venue['region'], string> = {
   Costa: 'border-[#19bfff]/40 bg-[#19bfff]/10 text-[#0d76a6]',
   Sierra: 'border-marathon-red/30 bg-marathon-red/[0.08] text-marathon-red',
-  Amazonía: 'border-marathon-green/30 bg-marathon-green/10 text-marathon-green',
 };
 
 const MONTH_ABBR: Record<string, string> = {
