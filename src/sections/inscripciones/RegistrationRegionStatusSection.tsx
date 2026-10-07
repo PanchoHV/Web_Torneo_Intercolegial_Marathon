@@ -142,7 +142,7 @@ export default function RegistrationRegionStatusSection() {
           Revisa el estado de tu región
         </h2>
 
-        <div className="mt-6 grid gap-[18px] md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-[18px] md:grid-cols-2">
           {REGISTRATION_STATUS.map(resolveRegion).map((region) => (
             <RegionCard
               key={region.id}

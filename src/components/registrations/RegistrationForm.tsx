@@ -615,7 +615,7 @@ export default function RegistrationForm({ onSubmitSuccess }: RegistrationFormPr
 
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em] text-marathon-blue/70">
             <CheckCircle2 size={14} className="text-marathon-red" />
-            Costa, Sierra y Amazonía
+            Costa y Sierra
           </div>
         </form>
       </div>

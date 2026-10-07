@@ -214,19 +214,6 @@ export const FEATURED_VENUE_CONTENT: Record<string, FeaturedVenueContent> = {
     ],
     mainLocations: [],
   },
-
-  'napo-tena': {
-    eyebrow: 'Sede regional',
-    description:
-      'Tena representa a la Amazonía en la Copa. La ficha operativa de la sede sigue en actualización.',
-    stats: [
-      { label: 'Escenarios', value: '1' },
-      { label: 'Colegios', value: '—' },
-      { label: 'Atletas', value: '—' },
-      { label: 'Partidos', value: '—' },
-    ],
-    mainLocations: [],
-  },
 };
 
 /** Ficha genérica para sedes sin contenido editorial propio todavía. */
@@ -314,7 +301,7 @@ export const VENUE_FAQ_ITEMS = [
   {
     question: '¿Cómo identifico las sedes por región?',
     answer:
-      'Puedes usar los filtros del explorador de Sedes para consultar las ciudades disponibles por Costa, Sierra o Amazonía y encontrar las sedes de la Copa Marathon correspondientes a cada región.',
+      'Puedes usar los filtros del explorador de Sedes para consultar las ciudades disponibles por Costa o Sierra y encontrar las sedes de la Copa Marathon correspondientes a cada región.',
   },
 ] as const;
 

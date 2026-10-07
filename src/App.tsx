@@ -18,6 +18,7 @@ const UsersPage = lazy(() => import('@/pages/admin/UsersPage'));
 const LaCopaPage = lazy(() => import('@/pages/LaCopaPage'));
 const InscripcionesPage = lazy(() => import('@/pages/InscripcionesPage'));
 const SedesPage = lazy(() => import('@/pages/SedesPage'));
+const SeguroPage = lazy(() => import('@/pages/SeguroPage'));
 
 /** Frontera de carga del panel: sin ella un chunk perezoso rompe la ruta. */
 function AdminPage({ children }: { children: ReactNode }) {
@@ -79,6 +80,14 @@ function App() {
             element={
               <PublicPage path="/inscripciones">
                 <InscripcionesPage />
+              </PublicPage>
+            }
+          />
+          <Route
+            path="seguro-estudiantil"
+            element={
+              <PublicPage path="/seguro-estudiantil">
+                <SeguroPage />
               </PublicPage>
             }
           />

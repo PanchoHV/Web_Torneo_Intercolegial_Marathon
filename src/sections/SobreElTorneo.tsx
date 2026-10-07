@@ -50,7 +50,7 @@ const features = [
     icon: FEATURE_ICONS.national,
     title: 'Cobertura Nacional',
     description:
-      'Un torneo que conecta instituciones educativas de Costa, Sierra y Amazonía en una competencia de alcance nacional.',
+      'Un torneo que conecta instituciones educativas de Costa y Sierra en una competencia de alcance nacional.',
     accent: 'red',
   },
   {

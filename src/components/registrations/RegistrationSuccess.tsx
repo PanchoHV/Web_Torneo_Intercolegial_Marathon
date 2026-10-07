@@ -1,7 +1,9 @@
-import { CheckCircle2, RotateCcw } from 'lucide-react';
+import { CheckCircle2, RotateCcw, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router';
 
 import { Button } from '@/components/ui/button';
 import { trackCtaClick } from '@/lib/analytics/gtm';
+import { SEGURO_PATH } from '@/lib/constants/seguroPage';
 import type { RegistrationResult } from '@/types/registration';
 
 type RegistrationSuccessProps = {
@@ -47,6 +49,17 @@ export default function RegistrationSuccess({ registration, onReset }: Registrat
           </p>
         </div>
       )}
+
+      <Link
+        to={SEGURO_PATH}
+        className="mx-auto mt-5 flex max-w-xl items-center gap-3 rounded-2xl border border-marathon-blue/15 bg-marathon-blue/[0.05] px-4 py-3 text-left text-sm leading-relaxed text-marathon-blue"
+      >
+        <ShieldCheck size={22} className="shrink-0 text-marathon-red" />
+        <span>
+          <span className="font-bold">Tus jugadores cuentan con seguro de accidentes.</span> Revisa
+          las clínicas en convenio y los documentos.
+        </span>
+      </Link>
 
       <div className="mt-6">
         <Button

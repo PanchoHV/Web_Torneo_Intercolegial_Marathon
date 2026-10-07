@@ -22,9 +22,9 @@ const ASSETS = {
 const REGISTRATION_OPEN_AT = '2026-08-28T00:00:00-05:00';
 
 /** Rango visible. Parametrizado para ajustar el copy sin tocar las fechas. */
-const REGISTRATION_WINDOW_LABEL = 'DEL 28 DE AGOSTO AL 05 DE OCTUBRE';
+const REGISTRATION_WINDOW_LABEL = 'DEL 28 DE AGOSTO AL 09 DE OCTUBRE';
 
-const REGIONS_LABEL = 'SIERRA Y ORIENTE';
+const REGIONS_LABEL = 'SIERRA';
 
 /** Ámbar del marcador y rojo de alarma. Locales al módulo: no son tokens del sitio. */
 const LED_AMBER = '#FFC400';
@@ -347,7 +347,7 @@ export default function SmartCopaBar() {
                         Faltan {plural(remaining.days, 'día', 'días')},{' '}
                         {plural(remaining.hours, 'hora', 'horas')} y{' '}
                         {plural(remaining.minutes, 'minuto', 'minutos')} para el cierre de
-                        inscripciones de Sierra y Oriente. Las inscripciones cierran el 5 de
+                        inscripciones de Sierra. Las inscripciones cierran el 9 de
                         octubre de 2026 a las 23:59, hora de Ecuador.
                       </p>
                     </div>

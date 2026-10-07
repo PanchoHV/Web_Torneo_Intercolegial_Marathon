@@ -261,7 +261,7 @@ export default function RegionStatusSection() {
             </button>
           </div>
 
-          <div className="registration-cards mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="registration-cards mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
             {visibleRegions.map(resolveRegion).map((region) => {
               const theme = STATUS_THEME[region.status];
               const Icon = theme.icon;

@@ -32,6 +32,7 @@ const navigationLinks = [
   { label: 'Sedes', to: '/sedes' },
   { label: 'Inscripciones', to: '/inscripciones' },
   { label: 'Fan App', to: '/fan-app' },
+  { label: 'Seguro estudiantil', to: '/seguro-estudiantil' },
 ] as const;
 
 /**

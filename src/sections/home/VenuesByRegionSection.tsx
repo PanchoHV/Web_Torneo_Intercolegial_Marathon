@@ -5,8 +5,8 @@ import { Container } from '@/components/ui/container';
 import VENUES from '@/lib/constants/venues';
 
 type PreviewRegion = {
-  title: 'Costa' | 'Sierra' | 'Oriente';
-  sourceRegion: 'Costa' | 'Sierra' | 'Amazonía';
+  title: 'Costa' | 'Sierra';
+  sourceRegion: 'Costa' | 'Sierra';
   mapSrc: string;
   stadiumSrc: string;
   accent: string;
@@ -26,13 +26,6 @@ const PREVIEW_REGIONS: PreviewRegion[] = [
     mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Sierra.webp',
     stadiumSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Estadio%20Sierra.webp',
     accent: 'bg-sky-300',
-  },
-  {
-    title: 'Oriente',
-    sourceRegion: 'Amazonía',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_oriente.webp',
-    stadiumSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Estadio%20Oriente.webp',
-    accent: 'bg-emerald-300',
   },
 ];
 
@@ -115,7 +108,7 @@ export default function VenuesByRegionSection() {
             }
 
             #sedes-preview .sedes-preview-cards {
-              grid-template-columns: repeat(3, minmax(0, 1fr));
+              grid-template-columns: repeat(2, minmax(0, 1fr));
               gap: 1.25rem;
             }
           }
@@ -178,9 +171,7 @@ export default function VenuesByRegionSection() {
                   <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.06)_0%,transparent_48%,rgba(255,255,255,0.04)_100%)]" />
 
                   <div
-                    className={`absolute right-3 top-3 opacity-95 drop-shadow-[0_4px_10px_rgba(0,0,0,0.28)] ${
-                      region.title === 'Oriente' ? 'h-[68px] w-[68px] sm:h-[76px] sm:w-[76px]' : 'h-[60px] w-[60px] sm:h-[68px] sm:w-[68px]'
-                    }`}
+                    className="absolute right-3 top-3 h-[60px] w-[60px] opacity-95 drop-shadow-[0_4px_10px_rgba(0,0,0,0.28)] sm:h-[68px] sm:w-[68px]"
                   >
                     <img
                       src={region.mapSrc}
