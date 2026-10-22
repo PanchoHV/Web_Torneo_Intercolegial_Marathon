@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import {
+  SAME_AS,
   SEO_BY_PATH,
   SITE_URL,
   buildBreadcrumbJsonLd,
@@ -108,6 +109,7 @@ export default function PublicRouteSeo({ path }: { path: PublicSeoPath }) {
       url: `${SITE_URL}/`,
       logo: `${SITE_URL}/marathon-logo.webp`,
       image: OG_IMAGE_URL,
+      sameAs: SAME_AS,
     });
 
     const breadcrumb = buildBreadcrumbJsonLd(path);

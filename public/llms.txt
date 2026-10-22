@@ -4,8 +4,8 @@
 > de Ecuador. Sitio oficial: información del torneo, sedes de
 > competencia, estado de inscripciones por región y acceso a la Fan App.
 
-Las inscripciones de Sierra cierran el 9 de octubre de 2026
-(hora de Ecuador, UTC-5). La región Costa ya cerró su periodo.
+El periodo de inscripciones cerró el 9 de octubre de 2026
+(hora de Ecuador, UTC-5).
 
 ## Páginas
 
@@ -14,6 +14,7 @@ Las inscripciones de Sierra cierran el 9 de octubre de 2026
 - [Sedes](https://www.copamarathon.com/sedes): ciudades sede, escenarios y fechas de cada región.
 - [Inscripciones](https://www.copamarathon.com/inscripciones): estado por región, requisitos y formulario de registro de instituciones.
 - [Fan App](https://www.copamarathon.com/fan-app): aplicación oficial para seguir partidos, resultados y noticias.
+- [Seguro estudiantil](https://www.copamarathon.com/seguro-estudiantil): seguro de accidentes para los jugadores, clínicas en convenio, coberturas y documentos.
 
 ## Documentos
 

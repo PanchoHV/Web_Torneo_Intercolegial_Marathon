@@ -1,5 +1,13 @@
 export const SITE_URL = 'https://www.copamarathon.com';
 
+// Perfiles oficiales: unen la entidad "Copa Marathon" con sus cuentas para que
+// Google no la confunda con la tienda Marathon Sports.
+export const SAME_AS = [
+  'https://www.instagram.com/copamarathonec/',
+  'https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/',
+  'https://www.tiktok.com/@copamarathonec',
+];
+
 export const SEO_BY_PATH = {
   '/': {
     title: 'Copa Marathon 2026 | Torneo Intercolegial de Fútbol Ecuador',
