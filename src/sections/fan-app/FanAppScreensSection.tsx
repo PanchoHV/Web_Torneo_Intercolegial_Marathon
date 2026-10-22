@@ -9,7 +9,7 @@ import { trackFanAppGalleryView } from '@/lib/analytics/gtm';
 const R2_BASE = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/';
 
 const ART = {
-  stamp: `${R2_BASE}optimized-copa-stamp.webp`,
+  stamp: `${R2_BASE}optimized-optimized-copa-stamp-v2-6cb8b47c-f837-4dd8-8bd9-780925fda83b.webp`,
   tactical: `${R2_BASE}optimized-elementos%201.webp`,
   arrow: `${R2_BASE}optimized-flecha%20entre%20cortada.webp`,
 } as const;

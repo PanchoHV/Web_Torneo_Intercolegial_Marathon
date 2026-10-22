@@ -4,16 +4,39 @@
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PJNW7H9D');
+      /*
+        GTM (y con él GA, Pixel y CAPI, ~640 KB) deja de competir con el JS de la
+        app por el ancho de banda de la carga inicial. Arranca en la primera
+        interacción del usuario o 4 s después de `load`, lo que ocurra primero.
+        Los eventos que la app empuje a `dataLayer` mientras tanto se conservan
+        y GTM los procesa al cargar; `gtm.js` va al frente de la cola para que
+        los activadores de "Page View" se evalúen antes que esos eventos.
+      */
+      (function (w, d, i) {
+        var started = false;
+        var triggers = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+        w.dataLayer = w.dataLayer || [];
+
+        function start() {
+          if (started) return;
+          started = true;
+          triggers.forEach(function (name) {
+            w.removeEventListener(name, start);
+          });
+          w.dataLayer.unshift({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var j = d.createElement('script');
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+          d.head.appendChild(j);
+        }
+
+        triggers.forEach(function (name) {
+          w.addEventListener(name, start, { passive: true });
+        });
+        w.addEventListener('load', function () {
+          setTimeout(start, 4000);
+        });
+      })(window, document, 'GTM-PJNW7H9D');
     </script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,13 +74,16 @@
       {"@context":"https://schema.org","@type":"WebSite","name":"Copa Marathon 2026","alternateName":["Copa Marathon","Copa Nacional Intercolegial Marathon"],"url":"https://www.copamarathon.com/","image":"https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp","inLanguage":"es-EC"}
     </script>
     <script type="application/ld+json" id="seo-organization">
-      {"@context":"https://schema.org","@type":"Organization","name":"Copa Marathon 2026","alternateName":["Copa Marathon","Copa Nacional Intercolegial Marathon"],"url":"https://www.copamarathon.com/","logo":"https://www.copamarathon.com/marathon-logo.webp","image":"https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp"}
+      {"@context":"https://schema.org","@type":"Organization","name":"Copa Marathon 2026","alternateName":["Copa Marathon","Copa Nacional Intercolegial Marathon"],"url":"https://www.copamarathon.com/","logo":"https://www.copamarathon.com/marathon-logo.webp","image":"https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-OG_IMAGE.webp","sameAs":["https://www.instagram.com/copamarathonec/","https://www.facebook.com/p/Copa-Nacional-Intercolegial-Marathon-61575560775997/","https://www.tiktok.com/@copamarathonec"]}
     </script>
     <link rel="icon" type="image/webp" href="/marathon-logo.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    <!-- Las imágenes de r2.dev se piden sin CORS: un preconnect con `crossorigin` abriría otra conexión que nunca se usa. -->
+    <link rel="preconnect" href="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev" />
+    <!-- Hoja de fuentes sin bloquear el primer pintado; `display=swap` ya evita texto invisible. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" /></noscript>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

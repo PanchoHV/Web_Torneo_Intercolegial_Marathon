@@ -13,7 +13,7 @@ import { SEGURO_PATH } from '@/lib/constants/seguroPage';
  * Ícono del acceso al seguro estudiantil: isotipo de Hispana de Seguros.
  * El candado ocupa menos de la mitad del lienzo del asset, por eso se escala al montarlo.
  */
-const SEGURO_ICON_SRC = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-hispana.webp';
+const SEGURO_ICON_SRC = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-hispana-v2-ae92eeaa-fb7a-46a6-b45c-00f36a83eb15.webp';
 
 const navLinks = [
   { label: 'La Copa', href: '/la-copa' },
@@ -109,6 +109,8 @@ export default function Navigation() {
             >
               <img
                 src="/marathon-logo.webp"
+                width={256}
+                height={256}
                 alt="Copa Nacional Marathon Intercolegial 2026"
                 className="h-12 w-auto shrink-0 sm:h-14 lg:h-16"
                 onError={(event) => {

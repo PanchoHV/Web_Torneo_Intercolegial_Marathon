@@ -161,7 +161,7 @@ export default function FaqSection({
                       className="pointer-events-none absolute inset-0 rounded-full bg-marathon-red/8 blur-2xl"
                     />
                     <img
-                      src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-copa-stamp.webp"
+                      src="https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-copa-stamp-v2-6cb8b47c-f837-4dd8-8bd9-780925fda83b.webp"
                       alt=""
                       aria-hidden="true"
                       loading="lazy"

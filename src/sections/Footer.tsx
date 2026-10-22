@@ -158,6 +158,8 @@ export default function Footer() {
               <div className="flex items-center gap-4">
                 <img
                   src="/marathon-logo.webp"
+                  width={256}
+                  height={256}
                   alt="Copa Nacional Intercolegial Marathon Ecuador"
                   loading="lazy"
                   decoding="async"

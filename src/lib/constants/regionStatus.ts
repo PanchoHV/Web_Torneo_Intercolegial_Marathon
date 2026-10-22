@@ -56,7 +56,7 @@ export const REGISTRATION_STATUS: RegionRegistration[] = [
     status: 'closed',
     headline: 'INSCRIPCIONES CERRADAS',
     description: 'El periodo de inscripción de esta región finalizó.',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Costa.webp',
+    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Map_Costa-v2-c2a98a22-3dd2-4dee-8cea-d5af6560e8f0.webp',
   },
   {
     id: 'sierra',
@@ -68,7 +68,7 @@ export const REGISTRATION_STATUS: RegionRegistration[] = [
       'Registra a tu institución y asegura su participación hasta el 09 de octubre.',
     closingDate: '09 OCT 2026',
     closesAt: REGISTRATION_CLOSE_AT,
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Sierra.webp',
+    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Map_Sierra-v2-55a6ef0d-3789-4175-ba71-907395d6db9c.webp',
   },
 ];
 

@@ -10,16 +10,16 @@ import { EXTERNAL_LINK_PROPS, FAN_APP_URL } from '@/lib/constants/links';
 gsap.registerPlugin(ScrollTrigger);
 
 const HERO_FIELD = encodeURI(
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Fono de estadio.webp'
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Fono-de-estadio-v2-7d5da78a-c7de-448b-a13f-c93fb3702cfd.webp'
 );
 const HERO_ELEMENTS = encodeURI(
   'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-elementos 1.webp'
 );
 const HERO_PLAYERS = encodeURI(
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Jugadores Transparencia.webp'
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Jugadores-Transparencia-v2-95419a76-4c8f-4165-b9ce-7fa759299c59.webp'
 );
 const HERO_PHONE = encodeURI(
-  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Imagen Celular Mock.webp'
+  'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Imagen-Celular-Mock-v2-40371069-5a4f-41f5-9406-bcd990dced02.webp'
 );
 
 const HERO_COPY_STYLES = `

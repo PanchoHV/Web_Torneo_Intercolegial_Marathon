@@ -40,7 +40,7 @@ export const textures = {
   brushPlus: file('optimized-brush-plus.webp'),
 
   /** Sello circular oficial de la Copa. */
-  copaStamp: file('optimized-copa-stamp.webp'),
+  copaStamp: file('optimized-optimized-copa-stamp-v2-6cb8b47c-f837-4dd8-8bd9-780925fda83b.webp'),
 } as const;
 
 export type TextureName = keyof typeof textures;
