@@ -78,6 +78,22 @@ type AnalyticsEventMap = {
     /** Identificador de la medición: permite deduplicar en GA4. */
     metric_id: string;
     metric_navigation_type: string;
+    /**
+     * Atribución para saber qué corregir. INP: selector del elemento de la
+     * interacción más lenta. LCP: selector del elemento que se pintó al final.
+     * GA4 recorta los valores a 100 caracteres.
+     */
+    metric_target?: string;
+    /** INP: 'pointer' o 'keyboard'. */
+    metric_interaction_type?: string;
+    /** INP: 'loading', 'dom-interactive', 'dom-content-loaded' o 'complete'. */
+    metric_load_state?: string;
+    /** INP, en ms: espera hasta que el navegador empieza a procesar el evento. */
+    inp_input_delay?: number;
+    /** INP, en ms: lo que tardan los manejadores del evento (aquí pesan GTM y React). */
+    inp_processing_duration?: number;
+    /** INP, en ms: del fin de los manejadores al siguiente pintado. */
+    inp_presentation_delay?: number;
   };
 };
 
