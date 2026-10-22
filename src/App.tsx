@@ -1,6 +1,5 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { Navigate, Route, Routes } from 'react-router';
-import ProtectedAdminRoute from '@/components/admin/ProtectedAdminRoute';
 import ScrollToTop from '@/components/ScrollToTop';
 import ScrollToTopOnNavigate from '@/components/ScrollToTopOnNavigate';
 import RouteAnalytics from '@/components/analytics/RouteAnalytics';
@@ -8,6 +7,8 @@ import PublicLayout from '@/components/layout/PublicLayout';
 import PublicRouteSeo, { type PublicSeoPath } from '@/components/seo/PublicRouteSeo';
 import HomePage from '@/pages/HomePage';
 const FanAppPage = lazy(() => import('@/pages/FanAppPage'));
+const AdminAuthBoundary = lazy(() => import('@/components/admin/AdminAuthBoundary'));
+const ProtectedAdminRoute = lazy(() => import('@/components/admin/ProtectedAdminRoute'));
 const AdminLayout = lazy(() => import('@/components/admin/AdminLayout'));
 const AdminLogin = lazy(() => import('@/pages/admin/Login'));
 const AuditPage = lazy(() => import('@/pages/admin/AuditPage'));
@@ -92,6 +93,8 @@ function App() {
             }
           />
         </Route>
+        {/* La sesión del panel (y Supabase con ella) solo se carga bajo /admin. */}
+        <Route element={<AdminPage><AdminAuthBoundary /></AdminPage>}>
         <Route path="/admin/login" element={<AdminPage><AdminLogin /></AdminPage>} />
         <Route
           path="/admin"
@@ -127,6 +130,7 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+        </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
