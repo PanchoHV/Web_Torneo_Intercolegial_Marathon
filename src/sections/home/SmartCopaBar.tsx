@@ -245,9 +245,12 @@ export default function SmartCopaBar() {
                   <p className="font-montserrat text-[clamp(0.95rem,4vw,1.15rem)] font-bold uppercase leading-none tracking-[0.02em] text-white/92 md:text-[clamp(1rem,1.35vw,1.35rem)]">
                     Inscripciones
                   </p>
+                  {/* bg-clip-text solo pinta dentro de la caja del elemento y leading-[0.86] la deja
+                      más baja que las letras: el relleno amplía la caja (y los márgenes negativos
+                      lo compensan) para que el degradado no recorte la tinta. */}
                   <h2
                     id="smart-copa-bar-title"
-                    className="mt-1.5 w-fit max-w-full bg-gradient-to-b from-white via-white to-white/62 bg-clip-text font-montserrat text-[clamp(2.05rem,9.4vw,2.75rem)] font-black uppercase leading-[0.86] tracking-[-0.025em] text-transparent md:text-[clamp(2.25rem,3.35vw,3.25rem)]"
+                    className="-mb-[0.14em] -ml-[0.04em] -mr-[0.1em] mt-[calc(0.375rem-0.12em)] w-fit bg-gradient-to-b from-white via-white to-white/62 bg-clip-text pb-[0.14em] pl-[0.04em] pr-[0.1em] pt-[0.12em] font-montserrat text-[clamp(2.05rem,9.4vw,2.75rem)] font-black uppercase leading-[0.86] tracking-[-0.025em] text-transparent md:text-[clamp(2.25rem,3.35vw,3rem)]"
                   >
                     {isClosed ? 'Cerradas' : 'Abiertas'}
                   </h2>
