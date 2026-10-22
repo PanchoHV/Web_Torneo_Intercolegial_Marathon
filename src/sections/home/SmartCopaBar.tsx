@@ -11,9 +11,9 @@ const R2 = 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev';
 
 const ASSETS = {
   /** Estructura física de la pizarra. El contenido va en HTML encima. */
-  ledPanel: `${R2}/optimized-Pantalla%20Led.webp`,
+  ledPanel: `${R2}/optimized-optimized-Pantalla-Led-v2-cf9366ae-6117-4ee0-b4b0-c381023592f6.webp`,
   /** Estadio nocturno: atmósfera del módulo. */
-  stadium: `${R2}/optimized-Fondo%20de%20est%C3%A1dio.webp`,
+  stadium: `${R2}/optimized-optimized-Fondo-de-esta-dio-v2-cc263e2d-3505-4294-8332-4b44a56a4489.webp`,
   /** Playbook táctico: detalle recortado al borde izquierdo. */
   tactical: `${R2}/optimized-elemento%20t%C3%A1ctico.webp`,
 } as const;

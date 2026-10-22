@@ -10,7 +10,7 @@ const ABOUT_COPA_ASSETS = {
   paperBackground:
     'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-paper-background.webp',
   copaStamp:
-    'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-copa-stamp.webp',
+    'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-copa-stamp-v2-6cb8b47c-f837-4dd8-8bd9-780925fda83b.webp',
   tacticalXO:
     'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-tactical-xox.webp',
   tacticalXORoute:

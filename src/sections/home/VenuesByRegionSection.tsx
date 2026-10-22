@@ -16,14 +16,14 @@ const PREVIEW_REGIONS: PreviewRegion[] = [
   {
     title: 'Costa',
     sourceRegion: 'Costa',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Costa.webp',
+    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Map_Costa-v2-c2a98a22-3dd2-4dee-8cea-d5af6560e8f0.webp',
     stadiumSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Estadio_costa.webp',
     accent: 'bg-cyan-300',
   },
   {
     title: 'Sierra',
     sourceRegion: 'Sierra',
-    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Map_Sierra.webp',
+    mapSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-optimized-Map_Sierra-v2-55a6ef0d-3789-4175-ba71-907395d6db9c.webp',
     stadiumSrc: 'https://pub-dc06325214ac4e9a8959030cf5f65654.r2.dev/optimized-Estadio%20Sierra.webp',
     accent: 'bg-sky-300',
   },
