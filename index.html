@@ -4,16 +4,39 @@
     <meta charset="UTF-8" />
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PJNW7H9D');
+      /*
+        GTM (y con él GA, Pixel y CAPI, ~640 KB) deja de competir con el JS de la
+        app por el ancho de banda de la carga inicial. Arranca en la primera
+        interacción del usuario o 4 s después de `load`, lo que ocurra primero.
+        Los eventos que la app empuje a `dataLayer` mientras tanto se conservan
+        y GTM los procesa al cargar; `gtm.js` va al frente de la cola para que
+        los activadores de "Page View" se evalúen antes que esos eventos.
+      */
+      (function (w, d, i) {
+        var started = false;
+        var triggers = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+        w.dataLayer = w.dataLayer || [];
+
+        function start() {
+          if (started) return;
+          started = true;
+          triggers.forEach(function (name) {
+            w.removeEventListener(name, start);
+          });
+          w.dataLayer.unshift({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var j = d.createElement('script');
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i;
+          d.head.appendChild(j);
+        }
+
+        triggers.forEach(function (name) {
+          w.addEventListener(name, start, { passive: true });
+        });
+        w.addEventListener('load', function () {
+          setTimeout(start, 4000);
+        });
+      })(window, document, 'GTM-PJNW7H9D');
     </script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
