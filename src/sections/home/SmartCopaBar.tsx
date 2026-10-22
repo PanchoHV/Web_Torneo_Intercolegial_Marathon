@@ -29,6 +29,8 @@ const REGIONS_LABEL = 'SIERRA';
 /** Ámbar del marcador y rojo de alarma. Locales al módulo: no son tokens del sitio. */
 const LED_AMBER = '#FFC400';
 const LED_RED = '#FF2D2D';
+// Fondo de la etiqueta con texto blanco: LED_RED da ~3,6:1 y AA pide 4,5:1; este rojo da ~5:1.
+const LED_RED_BADGE = '#D91F26';
 
 type Remaining = {
   total: number;
@@ -252,7 +254,7 @@ export default function SmartCopaBar() {
                   <p
                     className="mt-4 inline-block rounded-[2px] px-3 py-1.5 font-montserrat text-[clamp(0.72rem,2.9vw,0.85rem)] font-black uppercase tracking-[0.1em] md:text-[clamp(0.75rem,1vw,0.95rem)]"
                     style={{
-                      backgroundColor: accent,
+                      backgroundColor: isClosed ? LED_RED_BADGE : accent,
                       color: isClosed ? '#FFFFFF' : '#0A0A0A',
                     }}
                   >
