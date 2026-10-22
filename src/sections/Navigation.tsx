@@ -109,6 +109,8 @@ export default function Navigation() {
             >
               <img
                 src="/marathon-logo.webp"
+                width={256}
+                height={256}
                 alt="Copa Nacional Marathon Intercolegial 2026"
                 className="h-12 w-auto shrink-0 sm:h-14 lg:h-16"
                 onError={(event) => {
